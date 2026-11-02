@@ -314,6 +314,7 @@ Every Pokémon is from Gens 1–3 and has a cheese connection.
 
 - Replaces the Game Freak developer cameo in the Cove Lily Motel.
 - Awards the diploma for completing the Pokédex. The diploma checks the **PASTALIA (regional) Dex**, not the full National Dex.
+- **Done: dialogue (approved by Joe).** He introduces himself by name, jokes that his cousin told him to stop spending money on Pokémon games ("So I made my own!"), and denies ever meeting WILDCARD. The diploma is signed JOE FETTUCCINE. The motel owner says the big group booked in under FETTUCCINE instead of GAME FREAK.
 
 ### WILDCARD and his castle (replaces the Trick Master and Trick House)
 
@@ -640,7 +641,7 @@ A yes/no choice at New Game that randomizes Pokémon for that save file. It must
 | Joe Q replaces Scott | Dialogue rewrite (keeps Scott's sprite) | Name and dialogue done (keeps Scott's sprite) |
 | New themed teams for all trainers and Gym Leaders (Gens 1–9, Megas from gym 3) | Trainer data | Done |
 | Trainer names from the Retrotopia community | Text (waiting on Joe's list) | Not started |
-| Retrotopia cast: Alan (Birch), Sam (Steven), Joe Fettuccine (designer) | Custom sprites, scripts, dialogue | Partly done: Alan's and Sam's names and dialogue done, Joe Fettuccine gives the Old Sea Map; Joe Fettuccine's motel dialogue (still Emerald's "GAME DESIGNER" lines) and all three custom sprites still to do |
+| Retrotopia cast: Alan (Birch), Sam (Steven), Joe Fettuccine (designer) | Custom sprites, scripts, dialogue | Partly done: names and dialogue done for all three (Joe Fettuccine gives the Old Sea Map and signs the diploma); all three custom sprites still to do |
 | All Pokémon through Gen IX | Built in; plan placement | Done: wild placement, event islands, 27 legendary one-offs, regional evolutions |
 | Items, abilities, move effects through Gen IX | Built in; plan placement | Done: TM51–100, held items, training items, balls, berries, form items, charms, gems, snacks placed in shops; the rest skipped on purpose |
 | Physical/special split | Built in | Done (built in) |

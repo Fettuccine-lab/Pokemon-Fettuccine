@@ -69,22 +69,25 @@ LilycoveCity_CoveLilyMotel_2F_EventScript_MetScott::
 	end
 
 LilycoveCity_CoveLilyMotel_2F_Text_ShowMeCompletedDex:
-	.string "I'm the GAME DESIGNER.\p"
-	.string "Oh, is that right?\n"
-	.string "You're working on a POKéDEX?\p"
-	.string "It's tough trying to complete it,\n"
-	.string "but don't give up.\p"
-	.string "If you do complete it, please come\n"
-	.string "show me.$"
+	.string "Hey! I'm JOE FETTUCCINE, the\n"
+	.string "GAME DESIGNER.\p"
+	.string "Yes, like the pasta. Around here,\n"
+	.string "everything is like the pasta.\p"
+	.string "My cousin told me to stop spending\n"
+	.string "money on POKéMON games.\p"
+	.string "So I made my own!\p"
+	.string "You're working on a POKéDEX? It's\n"
+	.string "tough to fill, but don't give up.\p"
+	.string "Fill every PASTALIA entry, then come\n"
+	.string "show me. I'll make it official.$"
 
 LilycoveCity_CoveLilyMotel_2F_Text_FilledPokedexGiveYouThis:
-	.string "Wow! That's awesome!\n"
-	.string "Yep, it's totally awesome!\p"
-	.string "This POKéDEX is completely filled!\n"
+	.string "Whoa! This POKéDEX is completely\n"
+	.string "filled!\p"
+	.string "I put all those POKéMON in here, and\n"
+	.string "even I never caught them all.\p"
 	.string "You really must love POKéMON!\p"
-	.string "I'm so impressed!\p"
-	.string "Let me give you something in\n"
-	.string "recognition of your feat!$"
+	.string "Here, this makes it official!$"
 
 LilycoveCity_CoveLilyMotel_2F_Text_ImTheProgrammer:
 	.string "Me? You're talking to me?\n"
@@ -152,6 +155,7 @@ LilycoveCity_CoveLilyMotel_2F_EventScript_GiveOldSeaMapBagFull::
 
 LilycoveCity_CoveLilyMotel_2F_Text_OldSeaMapOffer:
 	.string "Oh! You're the new CHAMPION!\p"
+	.string "I'm JOE FETTUCCINE, the GAME DESIGNER.\p"
 	.string "Want to know a secret? I hid an island\n"
 	.string "in this region that nobody has ever\l"
 	.string "found.\p"
@@ -161,7 +165,9 @@ LilycoveCity_CoveLilyMotel_2F_Text_OldSeaMapOffer:
 LilycoveCity_CoveLilyMotel_2F_Text_OldSeaMapUseAtPort:
 	.string "Show it at the LINGUICOVE harbor. The\n"
 	.string "ferry will take you to FARAWAY ISLAND.\p"
-	.string "Don't tell anyone I told you!$"
+	.string "Don't tell anyone I told you!\n"
+	.string "Especially not that WILDCARD guy at\l"
+	.string "the castle. We've never met.$"
 
 LilycoveCity_CoveLilyMotel_2F_Text_OldSeaMapBagFull:
 	.string "Your BAG is full! Come back when you've\n"
