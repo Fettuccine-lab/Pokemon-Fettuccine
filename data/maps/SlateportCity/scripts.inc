@@ -482,21 +482,47 @@ SlateportCity_EventScript_AquaGrunt11::
 	release
 	end
 
-SlateportCity_EventScript_DollClerk::
+SlateportCity_EventScript_Blobby::
 	lock
 	faceplayer
-	message gText_HowMayIServeYou
+	message SlateportCity_Text_BlobbyWelcome
 	waitmessage
-	pokemartdecoration SlateportCity_PokemartDecor_Dolls
-	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	pokemart SlateportCity_Pokemart_CellarDweller
+	msgbox SlateportCity_Text_BlobbyGoodbye, MSGBOX_DEFAULT
 	release
 	end
 
 	.align 2
-SlateportCity_PokemartDecor_Dolls:
-	.2byte DECOR_AZURILL_DOLL
-	.2byte DECOR_MARILL_DOLL
-	.2byte DECOR_SKITTY_DOLL
+SlateportCity_Pokemart_CellarDweller:
+	.2byte ITEM_LONELY_MINT
+	.2byte ITEM_ADAMANT_MINT
+	.2byte ITEM_NAUGHTY_MINT
+	.2byte ITEM_BRAVE_MINT
+	.2byte ITEM_BOLD_MINT
+	.2byte ITEM_IMPISH_MINT
+	.2byte ITEM_LAX_MINT
+	.2byte ITEM_RELAXED_MINT
+	.2byte ITEM_MODEST_MINT
+	.2byte ITEM_MILD_MINT
+	.2byte ITEM_RASH_MINT
+	.2byte ITEM_QUIET_MINT
+	.2byte ITEM_CALM_MINT
+	.2byte ITEM_GENTLE_MINT
+	.2byte ITEM_CAREFUL_MINT
+	.2byte ITEM_SASSY_MINT
+	.2byte ITEM_TIMID_MINT
+	.2byte ITEM_HASTY_MINT
+	.2byte ITEM_JOLLY_MINT
+	.2byte ITEM_NAIVE_MINT
+	.2byte ITEM_SERIOUS_MINT
+	.2byte ITEM_EVERSTONE
+	.2byte ITEM_SOOTHE_BELL
+	.2byte ITEM_AMULET_COIN
+	.2byte ITEM_STRANGE_SOUVENIR
+	.2byte ITEM_RARE_BONE
+	.2byte ITEM_COMET_SHARD
+	.2byte ITEM_PEARL_STRING
+	.2byte ITEM_BIG_NUGGET
 	pokemartlistend
 
 SlateportCity_EventScript_ComeBackWithSecretPower::
@@ -946,6 +972,17 @@ SlateportCity_EventScript_BerryCrushRankingsSign::
 SlateportCity_Text_EnergyGuruSellWhatYouNeed:
 	.string "I'm the ENERGY GURU! I'll go for it and\n"
 	.string "sell you what you need!$"
+
+SlateportCity_Text_BlobbyWelcome:
+	.string "Welcome to CELLAR DWELLER\n"
+	.string "COLLECTIONS! I'm BLOBBY.\p"
+	.string "From my childhood to your collection,\n"
+	.string "welcome to the cellar!\p"
+	.string "The real cellar's back home. I only\n"
+	.string "brought the good stuff to the market.$"
+
+SlateportCity_Text_BlobbyGoodbye:
+	.string "Thanks for stopping by the cellar!$"
 
 SlateportCity_Text_OhYourPokemon:
 	.string "Oh?\n"
