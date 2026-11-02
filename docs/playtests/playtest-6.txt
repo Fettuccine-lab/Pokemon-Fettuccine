@@ -1,0 +1,112 @@
+POKEMON FETTUCCINE VERSION - PLAYTEST 6
+=======================================
+
+Thanks for testing! The big one this time is the RANDOMIZER.
+
+
+HOW TO PLAY
+-----------
+1. You need a clean US Pokemon Emerald ROM (not included).
+   It should match:
+     CRC32: 1F1C08FB
+     SHA-1: f3ae088181bf583e55daf962a92bb46f4f1d07b7
+2. Apply fettuccine-playtest-6.bps to it. Either of these works:
+     - Rom Patcher JS (in your browser): https://www.marcrobledo.com/RomPatcher.js/
+     - Floating IPS (Flips)
+3. Play the patched ROM in mGBA or any GBA emulator.
+
+Your Playtest 5 save keeps working: give the new ROM the same file
+name as before (so the save file matches) or copy the .sav across.
+Use an in-game save, not a save state from an older playtest.
+Old saves are never randomized. To try the RANDOMIZER, start a new
+game. Back up your .sav first if you want to keep your old game.
+
+
+NEW SINCE PLAYTEST 5
+--------------------
+The RANDOMIZER
+- After you enter your name in a new game, you're asked if you want
+  a RANDOMIZER game. You can only choose this at the start.
+- It randomizes wild Pokemon, starters, every trainer's team (bosses
+  too), gifts and eggs, NPC trades, legendaries, roamers, Wonder
+  Trade and the Bucatini Frontier.
+- Results stay the same within a save and change with each new game.
+- Levels don't change, so a level 3 legendary on Route 101 is
+  possible. Starters can always fight in the first battle.
+- Trainers use level-up moves and don't Mega Evolve. Story lines
+  will still name the original Pokemon. That's expected.
+- Completing the Pokedex in a RANDOMIZER game means catching any 200
+  different Pokemon.
+
+Prof. Alan's lab
+- Wall-to-wall bookcases along the back wall.
+- Complete the Pokedex, get your Hoenn starter, and PROF. ALAN has
+  something else to offer...
+
+Spaghettiport
+- CELLAR DWELLER COLLECTIONS: BLOBBY's stall in the market, where
+  the doll clerk used to be. He sells all the Nature Mints, now
+  1,000 each and no longer at the Linguicove Department Store, plus
+  some collector's pieces.
+
+Smaller changes
+- JOE FETTUCCINE, the game designer at the Cove Lily Motel, has new
+  lines and signs the Pokedex diploma.
+- The "press SELECT for a new game" shortcut on the title screen is
+  gone.
+
+
+PLEASE TRY
+----------
+- Start a RANDOMIZER game and play as far as you like.
+- Check that a route keeps the same Pokemon after saving and
+  reloading.
+- Battle Brian and a Gym Leader in a RANDOMIZER game.
+- Try gifts and eggs in a RANDOMIZER game: a fossil, the Riolu egg.
+- If you reach it, the Bucatini Frontier in a RANDOMIZER game. The
+  Pyramid, Pike and Dome are the most likely to have problems.
+- Talk to BLOBBY and buy a Mint.
+- Walk along the back wall of PROF. ALAN's lab.
+- With a late-game save, take on PROF. ALAN.
+
+
+DEBUG MENU
+----------
+This build has the developer's debug menus turned on, so you can
+skip ahead or set up a test:
+  - Overworld: hold R and press START (mGBA keyboard: hold S, Enter)
+  - In battle: press SELECT on the battle menu (mGBA: Backspace)
+  - Sprite viewer: SELECT on a summary screen (mGBA: Backspace)
+Use a separate save or a save state first, and say in your report
+if that save used the debug menu.
+
+
+AFTER-BATTLE GLITCHES
+---------------------
+If anything odd happens right after a battle (the player moving on
+their own, buttons not working, a freeze, strange graphics), make a
+SAVE STATE right away (mGBA: File > Save State) and send it in.
+
+
+KNOWN PLACEHOLDERS
+------------------
+- Brian, Prof. Alan, Sam, Mike, Joe Q, WILDCARD, JASON and BLOBBY
+  still use old Emerald sprites. Prof. Alan's battle sprite is a
+  Gentleman.
+- Retro Salvage Games shops still have blue roofs and MART signs.
+- A few map graphics still say HOENN.
+- Sam's shiny Metagross isn't cheddar-yellow yet.
+
+
+PLEASE REPORT
+-------------
+- Crashes or freezes, especially in a RANDOMIZER game
+- A Pokemon that looks or acts wrong (bad sprite, wrong name, a
+  Pokemon with no usable moves)
+- Text that runs off the box
+- Anything that blocks progress
+- Battles that feel too hard or too easy
+- Say whether your save is a RANDOMIZER game
+
+If you can, say where you were and what you were doing, and send a
+screenshot or your save file.
