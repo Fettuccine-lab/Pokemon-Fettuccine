@@ -16803,3 +16803,79 @@ Shiny: Yes
 - Surf
 - Ice Beam
 - Roost
+
+=== TRAINER_PROF_ALAN ===
+Name: ALAN
+Class: Pkmn Prof Frlg
+Pic: Gentleman
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Stoutland @ Sitrus Berry
+Level: 80
+Ability: Intimidate
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- Facade
+- Crunch
+- Play Rough
+- Thunder Wave
+
+Sirfetch'd @ Leek
+Level: 80
+Ability: Scrappy
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- Close Combat
+- Brave Bird
+- Leaf Blade
+- Knock Off
+
+Decidueye @ Leftovers
+Level: 81
+Ability: Long Reach
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- Spirit Shackle
+- Leaf Blade
+- Swords Dance
+- Roost
+
+Greninja @ Focus Sash
+Level: 81
+Ability: Protean
+Nature: Timid
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- Surf
+- Dark Pulse
+- Ice Beam
+- Water Shuriken
+
+Cinderace @ Life Orb
+Level: 81
+Ability: Libero
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- Pyro Ball
+- High Jump Kick
+- U-turn
+- Sucker Punch
+
+Polteageist @ White Herb
+Level: 82
+Ability: Weak Armor
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- Shell Smash
+- Shadow Ball
+- Giga Drain
+- Strength Sap

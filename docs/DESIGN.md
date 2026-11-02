@@ -292,6 +292,18 @@ Status:
 - The Jammie Dodgers at the Pokémon Centers can come from Alan's own stash.
 - **Done: post-game lab scene rewritten.** The Pokédex is National from the start, so after the Hall of Fame Alan no longer "upgrades" it. He asks how the player's Pokédex is coming along, says Pokémon from every corner of the world live in Pastalia ("Like a good bolognese!"), and backs up the player's Pokédex data on his PC. Brian: "Regions with NO pasta! If you find out where they're from, tell me first. I'm moving there." Alan's send-off points the player to the post-game: fill every PASTALIA entry for "a little something" (now Treecko, Torchic and Mudkip instead of the Johto starters) and show the game designer at the Cove Lily Motel. The scene still switches on the National Dex silently, which fixes saves from before the National Dex change.
 
+- **Done: wall-to-wall bookcases.** Six bookcases line the lab's back wall in both layouts, replacing the back PC desk and book desks. The row in front stays walkable.
+- **Done: secret boss battle (approved by Joe).** After the player chooses their Treecko, Torchic or Mudkip, Alan offers a battle, and offers it again whenever he's talked to; saying no there leads into the usual Pokédex rating. Repeatable, no prize. Trainer `TRAINER_PROF_ALAN`, class PKMN PROF., Champion battle music, 4 Full Restores. He uses the Gentleman battle sprite as a placeholder, so **he needs a custom battle sprite too**. Brian chimes in that he's "rooting for whoever hates pasta."
+
+| Pokémon | Lv | Item | Ability | Moves |
+| --- | --- | --- | --- | --- |
+| Stoutland | 80 | Sitrus Berry | Intimidate | Facade, Crunch, Play Rough, Thunder Wave |
+| Sirfetch'd | 80 | Leek | Scrappy | Close Combat, Brave Bird, Leaf Blade, Knock Off |
+| Decidueye | 81 | Leftovers | Long Reach | Spirit Shackle, Leaf Blade, Swords Dance, Roost |
+| Greninja | 81 | Focus Sash | Protean | Surf, Dark Pulse, Ice Beam, Water Shuriken |
+| Cinderace | 81 | Life Orb | Libero | Pyro Ball, High Jump Kick, U-turn, Sucker Punch |
+| Polteageist (ace) | 82 | White Herb | Weak Armor | Shell Smash, Shadow Ball, Giga Drain, Strength Sap |
+
 ### Sam as Steven
 
 - The heart of Retrotopia: kind and always looking out for the player.
@@ -691,6 +703,8 @@ A yes/no choice at New Game that randomizes Pokémon for that save file. It must
 | Wildcard's Castle quiz (WILDCARD and Retrotopia questions) | Dialogue | Done |
 | Retro Salvage Games shop dialogue | Dialogue | Done |
 | Cellar Dweller Collections (Blobby's stall, Spaghettiport) | Script, dialogue | Done (placeholder sprite) |
+| Alan's lab bookcases | Map layout | Done |
+| Alan secret boss battle | Script, trainer data, dialogue | Done (placeholder battle sprite) |
 
 ## Playtests
 

@@ -367,7 +367,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedCyndaquil::
 	hidemonpic
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaiting, MSGBOX_DEFAULT
 	setvar VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 6
-	releaseall
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_AlanFirstOffer
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_GiveTotodile::
@@ -408,7 +408,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedTotodile::
 	hidemonpic
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaiting, MSGBOX_DEFAULT
 	setvar VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 6
-	releaseall
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_AlanFirstOffer
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_GiveChikorita::
@@ -449,7 +449,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedChikorita::
 	hidemonpic
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaiting, MSGBOX_DEFAULT
 	setvar VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 6
-	releaseall
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_AlanFirstOffer
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedJohtoStarter::
@@ -459,11 +459,36 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedJohtoStarter::
 	waitfanfare
 	return
 
+@ Secret boss: offered once the player has their Hoenn starter, repeatable, no prize
+LittlerootTown_ProfessorBirchsLab_EventScript_AlanFirstOffer::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_AlanFirstOffer, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, LittlerootTown_ProfessorBirchsLab_EventScript_AlanBattle
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_AlanDeclined, MSGBOX_DEFAULT
+	releaseall
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_AlanLaterOffer::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_AlanLaterOffer, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, LittlerootTown_ProfessorBirchsLab_EventScript_AlanBattle
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_AlanDeclined, MSGBOX_DEFAULT
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_BirchRateOrRegister
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_AlanBattle::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_AlanAccepted, MSGBOX_DEFAULT
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BrianRootsAgainstAlan, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_PROF_ALAN, LittlerootTown_ProfessorBirchsLab_Text_AlanDefeat
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_AlanPostBattle, MSGBOX_DEFAULT
+	releaseall
+	end
+
 LittlerootTown_ProfessorBirchsLab_EventScript_Birch::
 	lock
 	faceplayer
+	goto_if_ge VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 6, LittlerootTown_ProfessorBirchsLab_EventScript_AlanLaterOffer
 	goto_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 5, LittlerootTown_ProfessorBirchsLab_EventScript_CanHaveAnyOneOfRarePokemon
 	goto_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2, LittlerootTown_ProfessorBirchsLab_EventScript_GrassyPatchWaiting
+LittlerootTown_ProfessorBirchsLab_EventScript_BirchRateOrRegister::
 	goto_if_unset FLAG_HAS_MATCH_CALL, LittlerootTown_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister
 	goto_if_unset FLAG_ENABLE_PROF_BIRCH_MATCH_CALL, EventScript_RegisterProfBirch
 	goto LittlerootTown_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister
@@ -947,6 +972,45 @@ LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaiting:
 	.string "that is POKéMON.\p"
 	.string "Somewhere out there, a patch of\n"
 	.string "long grass is waiting for you!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_AlanFirstOffer:
+	.string "PROF. ALAN: Oh, before you dash off,\n"
+	.string "{PLAYER}{KUN}…\p"
+	.string "I don't just study POKéMON, you know.\n"
+	.string "I've a little team of my own.\p"
+	.string "Never mentioned them. A gentleman\n"
+	.string "doesn't like to show off.\p"
+	.string "But you've filled the whole POKéDEX,\n"
+	.string "so I think you've earned a proper go.\p"
+	.string "What do you say? Fancy a battle?$"
+
+LittlerootTown_ProfessorBirchsLab_Text_AlanLaterOffer:
+	.string "PROF. ALAN: Back for another round?\n"
+	.string "I've only just poured a fresh one.\p"
+	.string "Fancy a battle?$"
+
+LittlerootTown_ProfessorBirchsLab_Text_AlanAccepted:
+	.string "PROF. ALAN: Splendid! Let me just put\n"
+	.string "down my whiskey. Carefully, now.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_AlanDeclined:
+	.string "PROF. ALAN: Very sensible. I'll pour\n"
+	.string "another while I wait.\p"
+	.string "Come and find me when you fancy it.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_BrianRootsAgainstAlan:
+	.string "BRIAN: Sorry in advance, PROF., but\n"
+	.string "I'm rooting for whoever hates pasta.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_AlanDefeat:
+	.string "Good heavens, well played!\n"
+	.string "And I'd only had the one…$"
+
+LittlerootTown_ProfessorBirchsLab_Text_AlanPostBattle:
+	.string "PROF. ALAN: Marvellous! Best battle\n"
+	.string "I've had in ages.\p"
+	.string "Right. Where did I put my whiskey?\p"
+	.string "Come back for another round any time.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BetterLeaveOthersAlone:
 	.string "You received the promised POKéMON.\n"
