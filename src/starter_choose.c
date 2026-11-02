@@ -21,6 +21,7 @@
 #include "trainer_pokemon_sprites.h"
 #include "trig.h"
 #include "window.h"
+#include "randomizer.h"
 #include "constants/songs.h"
 #include "constants/rgb.h"
 
@@ -351,7 +352,7 @@ u16 GetStarterPokemon(u16 chosenStarterId)
 {
     if (chosenStarterId > STARTER_MON_COUNT)
         chosenStarterId = 0;
-    return sStarterMon[chosenStarterId];
+    return RandomizerGetStarter(sStarterMon[chosenStarterId], chosenStarterId);
 }
 
 static void VblankCB_StarterChoose(void)
