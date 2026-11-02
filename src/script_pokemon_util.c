@@ -27,6 +27,7 @@
 #include "string_util.h"
 #include "tv.h"
 #include "wild_encounter.h"
+#include "randomizer.h"
 #include "constants/abilities.h"
 #include "constants/items.h"
 #include "constants/battle_frontier.h"
@@ -69,6 +70,7 @@ u8 ScriptGiveEgg(enum Species species)
     struct Pokemon mon;
     u8 isEgg;
 
+    species = RandomizerGetSpecies(species, RANDOMIZER_GIFT, 0);
     CreateEgg(&mon, species, TRUE);
     isEgg = TRUE;
     SetMonData(&mon, MON_DATA_IS_EGG, &isEgg);
@@ -124,6 +126,7 @@ void CreateScriptedWildMon(enum Species species, u8 level, enum Item item)
 {
     u8 heldItem[2];
 
+    species = RandomizerGetSpecies(species, RANDOMIZER_STATIC, 0);
     ZeroEnemyPartyMons();
     u32 personality = GetMonPersonality(species,
         GetSynchronizedGender(STATIC_WILDMON_ORIGIN, species),
@@ -143,6 +146,8 @@ void CreateScriptedDoubleWildMon(enum Species species1, u8 level1, enum Item ite
     u8 heldItem1[2];
     u8 heldItem2[2];
 
+    species1 = RandomizerGetSpecies(species1, RANDOMIZER_STATIC, 0);
+    species2 = RandomizerGetSpecies(species2, RANDOMIZER_STATIC, 0);
     ZeroEnemyPartyMons();
     u32 personality = GetMonPersonality(species1,
         GetSynchronizedGender(STATIC_WILDMON_ORIGIN, species1),
@@ -369,6 +374,7 @@ u32 ScriptGiveMonParameterized(u8 side, u8 slot, struct PokemonTemplate *monTemp
 {
     struct Pokemon mon;
 
+    monTemplate->species = RandomizerGetSpecies(monTemplate->species, RANDOMIZER_GIFT, 0);
     CreateMonFromTemplate(&mon, monTemplate);
 
     if (side == B_SIDE_PLAYER)

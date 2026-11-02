@@ -63,6 +63,7 @@
 #include "list_menu.h"
 #include "malloc.h"
 #include "battle.h"
+#include "randomizer.h"
 #include "constants/comparison_operators.h"
 #include "constants/event_objects.h"
 #include "constants/map_types.h"
@@ -1985,7 +1986,11 @@ bool8 ScrCmd_drawboxtext(struct ScriptContext *ctx)
 
 bool8 ScrCmd_showmonpic(struct ScriptContext *ctx)
 {
-    enum Species species = VarGet(ScriptReadHalfword(ctx));
+    u16 speciesArg = ScriptReadHalfword(ctx);
+    enum Species species = VarGet(speciesArg);
+    // A species written into the script is a gift, so show the Pokémon the player will get
+    if (speciesArg < VARS_START)
+        species = RandomizerGetSpecies(species, RANDOMIZER_GIFT, 0);
     u8 x = ScriptReadByte(ctx);
     u8 y = ScriptReadByte(ctx);
 
@@ -2102,9 +2107,14 @@ bool8 ScrCmd_vmessage(struct ScriptContext *ctx)
 bool8 ScrCmd_bufferspeciesname(struct ScriptContext *ctx)
 {
     u8 stringVarIndex = ScriptReadByte(ctx);
-    enum Species species = VarGet(ScriptReadHalfword(ctx)) & OBJ_EVENT_MON_SPECIES_MASK; // ignore possible shiny / form bits
+    u16 speciesArg = ScriptReadHalfword(ctx);
+    enum Species species = VarGet(speciesArg) & OBJ_EVENT_MON_SPECIES_MASK; // ignore possible shiny / form bits
 
     Script_RequestEffects(SCREFF_V1);
+
+    // A species written into the script is a gift, so name the Pokémon the player gets
+    if (speciesArg < VARS_START || speciesArg == VAR_TEMP_TRANSFERRED_SPECIES)
+        species = RandomizerGetSpecies(species, RANDOMIZER_GIFT, 0);
 
     StringCopy(GetStringVar(stringVarIndex), GetSpeciesName(species));
     return FALSE;
@@ -3122,8 +3132,15 @@ bool8 ScrCmd_checkobjectat(struct ScriptContext *ctx)
 
 bool8 Scrcmd_getsetpokedexflag(struct ScriptContext *ctx)
 {
-    enum NationalDexOrder speciesId = SpeciesToNationalPokedexNum(VarGet(ScriptReadHalfword(ctx)));
+    u16 speciesArg = ScriptReadHalfword(ctx);
+    enum Species species = VarGet(speciesArg);
     u32 desiredFlag = VarGet(ScriptReadHalfword(ctx));
+    enum NationalDexOrder speciesId;
+
+    // Legendary spots check whether what they held has been caught, which may be anything now
+    if (desiredFlag == FLAG_GET_CAUGHT && speciesArg < VARS_START)
+        species = RandomizerGetSpecies(species, RANDOMIZER_STATIC, 0);
+    speciesId = SpeciesToNationalPokedexNum(species);
 
     if (desiredFlag == FLAG_SET_CAUGHT || desiredFlag == FLAG_SET_SEEN)
         Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);

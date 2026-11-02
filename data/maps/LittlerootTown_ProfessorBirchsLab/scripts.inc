@@ -291,6 +291,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_Cyndaquil::
 	applymovement LOCALID_BIRCHS_LAB_BIRCH, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	showmonpic SPECIES_TORCHIC, 10, 3
+	bufferspeciesname STR_VAR_1, SPECIES_TORCHIC
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_YoullTakeCyndaquil, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_TakeYourTime
 	goto LittlerootTown_ProfessorBirchsLab_EventScript_GiveCyndaquil
@@ -302,6 +303,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_Totodile::
 	applymovement LOCALID_BIRCHS_LAB_BIRCH, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	showmonpic SPECIES_MUDKIP, 10, 3
+	bufferspeciesname STR_VAR_1, SPECIES_MUDKIP
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_YoullTakeTotodile, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_TakeYourTime
 	goto LittlerootTown_ProfessorBirchsLab_EventScript_GiveTotodile
@@ -313,6 +315,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_Chikorita::
 	applymovement LOCALID_BIRCHS_LAB_BIRCH, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	showmonpic SPECIES_TREECKO, 10, 3
+	bufferspeciesname STR_VAR_1, SPECIES_TREECKO
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_YoullTakeChikorita, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_TakeYourTime
 	goto LittlerootTown_ProfessorBirchsLab_EventScript_GiveChikorita
@@ -926,23 +929,21 @@ LittlerootTown_ProfessorBirchsLab_Text_CanHaveAnyOneOfRarePokemon:
 	.string "three!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_YoullTakeCyndaquil:
-	.string "PROF. ALAN: The FIRE POKéMON\n"
-	.string "TORCHIC caught your eye!\p"
+	.string "PROF. ALAN: {STR_VAR_1} caught\n"
+	.string "your eye!\p"
 	.string "Sharp as ever!\p"
-	.string "So, TORCHIC it is?$"
+	.string "So, {STR_VAR_1} it is?$"
 
 LittlerootTown_ProfessorBirchsLab_Text_YoullTakeTotodile:
-	.string "PROF. ALAN: The WATER POKéMON\n"
-	.string "MUDKIP!\p"
+	.string "PROF. ALAN: {STR_VAR_1}!\p"
 	.string "You know how to pick a good one.\p"
-	.string "So, you'll take MUDKIP?$"
+	.string "So, you'll take {STR_VAR_1}?$"
 
 LittlerootTown_ProfessorBirchsLab_Text_YoullTakeChikorita:
-	.string "PROF. ALAN: The GRASS POKéMON\n"
-	.string "TREECKO!\p"
+	.string "PROF. ALAN: {STR_VAR_1}!\p"
 	.string "You certainly know what you're\n"
 	.string "doing.\p"
-	.string "So, you'll take TREECKO?$"
+	.string "So, you'll take {STR_VAR_1}?$"
 
 LittlerootTown_ProfessorBirchsLab_Text_TakeYourTimeAllInvaluable:
 	.string "PROF. ALAN: No rush.\n"
