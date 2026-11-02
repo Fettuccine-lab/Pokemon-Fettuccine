@@ -1,6 +1,7 @@
 #include "global.h"
 #include "clock.h"
 #include "new_game.h"
+#include "randomizer.h"
 #include "random.h"
 #include "clock.h"
 #include "pokemon.h"
@@ -185,6 +186,7 @@ void NewGameInitData(void)
     PlayTimeCounter_Reset();
     ClearPokedexFlags();
     InitEventData();
+    RandomizerApplyNewGameChoice();
     ClearTVShowData();
     ResetGabbyAndTy();
     ClearSecretBases();

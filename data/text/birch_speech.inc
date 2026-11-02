@@ -48,6 +48,15 @@ gText_Birch_YourePlayer::
 	.string "Splendid!\p"
 	.string "$"
 
+gText_Birch_AskRandomizer::
+	.string "One last thing! Would you like to\n"
+	.string "play a RANDOMIZER game?\p"
+	.string "It randomizes wild POKéMON, starters,\n"
+	.string "trainer teams, gifts, legendaries,\l"
+	.string "NPC trades and the BUCATINI FRONTIER.\p"
+	.string "You can only choose this now.\n"
+	.string "Play a RANDOMIZER game?$"
+
 gText_Birch_AreYouReady::
 	.string "Right, are you ready?\p"
 	.string "Your very own adventure is about\n"

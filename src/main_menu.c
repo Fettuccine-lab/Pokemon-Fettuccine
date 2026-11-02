@@ -22,6 +22,7 @@
 #include "option_menu.h"
 #include "overworld.h"
 #include "palette.h"
+#include "randomizer.h"
 #include "party_menu.h"
 #include "pokeball.h"
 #include "pokedex.h"
@@ -232,6 +233,9 @@ void CreateYesNoMenuParameterized(u8, u8, u16, u16, u8, u8);
 static void Task_NewGameBirchSpeech_SlidePlatformAway2(u8);
 static void Task_NewGameBirchSpeech_ReshowBirchLotad(u8);
 static void Task_NewGameBirchSpeech_WaitForSpriteFadeInAndTextPrinter(u8);
+static void Task_NewGameBirchSpeech_AskRandomizer(u8);
+static void Task_NewGameBirchSpeech_WaitToShowRandomizerMenu(u8);
+static void Task_NewGameBirchSpeech_ProcessRandomizerMenu(u8);
 static void Task_NewGameBirchSpeech_AreYouReady(u8);
 static void Task_NewGameBirchSpeech_ShrinkPlayer(u8);
 static void SpriteCB_MovePlayerDownWhileShrinking(struct Sprite *);
@@ -1722,15 +1726,48 @@ static void Task_NewGameBirchSpeech_WaitForSpriteFadeInAndTextPrinter(u8 taskId)
         gSprites[gTasks[taskId].tBirchSpriteId].oam.objMode = ST_OAM_OBJ_NORMAL;
         gSprites[gTasks[taskId].tLotadSpriteId].oam.objMode = ST_OAM_OBJ_NORMAL;
         if (!RunTextPrintersAndIsPrinter0Active())
-        {
-            gSprites[gTasks[taskId].tBirchSpriteId].oam.objMode = ST_OAM_OBJ_BLEND;
-            gSprites[gTasks[taskId].tLotadSpriteId].oam.objMode = ST_OAM_OBJ_BLEND;
-            NewGameBirchSpeech_StartFadeOutTarget1InTarget2(taskId, 2);
-            NewGameBirchSpeech_StartFadePlatformIn(taskId, 1);
-            gTasks[taskId].tTimer = 64;
-            gTasks[taskId].func = Task_NewGameBirchSpeech_AreYouReady;
-        }
+            gTasks[taskId].func = Task_NewGameBirchSpeech_AskRandomizer;
     }
+}
+
+static void Task_NewGameBirchSpeech_AskRandomizer(u8 taskId)
+{
+    NewGameBirchSpeech_ClearWindow(0);
+    StringExpandPlaceholders(gStringVar4, gText_Birch_AskRandomizer);
+    AddTextPrinterForMessage(TRUE);
+    gTasks[taskId].func = Task_NewGameBirchSpeech_WaitToShowRandomizerMenu;
+}
+
+static void Task_NewGameBirchSpeech_WaitToShowRandomizerMenu(u8 taskId)
+{
+    if (!RunTextPrintersAndIsPrinter0Active())
+    {
+        CreateYesNoMenuParameterized(2, 1, 0xF3, 0xDF, 2, 15);
+        gTasks[taskId].func = Task_NewGameBirchSpeech_ProcessRandomizerMenu;
+    }
+}
+
+static void Task_NewGameBirchSpeech_ProcessRandomizerMenu(u8 taskId)
+{
+    switch (Menu_ProcessInputNoWrapClearOnChoose())
+    {
+    case 0:
+        RandomizerSetNewGameChoice(TRUE);
+        break;
+    case MENU_B_PRESSED:
+    case 1:
+        RandomizerSetNewGameChoice(FALSE);
+        break;
+    default:
+        return;
+    }
+    PlaySE(SE_SELECT);
+    gSprites[gTasks[taskId].tBirchSpriteId].oam.objMode = ST_OAM_OBJ_BLEND;
+    gSprites[gTasks[taskId].tLotadSpriteId].oam.objMode = ST_OAM_OBJ_BLEND;
+    NewGameBirchSpeech_StartFadeOutTarget1InTarget2(taskId, 2);
+    NewGameBirchSpeech_StartFadePlatformIn(taskId, 1);
+    gTasks[taskId].tTimer = 64;
+    gTasks[taskId].func = Task_NewGameBirchSpeech_AreYouReady;
 }
 
 static void Task_NewGameBirchSpeech_AreYouReady(u8 taskId)
