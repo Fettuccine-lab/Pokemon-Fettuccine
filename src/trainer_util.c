@@ -6,8 +6,11 @@
 #include "string_util.h"
 #include "trainer_util.h"
 #include "text.h"
+#include "item.h"
+#include "randomizer.h"
 
 #include "constants/battle_ai.h"
+#include "constants/hold_effects.h"
 #include "constants/pokeball.h"
 
 rng_value_t GeneratePartySeed(const struct Trainer *trainer)
@@ -122,7 +125,29 @@ void MakePartnerGenerator(struct TrainerGenerator *trainerGen, const struct Trai
 
 void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *trainerMon, struct TrainerGenerator *trainer)
 {
+    struct TrainerMon randomizedMon;
     u32 data;
+
+    // A random Pokémon uses level-up moves, its own ability, and can't use a Mega Stone or the like
+    if (RandomizerIsActive())
+    {
+        randomizedMon = *trainerMon;
+        randomizedMon.species = RandomizerGetSpecies(trainerMon->species, RANDOMIZER_TRAINER, (u32)trainerMon);
+        memset(&randomizedMon.moves, 0, sizeof(randomizedMon.moves));
+        randomizedMon.ability = ABILITY_NONE;
+        switch (GetItemHoldEffect(randomizedMon.heldItem))
+        {
+        case HOLD_EFFECT_MEGA_STONE:
+        case HOLD_EFFECT_PRIMAL_ORB:
+        case HOLD_EFFECT_Z_CRYSTAL:
+            randomizedMon.heldItem = ITEM_NONE;
+            break;
+        default:
+            break;
+        }
+        trainerMon = &randomizedMon;
+    }
+
     u32 personality = (LocalRandom32(&trainer->localRngState) & 0xFFFFDF00) + 0x1000;
     u32 genderValue = LocalRandom32(&trainer->localRngState);
     if (trainerMon->gender == TRAINER_MON_RANDOM_GENDER)
