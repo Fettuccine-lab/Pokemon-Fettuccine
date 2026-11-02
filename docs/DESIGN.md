@@ -526,7 +526,6 @@ Diancie and Mewtwo stay put if the player knocks them out or runs, so they can b
 - **Primal Reversion (Kyogre and Groudon).** Built in; triggers when they hold the Blue Orb or Red Orb. **Decided:** the orbs come from the elderly couple at the Mt. Pyre summit, as in Omega Ruby/Alpha Sapphire (Emerald never gives them to the player). **Done:** after Marzano and Parmigiano return the orbs (after Sugopolis, before the Elite Four), the old woman gives the player both orbs. If the bag is full, she offers them again later. **Done:** Terramisu Cave (Groudon) and Marsala Cave (Kyogre) open at the same point instead of after the Hall of Fame: the Weather Institute scientist (2F) reports the abnormal weather once the orbs are returned, and the old woman points the player there.
 - **Decided (Oct 2026): no Z-Moves, Terastallization or Dynamax.** They stay switched off: the player can never get the key items they need (Z-Power Ring, Tera Orb, Dynamax Band), and no trainer uses them. Z-Crystals, Tera Shards, Max Mushrooms, Dynamax Candy and the like stay out of the game.
 - **Double wild battles.** Config option with an adjustable encounter chance. **Done:** 15% chance; always a single battle when the player has only one usable Pokémon.
-- **1v2 / 2v1 battles.** Supported by the engine; set up per trainer encounter in event scripts.
 
 ## Battle UI and speed
 
@@ -550,7 +549,7 @@ Mostly quality-of-life config options. Feature names change between expansion ve
 - **Done: the player starts with the Shiny Charm** in the bag (it only works from the bag, not the PC).
 - **Done: INSTANT text speed.** TEXT SPEED in the Options menu cycles SLOW / MID / FAST / INSTANT with Left and Right; only the chosen speed is shown, like FRAME.
 - **Done: one combined BIKE.** Rydel gives a single BIKE. Press **B** while riding to switch between **FAST mode** (Mach Bike) and **ACRO mode** (Acro Bike); the bike bell rings and the sprite changes. In Acro mode, **R** does wheelies, bunny hops and jumps (they used to be on B). The bike remembers the last mode (`FLAG_BIKE_ACRO_MODE`). Switching is blocked mid-trick and on rails, bumpy slopes and sandy slopes. **Decided:** two modes, not three (a "normal" mode would have ridden exactly like Acro mode). Both old bike items are now named "Bike" and work the same, so old saves need nothing. Rydel's handbooks, Ethan (Jagged Pass), Sam's call and the Cycling Road gatekeeper talk about modes.
-- **Done: MEDICINE pocket.** 68 items (potions, revives, status heals, PP restorers, vitamins, feathers, mochi, Rare Candy, Exp. Candies) moved from Items to a new 40-slot pocket between ITEMS and POKé BALLS. Honey and Dynamax Candy stay in Items. Its slots use spare space at the end of the save, so **old saves still load**; the first load moves their medicine over (`FLAG_MEDICINE_POCKET_READY`). Wally's (Brian's) catching tutorial starts on this pocket so it still lands on Poké Balls. **Art to do (Joe):** the bag picture reuses the Items one; add a 7th 64×64 frame to the bottom of `graphics/bag/bag_male.png` and `bag_female.png` (same palette).
+- **Done: MEDICINE pocket.** 68 items (potions, revives, status heals, PP restorers, vitamins, feathers, mochi, Rare Candy, Exp. Candies) moved from Items to a new 40-slot pocket between ITEMS and POKé BALLS. Honey and Dynamax Candy stay in Items. Its slots use spare space at the end of the save, so **old saves still load**; the first load moves their medicine over (`FLAG_MEDICINE_POCKET_READY`). Wally's (Brian's) catching tutorial starts on this pocket so it still lands on Poké Balls. **Decided:** the pocket keeps using the Items bag picture.
 - **Done: Pokédex search by typed name.** The Name list has **TYPE A NAME** below DON'T SPECIFY. It opens the nickname keyboard ("Which POKéMON?"); the search screen comes back with the name filled in and every other setting kept. It finds names that start with the typed text (upper/lower case doesn't matter) and combines with color, type and order. Search also defaults to the National Dex, so Pokémon outside the Pastalia Dex are found.
 - **Done: no random PokéNav calls from trainers.** Story calls (Alan, Sam, Mom, etc.) are unchanged.
 - **Done: Route 111's smashed rocks stay broken** (Rotipurf Tunnel's already did).
@@ -597,14 +596,13 @@ Mostly quality-of-life config options. Feature names change between expansion ve
 - Build it as its own callback/task screen (like the Berry Blender or Pokéblock minigames), separate from the battle and overworld systems. Check how pokeemerald-expansion structures existing minigames before writing anything new.
 - Do it in steps, building and committing after each: (1) name check plus placeholder screen, (2) scrolling background, (3) player movement, (4) obstacles and enemies, (5) win/lose and return, (6) polish.
 
-**Done** (with placeholder art; the polish step was skipped):
+**Done** (the polish step was skipped). **Decided:** the placeholder art stays as the final art.
 
 - Title screen ("PRESS A TO START", "B: QUIT", in-game controls listed) leads into one side-scrolling level about four screens wide, with a parallax mountain backdrop. Code is in `src/pocket_knight.c`.
 - Controls: D-pad runs, A jumps (hold for higher), B is a rocket dash (once per jump, recharged on landing or by stomping), START quits.
 - Two original enemies: Clank (walker, turns at walls and ledges) and Buzz (flying drone that bobs up and down). Stomp or dash through them for 100 points each. Spikes and pits hurt too.
 - 3 lives. A hit restarts the level from the beginning with a short invincibility flicker. GAME OVER plays the "too bad" jingle; touching the flagpole shows YOU WIN! with the score and the level-up fanfare.
 - The first win gives one Master Ball back in the bedroom ("Something popped out of the cartridge slot!"), tracked with `FLAG_POCKET_KNIGHT_CLEARED` (the former unused flag 0x1AA). If the bag is full, the next win tries again.
-- **Art to replace (Joe, in Aseprite):** `graphics/pocket_knight/knight.png` (five 16×16 frames stacked: stand, run 1, run 2, jump, boost), `enemies.png` (Clank ×2, Buzz ×2), `level_tiles.png` and `background.png` (8×8 tiles in a row; keep the tile order). All are 16-color indexed PNGs.
 - **Level layout** is ASCII art in `src/data/pocket_knight_level.h` (`#` ground, `=` brick, `^` spikes, `E` walker, `Y` flyer, `S` start, `|` flagpole). Every row must stay 128 characters.
 - Not done (optional): saved high score, death animation, checkpoints, its own music.
 
@@ -642,14 +640,13 @@ A yes/no choice at New Game that randomizes Pokémon for that save file. It must
 | Joe Q replaces Scott | Dialogue rewrite (keeps Scott's sprite) | Name and dialogue done (keeps Scott's sprite) |
 | New themed teams for all trainers and Gym Leaders (Gens 1–9, Megas from gym 3) | Trainer data | Done |
 | Trainer names from the Retrotopia community | Text (waiting on Joe's list) | Not started |
-| Retrotopia cast: Alan (Birch), Sam (Steven), Joe Fettuccine (designer) | Custom sprites, scripts, dialogue | Not started |
+| Retrotopia cast: Alan (Birch), Sam (Steven), Joe Fettuccine (designer) | Custom sprites, scripts, dialogue | Partly done: Alan's and Sam's names and dialogue done, Joe Fettuccine gives the Old Sea Map; Joe Fettuccine's motel dialogue (still Emerald's "GAME DESIGNER" lines) and all three custom sprites still to do |
 | All Pokémon through Gen IX | Built in; plan placement | Done: wild placement, event islands, 27 legendary one-offs, regional evolutions |
 | Items, abilities, move effects through Gen IX | Built in; plan placement | Done: TM51–100, held items, training items, balls, berries, form items, charms, gems, snacks placed in shops; the rest skipped on purpose |
 | Physical/special split | Built in | Done (built in) |
 | Mega Evolution (Mega Ring and Mega Stone Case from Sam in Gouda Grotto) | Built in, plus custom key item | Done |
 | Primal Reversion | Built in; place Blue/Red Orbs | Done (orbs given at Mt. Penne) |
 | Double wild battles | Config toggle | Done (config, 15%) |
-| 1v2 / 2v1 battles | Event scripting | Not started |
 | Poké Ball quick menu | Config toggle | Done (built in) |
 | Move description menu | Verify in config | Done (built in) |
 | Shortcut to Run | Verify in config | Done (config) |
@@ -663,7 +660,7 @@ A yes/no choice at New Game that randomizes Pokémon for that save file. It must
 | Start with Running Shoes | New-game setup, Mom's script | Done |
 | Start with Shiny Charm | New-game setup | Done |
 | Faster berry picking | Berry tree script | Done |
-| Secret Pocket Knight Adventures minigame (name "Joe F.") | Custom minigame, original sprites | Done (placeholder art; Joe's sprites still to swap in) |
+| Secret Pocket Knight Adventures minigame (name "Joe F.") | Custom minigame, original sprites | Done |
 | Randomizer at New Game | Custom (large) | Not started |
 | Instant text speed | Options menu | Done |
 | National Dex from the start | Script | Done |
@@ -677,7 +674,7 @@ A yes/no choice at New Game that randomizes Pokémon for that save file. It must
 | Alan's post-game lab scene | Dialogue | Done |
 | Brian's house sign and ANTI-PASTA PokéNav tag | Text | Done |
 | One combined BIKE (B: Fast/Acro, R: tricks) | Custom | Done |
-| MEDICINE bag pocket | Custom | Done (bag picture is a placeholder) |
+| MEDICINE bag pocket | Custom | Done |
 | Pokédex search by typed name | Custom | Done |
 | Wild encounters without time of day (4% minimum) | Data plus engine change | Done |
 | Caught Pokémon fully healed | Custom | Done |
@@ -697,6 +694,7 @@ Testers download from **https://github.com/jchiparo-lab/Pokemon-Fettuccine/relea
 | 2 | Brian, Retrotopia cast, new teams, every Pokémon in the wild, battle speed; rebuilt to fix the 2X move-forget freeze |
 | 3 | Wonder Trade, National Dex from the start, reusable TMs, level-up trade evolutions, INSTANT text, Wildcard's Castle, Gouda Grotto, Garlic Corp. |
 | 4 | Faster HMs, walking-down bug safety net |
+| 5 | One combined Bike, time-free wild encounters, Medicine pocket, full TM pocket, Pokédex name search, Retro Salvage Games dialogue, TM51–100 and about 270 new shop items, Mega Stone Case |
 
 **Idea (not scheduled): free up save space.** `include/config/save.h` can switch off unused save data (Mystery Event, record-mixing Hall records, Mystery Gift, Union Room chat, Battle Tower e-Reader and smaller ones), about 3.7 KB in all. Any of these shifts the save layout and breaks existing saves, so do them together, once, in a playtest where testers start a new save. Keep Match Call (the story calls use it).
 
