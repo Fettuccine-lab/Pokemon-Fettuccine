@@ -34,6 +34,7 @@
 #include "constants/rgb.h"
 #include "constants/songs.h"
 #include "config/pokedex_plus_hgss.h"
+#include "randomizer.h"
 
 EWRAM_DATA struct PokedexView *sPokedexView = NULL;
 static EWRAM_DATA u16 sLastSelectedPokemon = 0;
@@ -4625,6 +4626,10 @@ bool16 HasAllRegionalMons(void)
 bool16 HasAllHoennMons(void)
 {
     u32 i, j;
+
+    // A randomizer game may never offer the Pastalia Dex's Pokémon, so any will do
+    if (RandomizerIsActive())
+        return GetNationalPokedexCount(FLAG_GET_CAUGHT) >= RANDOMIZER_DEX_GOAL;
 
     for (i = 0; i < HOENN_DEX_COUNT - 1; i++)
     {

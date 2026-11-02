@@ -1,6 +1,9 @@
 #ifndef GUARD_RANDOMIZER_H
 #define GUARD_RANDOMIZER_H
 
+// How many different Pokémon a randomizer game has to catch to count as completing the Pokédex
+#define RANDOMIZER_DEX_GOAL 200
+
 // Each kind of Pokémon source rolls separately, so the same species can become
 // different Pokémon depending on where it comes from.
 enum RandomizerSource

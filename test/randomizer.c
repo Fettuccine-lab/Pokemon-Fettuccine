@@ -2,6 +2,7 @@
 #include "data.h"
 #include "event_data.h"
 #include "move.h"
+#include "pokedex.h"
 #include "pokemon.h"
 #include "random.h"
 #include "randomizer.h"
@@ -111,4 +112,20 @@ TEST("Fettuccine randomizer: wild and scripted battles are random, and stay the 
     CreateScriptedWildMon(SPECIES_RAYQUAZA, 70, ITEM_NONE);
     EXPECT_EQ(GetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_SPECIES), RandomizerGetSpecies(SPECIES_RAYQUAZA, RANDOMIZER_STATIC, 0));
     FlagClear(FLAG_RANDOMIZER_ON);
+}
+
+TEST("Fettuccine randomizer: the Pokedex reward needs any 200 different Pokemon")
+{
+    u32 i;
+
+    TurnRandomizerOn();
+    memset(&gSaveBlock1Ptr->dexCaught, 0, sizeof(gSaveBlock1Ptr->dexCaught));
+    for (i = 1; i < RANDOMIZER_DEX_GOAL; i++)
+        GetSetPokedexFlag(i, FLAG_SET_CAUGHT);
+    EXPECT(!HasAllHoennMons());
+    GetSetPokedexFlag(RANDOMIZER_DEX_GOAL, FLAG_SET_CAUGHT);
+    EXPECT(HasAllHoennMons());
+    FlagClear(FLAG_RANDOMIZER_ON);
+    EXPECT(!HasAllHoennMons());
+    memset(&gSaveBlock1Ptr->dexCaught, 0, sizeof(gSaveBlock1Ptr->dexCaught));
 }
