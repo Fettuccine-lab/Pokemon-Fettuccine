@@ -194,7 +194,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_UpgradeToNationalDex::
 	@ the data. This also switches on the National Dex for older saves.
 	setflag FLAG_SYS_NATIONAL_DEX
 	special EnableNationalPokedex
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaiting2, MSGBOX_DEFAULT
+	call LittlerootTown_ProfessorBirchsLab_EventScript_ShowGrassyPatchWaiting2
 	closemessage
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCH
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_RIVAL
@@ -250,7 +250,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ChooseJohtoStarter::
 	lockall
 	applymovement LOCALID_PLAYER, LittlerootTown_ProfessorBirchsLab_Movement_PlayerEnterLabForJohtoStarter
 	waitmovement 0
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_CompletedDexChoosePokemon, MSGBOX_DEFAULT
+	call LittlerootTown_ProfessorBirchsLab_EventScript_ShowCompletedDexChoosePokemon
 	setvar VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 5
 	releaseall
 	end
@@ -368,7 +368,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_CyndaquilTransferredToPC::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedCyndaquil::
 	hidemonpic
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaiting, MSGBOX_DEFAULT
+	call LittlerootTown_ProfessorBirchsLab_EventScript_ShowGrassyPatchWaiting
 	setvar VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 6
 	goto LittlerootTown_ProfessorBirchsLab_EventScript_AlanFirstOffer
 	end
@@ -409,7 +409,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_TotodileTransferredToPC::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedTotodile::
 	hidemonpic
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaiting, MSGBOX_DEFAULT
+	call LittlerootTown_ProfessorBirchsLab_EventScript_ShowGrassyPatchWaiting
 	setvar VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 6
 	goto LittlerootTown_ProfessorBirchsLab_EventScript_AlanFirstOffer
 	end
@@ -450,7 +450,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ChikoritaTransferredToPC::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedChikorita::
 	hidemonpic
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaiting, MSGBOX_DEFAULT
+	call LittlerootTown_ProfessorBirchsLab_EventScript_ShowGrassyPatchWaiting
 	setvar VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 6
 	goto LittlerootTown_ProfessorBirchsLab_EventScript_AlanFirstOffer
 	end
@@ -462,9 +462,46 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedJohtoStarter::
 	waitfanfare
 	return
 
+@ In a randomizer game the Pokédex goal is any 200 different Pokémon (see HasAllHoennMons)
+LittlerootTown_ProfessorBirchsLab_EventScript_ShowGrassyPatchWaiting2::
+	goto_if_set FLAG_RANDOMIZER_ON, LittlerootTown_ProfessorBirchsLab_EventScript_ShowGrassyPatchWaiting2Randomizer
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaiting2, MSGBOX_DEFAULT
+	return
+
+LittlerootTown_ProfessorBirchsLab_EventScript_ShowGrassyPatchWaiting2Randomizer::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaiting2Randomizer, MSGBOX_DEFAULT
+	return
+
+LittlerootTown_ProfessorBirchsLab_EventScript_ShowGrassyPatchWaiting::
+	goto_if_set FLAG_RANDOMIZER_ON, LittlerootTown_ProfessorBirchsLab_EventScript_ShowGrassyPatchWaitingRandomizer
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaiting, MSGBOX_DEFAULT
+	return
+
+LittlerootTown_ProfessorBirchsLab_EventScript_ShowGrassyPatchWaitingRandomizer::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaitingRandomizer, MSGBOX_DEFAULT
+	return
+
+LittlerootTown_ProfessorBirchsLab_EventScript_ShowCompletedDexChoosePokemon::
+	goto_if_set FLAG_RANDOMIZER_ON, LittlerootTown_ProfessorBirchsLab_EventScript_ShowCompletedDexChoosePokemonRandomizer
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_CompletedDexChoosePokemon, MSGBOX_DEFAULT
+	return
+
+LittlerootTown_ProfessorBirchsLab_EventScript_ShowCompletedDexChoosePokemonRandomizer::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_CompletedDexChoosePokemonRandomizer, MSGBOX_DEFAULT
+	return
+
+LittlerootTown_ProfessorBirchsLab_EventScript_ShowAlanFirstOffer::
+	goto_if_set FLAG_RANDOMIZER_ON, LittlerootTown_ProfessorBirchsLab_EventScript_ShowAlanFirstOfferRandomizer
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_AlanFirstOffer, MSGBOX_YESNO
+	return
+
+LittlerootTown_ProfessorBirchsLab_EventScript_ShowAlanFirstOfferRandomizer::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_AlanFirstOfferRandomizer, MSGBOX_YESNO
+	return
+
 @ Secret boss: offered once the player has their Hoenn starter, repeatable, no prize
 LittlerootTown_ProfessorBirchsLab_EventScript_AlanFirstOffer::
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_AlanFirstOffer, MSGBOX_YESNO
+	call LittlerootTown_ProfessorBirchsLab_EventScript_ShowAlanFirstOffer
 	goto_if_eq VAR_RESULT, YES, LittlerootTown_ProfessorBirchsLab_EventScript_AlanBattle
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_AlanDeclined, MSGBOX_DEFAULT
 	releaseall
@@ -503,7 +540,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_CanHaveAnyOneOfRarePokemon::
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_GrassyPatchWaiting::
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaiting2, MSGBOX_DEFAULT
+	call LittlerootTown_ProfessorBirchsLab_EventScript_ShowGrassyPatchWaiting2
 	release
 	end
 
@@ -983,6 +1020,59 @@ LittlerootTown_ProfessorBirchsLab_Text_AlanFirstOffer:
 	.string "doesn't like to show off.\p"
 	.string "But you've filled the whole POKéDEX,\n"
 	.string "so I think you've earned a proper go.\p"
+	.string "What do you say? Fancy a battle?$"
+
+LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaiting2Randomizer:
+	.string "PROF. ALAN: But listen. You may be\n"
+	.string "the CHAMPION, but your POKéMON\l"
+	.string "journey isn't over.\p"
+	.string "Catch any 200 different POKéMON and\n"
+	.string "pop back to the LAB.\l"
+	.string "I'll have a little something for you.\p"
+	.string "And the game designer at the\n"
+	.string "COVE LILY MOTEL in LINGUICOVE\l"
+	.string "would love to see it, too.\p"
+	.string "There's no end to the road\n"
+	.string "that is POKéMON.\p"
+	.string "Somewhere out there, a patch of\n"
+	.string "long grass is waiting for you!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_CompletedDexChoosePokemonRandomizer:
+	.string "PROF. ALAN: Ah, {PLAYER}{KUN}!\n"
+	.string "Let's have a look at your POKéDEX.\p"
+	.string "… … … … … …\n"
+	.string "… … … … … …\p"
+	.string "Well, I'll be.\n"
+	.string "There's no doubt about it.\p"
+	.string "You've really caught 200 different\n"
+	.string "POKéMON.\p"
+	.string "That's not just impressive,\n"
+	.string "that's absolutely brilliant!\p"
+	.string "I have a gift for you, as thanks\n"
+	.string "for all your fantastic work.\p"
+	.string "A rare POKéMON, hardly ever\n"
+	.string "seen in the wild!\p"
+	.string "You may have any one of these\n"
+	.string "three!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaitingRandomizer:
+	.string "PROF. ALAN: Listen, {PLAYER}{KUN}.\n"
+	.string "You've caught 200 POKéMON, but your\l"
+	.string "POKéMON journey isn't over.\p"
+	.string "There's no end to the road\n"
+	.string "that is POKéMON.\p"
+	.string "Somewhere out there, a patch of\n"
+	.string "long grass is waiting for you!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_AlanFirstOfferRandomizer:
+	.string "PROF. ALAN: Oh, before you dash off,\n"
+	.string "{PLAYER}{KUN}…\p"
+	.string "I don't just study POKéMON, you know.\n"
+	.string "I've a little team of my own.\p"
+	.string "Never mentioned them. A gentleman\n"
+	.string "doesn't like to show off.\p"
+	.string "But you've caught 200 POKéMON, so\n"
+	.string "I think you've earned a proper go.\p"
 	.string "What do you say? Fancy a battle?$"
 
 LittlerootTown_ProfessorBirchsLab_Text_AlanLaterOffer:

@@ -639,7 +639,7 @@ A yes/no choice at New Game that randomizes Pokémon for that save file. It runs
 
 **Done.** Code in `src/randomizer.c`; tests in `test/randomizer.c`. `FLAG_RANDOMIZER_ON` and the two `VAR_RANDOMIZER_SEED_*` vars are spare save space, so the save layout is unchanged and old saves stay un-randomized.
 
-- **Pokédex goal:** in a randomizer game, catching any 200 different Pokémon counts as completing the Pokédex (diploma, Alan's Hoenn starter and secret boss, the trainer card star), because the Pokémon the Pastalia Dex lists may never appear.
+- **Pokédex goal:** in a randomizer game, catching any 200 different Pokémon counts as completing the Pokédex (diploma, Alan's Hoenn starter and secret boss, the trainer card star), because the Pokémon the Pastalia Dex lists may never appear. Alan and Joe Fettuccine say so in randomizer-only lines (approved by Joe), and the diploma reads RANDOMIZER POKéDEX.
 - Results are fixed for a save and different for every new game. A species on one map always becomes the same Pokémon, so encounter rates still work.
 - Randomized trainers use level-up moves and their own abilities; Mega Stones, Primal Orbs and Z-Crystals are removed, and other held items stay.
 - Frontier Pokémon keep the moves from their sets, because the Frontier screens show them, even if the new Pokémon couldn't learn them.

@@ -15,7 +15,12 @@ LilycoveCity_CoveLilyMotel_2F_EventScript_GameDesignerDex::
 	end
 
 LilycoveCity_CoveLilyMotel_2F_EventScript_ShowMeCompletedDex::
+	goto_if_set FLAG_RANDOMIZER_ON, LilycoveCity_CoveLilyMotel_2F_EventScript_ShowMeCompletedDexRandomizer
 	msgbox LilycoveCity_CoveLilyMotel_2F_Text_ShowMeCompletedDex, MSGBOX_DEFAULT
+	return
+
+LilycoveCity_CoveLilyMotel_2F_EventScript_ShowMeCompletedDexRandomizer::
+	msgbox LilycoveCity_CoveLilyMotel_2F_Text_ShowMeCompletedDexRandomizer, MSGBOX_DEFAULT
 	return
 
 LilycoveCity_CoveLilyMotel_2F_EventScript_AllHoennMonsFanfare::
@@ -26,8 +31,16 @@ LilycoveCity_CoveLilyMotel_2F_EventScript_AllHoennMonsFanfare::
 	end
 
 LilycoveCity_CoveLilyMotel_2F_EventScript_ShowDiploma::
+	goto_if_set FLAG_RANDOMIZER_ON, LilycoveCity_CoveLilyMotel_2F_EventScript_ShowDiplomaRandomizer
 	message LilycoveCity_CoveLilyMotel_2F_Text_FilledPokedexGiveYouThis
 	waitmessage
+	goto LilycoveCity_CoveLilyMotel_2F_EventScript_AwardDiploma
+	end
+
+LilycoveCity_CoveLilyMotel_2F_EventScript_ShowDiplomaRandomizer::
+	message LilycoveCity_CoveLilyMotel_2F_Text_FilledPokedexGiveYouThisRandomizer
+	waitmessage
+LilycoveCity_CoveLilyMotel_2F_EventScript_AwardDiploma::
 	call Common_EventScript_PlayGymBadgeFanfare
 	special Special_ShowDiploma
 	release
@@ -86,6 +99,26 @@ LilycoveCity_CoveLilyMotel_2F_Text_FilledPokedexGiveYouThis:
 	.string "filled!\p"
 	.string "I put all those POKéMON in here, and\n"
 	.string "even I never caught them all.\p"
+	.string "You really must love POKéMON!\p"
+	.string "Here, this makes it official!$"
+
+LilycoveCity_CoveLilyMotel_2F_Text_ShowMeCompletedDexRandomizer:
+	.string "Hey! I'm JOE FETTUCCINE, the\n"
+	.string "GAME DESIGNER.\p"
+	.string "Yes, like the pasta. Around here,\n"
+	.string "everything is like the pasta.\p"
+	.string "My cousin told me to stop spending\n"
+	.string "money on POKéMON games.\p"
+	.string "So I made my own!\p"
+	.string "You're working on a POKéDEX? It's\n"
+	.string "tough to fill, but don't give up.\p"
+	.string "Catch any 200 different POKéMON, then\n"
+	.string "come show me. I'll make it official.$"
+
+LilycoveCity_CoveLilyMotel_2F_Text_FilledPokedexGiveYouThisRandomizer:
+	.string "Whoa! 200 different POKéMON!\p"
+	.string "With everything scrambled like this,\n"
+	.string "even I couldn't have done that.\p"
 	.string "You really must love POKéMON!\p"
 	.string "Here, this makes it official!$"
 

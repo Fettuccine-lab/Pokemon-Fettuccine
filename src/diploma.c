@@ -14,10 +14,12 @@
 #include "overworld.h"
 #include "menu.h"
 #include "pokedex.h"
+#include "randomizer.h"
 #include "constants/rgb.h"
 
 extern const u8 gText_DexNational[];
 extern const u8 gText_DexHoenn[];
+extern const u8 gText_DexRandomizer[];
 extern const u8 gText_PokedexDiploma[];
 
 static void MainCB2(void);
@@ -135,7 +137,7 @@ static void DisplayDiplomaText(void)
     else
     {
         SetGpuReg(REG_OFFSET_BG1HOFS, 0);
-        StringCopy(gStringVar1, gText_DexHoenn);
+        StringCopy(gStringVar1, RandomizerIsActive() ? gText_DexRandomizer : gText_DexHoenn);
     }
     StringExpandPlaceholders(gStringVar4, gText_PokedexDiploma);
     PrintDiplomaText(gStringVar4, 0, 1);
