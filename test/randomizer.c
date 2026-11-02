@@ -1,8 +1,13 @@
 #include "global.h"
+#include "data.h"
 #include "event_data.h"
 #include "move.h"
 #include "pokemon.h"
+#include "random.h"
 #include "randomizer.h"
+#include "script_pokemon_util.h"
+#include "trainer_util.h"
+#include "wild_encounter.h"
 #include "test/test.h"
 
 static void TurnRandomizerOn(void)
@@ -68,5 +73,42 @@ TEST("Fettuccine randomizer: starters always know a damaging move")
         }
         EXPECT(canFight);
     }
+    FlagClear(FLAG_RANDOMIZER_ON);
+}
+
+TEST("Fettuccine randomizer: trainer Pokemon lose their set moves and Mega Stones")
+{
+    static const struct TrainerMon trainerMon =
+    {
+        .species = SPECIES_CHARIZARD,
+        .lvl = 50,
+        .gender = TRAINER_MON_RANDOM_GENDER,
+        .heldItem = ITEM_CHARIZARDITE_X,
+        .ability = ABILITY_BLAZE,
+        .moves = {MOVE_SPLASH, MOVE_NONE, MOVE_NONE, MOVE_NONE},
+    };
+    struct TrainerGenerator generator = {0};
+    struct Pokemon mon;
+
+    TurnRandomizerOn();
+    GenerateMonFromTrainerMon(&mon, &trainerMon, &generator);
+    EXPECT(RandomizerIsSpeciesInPool(GetMonData(&mon, MON_DATA_SPECIES)));
+    EXPECT_EQ(GetMonData(&mon, MON_DATA_HELD_ITEM), ITEM_NONE);
+    EXPECT_NE(GetMonData(&mon, MON_DATA_MOVE1), MOVE_SPLASH);
+    FlagClear(FLAG_RANDOMIZER_ON);
+}
+
+TEST("Fettuccine randomizer: wild and scripted battles are random, and stay the same")
+{
+    enum Species first;
+
+    TurnRandomizerOn();
+    CreateWildMon(SPECIES_PIDGEY, 5);
+    first = GetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_SPECIES);
+    EXPECT(RandomizerIsSpeciesInPool(first));
+    CreateWildMon(SPECIES_PIDGEY, 5);
+    EXPECT_EQ(GetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_SPECIES), first);
+    CreateScriptedWildMon(SPECIES_RAYQUAZA, 70, ITEM_NONE);
+    EXPECT_EQ(GetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_SPECIES), RandomizerGetSpecies(SPECIES_RAYQUAZA, RANDOMIZER_STATIC, 0));
     FlagClear(FLAG_RANDOMIZER_ON);
 }

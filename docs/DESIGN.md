@@ -627,14 +627,24 @@ Mostly quality-of-life config options. Feature names change between expansion ve
 
 ## Randomizer option at game start
 
-A yes/no choice at New Game that randomizes Pokémon for that save file. It must run inside the ROM at runtime (save-file flag plus a seed), not as a separate patching tool. **Build this last.**
+A yes/no choice at New Game that randomizes Pokémon for that save file. It runs inside the ROM at runtime (save-file flag plus a seed), not as a separate patching tool.
 
 **Decided:**
 
-- Randomizes **wild Pokémon, starters, and trainer teams**.
-- **Full random** (no matching by strength).
-- **No exclusions;** legendaries can appear anywhere.
-- **Simple on/off.** The New Game prompt must tell the player exactly what gets randomized: wild Pokémon, starters, and trainer teams.
+- **Everything is random:** wild Pokémon, starters, every trainer team (Brian, Gym Leaders, Elite Four, Mike, Sam and Alan included), gifts and eggs, Alan's Hoenn starter reward, NPC trades, legendary one-offs and event islands, roamers, Wonder Trade, and the Bucatini Frontier. (Changed Nov 2026; it used to be only the first three.)
+- **Full random** (no matching by strength; levels stay as they are).
+- **The pool is every Pokémon and form,** legendaries included, except battle-only forms (Megas, Aegislash's Blade Forme and so on) and Mike's Spearow.
+- **Starters re-roll** if they wouldn't know a damaging move at level 5, because the first battle comes right after choosing.
+- **Simple on/off.** The prompt comes after the player's name and says what gets randomized. It can only be chosen at New Game.
+
+**Done.** Code in `src/randomizer.c`; tests in `test/randomizer.c`. `FLAG_RANDOMIZER_ON` and the two `VAR_RANDOMIZER_SEED_*` vars are spare save space, so the save layout is unchanged and old saves stay un-randomized.
+
+- Results are fixed for a save and different for every new game. A species on one map always becomes the same Pokémon, so encounter rates still work.
+- Randomized trainers use level-up moves and their own abilities; Mega Stones, Primal Orbs and Z-Crystals are removed, and other held items stay.
+- Frontier Pokémon keep the moves from their sets, because the Frontier screens show them, even if the new Pokémon couldn't learn them.
+- Legendary spots still show the original Pokémon's sprite and cry, then battle the random one. A spot disappears once its random Pokémon has been caught, even if that happened somewhere else first.
+- Known mismatches, on purpose: story dialogue still names the original Pokémon (Mike's Spearow, a gym's type, Sam offering Beldum), and Pokédex area maps show the original locations. Brian's catching scene on Route 102 is a cutscene and isn't randomized.
+- Alan's Hoenn starter lines now use the Pokémon's name instead of "The FIRE POKéMON TORCHIC," so they work in both modes.
 
 ## Feature tracker
 
@@ -680,7 +690,7 @@ A yes/no choice at New Game that randomizes Pokémon for that save file. It must
 | Start with Shiny Charm | New-game setup | Done |
 | Faster berry picking | Berry tree script | Done |
 | Secret Pocket Knight Adventures minigame (name "Joe F.") | Custom minigame, original sprites | Done |
-| Randomizer at New Game | Custom (large) | Not started |
+| Randomizer at New Game | Custom (large) | Done, needs playtesting |
 | Instant text speed | Options menu | Done |
 | National Dex from the start | Script | Done |
 | Reusable TMs | Config toggle | Done |
@@ -732,4 +742,4 @@ Work from easiest to hardest so there's always a playable build.
 6. Story and character changes: Brian (rival, Wally, Champion), the Retrotopia cast, Retro Salvage Games.
 7. ~~Small custom features: PC item and Move-default storage; party-menu relearner if needed.~~ **Done**, plus HM field moves without knowing the move.
 8. Sprites (as art becomes available).
-9. Randomizer, last.
+9. ~~Randomizer.~~ **Done.**

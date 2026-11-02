@@ -34,6 +34,7 @@
 #include "scanline_effect.h"
 #include "script_pokemon_util.h"
 #include "graphics.h"
+#include "randomizer.h"
 #include "constants/battle_dome.h"
 #include "constants/battle_move_effects.h"
 #include "constants/frontier_util.h"
@@ -4164,7 +4165,7 @@ static void DisplayTrainerInfoOnCard(u8 flags, u8 trainerTourneyId)
         }
         else
         {
-            sInfoCard->spriteIds[2 + i + arrId] = CreateMonIcon(gFacilityTrainerMons[DOME_MONS[trainerTourneyId][i]].species,
+            sInfoCard->spriteIds[2 + i + arrId] = CreateMonIcon(RandomizerGetSpecies(gFacilityTrainerMons[DOME_MONS[trainerTourneyId][i]].species, RANDOMIZER_FRONTIER, 0),
                                                                   SpriteCB_MonIconDomeInfo,
                                                                   x | sInfoTrainerMonX[i],
                                                                   y + sInfoTrainerMonY[i],
@@ -4237,7 +4238,7 @@ static void DisplayTrainerInfoOnCard(u8 flags, u8 trainerTourneyId)
         else if (trainerId == TRAINER_FRONTIER_BRAIN)
             textPrinter.currentChar = GetSpeciesName(DOME_MONS[trainerTourneyId][i]);
         else
-            textPrinter.currentChar = GetSpeciesName(gFacilityTrainerMons[DOME_MONS[trainerTourneyId][i]].species);
+            textPrinter.currentChar = GetSpeciesName(RandomizerGetSpecies(gFacilityTrainerMons[DOME_MONS[trainerTourneyId][i]].species, RANDOMIZER_FRONTIER, 0));
         textPrinter.fontId = GetFontIdToFit(textPrinter.currentChar, FONT_SHORT, 0, 60);
 
         textPrinter.windowId = WIN_TRAINER_MON1_NAME + i + windowId;
@@ -4709,7 +4710,7 @@ static void DisplayMatchInfoOnCard(u8 flags, u8 matchNo)
         }
         else
         {
-            sInfoCard->spriteIds[2 + i + arrId] = CreateMonIcon(gFacilityTrainerMons[DOME_MONS[tournamentIds[0]][i]].species,
+            sInfoCard->spriteIds[2 + i + arrId] = CreateMonIcon(RandomizerGetSpecies(gFacilityTrainerMons[DOME_MONS[tournamentIds[0]][i]].species, RANDOMIZER_FRONTIER, 0),
                                                                   SpriteCB_MonIconDomeInfo,
                                                                   x | sLeftTrainerMonX[i],
                                                                   y + sLeftTrainerMonY[i],
@@ -4749,7 +4750,7 @@ static void DisplayMatchInfoOnCard(u8 flags, u8 matchNo)
         }
         else
         {
-            sInfoCard->spriteIds[5 + i + arrId] = CreateMonIcon(gFacilityTrainerMons[DOME_MONS[tournamentIds[1]][i]].species,
+            sInfoCard->spriteIds[5 + i + arrId] = CreateMonIcon(RandomizerGetSpecies(gFacilityTrainerMons[DOME_MONS[tournamentIds[1]][i]].species, RANDOMIZER_FRONTIER, 0),
                                                                   SpriteCB_MonIconDomeInfo,
                                                                   x | sRightTrainerMonX[i],
                                                                   y + sRightTrainerMonY[i],
@@ -5112,7 +5113,7 @@ static u16 GetWinningMove(int winnerTournamentId, int loserTournamentId, u8 roun
                     personality = Random32();
                 } while (gFacilityTrainerMons[DOME_MONS[loserTournamentId][k]].nature != GetNatureFromPersonality(personality));
 
-                targetSpecies = gFacilityTrainerMons[DOME_MONS[loserTournamentId][k]].species;
+                targetSpecies = RandomizerGetSpecies(gFacilityTrainerMons[DOME_MONS[loserTournamentId][k]].species, RANDOMIZER_FRONTIER, 0);
 
                 if (personality & 1)
                     targetAbility = GetSpeciesAbility(targetSpecies, 1);

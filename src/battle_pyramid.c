@@ -29,6 +29,7 @@
 #include "event_scripts.h"
 #include "graphics.h"
 #include "wild_encounter.h"
+#include "randomizer.h"
 #include "constants/battle_frontier.h"
 #include "constants/battle_pyramid.h"
 #include "constants/event_objects.h"
@@ -1587,8 +1588,9 @@ void GenerateBattlePyramidWildMon(enum Species forceSpecies)
         wildMons = sLevel50WildMonPointers[round];
 
     id = GetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_SPECIES) - 1;
-    SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_SPECIES, &wildMons[id].species);
-    StringCopy(name, GetSpeciesName(wildMons[id].species));
+    u16 species = RandomizerGetSpecies(wildMons[id].species, RANDOMIZER_FRONTIER, 0);
+    SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_SPECIES, &species);
+    StringCopy(name, GetSpeciesName(species));
     SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_NICKNAME, &name);
     if (lvl != FRONTIER_LVL_50)
     {
@@ -1602,7 +1604,7 @@ void GenerateBattlePyramidWildMon(enum Species forceSpecies)
     }
     SetMonData(&gParties[B_TRAINER_OPPONENT_A][0],
                MON_DATA_EXP,
-               &gExperienceTables[gSpeciesInfo[wildMons[id].species].growthRate][lvl]);
+               &gExperienceTables[gSpeciesInfo[species].growthRate][lvl]);
 
     switch (wildMons[id].abilityNum)
     {
@@ -1612,7 +1614,7 @@ void GenerateBattlePyramidWildMon(enum Species forceSpecies)
         break;
     case ABILITY_RANDOM:
     default:
-        if (GetSpeciesAbility(wildMons[id].species, 1))
+        if (GetSpeciesAbility(species, 1))
         {
             i = GetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_PERSONALITY) % 2;
             SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_ABILITY_NUM, &i);

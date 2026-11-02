@@ -57,6 +57,7 @@
 #include "trainer.h"
 #include "trainer_hill.h"
 #include "util.h"
+#include "randomizer.h"
 #include "constants/abilities.h"
 #include "constants/battle_frontier.h"
 #include "constants/battle_move_effects.h"
@@ -1103,7 +1104,7 @@ void CreateBattleTowerMon(struct Pokemon *mon, struct BattleTowerPokemon *src)
     enum Language language;
     u8 value;
 
-    CreateMon(mon, src->species, src->level, src->personality, OTID_STRUCT_PRESET(src->otId));
+    CreateMon(mon, RandomizerGetSpecies(src->species, RANDOMIZER_FRONTIER, 0), src->level, src->personality, OTID_STRUCT_PRESET(src->otId));
 
     for (i = 0; i < MAX_MON_MOVES; i++)
         SetMonMoveSlot(mon, src->moves[i], i);
@@ -1165,7 +1166,7 @@ void CreateBattleTowerMon_HandleLevel(struct Pokemon *mon, struct BattleTowerPok
     else
         level = src->level;
 
-    CreateMon(mon, src->species, level, src->personality, OTID_STRUCT_PRESET(src->otId));
+    CreateMon(mon, RandomizerGetSpecies(src->species, RANDOMIZER_FRONTIER, 0), level, src->personality, OTID_STRUCT_PRESET(src->otId));
 
     for (i = 0; i < MAX_MON_MOVES; i++)
         SetMonMoveSlot(mon, src->moves[i], i);

@@ -13,6 +13,7 @@
 #include "palette.h"
 #include "script.h"
 #include "battle_setup.h"
+#include "randomizer.h"
 #include "constants/event_objects.h"
 #include "constants/battle_frontier.h"
 #include "constants/frontier_util.h"
@@ -1125,11 +1126,14 @@ bool32 TryGenerateBattlePikeWildMon(bool8 checkKeenEyeIntimidate)
     if (checkKeenEyeIntimidate == TRUE && !CanEncounterWildMon(monLevel))
         return FALSE;
 
+    u16 species = RandomizerGetSpecies(wildMons[headerId][pikeMonId].species, RANDOMIZER_FRONTIER, 0);
+    SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_SPECIES, &species);
+    SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_NICKNAME, GetSpeciesName(species));
     SetMonData(&gParties[B_TRAINER_OPPONENT_A][0],
                MON_DATA_EXP,
-               &gExperienceTables[gSpeciesInfo[wildMons[headerId][pikeMonId].species].growthRate][monLevel]);
+               &gExperienceTables[gSpeciesInfo[species].growthRate][monLevel]);
 
-    if (GetSpeciesAbility(wildMons[headerId][pikeMonId].species, 1))
+    if (GetSpeciesAbility(species, 1))
         abilityNum = Random() % 2;
     else
         abilityNum = 0;

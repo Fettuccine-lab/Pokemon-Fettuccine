@@ -3,6 +3,7 @@
 #include "pokemon.h"
 #include "random.h"
 #include "wonder_trade.h"
+#include "randomizer.h"
 
 // Wonder Trade: the right-hand counter upstairs in every Pokémon Center.
 // The player sends one Pokémon and gets a random non-legendary one back at
@@ -28,6 +29,9 @@ static const u8 sWonderTradeOtNames[][PLAYER_NAME_LENGTH + 1] =
 static bool32 IsWonderTradeSpecies(enum Species species)
 {
     const struct SpeciesInfo *info = &gSpeciesInfo[species];
+
+    if (RandomizerIsActive())
+        return RandomizerIsSpeciesInPool(species);
 
     if (species == SPECIES_NONE || species >= NUM_SPECIES || !IsSpeciesEnabled(species))
         return FALSE;

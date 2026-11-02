@@ -17,6 +17,7 @@
 #include "task.h"
 #include "text.h"
 #include "trainer_util.h"
+#include "randomizer.h"
 #include "constants/abilities.h"
 #include "constants/battle_frontier.h"
 #include "constants/battle_frontier_mons.h"
@@ -309,6 +310,7 @@ static void FillTrainerParty(u16 trainerId, enum BattleTrainer trainer, u8 monCo
 void CreateFacilityMon(const struct TrainerMon *fmon, u16 level, u8 fixedIV, u32 otID, u32 flags, struct Pokemon *dst)
 {
     enum PokeBall ball = (fmon->ball == 0xFF) ? Random() % POKEBALL_COUNT : fmon->ball;
+    enum Species species = RandomizerGetSpecies(fmon->species, RANDOMIZER_FRONTIER, 0);
     enum Move move;
     u32 friendship, j;
     u32 data;
@@ -316,15 +318,15 @@ void CreateFacilityMon(const struct TrainerMon *fmon, u16 level, u8 fixedIV, u32
     u32 personality = (Random32() & 0xFFFFDF00) + 0x1000;
     u32 genderValue = Random32();
     if (fmon->gender == TRAINER_MON_MALE)
-        genderValue = GeneratePersonalityForGender(MON_MALE, fmon->species, genderValue);
+        genderValue = GeneratePersonalityForGender(MON_MALE, species, genderValue);
     else if (fmon->gender == TRAINER_MON_FEMALE)
-        genderValue = GeneratePersonalityForGender(MON_FEMALE, fmon->species, genderValue);
+        genderValue = GeneratePersonalityForGender(MON_FEMALE, species, genderValue);
     else
         genderValue = genderValue & 0x000000FF;
     personality |= genderValue;
 
     ModifyPersonalityForNature(&personality, fmon->nature);
-    CreateMonWithIVs(dst, fmon->species, level, personality, OTID_STRUCT_PRESET(otID), fixedIV);
+    CreateMonWithIVs(dst, species, level, personality, OTID_STRUCT_PRESET(otID), fixedIV);
 
     friendship = MAX_FRIENDSHIP;
     // Give the chosen Pokémon its specified moves.
@@ -345,7 +347,7 @@ void CreateFacilityMon(const struct TrainerMon *fmon, u16 level, u8 fixedIV, u32
     // try to set ability. Otherwise, random of non-hidden as per vanilla
     if (fmon->ability)
     {
-        SetCorrectAbilityNum(dst, fmon->species, fmon->ability);
+        SetCorrectAbilityNum(dst, species, fmon->ability);
     }
 
     if (fmon->ev != NULL)
