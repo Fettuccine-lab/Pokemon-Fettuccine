@@ -290,6 +290,7 @@ Status:
 - Loves Italian food, which makes him a natural foil for Brian.
 - **Decided:** His love of whiskey is a running joke in his dialogue.
 - The Jammie Dodgers at the Pokémon Centers can come from Alan's own stash.
+- **Done: Alan shows a Hoothoot in the opening speech** (was Lotad). It stays a Hoothoot in randomizer games, because the choice comes during that same speech.
 - **Done: post-game lab scene rewritten.** The Pokédex is National from the start, so after the Hall of Fame Alan no longer "upgrades" it. He asks how the player's Pokédex is coming along, says Pokémon from every corner of the world live in Pastalia ("Like a good bolognese!"), and backs up the player's Pokédex data on his PC. Brian: "Regions with NO pasta! If you find out where they're from, tell me first. I'm moving there." Alan's send-off points the player to the post-game: fill every PASTALIA entry for "a little something" (now Treecko, Torchic and Mudkip instead of the Johto starters) and show the game designer at the Cove Lily Motel. The scene still switches on the National Dex silently, which fixes saves from before the National Dex change.
 
 - **Done: wall-to-wall bookcases.** Six bookcases line the lab's back wall in both layouts, replacing the back PC desk and book desks. The row in front stays walkable.
