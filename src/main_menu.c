@@ -1762,6 +1762,8 @@ static void Task_NewGameBirchSpeech_ProcessRandomizerMenu(u8 taskId)
         return;
     }
     PlaySE(SE_SELECT);
+    // The question has no trailing page break to wipe it, so blank the box here.
+    NewGameBirchSpeech_ClearWindow(0);
     gSprites[gTasks[taskId].tBirchSpriteId].oam.objMode = ST_OAM_OBJ_BLEND;
     gSprites[gTasks[taskId].tLotadSpriteId].oam.objMode = ST_OAM_OBJ_BLEND;
     NewGameBirchSpeech_StartFadeOutTarget1InTarget2(taskId, 2);
