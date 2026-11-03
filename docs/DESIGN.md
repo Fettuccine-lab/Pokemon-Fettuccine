@@ -578,6 +578,7 @@ Mostly quality-of-life config options. Feature names change between expansion ve
 
 - **HMs are not permanent.** HM moves can be forgotten like normal moves. **Decided:** field moves only need the badge plus the HM in the bag; no Pokémon has to know the move. Forgetting HMs is **done** (config). **Done:** using field moves without knowing them. If no party Pokémon knows the move, a phantom Magikarp uses it (Magikarp in the animation), even with no Magikarp in the party. FLY and FLASH appear in every Pokémon's party menu once the badge and HM are in hand, and can also be used straight from HM02 and HM05 in the bag (USE still teaches the move). **Done (Playtest 4): faster HMs.** CUT, ROCK SMASH, STRENGTH, SURF, WATERFALL and DIVE (down and up) ask a single "Use CUT?" (etc.) YES/NO and act right away; the description pages and the "MAGIKARP used CUT!" / "used STRENGTH!" messages are gone. Without the HM or badge, the tree, rock or boulder still explains what it is. Pressing A on a boulder with Strength already on still says STRENGTH is active.
 - **Move relearner in the party menu.** A "Relearn" option on each Pokémon. This version already has a relearner on the summary screen's moves page. **Decided:** add it as a party-menu option anyway (custom). **Done:** RELEARN appears for any Pokémon with moves to relearn and returns to the party menu when finished. It's free, like the summary-screen relearner.
+- **Done: SELECT to switch party members.** Pressing SELECT on a Pokémon in the party menu opened from the Start menu goes straight to "Move to where?", skipping the action list. It follows the same rules as the SWITCH option, so it does nothing on CANCEL, with only one Pokémon, in the Battle Pike, or in battle.
 - **PC access anywhere via a bag item.** A key item that opens the storage system. **Done (built in):** the expansion's Pkmn Box Link. Alan gives it with the starter in his lab.
 - **"Move" as the default PC option.** **Done (built in):** MOVE POKéMON is the first PC menu option, with the cursor on it, in every PC and the Box Link. **Decided:** keep the menu rather than skipping straight into Move mode, so MOVE ITEMS stays available.
 
@@ -687,6 +688,7 @@ A yes/no choice at New Game that randomizes Pokémon for that save file. It runs
 | Battle speed option (battles only) | Custom (Options menu) | Done |
 | Non-permanent HMs | Config toggle plus custom | Done: HMs forgettable (config); with the badge and HM in the bag, a phantom Magikarp uses the move; FLY and FLASH also in every party menu and usable from HM02/HM05 in the bag; one-question "Use CUT?" prompts |
 | Move relearner in party menu | Custom (party-menu option) | Done: RELEARN appears for Pokémon with moves to relearn (summary-screen relearner also still there) |
+| SELECT to switch party members | Custom (party menu) | Done |
 | PC access via bag item, "Move" default in storage | Built in | Done: Pkmn Box Link (from Alan with the starter); MOVE POKéMON is already the default option |
 | Start with Running Shoes | New-game setup, Mom's script | Done |
 | Start with Shiny Charm | New-game setup | Done |

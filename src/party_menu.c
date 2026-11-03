@@ -1511,6 +1511,14 @@ void Task_HandleChooseMonInput(u8 taskId)
                 MoveCursorToConfirm();
             }
             break;
+        case SELECT_BUTTON: // Fettuccine: same rules as the SWITCH option in the field menu
+            if (gPartyMenu.menuType == PARTY_MENU_TYPE_FIELD
+             && gPartyMenu.action == PARTY_ACTION_CHOOSE_MON
+             && *slotPtr < PARTY_SIZE
+             && !InBattlePike()
+             && GetMonData(&gParties[B_TRAINER_PLAYER][1], MON_DATA_SPECIES) != SPECIES_NONE)
+                CursorCb_Switch(taskId);
+            break;
         case R_BUTTON: // Only used in full-team multis to cycle player/partner parties
             PlaySE(SE_M_HARDEN);
             UpdatePartyToFieldOrder();
@@ -1805,6 +1813,10 @@ static u16 PartyMenuButtonHandler(s8 *slotPtr)
 
     if (JOY_NEW(START_BUTTON))
         return START_BUTTON;
+
+    // Fettuccine: SELECT jumps straight to switching party members
+    if (JOY_NEW(SELECT_BUTTON))
+        return SELECT_BUTTON;
 
     // Cycling player and party teams for in-battle party menu in full-team multis
     if ((gPartyMenu.layout == PARTY_LAYOUT_MULTI_FULL || gPartyMenu.layout == PARTY_LAYOUT_MULTI_FULL_PARTNER)
