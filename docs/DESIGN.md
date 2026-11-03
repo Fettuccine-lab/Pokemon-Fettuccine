@@ -719,7 +719,7 @@ A yes/no choice at New Game that randomizes Pokémon for that save file. It runs
 
 ## Playtests
 
-Testers download from **https://github.com/jchiparo-lab/Pokemon-Fettuccine/releases/latest**, which always opens the newest playtest. Each release is a zip with a `.bps` patch (applied to a clean US Emerald ROM) and a README; the ROM itself is never shared. Tester notes live in `docs/playtests/playtest-N.txt`, and `tools/fettuccine/make_playtest.sh N` builds, patches, checks and zips a playtest. Builds include the debug menus.
+Testers download from **https://github.com/Fettuccine-lab/Pokemon-Fettuccine/releases/latest**, which always opens the newest playtest. Each release is a zip with a `.bps` patch (applied to a clean US Emerald ROM) and a README; the ROM itself is never shared. Tester notes live in `docs/playtests/playtest-N.txt`, and `tools/fettuccine/make_playtest.sh N` builds, patches, checks and zips a playtest. Builds include the debug menus.
 
 | Playtest | Highlights |
 |---|---|
