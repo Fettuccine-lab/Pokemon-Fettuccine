@@ -8,6 +8,7 @@ Common_EventScript_PkmnCenterNurse::
 	special HealPlayerParty
 	callnative UpdateFollowingPokemon
 	call EventScript_PkmnCenterNurse_TryGiveMegaStoneCase
+	call EventScript_PkmnCenterNurse_TryGiveExpShare
 	goto_if_unset FLAG_POKERUS_EXPLAINED, EventScript_PkmnCenterNurse_CheckPokerus
 	goto EventScript_PkmnCenterNurse_CheckTrainerHillAndUnionRoom
 	end
@@ -91,6 +92,27 @@ EventScript_PkmnCenterNurse_TryGiveMegaStoneCase::
 	msgbox gText_SamLeftMegaStoneCaseExplain, MSGBOX_DEFAULT
 EventScript_PkmnCenterNurse_TryGiveMegaStoneCaseEnd:
 	return
+
+@ Fettuccine: saves from before the key item version of the Exp. Share don't
+@ have it in the Key Items pocket. Hand it over here, switched on.
+EventScript_PkmnCenterNurse_TryGiveExpShare::
+	checkitem ITEM_EXP_SHARE
+	goto_if_eq VAR_RESULT, TRUE, EventScript_PkmnCenterNurse_TryGiveExpShareEnd
+	msgbox gText_MrGarlicLeftExpShare, MSGBOX_DEFAULT
+	giveitem ITEM_EXP_SHARE
+	goto_if_eq VAR_RESULT, FALSE, EventScript_PkmnCenterNurse_TryGiveExpShareEnd
+	setflag FLAG_EXP_SHARE_ON
+	msgbox gText_MrGarlicLeftExpShareExplain, MSGBOX_DEFAULT
+EventScript_PkmnCenterNurse_TryGiveExpShareEnd:
+	return
+
+gText_MrGarlicLeftExpShare:
+	.string "Oh, and MR. GARLIC left this\n"
+	.string "here for you!$"
+
+gText_MrGarlicLeftExpShareExplain:
+	.string "It shares EXP. Points with your whole\n"
+	.string "team. Turn it off from your BAG.$"
 
 gText_SamLeftMegaStoneCase:
 	.string "Oh, and SAM left this here for you!$"

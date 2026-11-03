@@ -1266,7 +1266,7 @@ RustboroCity_Text_AddedMatchCallPleaseCallMrStone:
 	.string "Using the MATCH CALL feature,\n"
 	.string "you can chat with people who have\l"
 	.string "been registered in your POKéNAV.\p"
-	.string "{PLAYER}, our PRESIDENT STONE should\n"
+	.string "{PLAYER}, our PRESIDENT GARLIC should\n"
 	.string "be registered in your POKéNAV.\p"
 	.string "Test it out.\n"
 	.string "Please give our PRESIDENT a call.$"

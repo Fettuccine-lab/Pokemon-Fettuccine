@@ -209,6 +209,8 @@ void NewGameInitData(void)
     TryMoveTMsToOwnedBits();
     NewGameInitPCItems();
     AddBagItem(ITEM_SHINY_CHARM, 1);
+    AddBagItem(ITEM_EXP_SHARE, 1); // Fettuccine: Exp. Share from the start, switched on
+    FlagSet(FLAG_EXP_SHARE_ON);
     FlagSet(FLAG_SYS_B_DASH);
     FlagSet(FLAG_RECEIVED_RUNNING_SHOES);
     ClearPokeblocks();
