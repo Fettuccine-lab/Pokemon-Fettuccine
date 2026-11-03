@@ -734,6 +734,7 @@ Testers download from **https://github.com/Fettuccine-lab/Pokemon-Fettuccine/rel
 | 4 | Faster HMs, walking-down bug safety net |
 | 5 | One combined Bike, time-free wild encounters, Medicine pocket, full TM pocket, Pokédex name search, Retro Salvage Games dialogue, TM51–100 and about 270 new shop items, Mega Stone Case |
 | 6 | Randomizer, Alan's secret boss and lab bookcases, Blobby's stall, Joe Fettuccine's dialogue, title screen shortcut removed |
+| 7 | Modern Exp. Share from the start, SELECT to switch in the party menu, Mr. Garlic and his Amulet Coin, Alan's Hoothoot, randomizer text fix |
 
 **Idea (not scheduled): free up save space.** `include/config/save.h` can switch off unused save data (Mystery Event, record-mixing Hall records, Mystery Gift, Union Room chat, Battle Tower e-Reader and smaller ones), about 3.7 KB in all. Any of these shifts the save layout and breaks existing saves, so do them together, once, in a playtest where testers start a new save. Keep Match Call (the story calls use it).
 
