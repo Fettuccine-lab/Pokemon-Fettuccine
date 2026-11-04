@@ -1,0 +1,135 @@
+POKEMON FETTUCCINE VERSION - PLAYTEST 8
+=======================================
+
+Thanks for testing! This is a big one: new starters, the Legends Z-A
+Megas, new team changes, and a surprise on Route 101.
+
+A NEW GAME is the best way to test this one, since the new starters,
+the Route 101 battle and the PC item only appear in a new game.
+
+
+HOW TO PLAY
+-----------
+1. You need a clean US Pokemon Emerald ROM (not included).
+   It should match:
+     CRC32: 1F1C08FB
+     SHA-1: f3ae088181bf583e55daf962a92bb46f4f1d07b7
+2. Apply fettuccine-playtest-8.bps to it. Either of these works:
+     - Rom Patcher JS (in your browser): https://www.marcrobledo.com/RomPatcher.js/
+     - Floating IPS (Flips)
+3. Play the patched ROM in mGBA or any GBA emulator.
+
+Your Playtest 7 save should keep working: give the new ROM the same
+file name as before (so the save file matches) or copy the .sav across.
+Use an in-game save, not a save state from an older playtest.
+
+If you load an older save, two things to know:
+- In a RANDOMIZER save, your wild Pokemon, trainers and gifts will
+  change, because the list of possible Pokemon changed.
+- If someone nearby looks like a fireplace or a chair right after
+  loading, leave the area and come back. Please tell us if it happens.
+
+
+NEW SINCE PLAYTEST 7
+--------------------
+New starters
+- Alan's bag now has Rowlet, Chimchar and Sobble.
+- Scorbunny and Froakie are now catchable: Scorbunny on Route 112,
+  and Froakie by surfing.
+- Prof. Alan's secret team now has Infernape and Inteleon.
+
+Route 101
+- The Pokemon chasing Prof. Alan is now a random legendary, different
+  in each new game. It's still level 2, and the battle still can't
+  be run from.
+
+Legends Z-A Megas
+- All the Z-A Mega Evolutions are in the game, and the Mega Stone Case
+  holds their stones.
+- Chikorita, Cyndaquil and Totodile now live on Route 117 (Totodile
+  by surfing).
+- After the Hall of Fame, look for Eternal Flower Floette on Route 104
+  by the flower shop, and Magearna in the Abandoned Ship's Captain's
+  Office.
+
+Team changes
+- FLANNERY: Mega Pyroar in every battle. Houndour is on her first team.
+- WINONA: Mega Hawlucha in her second rematch.
+- JUAN: Mega Golisopod in rematches 1 and 3.
+- MIKE: Mega Falinks, and Vanilluxe replaces Gallade.
+- SAM: Vileplume replaces Raichu.
+
+Randomizer
+- It now only uses Pokemon you can get in the game, so no more Paradox
+  Pokemon or Ultra Beasts.
+- The cursor now starts on NO at the New Game question.
+
+Smaller changes
+- Two new FRAME choices in Options: 21 is the Italian flag, 22 is pasta.
+- Your bedroom PC now starts with TM15 Hyper Beam instead of a Potion.
+- The clock's "Is this the correct time?" cursor now starts on YES.
+- Prof. Alan's lab has a fireplace and a big comfy chair. Press A on
+  them.
+- Wonder Trade no longer gives out Paradox Pokemon.
+
+
+PLEASE TRY
+----------
+- Start a few new games and look at the Route 101 legendary, both on
+  the map and in battle. Try losing that battle too: the story should
+  carry on as normal.
+- Try FRAME 21 and 22 in dialogue, menus and the Start menu.
+- Walk around Prof. Alan's chair and fireplace, before and after you
+  get the Pokedex. You shouldn't be able to walk through them.
+- Fight FLANNERY with each starter. Her level 29 Mega Pyroar is the
+  change most likely to feel too hard.
+- Mega Evolve some Z-A Pokemon, and scroll through the Mega Stone Case.
+- Fight WINONA, JUAN, MIKE and SAM if you can, and check the right
+  Pokemon Mega Evolves.
+- If you can reach the post-game: catch a regular Floette first, then
+  check the Eternal Flower Floette still shows up on Route 104.
+
+
+DEBUG MENU
+----------
+This build has the developer's debug menus turned on, so you can
+skip ahead or set up a test:
+  - Overworld: hold R and press START (mGBA keyboard: hold S, Enter)
+  - In battle: press SELECT on the battle menu (mGBA: Backspace)
+  - Sprite viewer: SELECT on a summary screen (mGBA: Backspace)
+Use a separate save or a save state first, and say in your report
+if that save used the debug menu.
+
+
+AFTER-BATTLE GLITCHES
+---------------------
+If anything odd happens right after a battle (the player moving on
+their own, buttons not working, a freeze, strange graphics), make a
+SAVE STATE right away (mGBA: File > Save State) and send it in.
+
+
+KNOWN PLACEHOLDERS
+------------------
+- Brian, Prof. Alan, Sam, Mike, Joe Q, WILDCARD, JASON and BLOBBY
+  still use old Emerald sprites. Prof. Alan's battle sprite is a
+  Gentleman.
+- Retro Salvage Games shops still have blue roofs and MART signs.
+- A few map graphics still say HOENN.
+- Sam's shiny Metagross isn't cheddar-yellow yet.
+- The new frames, chair and fireplace are first drafts of the art.
+
+
+PLEASE REPORT
+-------------
+- Crashes or freezes, especially in the Route 101 battle or when a Z-A
+  Pokemon Mega Evolves
+- Sprites that look wrong, especially on the Route 101 legendary, the
+  lab furniture and the Z-A Megas
+- Text that runs off the box
+- Anything that blocks progress
+- Battles that feel too hard or too easy with the new starters
+- Say whether your save is a RANDOMIZER game, and whether it's new or
+  from an older playtest
+
+If you can, say where you were and what you were doing, and send a
+screenshot or your save file.
