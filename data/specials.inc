@@ -326,6 +326,7 @@ gSpecials::
 	def_special IsGrassTypeInParty
 	def_special DoContestHallWarp, waitstate=1
 	def_special LoadWallyZigzagoon
+	def_special SetBirchBattleLegendary
 	def_special IsStarterInParty
 	def_special CopyCurSecretBaseOwnerName_StrVar1
 	def_special ScriptCheckFreePokemonStorageSpace

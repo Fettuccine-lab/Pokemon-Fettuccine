@@ -11,6 +11,7 @@
 #include "battle_setup.h"
 #include "battle_tv.h"
 #include "cable_club.h"
+#include "field_specials.h"
 #include "event_data.h"
 #include "event_object_movement.h"
 #include "item.h"
@@ -160,7 +161,7 @@ void SetUpBattleVarsAndBirchZigzagoon(void)
     BattleAI_SetupFlags();
 
     if (!IS_FRLG && gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE)
-        CreateWildMon(SPECIES_ZIGZAGOON, 2);
+        CreateWildMon(GetBirchBattleLegendary(), 2);
 }
 
 void InitBattleControllers(void)

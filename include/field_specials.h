@@ -42,4 +42,8 @@ bool32 CheckPartyHasSpecies(enum Species);
 bool8 CutMoveRuinValleyCheck(void);
 void CutMoveOpenDottedHoleDoor(void);
 
+enum Species RollBirchBattleLegendary(void);
+void SetBirchBattleLegendary(void);
+enum Species GetBirchBattleLegendary(void);
+
 #endif // GUARD_FIELD_SPECIALS_H

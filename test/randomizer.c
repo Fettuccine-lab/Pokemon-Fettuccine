@@ -1,6 +1,7 @@
 #include "global.h"
 #include "data.h"
 #include "event_data.h"
+#include "field_specials.h"
 #include "move.h"
 #include "pokedex.h"
 #include "pokemon.h"
@@ -144,4 +145,20 @@ TEST("Fettuccine randomizer: the Pokedex reward needs any 200 different Pokemon"
     FlagClear(FLAG_RANDOMIZER_ON);
     EXPECT(!HasAllHoennMons());
     memset(&gSaveBlock1Ptr->dexCaught, 0, sizeof(gSaveBlock1Ptr->dexCaught));
+}
+
+TEST("Fettuccine: Route 101's legendary is a legendary the starters can hit")
+{
+    u32 i;
+
+    for (i = 0; i < 200; i++)
+    {
+        enum Species species = RollBirchBattleLegendary();
+        const struct SpeciesInfo *info = &gSpeciesInfo[species];
+
+        EXPECT(info->isRestrictedLegendary || info->isSubLegendary);
+        EXPECT(!info->isMythical && !info->isUltraBeast && !info->isParadox);
+        EXPECT_NE(info->types[0], TYPE_GHOST);
+        EXPECT_NE(info->types[1], TYPE_GHOST);
+    }
 }

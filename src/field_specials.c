@@ -1540,6 +1540,55 @@ void SetShoalItemFlag(u16 unused)
     FlagSet(FLAG_SYS_SHOAL_ITEM);
 }
 
+// Fettuccine: the Pokemon chasing Alan on Route 101 is a random legendary. No
+// mythicals, Ultra Beasts or Paradox Pokemon. Ghost types are left out because
+// Chimchar and Sobble only know Normal moves at level 5 and can't run from this battle.
+static bool32 IsBirchBattleLegendary(enum Species species)
+{
+    const struct SpeciesInfo *info = &gSpeciesInfo[species];
+
+    return IsSpeciesEnabled(species)
+        && GET_BASE_SPECIES_ID(species) == species
+        && (info->isRestrictedLegendary || info->isSubLegendary)
+        && !info->isMythical && !info->isUltraBeast && !info->isParadox
+        && info->types[0] != TYPE_GHOST && info->types[1] != TYPE_GHOST;
+}
+
+enum Species RollBirchBattleLegendary(void)
+{
+    u32 i, count = 0;
+
+    for (i = 1; i < NUM_SPECIES; i++)
+    {
+        if (IsBirchBattleLegendary(i))
+            count++;
+    }
+    if (count != 0)
+    {
+        count = Random() % count;
+        for (i = 1; i < NUM_SPECIES; i++)
+        {
+            if (IsBirchBattleLegendary(i) && count-- == 0)
+                return i;
+        }
+    }
+    return SPECIES_ZIGZAGOON;
+}
+
+// Script special: picks this save's legendary before Route 101's objects appear,
+// so its overworld sprite (OBJ_EVENT_GFX_VAR_C) matches the Pokemon in the battle.
+void SetBirchBattleLegendary(void)
+{
+    if (VarGet(VAR_OBJ_GFX_ID_C) == 0)
+        VarSet(VAR_OBJ_GFX_ID_C, RollBirchBattleLegendary() + OBJ_EVENT_MON);
+}
+
+enum Species GetBirchBattleLegendary(void)
+{
+    SetBirchBattleLegendary();
+    return VarGet(VAR_OBJ_GFX_ID_C) & OBJ_EVENT_MON_SPECIES_MASK;
+}
+
 // Brian uses his own Ducklett in the catching tutorial (the name is kept for the script special)
 void LoadWallyZigzagoon(void)
 {
