@@ -51,6 +51,22 @@ TEST("Fettuccine randomizer: the pool has no battle-only forms or Mike's Spearow
     EXPECT(RandomizerIsSpeciesInPool(SPECIES_RATTATA_ALOLA));
 }
 
+TEST("Fettuccine randomizer: the pool only has Pokemon the game actually offers")
+{
+    u32 i;
+
+    EXPECT(RandomizerIsSpeciesInPool(SPECIES_CHIMCHAR));
+    EXPECT(RandomizerIsSpeciesInPool(SPECIES_FROAKIE));
+    EXPECT(RandomizerIsSpeciesInPool(SPECIES_MEW));
+    EXPECT(!RandomizerIsSpeciesInPool(SPECIES_NIHILEGO));
+    EXPECT(!RandomizerIsSpeciesInPool(SPECIES_KORAIDON));
+    for (i = 1; i < NUM_SPECIES; i++)
+    {
+        if (gSpeciesInfo[i].isParadox || gSpeciesInfo[i].isUltraBeast)
+            EXPECT(!RandomizerIsSpeciesInPool(i));
+    }
+}
+
 TEST("Fettuccine randomizer: starters always know a damaging move")
 {
     u32 seed;

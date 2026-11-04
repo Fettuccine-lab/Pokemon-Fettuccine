@@ -4,7 +4,6 @@
 #include "pokemon.h"
 #include "random.h"
 #include "randomizer.h"
-#include "constants/form_change_types.h"
 #include "constants/moves.h"
 
 // The player's answer at New Game. It's kept here because New Game clears all
@@ -37,73 +36,24 @@ bool32 RandomizerIsActive(void)
     return FlagGet(FLAG_RANDOMIZER_ON);
 }
 
-static bool32 IsBattleOnlyFormChange(enum FormChanges method)
-{
-    switch (method)
-    {
-    case FORM_CHANGE_BEGIN_BATTLE:
-    case FORM_CHANGE_BATTLE_SWITCH_OUT:
-    case FORM_CHANGE_BATTLE_SWITCH_IN:
-    case FORM_CHANGE_BATTLE_HP_PERCENT_TURN_END:
-    case FORM_CHANGE_BATTLE_HP_PERCENT_SEND_OUT:
-    case FORM_CHANGE_BATTLE_HP_PERCENT_DURING_MOVE:
-    case FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM:
-    case FORM_CHANGE_BATTLE_MEGA_EVOLUTION_MOVE:
-    case FORM_CHANGE_BATTLE_PRIMAL_REVERSION:
-    case FORM_CHANGE_BATTLE_WEATHER:
-    case FORM_CHANGE_BATTLE_TURN_END:
-    case FORM_CHANGE_BATTLE_ULTRA_BURST:
-    case FORM_CHANGE_BATTLE_GIGANTAMAX:
-    case FORM_CHANGE_BATTLE_HIT_BY_MOVE_CATEGORY:
-    case FORM_CHANGE_BATTLE_HIT_BY_CONFUSION_SELF_DMG:
-    case FORM_CHANGE_BATTLE_TERASTALLIZATION:
-    case FORM_CHANGE_BATTLE_BEFORE_MOVE:
-    case FORM_CHANGE_BATTLE_AFTER_MOVE:
-    case FORM_CHANGE_BATTLE_BOND:
-    case FORM_CHANGE_BATTLE_BEFORE_MOVE_CATEGORY:
-        return TRUE;
-    default:
-        return FALSE;
-    }
-}
-
-// A form is battle-only if any form of the same Pokémon turns into it through
-// something that only happens in battle (Aegislash's Blade Forme, for example).
-static bool32 IsBattleOnlyForm(enum Species species)
-{
-    const u16 *forms = gSpeciesInfo[species].formSpeciesIdTable;
-    u32 i, j;
-
-    if (forms == NULL || GET_BASE_SPECIES_ID(species) == species)
-        return FALSE;
-
-    for (i = 0; forms[i] != FORM_SPECIES_END; i++)
-    {
-        const struct FormChange *changes = gSpeciesInfo[forms[i]].formChangeTable;
-
-        if (changes == NULL)
-            continue;
-        for (j = 0; changes[j].method != FORM_CHANGE_TERMINATOR; j++)
-        {
-            if (changes[j].targetSpecies == species && IsBattleOnlyFormChange(changes[j].method))
-                return TRUE;
-        }
-    }
-    return FALSE;
-}
+#include "data/randomizer_pool.h"
 
 bool32 RandomizerIsSpeciesInPool(enum Species species)
 {
-    const struct SpeciesInfo *info = &gSpeciesInfo[species];
+    s32 low = 0, high = ARRAY_COUNT(sRandomizerPool) - 1;
 
-    if (species == SPECIES_NONE || species >= NUM_SPECIES || !IsSpeciesEnabled(species))
-        return FALSE;
-    if (species == SPECIES_SPEAROW_MIKE)
-        return FALSE;
-    if (info->isTotem || info->isMegaEvolution || info->isPrimalReversion
-     || info->isUltraBurst || info->isGigantamax || info->isTeraForm)
-        return FALSE;
-    return !IsBattleOnlyForm(species);
+    while (low <= high)
+    {
+        s32 middle = (low + high) / 2;
+
+        if (sRandomizerPool[middle] == species)
+            return TRUE;
+        if (sRandomizerPool[middle] < species)
+            low = middle + 1;
+        else
+            high = middle - 1;
+    }
+    return FALSE;
 }
 
 // The same inputs always give the same output, so a save's results never change.
@@ -125,7 +75,7 @@ static u32 GetSeed(void)
 static enum Species RollSpecies(u32 *state)
 {
     *state = Mix(*state + 0x9E3779B9);
-    return 1 + *state % (NUM_SPECIES - 1);
+    return sRandomizerPool[*state % ARRAY_COUNT(sRandomizerPool)];
 }
 
 static u32 GetInitialState(enum Species species, enum RandomizerSource source, u32 salt)
