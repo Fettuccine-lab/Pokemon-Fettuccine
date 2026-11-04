@@ -36,7 +36,7 @@ static bool32 IsWonderTradeSpecies(enum Species species)
     if (species == SPECIES_NONE || species >= NUM_SPECIES || !IsSpeciesEnabled(species))
         return FALSE;
 
-    if (info->isRestrictedLegendary || info->isSubLegendary || info->isUltraBeast)
+    if (info->isRestrictedLegendary || info->isSubLegendary || info->isUltraBeast || info->isParadox)
         return FALSE;
 
     if (info->cannotBeTraded || info->isTotem || info->isMegaEvolution || info->isPrimalReversion
