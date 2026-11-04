@@ -1742,7 +1742,9 @@ static void Task_NewGameBirchSpeech_WaitToShowRandomizerMenu(u8 taskId)
 {
     if (!RunTextPrintersAndIsPrinter0Active())
     {
-        CreateYesNoMenuParameterized(2, 1, 0xF3, 0xDF, 2, 15);
+        // Same window as CreateYesNoMenuParameterized(2, 1, 0xF3, 0xDF, 2, 15), but the cursor starts on NO.
+        struct WindowTemplate template = CreateWindowTemplate(0, 3, 2, 5, 4, 15, 0xDF);
+        CreateYesNoMenu(&template, 0xF3, 2, 1);
         gTasks[taskId].func = Task_NewGameBirchSpeech_ProcessRandomizerMenu;
     }
 }
