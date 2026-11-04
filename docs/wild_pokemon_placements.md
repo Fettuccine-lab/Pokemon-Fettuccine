@@ -43,6 +43,7 @@ so their first stage couldn't be caught. Each is now in one early area at every 
 | Sprigatito | Route 102, grass | 5% | 3 |
 | Scorbunny | Route 112, grass | 5% | 16 |
 | Chikorita | Route 117, grass | 4% | 14 |
+| Cyndaquil | Route 117, grass | 4% | 14 |
 | Totodile | Route 117, surfing | 4% | 15–25 |
 | Pikipek | Route 101, grass | 10% | 3 |
 | Fletchling | Route 103, grass | 10% | 2–4 |

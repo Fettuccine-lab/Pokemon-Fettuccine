@@ -60,6 +60,7 @@ TEST("Fettuccine randomizer: the pool only has Pokemon the game actually offers"
     EXPECT(RandomizerIsSpeciesInPool(SPECIES_FROAKIE));
     EXPECT(RandomizerIsSpeciesInPool(SPECIES_MEW));
     EXPECT(RandomizerIsSpeciesInPool(SPECIES_MEGANIUM));
+    EXPECT(RandomizerIsSpeciesInPool(SPECIES_TYPHLOSION));
     EXPECT(RandomizerIsSpeciesInPool(SPECIES_FERALIGATR));
     EXPECT(RandomizerIsSpeciesInPool(SPECIES_FLOETTE_ETERNAL));
     EXPECT(RandomizerIsSpeciesInPool(SPECIES_MAGEARNA));
