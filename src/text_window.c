@@ -29,6 +29,8 @@ static const u8 sTextWindowFrame17_Gfx[] = INCGFX_U8("graphics/text_window/17.pn
 static const u8 sTextWindowFrame18_Gfx[] = INCGFX_U8("graphics/text_window/18.png", ".4bpp");
 static const u8 sTextWindowFrame19_Gfx[] = INCGFX_U8("graphics/text_window/19.png", ".4bpp");
 static const u8 sTextWindowFrame20_Gfx[] = INCGFX_U8("graphics/text_window/20.png", ".4bpp");
+static const u8 sTextWindowFrame21_Gfx[] = INCGFX_U8("graphics/text_window/21.png", ".4bpp");
+static const u8 sTextWindowFrame22_Gfx[] = INCGFX_U8("graphics/text_window/22.png", ".4bpp");
 
 const u16 gTextWindowFrame1_Pal[] = INCGFX_U16("graphics/text_window/1.png", ".gbapal");
 static const u16 sTextWindowFrame2_Pal[] = INCGFX_U16("graphics/text_window/2.png", ".gbapal");
@@ -50,6 +52,8 @@ static const u16 sTextWindowFrame17_Pal[] = INCGFX_U16("graphics/text_window/17.
 static const u16 sTextWindowFrame18_Pal[] = INCGFX_U16("graphics/text_window/18.png", ".gbapal");
 static const u16 sTextWindowFrame19_Pal[] = INCGFX_U16("graphics/text_window/19.png", ".gbapal");
 static const u16 sTextWindowFrame20_Pal[] = INCGFX_U16("graphics/text_window/20.png", ".gbapal");
+static const u16 sTextWindowFrame21_Pal[] = INCGFX_U16("graphics/text_window/21.png", ".gbapal");
+static const u16 sTextWindowFrame22_Pal[] = INCGFX_U16("graphics/text_window/22.png", ".gbapal");
 
 static const u16 sTextWindowPalettes[][16] =
 {
@@ -81,7 +85,9 @@ static const struct TilesPal sWindowFrames[WINDOW_FRAMES_COUNT] =
     {sTextWindowFrame17_Gfx, sTextWindowFrame17_Pal},
     {sTextWindowFrame18_Gfx, sTextWindowFrame18_Pal},
     {sTextWindowFrame19_Gfx, sTextWindowFrame19_Pal},
-    {sTextWindowFrame20_Gfx, sTextWindowFrame20_Pal}
+    {sTextWindowFrame20_Gfx, sTextWindowFrame20_Pal},
+    {sTextWindowFrame21_Gfx, sTextWindowFrame21_Pal}, // Fettuccine: Italian flag
+    {sTextWindowFrame22_Gfx, sTextWindowFrame22_Pal}, // Fettuccine: pasta
 };
 
 static const u16 sTextWindowDexNavFrame[] = INCGFX_U16("graphics/text_window/dexnav_pal.pal", ".gbapal");
