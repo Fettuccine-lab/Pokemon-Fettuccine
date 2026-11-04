@@ -692,9 +692,9 @@
 #define FLAG_HIDE_LEGEND_MARSHADOW         0x27D // Fettuccine: post-game Marshadow
 #define FLAG_HIDE_LEGEND_ZERAORA           0x27E // Fettuccine: post-game Zeraora
 #define FLAG_BIRCH_REGIONAL_FORMS_CALL     0x27F // Fettuccine: Prof. Birch calls about regional forms on the first visit to Mauville
-#define FLAG_UNUSED_0x280  0x280 // Unused Flag
-#define FLAG_UNUSED_0x281  0x281 // Unused Flag
-#define FLAG_UNUSED_0x282  0x282 // Unused Flag
+#define FLAG_HIDE_LEGEND_FLOETTE_ETERNAL  0x280
+#define FLAG_HIDE_LEGEND_MAGEARNA  0x281
+#define FLAG_CAUGHT_FLOETTE_ETERNAL  0x282 // The Pokedex can't tell it from a regular Floette
 #define FLAG_UNUSED_0x283  0x283 // Unused Flag
 #define FLAG_UNUSED_0x284  0x284 // Unused Flag
 #define FLAG_UNUSED_0x285  0x285 // Unused Flag

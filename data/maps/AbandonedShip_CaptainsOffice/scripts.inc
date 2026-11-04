@@ -1,5 +1,40 @@
 AbandonedShip_CaptainsOffice_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, AbandonedShip_CaptainsOffice_OnTransition
 	.byte 0
+
+AbandonedShip_CaptainsOffice_OnTransition:
+	call AbandonedShip_CaptainsOffice_EventScript_SetupLegendMagearna
+	end
+
+AbandonedShip_CaptainsOffice_EventScript_SetupLegendMagearna::
+	setflag FLAG_HIDE_LEGEND_MAGEARNA
+	goto_if_unset FLAG_SYS_GAME_CLEAR, AbandonedShip_CaptainsOffice_EventScript_SetupLegendMagearnaDone
+	getcaughtmon SPECIES_MAGEARNA
+	goto_if_eq VAR_RESULT, TRUE, AbandonedShip_CaptainsOffice_EventScript_SetupLegendMagearnaDone
+	clearflag FLAG_HIDE_LEGEND_MAGEARNA
+AbandonedShip_CaptainsOffice_EventScript_SetupLegendMagearnaDone::
+	return
+
+AbandonedShip_CaptainsOffice_EventScript_LegendMagearna::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_MAGEARNA, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setwildbattle SPECIES_MAGEARNA, 50
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	dowildbattle
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, AbandonedShip_CaptainsOffice_EventScript_CaughtLegendMagearna
+	release
+	end
+
+AbandonedShip_CaptainsOffice_EventScript_CaughtLegendMagearna::
+	setflag FLAG_HIDE_LEGEND_MAGEARNA
+	goto Common_EventScript_RemoveStaticPokemon
+	end
 
 AbandonedShip_CaptainsOffice_EventScript_CaptSternAide::
 	lock

@@ -16,6 +16,38 @@ Route104_OnTransition:
 	call Common_EventScript_SetupRivalGfxId
 	call Route104_EventScript_TrySetRivalPos
 	call Route104_EventScript_ShowOrHideWhiteHerbFlorist
+	call Route104_EventScript_SetupLegendFloetteEternal
+	end
+
+@ The Pokedex counts every Floette as one Pokemon, so its own flag records the catch.
+Route104_EventScript_SetupLegendFloetteEternal::
+	setflag FLAG_HIDE_LEGEND_FLOETTE_ETERNAL
+	goto_if_unset FLAG_SYS_GAME_CLEAR, Route104_EventScript_SetupLegendFloetteEternalDone
+	goto_if_set FLAG_CAUGHT_FLOETTE_ETERNAL, Route104_EventScript_SetupLegendFloetteEternalDone
+	clearflag FLAG_HIDE_LEGEND_FLOETTE_ETERNAL
+Route104_EventScript_SetupLegendFloetteEternalDone::
+	return
+
+Route104_EventScript_LegendFloetteEternal::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_FLOETTE_ETERNAL, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setwildbattle SPECIES_FLOETTE_ETERNAL, 50
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	dowildbattle
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route104_EventScript_CaughtLegendFloetteEternal
+	release
+	end
+
+Route104_EventScript_CaughtLegendFloetteEternal::
+	setflag FLAG_CAUGHT_FLOETTE_ETERNAL
+	setflag FLAG_HIDE_LEGEND_FLOETTE_ETERNAL
+	goto Common_EventScript_RemoveStaticPokemon
 	end
 
 Route104_EventScript_ShowOrHideWhiteHerbFlorist::
