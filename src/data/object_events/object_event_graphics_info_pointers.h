@@ -92,6 +92,8 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayAcroBike
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MaySurfing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayFieldMove;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Truck;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AlansComfyChair;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AlansFireplace;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_VigorothCarryingBox;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_VigorothFacingAway;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BirchsBag;
@@ -497,6 +499,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_MAY_SURFING] =              &gObjectEventGraphicsInfo_MaySurfing,
     [OBJ_EVENT_GFX_MAY_FIELD_MOVE] =           &gObjectEventGraphicsInfo_MayFieldMove,
     [OBJ_EVENT_GFX_TRUCK] =                    &gObjectEventGraphicsInfo_Truck,
+    [OBJ_EVENT_GFX_ALANS_COMFY_CHAIR] =        &gObjectEventGraphicsInfo_AlansComfyChair,
+    [OBJ_EVENT_GFX_ALANS_FIREPLACE] =          &gObjectEventGraphicsInfo_AlansFireplace,
     [OBJ_EVENT_GFX_VIGOROTH_CARRYING_BOX] =    &gObjectEventGraphicsInfo_VigorothCarryingBox,
     [OBJ_EVENT_GFX_VIGOROTH_FACING_AWAY] =     &gObjectEventGraphicsInfo_VigorothFacingAway,
     [OBJ_EVENT_GFX_BIRCHS_BAG] =               &gObjectEventGraphicsInfo_BirchsBag,

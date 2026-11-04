@@ -1690,6 +1690,42 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Truck = {
     .images = sPicTable_Truck,
 };
 
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AlansComfyChair = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_ALANS_FURNITURE,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 1152,
+    .width = 48,
+    .height = 48,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = TRUE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_48x48,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_AlansComfyChair,
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AlansFireplace = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_ALANS_FURNITURE,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 1152,
+    .width = 48,
+    .height = 48,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = TRUE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_48x48,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_AlansFireplace,
+};
+
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_VigorothCarryingBox = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_VIGOROTH,

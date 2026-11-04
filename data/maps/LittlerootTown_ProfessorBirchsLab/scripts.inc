@@ -707,6 +707,14 @@ LittlerootTown_ProfessorBirchsLab_EventScript_PC::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_PCUsedForResearch, MSGBOX_SIGN
 	end
 
+LittlerootTown_ProfessorBirchsLab_EventScript_Fireplace::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_Fireplace, MSGBOX_SIGN
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_ComfyChair::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_ComfyChair, MSGBOX_SIGN
+	end
+
 LittlerootTown_ProfessorBirchsLab_EventScript_Bookshelf::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_CrammedWithBooksOnPokemon, MSGBOX_SIGN
 	end
@@ -1178,3 +1186,12 @@ LittlerootTown_ProfessorBirchsLab_Text_BoxLinkExplained:
 	.string "next to my hip flask.\p"
 	.string "Purely for medicinal purposes,\n"
 	.string "of course!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_Fireplace:
+	.string "A cozy fire is crackling away.\n"
+	.string "It smells faintly of whiskey.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_ComfyChair:
+	.string "It's PROF. ALAN's big comfy chair.\p"
+	.string "There's a whiskey glass wedged\n"
+	.string "down the side of the cushion.$"

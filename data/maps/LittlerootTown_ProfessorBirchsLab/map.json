@@ -98,6 +98,32 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Chikorita",
       "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_CHIKORITA"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ALANS_FIREPLACE",
+      "x": 3,
+      "y": 1,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ALANS_COMFY_CHAIR",
+      "x": 3,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -220,7 +246,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Bookshelf"
+      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Fireplace"
     },
     {
       "type": "sign",
@@ -228,7 +254,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Bookshelf"
+      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Fireplace"
     },
     {
       "type": "sign",
@@ -293,6 +319,38 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Bookshelf"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 3,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_ComfyChair"
+    },
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 3,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_ComfyChair"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_ComfyChair"
+    },
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_ComfyChair"
     }
   ]
 }
