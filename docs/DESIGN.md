@@ -75,17 +75,19 @@ The player picks one of three starters from different generations. They replace 
 | Starter | Type | Final evolution | Play style |
 | --- | --- | --- | --- |
 | Rowlet (Gen 7) | Grass/Flying | Decidueye (Grass/Ghost) | Steady physical attacker |
-| Scorbunny (Gen 8) | Fire | Cinderace | Fast physical attacker |
-| Froakie (Gen 6) | Water | Greninja (Water/Dark) | Fast special attacker |
+| Chimchar (Gen 4) | Fire | Infernape (Fire/Fighting) | Fast mixed attacker |
+| Sobble (Gen 8) | Water | Inteleon | Fast special attacker |
 
 Balance notes:
 
-- All three final evolutions have a base stat total of 530 and evolve at similar levels.
-- None of them can Mega Evolve, because the new Megas from Legends Z-A are excluded for now.
-- Roxanne's Rock types are tough for Rowlet and Scorbunny; consider slightly lower levels for her team or an easy early catch with a type advantage.
-- Scorbunny has the easiest time against Brian and Rowlet the hardest; tweak Brian's moves or levels based on the player's starter (Emerald already varies the rival's team by starter).
+- The final evolutions have similar base stat totals (Decidueye and Inteleon 530, Infernape 534) and evolve at similar levels.
+- None of them can Mega Evolve. (The Legends Z-A Megas are in the game now, but none of these three lines has one.)
+- Roxanne's Rock types are tough for Rowlet and for Chimchar until it becomes Fire/Fighting Monferno at level 14; consider slightly lower levels for her team or an easy early catch with a type advantage.
+- Chimchar has the easiest time against Brian and Rowlet the hardest; tweak Brian's moves or levels based on the player's starter (Emerald already varies the rival's team by starter).
 
-**Done.** Birch's bag offers Rowlet (left), Scorbunny (middle), and Froakie (right). The woman in the Pestoburg Pokémon Center who explains your starter's type is updated too.
+**Done (changed Nov 2026; Scorbunny and Froakie were the old starters).** Birch's bag offers Rowlet (left), Chimchar (middle), and Sobble (right). The woman in the Pestoburg Pokémon Center who explains your starter's type is updated too. Scorbunny and Froakie took over Chimchar's and Sobble's wild slots (Route 112 grass, surfing, and their evolved forms), so both stay catchable.
+
+**Done: Route 101's first battle.** The Pokémon chasing Alan is a random legendary at level 2 instead of Zigzagoon, rolled once per save, and its overworld sprite matches the battle. Mythicals, Ultra Beasts and Paradox Pokémon are left out, and so are Ghost types, because Chimchar and Sobble only know Normal moves at level 5 and this battle can't be run from. In randomizer saves it's random like everything else.
 
 - **Done:** the rival's teams no longer use Treecko, Torchic, or Mudkip (see Brian's battles).
 
@@ -124,7 +126,7 @@ Balance notes:
 **Done.** The attendant at the **right-hand counter** upstairs (Emerald's Direct Corner, which needs a wireless adapter and can't work on emulators) now runs Wonder Trade in every Pokémon Center. The left counter (cable link) and the middle counter (Union Room) are unchanged.
 
 - The player sends one Pokémon from the **party or the PC** and gets a **fully random** Pokémon back at the **same level**, with the normal trade animation.
-- **Decided:** anything can come back except **legendaries and Ultra Beasts**; **mythicals are included**. Regional forms can appear; Megas, Gigantamax and other battle-only forms can't. Fully random means a low-level trade can return a fully evolved Pokémon.
+- **Decided:** anything can come back except **legendaries, Ultra Beasts and Paradox Pokémon**; **mythicals are included**. Regional forms can appear; Megas, Gigantamax and other battle-only forms can't. Fully random means a low-level trade can return a fully evolved Pokémon.
 - Eggs can't be sent. A held item goes with the Pokémon that's sent.
 - It's a real trade: the received Pokémon is registered in the Pokédex and trade evolutions trigger. Traded Pokémon follow the usual badge-based obedience rules.
 - **Decided:** trading partners have pasta names (PENNE, ZITI, ORZO, FUSILLI, GNOCCHI, RAVIOLI, LASAGNA, ROTINI, CAPELLI, PASTINA).
@@ -180,15 +182,15 @@ Brian is a proud Canadian who hates all Italian food. He wants to become Champio
 - **Decided:** Mike replaces Wallace **everywhere** (Sugopolis and HM Waterfall, Cave of Origin, Sky Pillar, Mostaccideep, the Champion's Room until Brian takes it over, and every line that mentions him). **Done:** all dialogue and his trainer name say MIKE. Wallace's sprites are his placeholder.
 - **Decided:** Mike's ace is an **overpowered Spearow**, a unique Spearow form only he has (`SPECIES_SPEAROW_MIKE`). Wild Spearow are unaffected. Both Mike and his Spearow get custom sprite work by Joe. **Done:** the form exists with boosted stats (80 HP / 145 Atk / 90 Def / 55 SpA / 90 SpD / 140 Spe, 600 total, vs. 262 for Spearow), using Spearow's sprites as a placeholder. Moves: Brave Bird, Double-Edge, Drill Run, U-turn, with a Life Orb.
 - **Decided: Mike's personality** is an over-the-top Italian stereotype mixed with the Fonz ("Ayyy!", "Correctamundo!", "Capisce?"). He's confident but not overconfident: he knows he's strong and doesn't rub it in. Above all he's a proud Pastalian with a deep love for every pasta and sauce, so he won't take a side between red and white sauce. He keeps Wallace's backstory (former Sugopolis Gym Leader, Juan's student). **Done:** all his lines in Sugopolis, the Cave of Oregano, the Sky Breadstick, the Champion's Room, the Hall of Fame, and his PokéNav call and profile. (The Champion's Room and Hall of Fame lines have since moved to Brian.)
-- **Decided: Mike's team is hyper-Italian,** with a Mega (Gallade). (The earlier three-Gen-1 rule was dropped when Falinks replaced Snorlax.) **Done** (levels 57–60, Spearow last):
+- **Decided: Mike's team is hyper-Italian,** with a Mega (Falinks, changed Nov 2026; Vanilluxe replaced Gallade). (The earlier three-Gen-1 rule was dropped when Falinks replaced Snorlax.) **Done** (levels 57–60, Spearow last):
 
 | Pokémon | Gen | Type | Italian theme |
 | --- | --- | --- | --- |
 | Smeargle | 2 | Normal | Renaissance painter (leads with Spore and Sticky Web) |
 | Chandelure | 5 | Ghost/Fire | Murano glass chandelier |
 | Kingambit | 9 | Dark/Steel | Julius Caesar, commanding the Falinks legion |
-| Falinks | 8 | Fighting | A Roman legion marching in shield formation |
-| Gallade (Mega) | 4 | Psychic/Fighting | Roman gladiator; holds a Galladite and Mega Evolves |
+| Vanilluxe | 5 | Ice | Italian gelato (Snow Warning, Blizzard, Freeze-Dry, Flash Cannon, Water Pulse) |
+| Falinks (Mega) | 8 | Fighting | A Roman legion marching in shield formation; holds a Falinksite and Mega Evolves |
 | Spearow (Mike's form, ace) | 1 | Normal/Flying | Mike's overpowered ace |
 
 ### Notes on merging the roles
@@ -221,7 +223,7 @@ Brian is a proud Canadian who hates all Italian food. He wants to become Champio
 
 #### Brian's battles (Decided)
 
-Eight battles, in play order (the Linguicove battle stays optional, as in Emerald). Levels are for a Froakie player; against **Rowlet** (his hardest matchup) Brian is 1 level lower from Rotiniboro on and his Snover has no Ice move until Route 119, then only Icy Wind; against **Scorbunny** (his easiest) he's 1 level higher and Ducklett/Bibarel lead with Water moves. Macaroville, Victory Road and the Champion battle are the same for every starter.
+Eight battles, in play order (the Linguicove battle stays optional, as in Emerald). Levels are for a Sobble player; against **Rowlet** (his hardest matchup) Brian is 1 level lower from Rotiniboro on and his Snover has no Ice move until Route 119, then only Icy Wind; against **Chimchar** (his easiest) he's 1 level higher and Ducklett/Bibarel lead with Water moves. Macaroville, Victory Road and the Champion battle are the same for every starter.
 
 | # | Battle | Team (ace last) | IVs | Status |
 | --- | --- | --- | --- | --- |
@@ -294,6 +296,7 @@ Status:
 - **Done: post-game lab scene rewritten.** The Pokédex is National from the start, so after the Hall of Fame Alan no longer "upgrades" it. He asks how the player's Pokédex is coming along, says Pokémon from every corner of the world live in Pastalia ("Like a good bolognese!"), and backs up the player's Pokédex data on his PC. Brian: "Regions with NO pasta! If you find out where they're from, tell me first. I'm moving there." Alan's send-off points the player to the post-game: fill every PASTALIA entry for "a little something" (now Treecko, Torchic and Mudkip instead of the Johto starters) and show the game designer at the Cove Lily Motel. The scene still switches on the National Dex silently, which fixes saves from before the National Dex change.
 
 - **Done: wall-to-wall bookcases.** Six bookcases line the lab's back wall in both layouts, replacing the back PC desk and book desks. The row in front stays walkable.
+- **Done: fireplace and big comfy chair (draft art, Nov 2026).** The fireplace replaces the second bookcase from the left on the back wall, with the chair in front of it, in both lab layouts. Pressing A on either gives a whiskey-joke line. Repaint them in Aseprite: `graphics/object_events/pics/misc/alans_fireplace.png` and `alans_comfy_chair.png`.
 - **Done: secret boss battle (approved by Joe).** After the player chooses their Treecko, Torchic or Mudkip, Alan offers a battle, and offers it again whenever he's talked to; saying no there leads into the usual Pokédex rating. Repeatable, no prize. Trainer `TRAINER_PROF_ALAN`, class PKMN PROF., Champion battle music, 4 Full Restores. He uses the Gentleman battle sprite as a placeholder, so **he needs a custom battle sprite too**. Brian chimes in that he's "rooting for whoever hates pasta."
 
 | Pokémon | Lv | Item | Ability | Moves |
@@ -301,8 +304,8 @@ Status:
 | Stoutland | 80 | Sitrus Berry | Intimidate | Facade, Crunch, Play Rough, Thunder Wave |
 | Sirfetch'd | 80 | Leek | Scrappy | Close Combat, Brave Bird, Leaf Blade, Knock Off |
 | Decidueye | 81 | Leftovers | Long Reach | Spirit Shackle, Leaf Blade, Swords Dance, Roost |
-| Greninja | 81 | Focus Sash | Protean | Surf, Dark Pulse, Ice Beam, Water Shuriken |
-| Cinderace | 81 | Life Orb | Libero | Pyro Ball, High Jump Kick, U-turn, Sucker Punch |
+| Inteleon | 81 | Scope Lens | Sniper | Snipe Shot, Dark Pulse, Ice Beam, Scald |
+| Infernape | 81 | Life Orb | Iron Fist | Flare Blitz, Close Combat, Mach Punch, U-turn |
 | Polteageist (ace) | 82 | White Herb | Weak Armor | Shell Smash, Shadow Ball, Giga Drain, Strength Sap |
 
 ### Sam as Steven
@@ -321,12 +324,12 @@ Every Pokémon is from Gens 1–3 and has a cheese connection.
 | Metagross (shiny, Mega, ace) | 3 | Steel/Psychic | The Big Cheese, recolored cheddar yellow |
 | Miltank | 2 | Normal | Dairy cow, for Wisconsin, "America's Dairyland" |
 | Tauros | 1 | Normal | Dairy bull, Miltank's partner on the farm |
-| Raichu | 1 | Electric | A mouse, and mice love cheese |
+| Vileplume | 1 | Grass/Poison | Stinks like a ripe gorgonzola (Giga Drain, Sludge Bomb, Moonblast, Sleep Powder) |
 | Ampharos | 2 | Electric | A yellow sheep, for sheep's-milk cheeses like feta |
 | Lunatone | 3 | Rock/Psychic | Yellow crescent moon shaped like a cheese wedge; the moon is made of cheese |
 
 - **Decided: shiny cheddar Metagross.** Sam's Metagross is shiny in his trainer data, and Metagross's shiny palette is recolored cheddar yellow (Mega Metagross's shiny palette too). Any shiny Metagross the player finds will also be yellow.
-- **Balance:** Ground is the biggest weakness, hitting Metagross, Raichu, and Ampharos (Lunatone is immune thanks to Levitate). Give the team coverage moves for Ground types, such as Grass Knot on Raichu, Ice Punch on Metagross, and Earthquake on Tauros.
+- **Balance:** Ground is the biggest weakness, hitting Metagross and Ampharos (Ampharos holds an Air Balloon and Lunatone is immune thanks to Levitate). Vileplume replaced Raichu (Nov 2026) and adds Grass coverage for Ground types, alongside Ice Punch on Metagross and Earthquake on Tauros.
 - As a post-game boss, the whole team should have high levels, good items, and strong movesets.
 
 ### Joe Fettuccine as the game designer
@@ -416,11 +419,11 @@ Every Pokémon is from Gens 1–3 and has a cheese connection.
 | Roxanne | Rock | Rolycoly, Nacli, Tyrunt | **Mega Aerodactyl** (rematches only), Lycanroc, Tyranitar |
 | Brawly | Fighting | Timburr, Mienfoo, Crabrawler | **Mega Heracross** (rematches only), Pangoro, Annihilape |
 | Wattson | Electric | Joltik, Helioptile, Dedenne, **Mega Manectric** | Pawmot, Vikavolt, Kilowattrel |
-| Flannery | Fire | Litleo, Salandit, Torracat, **Mega Houndoom** | Centiskorch, Armarouge |
+| Flannery | Fire | Houndour, Salandit, Torracat, **Mega Pyroar** (all battles) | Centiskorch, Armarouge; Houndoom stays on her rematch teams without a stone |
 | Norman | Normal | Oinkologne, Furret, Ambipom, **Mega Kangaskhan** | Bewear, Ursaluna, Snorlax |
-| Winona | Flying | Hawlucha, Corvisquire, Toucannon, Cramorant, **Mega Altaria** | Staraptor |
+| Winona | Flying | Hawlucha, Corvisquire, Toucannon, Cramorant, **Mega Altaria** | Staraptor; **Mega Hawlucha** replaces Mega Altaria on rematch 2 only |
 | Tate & Liza | Psychic | Gothitelle, Reuniclus, Espeon, **Mega Alakazam** | Bronzong, Hatterene |
-| Juan | Water | Primarina, Lanturn, Golisopod, Barraskewda, **Mega Gyarados** | Dondozo |
+| Juan | Water | Primarina, Lanturn, Golisopod, Barraskewda, **Mega Gyarados** | Dondozo; Mega alternates: **Golisopod** on rematches 1 and 3, **Gyarados** on 2 and 4 |
 - **Decided:** trainers' names are replaced with names from the Retrotopia community. Joe will supply the list; build this near the end.
 
 ## Pokémon, moves, items and abilities
@@ -431,7 +434,7 @@ All built into pokeemerald-expansion; the work is deciding where things appear.
   - **Decided:** every non-legendary Pokémon is catchable (not a curated set); **no time-of-day encounters** (changed Oct 2026; every Pokémon in an area appears at all hours); some legendaries become one-off encounters (see "Legendary one-off encounters"); the Pokédex keeps the **National Dex order**.
   - **Done: the Pokédex is the National Dex from the moment Alan gives it** (in Emerald it unlocked after the Hall of Fame). See Alan's post-game scene for the follow-up.
   - **Done (Oct 2026): encounters don't depend on the time of day.** Each area's four time tables were merged into one. **Decided:** no wild Pokémon is rarer than 4%; common ones can be higher. Grass, surfing, Rock Smash and the Super Rod have 25 slots at 4% each, the Old Rod 10 slots at 10% and the Good Rod 20 slots at 5%, so a Pokémon's chance is how many slots it fills (edit rates in Porymap by adding or removing copies). Rates came from each Pokémon's average over the four times, reviewed by Joe; he hand-set the surfing, fishing and Rock Smash tables on Routes 102–104, 111, 114, 117, 118 and 120. The build fails on purpose if the slot percentages stop being even. Lures no longer favor rare slots (there are none) but still raise levels.
-  - **Done:** the first stage of 21 lines that were only placed evolved (Litten, Popplio, Sprigatito, Chimchar and others) now appears in an early area.
+  - **Done:** the first stage of 21 lines that were only placed evolved (Litten, Popplio, Sprigatito and others; Chimchar's slot went to Scorbunny in Nov 2026) now appears in an early area.
   - **Done: Feebas evolves into Milotic at Lv 35;** the Prism Scale still works.
   - **Done (original placement):** wild placement by a one-time script, `tools/fettuccine/place_wild_pokemon.py`. Each Emerald area had four time-of-day tables (merged since). Every Emerald Pokémon keeps its best slot in every table; 315 missing Pokémon lines fill duplicate slots, each in three different areas, matched by type to the area and by level (stronger Pokémon only appear at higher levels, and they're placed already evolved where the level allows). Ghost and Dark types lean toward night, Grass/Bug/Fire toward day. Starters and pseudo-legendary lines only get rare slots (5% or less). At most 3 new Pokémon per area and time (2 on the first routes), 1 per surfing, Rock Smash or fishing-rod table. The full list by area is in `docs/wild_pokemon_placements.md`.
   - **Done: regional evolutions.** The 13 regional forms that only evolve "in" their home region now evolve in a Hoenn spot standing in for that region. Level-up evolutions happen on a route (players level up by battling); item evolutions happen in the neighboring town. Evolving anywhere else gives the normal form.
@@ -504,7 +507,7 @@ Not included for now: the other legendaries, mythicals, Ultra Beasts and Paradox
 
 ## Battle mechanics
 
-- **Mega Evolution.** Built in. **Done:** Steven (Sam) gives the **Mega Ring** in Gouda Grotto, right after TM Steel Wing, followed by the Mega Stone Case. **Decided:** the item keeps the engine's name, Mega Ring (Joe briefly tried "Key Stone" and switched back). **Decided:** the new Megas from Legends Z-A are excluded for now.
+- **Mega Evolution.** Built in. **Done:** Steven (Sam) gives the **Mega Ring** in Gouda Grotto, right after TM Steel Wing, followed by the Mega Stone Case. **Decided:** the item keeps the engine's name, Mega Ring (Joe briefly tried "Key Stone" and switched back). **Decided (changed Nov 2026):** the Legends Z-A Megas and their DLC Megas are in the game (`P_GEN_9_MEGA_EVOLUTIONS`), and their 45 stones are in the Mega Stone Case. Meganium, Feraligatr, Floette Eternal and Magearna can't be caught or received, so those four stones do nothing yet.
   - **Decided (Oct 2026): every Mega is available from badge 1.** Sam gives the **Mega Stone Case** along with the Mega Ring. It holds every Mega Stone and never runs out, so two Pokémon can hold the same stone. This replaces the earlier plan of spreading stones out as item balls; Joe accepted that Megas are no longer gated by progress.
   - **Done: Mega Stone Case** (key item, `ITEM_MEGA_STONE_CASE`, code in `src/mega_stone_case.c`). While the player has it, the bag treats every Mega Stone as owned: giving one takes nothing, and taking one off a Pokémon returns it to the case. Using the case lists every stone, then opens the party menu to give the chosen one.
   - **Done:** all 39 Mega Stone item balls and Alan's 7 starter-stone gift are removed. The Dawn Stone and the two Metal Coats stay on the map. **Old saves:** Nurse Joy gives the case to anyone who already has the Mega Ring, and Mega Stones in their bag move into it.
@@ -565,9 +568,12 @@ Mostly quality-of-life config options. Feature names change between expansion ve
 
 ## Overworld and menus
 
+- **Done: the bedroom PC starts with TM15 Hyper Beam** instead of a Potion (Nov 2026).
+- **Done: the wall clock's "Is this the correct time?" cursor starts on YES** (Nov 2026).
 - **Done: the player starts with the Running Shoes.** Mom's scene in Lil Ragu Town after getting the starter is now just a goodbye.
 - **Done: the player starts with the Shiny Charm** in the bag (it only works from the bag, not the PC).
 - **Done: INSTANT text speed.** TEXT SPEED in the Options menu cycles SLOW / MID / FAST / INSTANT with Left and Right; only the chosen speed is shown, like FRAME.
+- **Done: two new window frames (draft art, Nov 2026).** FRAME 21 is the Italian flag and FRAME 22 is wavy fettuccine with farfalle corners (`graphics/text_window/21.png` and `22.png`).
 - **Done: one combined BIKE.** Rydel gives a single BIKE. Press **B** while riding to switch between **FAST mode** (Mach Bike) and **ACRO mode** (Acro Bike); the bike bell rings and the sprite changes. In Acro mode, **R** does wheelies, bunny hops and jumps (they used to be on B). The bike remembers the last mode (`FLAG_BIKE_ACRO_MODE`). Switching is blocked mid-trick and on rails, bumpy slopes and sandy slopes. **Decided:** two modes, not three (a "normal" mode would have ridden exactly like Acro mode). Both old bike items are now named "Bike" and work the same, so old saves need nothing. Rydel's handbooks, Ethan (Jagged Pass), Sam's call and the Cycling Road gatekeeper talk about modes.
 - **Done: MEDICINE pocket.** 68 items (potions, revives, status heals, PP restorers, vitamins, feathers, mochi, Rare Candy, Exp. Candies) moved from Items to a new 40-slot pocket between ITEMS and POKé BALLS. Honey and Dynamax Candy stay in Items. Its slots use spare space at the end of the save, so **old saves still load**; the first load moves their medicine over (`FLAG_MEDICINE_POCKET_READY`). Wally's (Brian's) catching tutorial starts on this pocket so it still lands on Poké Balls. **Decided:** the pocket keeps using the Items bag picture.
 - **Done: Pokédex search by typed name.** The Name list has **TYPE A NAME** below DON'T SPECIFY. It opens the nickname keyboard ("Which POKéMON?"); the search screen comes back with the name filled in and every other setting kept. It finds names that start with the typed text (upper/lower case doesn't matter) and combines with color, type and order. Search also defaults to the National Dex, so Pokémon outside the Pastalia Dex are found.
@@ -636,9 +642,9 @@ A yes/no choice at New Game that randomizes Pokémon for that save file. It runs
 
 - **Everything is random:** wild Pokémon, starters, every trainer team (Brian, Gym Leaders, Elite Four, Mike, Sam and Alan included), gifts and eggs, Alan's Hoenn starter reward, NPC trades, legendary one-offs and event islands, roamers, Wonder Trade, and the Bucatini Frontier. (Changed Nov 2026; it used to be only the first three.)
 - **Full random** (no matching by strength; levels stay as they are).
-- **The pool is every Pokémon and form,** legendaries included, except battle-only forms (Megas, Aegislash's Blade Forme and so on) and Mike's Spearow.
+- **The pool is only Pokémon and forms the game actually offers** (changed Nov 2026): wild tables, starters, gifts, eggs, trades and scripted battles, plus what those evolve into, breed down to or change into outside battle. No Paradox Pokémon, Ultra Beasts, unplaced legendaries, battle-only forms (Megas and so on) or Mike's Spearow. The list is generated: rerun `tools/fettuccine/make_randomizer_pool.py` if wild Pokémon, gifts or legendary spots change. Randomizer saves from before this change get different Pokémon.
 - **Starters re-roll** if they wouldn't know a damaging move at level 5, because the first battle comes right after choosing.
-- **Simple on/off.** The prompt comes after the player's name and says what gets randomized. It can only be chosen at New Game.
+- **Simple on/off.** The prompt comes after the player's name and says what gets randomized. The cursor starts on NO. It can only be chosen at New Game.
 
 **Done.** Code in `src/randomizer.c`; tests in `test/randomizer.c`. `FLAG_RANDOMIZER_ON` and the two `VAR_RANDOMIZER_SEED_*` vars are spare save space, so the save layout is unchanged and old saves stay un-randomized.
 
@@ -662,7 +668,12 @@ A yes/no choice at New Game that randomizes Pokémon for that save file. It runs
 | Villain teams: white vs. red sauce story dialogue | Dialogue | Done |
 | Villain leaders renamed: Parmigiano and Marzano | Text, trainer data | Done |
 | Pasta region name: Pastalia (replaces Hoenn) | Text, plus 2 PokéNav graphics and 1 Pokédex graphic | Text done; PokéNav "HOENN MAP" and Pokédex "HOENN" art still to redraw |
-| Starters: Rowlet, Scorbunny, Froakie | Script and data change | Done |
+| Starters: Rowlet, Chimchar, Sobble | Script and data change | Done, needs playtesting |
+| Legends Z-A Megas in the game and Mega Stone Case | Config, item list | Done, needs playtesting |
+| Random legendary in the Route 101 battle | Custom, script | Done, needs playtesting |
+| Z-A Megas on Flannery, Winona, Juan and Mike; Sam and Mike team swaps | Trainer data | Done, needs playtesting |
+| Italian flag and pasta window frames | Draft art, code | Done, needs playtesting |
+| Fireplace and big comfy chair in Alan's lab | Draft art, map | Done, needs playtesting |
 | Nurse Joy Jammie Dodger heal (plus blackout cookie) | One shared script change | Done |
 | Retro Salvage Games shops (Jason, orange roofs) | Sprite recolor, palette, tiles | Dialogue done; Jason sprite, orange roofs and sign tile still to do |
 | Main character sprites (Ethan and Kris) | Community sprites, no recolor | Not started |
@@ -744,7 +755,7 @@ Work from easiest to hardest so there's always a playable build.
 
 1. ~~Build pokeemerald-expansion unchanged and confirm it runs in mGBA. (Intel Mac with MacPorts, not Homebrew.)~~ **Done.** devkitARM 16.1.0; the hack lives on the `fettuccine` git branch, based on upstream commit `90c30f02ae`.
 2. ~~Audit `include/config/` and report which "Verify" features exist in this version.~~ **Done.**
-3. ~~Turn on the config toggles (battle speed, double wilds, HMs) and playtest.~~ **Done.** Legends Z-A Megas turned off.
+3. ~~Turn on the config toggles (battle speed, double wilds, HMs) and playtest.~~ **Done.** (Legends Z-A Megas were off at first and turned on in Nov 2026.)
 4. ~~Small visible changes: town names, Nurse Joy, starters.~~ **Done**, plus landmark names.
 5. ~~Script the Mega Ring (Sam in Gouda Grotto), Mega Stones, and Orbs into the story.~~ **Done.**
 6. Story and character changes: Brian (rival, Wally, Champion), the Retrotopia cast, Retro Salvage Games.
