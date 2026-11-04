@@ -16847,27 +16847,27 @@ EVs: 4 HP / 252 Atk / 252 Spe
 - Swords Dance
 - Roost
 
-Greninja @ Focus Sash
+Inteleon @ Scope Lens
 Level: 81
-Ability: Protean
+Ability: Sniper
 Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
-- Surf
+- Snipe Shot
 - Dark Pulse
 - Ice Beam
-- Water Shuriken
+- Scald
 
-Cinderace @ Life Orb
+Infernape @ Life Orb
 Level: 81
-Ability: Libero
+Ability: Iron Fist
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
-- Pyro Ball
-- High Jump Kick
+- Flare Blitz
+- Close Combat
+- Mach Punch
 - U-turn
-- Sucker Punch
 
 Polteageist @ White Herb
 Level: 82

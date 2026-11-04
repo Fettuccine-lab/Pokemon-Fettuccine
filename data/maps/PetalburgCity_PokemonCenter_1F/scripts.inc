@@ -78,7 +78,7 @@ PetalburgCity_PokemonCenter_1F_Text_TreeckoIsGrassType:
 	.string "ICE-, and ROCK-type POKéMON.$"
 
 PetalburgCity_PokemonCenter_1F_Text_TorchicIsFireType:
-	.string "For example, your SCORBUNNY\n"
+	.string "For example, your CHIMCHAR\n"
 	.string "is a FIRE type.\p"
 	.string "It's strong against the GRASS and\n"
 	.string "BUG types.\p"
@@ -86,7 +86,7 @@ PetalburgCity_PokemonCenter_1F_Text_TorchicIsFireType:
 	.string "POKéMON.$"
 
 PetalburgCity_PokemonCenter_1F_Text_MudkipIsWaterType:
-	.string "For example, your FROAKIE\n"
+	.string "For example, your SOBBLE\n"
 	.string "is a WATER type.\p"
 	.string "It's strong against the FIRE type.\p"
 	.string "But, it's weak against GRASS-type\n"

@@ -41,7 +41,7 @@ so their first stage couldn't be caught. Each is now in one early area at every 
 | Litten | Route 113, grass | 5% | 16 |
 | Popplio | Route 104, grass | 4–5% | 4 |
 | Sprigatito | Route 102, grass | 5% | 3 |
-| Chimchar | Route 112, grass | 5% | 16 |
+| Scorbunny | Route 112, grass | 5% | 16 |
 | Pikipek | Route 101, grass | 10% | 3 |
 | Fletchling | Route 103, grass | 10% | 2–4 |
 | Rookidee | Route 116, grass | 10% | 6 |
@@ -362,7 +362,7 @@ so their first stage couldn't be caught. Each is now in one early area at every 
 | Stunfisk | Morning | grass/cave | 10% | 29 |
 | Salandit | Day | grass/cave | 10% | 28 |
 | Growlithe | Day | grass/cave | 10% | 30 |
-| Monferno | Day | grass/cave | 5% | 30 |
+| Raboot | Day | grass/cave | 5% | 30 |
 | Trubbish | Evening | grass/cave | 10% | 28 |
 | Klefki | Evening | grass/cave | 10% | 30 |
 | Yamask Galar | Night | grass/cave | 10% | 28 |
@@ -405,7 +405,7 @@ so their first stage couldn't be caught. Each is now in one early area at every 
 | Nidorina | Morning | grass/cave | 10% | 30 |
 | Fletchinder | Day | grass/cave | 10% | 28 |
 | Darumaka | Day | grass/cave | 10% | 30 |
-| Monferno | Day | grass/cave | 5% | 30 |
+| Raboot | Day | grass/cave | 5% | 30 |
 | Sizzlipede | Evening | grass/cave | 10% | 28 |
 | Stunfisk Galar | Evening | grass/cave | 10% | 30 |
 | Litleo | Night | grass/cave | 10% | 28 |
@@ -796,7 +796,7 @@ so their first stage couldn't be caught. Each is now in one early area at every 
 | Basculin Red Striped | Day | fishing | 40% | 30 |
 | Basculin White Striped | Evening | fishing | 40% | 30 |
 | Mantyke | Night | fishing | 40% | 30 |
-| Sobble | Night | surfing | 5% | 15 |
+| Froakie | Night | surfing | 5% | 15 |
 
 ### Route106
 
@@ -860,7 +860,7 @@ so their first stage couldn't be caught. Each is now in one early area at every 
 | Cubone | Morning | Rock Smash | 30% | 5 |
 | Grubbin | Day | grass/cave | 10% | 21 |
 | Rellor | Day | grass/cave | 10% | 21 |
-| Monferno | Day | grass/cave | 5% | 19 |
+| Raboot | Day | grass/cave | 5% | 19 |
 | Bronzor | Day | Rock Smash | 30% | 5 |
 | Happiny | Evening | grass/cave | 10% | 21 |
 | Munchlax | Evening | grass/cave | 10% | 21 |
@@ -1086,7 +1086,7 @@ so their first stage couldn't be caught. Each is now in one early area at every 
 
 | Pokémon | Time | Where | Rate | Level |
 | --- | --- | --- | --- | --- |
-| Sobble | Morning | surfing | 5% | 15 |
+| Froakie | Morning | surfing | 5% | 15 |
 | Oshawott | Day | surfing | 5% | 15 |
 | Primarina | Evening | fishing | 1% | 40 |
 | Quaxly | Night | surfing | 5% | 15 |
@@ -1471,7 +1471,7 @@ so their first stage couldn't be caught. Each is now in one early area at every 
 
 | Pokémon | Time | Where | Rate | Level |
 | --- | --- | --- | --- | --- |
-| Drizzile | Morning | surfing | 5% | 30 |
+| Frogadier | Morning | surfing | 5% | 30 |
 | Dewott | Day | surfing | 5% | 30 |
 | Quaxwell | Evening | surfing | 5% | 30 |
 | Prinplup | Night | surfing | 5% | 30 |

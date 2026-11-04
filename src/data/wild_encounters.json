@@ -2114,7 +2114,7 @@
               {
                 "min_level": 15,
                 "max_level": 25,
-                "species": "SPECIES_SOBBLE"
+                "species": "SPECIES_FROAKIE"
               }
             ]
           },
@@ -3047,7 +3047,7 @@
               {
                 "min_level": 19,
                 "max_level": 19,
-                "species": "SPECIES_MONFERNO"
+                "species": "SPECIES_RABOOT"
               },
               {
                 "min_level": 21,
@@ -3696,7 +3696,7 @@
               {
                 "min_level": 16,
                 "max_level": 16,
-                "species": "SPECIES_CHIMCHAR"
+                "species": "SPECIES_SCORBUNNY"
               },
               {
                 "min_level": 16,
@@ -7242,7 +7242,7 @@
               {
                 "min_level": 30,
                 "max_level": 35,
-                "species": "SPECIES_DRIZZILE"
+                "species": "SPECIES_FROGADIER"
               },
               {
                 "min_level": 30,
@@ -15281,7 +15281,7 @@
               {
                 "min_level": 15,
                 "max_level": 25,
-                "species": "SPECIES_SOBBLE"
+                "species": "SPECIES_FROAKIE"
               },
               {
                 "min_level": 25,
@@ -32991,7 +32991,7 @@
               {
                 "min_level": 30,
                 "max_level": 30,
-                "species": "SPECIES_MONFERNO"
+                "species": "SPECIES_RABOOT"
               },
               {
                 "min_level": 28,
@@ -33264,7 +33264,7 @@
               {
                 "min_level": 30,
                 "max_level": 30,
-                "species": "SPECIES_MONFERNO"
+                "species": "SPECIES_RABOOT"
               },
               {
                 "min_level": 28,
