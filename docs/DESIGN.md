@@ -183,7 +183,7 @@ Brian is a proud Canadian who hates **sauce**. His firm stance: **all sauce is j
 - **Done:** Mike stands in the Pokémon League lobby, right of the Elite Four door (tile 13, 3; Joe may move him in Porymap). Before the Hall of Fame he tells the player a kid from Canada beat him; after it, he offers a battle (yes/no) every time he's talked to, using his trainer data (`TRAINER_WALLACE`, levels 57–60).
 - **Decided:** Mike replaces Wallace **everywhere** (Sugopolis and HM Waterfall, Cave of Origin, Sky Pillar, Mostaccideep, the Champion's Room until Brian takes it over, and every line that mentions him). **Done:** all dialogue and his trainer name say MIKE. Wallace's sprites are his placeholder.
 - **Decided:** Mike's ace is an **overpowered Spearow**, a unique Spearow form only he has (`SPECIES_SPEAROW_MIKE`). Wild Spearow are unaffected. Both Mike and his Spearow get custom sprite work by Joe. **Done:** the form exists with boosted stats (80 HP / 145 Atk / 90 Def / 55 SpA / 90 SpD / 140 Spe, 600 total, vs. 262 for Spearow), using Spearow's sprites as a placeholder. Moves: Brave Bird, Double-Edge, Drill Run, U-turn, with a Life Orb.
-- **Decided: Mike's personality** is an over-the-top Italian stereotype mixed with the Fonz ("Ayyy!", "Correctamundo!", "Capisce?"). He's confident but not overconfident: he knows he's strong and doesn't rub it in. Above all he's a proud Pastalian with a deep love for every pasta and sauce, so he won't take a side between red and white sauce. He keeps Wallace's backstory (former Sugopolis Gym Leader, Juan's student). **Done:** all his lines in Sugopolis, the Cave of Oregano, the Sky Breadstick, the Champion's Room, the Hall of Fame, and his PokéNav call and profile. (The Champion's Room and Hall of Fame lines have since moved to Brian.)
+- **Decided: Mike's personality** is an over-the-top Italian stereotype mixed with the Fonz ("Ayyy!", "Correctamundo!", "Capisce?"). He's confident but not overconfident: he knows he's strong and doesn't rub it in. Above all he's a proud Pastalian with a deep love for every pasta and sauce, so he won't take a side between red and white sauce. He keeps Wallace's backstory as a former Sugopolis Gym Leader, but his teacher is now his **older brother Joe Q** (changed Nov 2026; it used to be Juan). **Done:** all his lines in Sugopolis, the Cave of Oregano, the Sky Breadstick, the Champion's Room, the Hall of Fame, and his PokéNav call and profile. (The Champion's Room and Hall of Fame lines have since moved to Brian.)
 - **Decided: Mike's team is hyper-Italian,** with a Mega (Falinks, changed Nov 2026; Vanilluxe replaced Gallade). (The earlier three-Gen-1 rule was dropped when Falinks replaced Snorlax.) **Done** (levels 57–60, Spearow last):
 
 | Pokémon | Gen | Type | Italian theme |
@@ -359,6 +359,7 @@ Every Pokémon is from Gens 1–3 and has a cheese connection.
 
 - **Decided:** Joe Q is a different person from Joe Fettuccine (the game designer). His in-game name is "Joe Q" so he isn't confused with Joe.
 - **Decided:** Joe Q keeps Scott's sprite.
+- **Decided:** Joe Q is **Mike's older brother** and his old teacher.
 - **Done:** every SCOTT in dialogue and the PokéNav now says JOE Q (the Battle Frontier guide calls him "MR. Q").
 
 **Who he is:**
@@ -383,6 +384,15 @@ Every Pokémon is from Gens 1–3 and has a cheese connection.
 - His final scene is the post-game invitation to the Bucatini Frontier, where he declares the player "just cool enough."
 - Starting point: search `data/maps/` for every line Scott speaks and list each one with its map and story order before rewriting.
 
+### Joe Q as the Sugopolis Gym Leader (replaces Juan)
+
+**Done (Nov 2026).** Joe Q runs the 8th gym. He used to lead it before he went into talent scouting, then handed it to Mike; when Mike moved up, Joe Q came back.
+
+- He stands in the gym in his street clothes (Scott's sprite). When the player talks to him, he explains the backstory, says he can't battle in his street clothes, and **spins into his "BATTLE DUDS"** (Juan's sprite). Juan's battle sprite is his Battle Duds, so Joe Q needs no separate battle sprite.
+- After the battle (first win and rematches) he spins back into his street clothes ("Those BATTLE DUDS were starting to pinch").
+- Trainer name is JOE Q (data is still `TRAINER_JUAN_1`–`_5`); team unchanged. His Gym Leader PokéNav entry is separate from his scout entry: tag **BATTLE DUDS**, with new profile and rematch calls.
+- Updated: gym sign ("The GYM LEADER who is just cool enough!"), gym guide, all gym trainers, the badge/TM speech, Mike in the Cave of Oregano and Sugopolis, the Mostaccideep, Sugopolis Pokémon Center and Sugopolis house NPCs, and scout call 6.
+
 **Done:** new dialogue (approved by Joe) in all 13 Scott scenes and PokéNav calls 1, 4, 5 and 7 (calls 2, 3 and 6 are unchanged). His PokéNav profile tag is **BIG JOE**. The Macaroville and Route 119 lines refer to the pasta-hating rival, and call 1 mentions Retro Salvage Games, so both will fully make sense once the Brian and shop features are done.
 
 ### Retrotopia promo office (Ditalinford Hall)
@@ -394,7 +404,7 @@ Every Pokémon is from Gens 1–3 and has a cheese connection.
 | Person | Replaces | Role in the game |
 | --- | --- | --- |
 | Mike | Wallace | Waits outside the Elite Four; post-game challenge with an overpowered Spearow ace (see "Mike at the Pokémon League") |
-| Joe Q | Scott | Talent scout and Bucatini Frontier recruiter (see "Joe Q as Scott" under Retrotopia cast) |
+| Joe Q | Scott and Juan | Mike's older brother. Talent scout, Bucatini Frontier recruiter, and Sugopolis Gym Leader in his Battle Duds (see "Joe Q as Scott" under Retrotopia cast) |
 
 - **Decided:** Mike and his Spearow get custom sprites (placeholder for now).
 
@@ -425,7 +435,7 @@ Every Pokémon is from Gens 1–3 and has a cheese connection.
 | Norman | Normal | Oinkologne, Furret, Ambipom, **Mega Kangaskhan** | Bewear, Ursaluna, Snorlax |
 | Winona | Flying | Hawlucha, Corvisquire, Toucannon, Cramorant, **Mega Altaria** | Staraptor; **Mega Hawlucha** replaces Mega Altaria on rematch 2 only |
 | Tate & Liza | Psychic | Gothitelle, Reuniclus, Espeon, **Mega Alakazam** | Bronzong, Hatterene |
-| Juan | Water | Primarina, Lanturn, Golisopod, Barraskewda, **Mega Gyarados** | Dondozo; Mega alternates: **Golisopod** on rematches 1 and 3, **Gyarados** on 2 and 4 |
+| Joe Q (was Juan) | Water | Primarina, Lanturn, Golisopod, Barraskewda, **Mega Gyarados** | Dondozo; Mega alternates: **Golisopod** on rematches 1 and 3, **Gyarados** on 2 and 4 |
 - **Decided:** trainers' names are replaced with names from the Retrotopia community. Joe will supply the list; build this near the end.
 
 ## Pokémon, moves, items and abilities
@@ -679,7 +689,7 @@ A yes/no choice at New Game that randomizes Pokémon for that save file. It runs
 | Starters: Rowlet, Chimchar, Sobble | Script and data change | Done, needs playtesting |
 | Legends Z-A Megas in the game and Mega Stone Case | Config, item list | Done, needs playtesting |
 | Random legendary in the Route 101 battle | Custom, script | Done, needs playtesting |
-| Z-A Megas on Flannery, Winona, Juan and Mike; Sam and Mike team swaps | Trainer data | Done, needs playtesting |
+| Z-A Megas on Flannery, Winona, Joe Q (Sugopolis Gym) and Mike; Sam and Mike team swaps | Trainer data | Done, needs playtesting |
 | Italian flag and pasta window frames | Draft art, code | Done, needs playtesting |
 | Fireplace and big comfy chair in Alan's lab | Draft art, map | Done, needs playtesting |
 | Nurse Joy Jammie Dodger heal (plus blackout cookie) | One shared script change | Done |
@@ -690,6 +700,7 @@ A yes/no choice at New Game that randomizes Pokémon for that save file. It runs
 | Brian as Champion, Mike (replaces Wallace) outside the Elite Four | Scripts, trainer data, dialogue, custom sprites | Done (placeholder sprites: Brendan for Brian, Wallace for Mike) |
 | Brian's room SNES / Time Toggle text | Text edit | Done |
 | Joe Q replaces Scott | Dialogue rewrite (keeps Scott's sprite) | Name and dialogue done (keeps Scott's sprite) |
+| Joe Q replaces Juan as Sugopolis Gym Leader (Battle Duds spin) | Script, small custom special, dialogue | Done, needs playtesting |
 | New themed teams for all trainers and Gym Leaders (Gens 1–9, Megas from gym 3) | Trainer data | Done |
 | Trainer names from the Retrotopia community | Text (waiting on Joe's list) | Not started |
 | Retrotopia cast: Alan (Birch), Sam (Steven), Joe Fettuccine (designer) | Custom sprites, scripts, dialogue | Partly done: names and dialogue done for all three (Joe Fettuccine gives the Old Sea Map and signs the diploma); all three custom sprites still to do |
