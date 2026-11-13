@@ -1,0 +1,98 @@
+POKEMON FETTUCCINE VERSION - PLAYTEST 10
+========================================
+
+Thanks for testing! This one has a new 8th Gym Leader: Joe Q, in his
+BATTLE DUDS.
+
+
+HOW TO PLAY
+-----------
+1. You need a clean US Pokemon Emerald ROM (not included).
+   It should match:
+     CRC32: 1F1C08FB
+     SHA-1: f3ae088181bf583e55daf962a92bb46f4f1d07b7
+2. Apply fettuccine-playtest-10.bps to it. Either of these works:
+     - Rom Patcher JS (in your browser): https://www.marcrobledo.com/RomPatcher.js/
+     - Floating IPS (Flips)
+3. Play the patched ROM in mGBA or any GBA emulator.
+
+Your Playtest 9 save should keep working: give the new ROM the same
+file name as before (so the save file matches) or copy the .sav across.
+Use an in-game save, not a save state from an older playtest.
+
+
+NEW SINCE PLAYTEST 9
+--------------------
+Sugopolis Gym: Joe Q is the new Gym Leader
+- Juan is gone. Joe Q, the talent scout you keep running into, runs
+  the Sugopolis Gym. Turns out he's MIKE's big brother, and he taught
+  Mike everything.
+- Before you battle, he changes into his BATTLE DUDS. After the
+  battle, he changes back.
+- His team has a new member: a Palafin in its superhero Hero Form
+  takes Primarina's place. The rest of his team is the same.
+- Mike, the gym sign, the gym trainers, a few Sugopolis and
+  Mostaccideep townspeople, and Joe Q's PokeNav calls all have new
+  lines to match.
+- Joe Q now has two PokeNav entries: his scout one and a Gym Leader
+  one (for rematches).
+
+
+PLEASE TRY
+----------
+- Talk to Joe Q at the top of the Sugopolis Gym. Watch him change
+  into his BATTLE DUDS, beat him, and watch him change back after
+  you get the badge, the TM and the PokeNav message.
+- Check that his Palafin shows up as the muscly Hero Form, not the
+  small dolphin.
+- Talk to him again after the battle, and after leaving and coming
+  back.
+- If you can, lose to him once, then come back and try again.
+- If you reach rematches, try one (with 2+ Pokemon, and once with
+  only 1).
+- Read Mike's lines in the Cave of Oregano and Sugopolis, and the gym
+  trainers' lines. Look for text that runs off the box or breaks in
+  an odd place.
+
+
+DEBUG MENU
+----------
+This build has the developer's debug menus turned on, so you can
+skip ahead or set up a test:
+  - Overworld: hold R and press START (mGBA keyboard: hold S, Enter)
+  - In battle: press SELECT on the battle menu (mGBA: Backspace)
+  - Sprite viewer: SELECT on a summary screen (mGBA: Backspace)
+Use a separate save or a save state first, and say in your report
+if that save used the debug menu.
+
+
+AFTER-BATTLE GLITCHES
+---------------------
+If anything odd happens right after a battle (the player moving on
+their own, buttons not working, a freeze, strange graphics), make a
+SAVE STATE right away (mGBA: File > Save State) and send it in.
+
+
+KNOWN PLACEHOLDERS
+------------------
+- Brian, Prof. Alan, Sam, Mike, Joe Q, WILDCARD, JASON and BLOBBY
+  still use old Emerald sprites. Prof. Alan's battle sprite is a
+  Gentleman.
+- Retro Salvage Games shops still have blue roofs and MART signs.
+- A few map graphics still say HOENN.
+- Sam's shiny Metagross isn't cheddar-yellow yet.
+- The new frames, chair and fireplace are first drafts of the art.
+
+
+PLEASE REPORT
+-------------
+- Crashes or freezes, especially in the Sugopolis Gym
+- Joe Q stuck in the wrong outfit, facing the wrong way, or
+  disappearing
+- Text that runs off the box
+- Anything that blocks progress
+- Say whether your save is a RANDOMIZER game, and whether it's new or
+  from an older playtest
+
+If you can, say where you were and what you were doing, and send a
+screenshot or your save file.
