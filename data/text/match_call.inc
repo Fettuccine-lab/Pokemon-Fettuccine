@@ -2339,8 +2339,7 @@ MatchCall_Text_May2::
 	.string "SPAGHETTIPORT not have a GYM?\p"
 	.string "When they build one, I'm applying to be\n"
 	.string "the LEADER.\p"
-	.string "First rule: no sauce. Spaghetti gets\n"
-	.string "salt and pepper, like a wing.$"
+	.string "First rule: no spaghetti.$"
 
 MatchCall_Text_May3::
 	.string "BRIAN: Remember the CUTTER in\n"
@@ -2449,8 +2448,7 @@ MatchCall_Text_Brendan2::
 	.string "SPAGHETTIPORT not have a GYM?\p"
 	.string "When they build one, I'm applying to be\n"
 	.string "the LEADER.\p"
-	.string "First rule: no sauce. Spaghetti gets\n"
-	.string "salt and pepper, like a wing.$"
+	.string "First rule: no spaghetti.$"
 
 MatchCall_Text_Brendan3::
 	.string "BRIAN: Remember the CUTTER in\n"

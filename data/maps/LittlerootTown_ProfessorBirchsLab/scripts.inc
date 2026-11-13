@@ -1130,16 +1130,16 @@ LittlerootTown_ProfessorBirchsLab_Text_DontHaveAnyRoomForPokemon:
 
 LittlerootTown_ProfessorBirchsLab_Text_MayWhatNextImStayingHere:
 	.string "BRIAN: So you beat me. Fine.\p"
-	.string "But I'm still not eating the sauce. I'm\n"
-	.string "getting wings. Dry.\p"
+	.string "But I'm still not eating the pasta. I'm\n"
+	.string "getting wings.\p"
 	.string "What now, {PLAYER}? Fill the NATIONAL\n"
 	.string "POKéDEX?\p"
 	.string "Me, I'm training. I'll be back.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BrendanPreferCollectingSlowly:
 	.string "BRIAN: So you beat me. Fine.\p"
-	.string "But I'm still not eating the sauce. I'm\n"
-	.string "getting wings. Dry.\p"
+	.string "But I'm still not eating the pasta. I'm\n"
+	.string "getting wings.\p"
 	.string "What now, {PLAYER}? Fill the NATIONAL\n"
 	.string "POKéDEX?\p"
 	.string "Me, I'm training. I'll be back.$"

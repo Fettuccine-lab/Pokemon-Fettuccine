@@ -271,7 +271,7 @@ static const struct MatchCallStructNPC sStevenMatchCallHeader =
     }
 };
 
-static const u8 gText_MayBrendanMatchCallDesc[] = _("ANTI-PASTA");
+static const u8 gText_MayBrendanMatchCallDesc[] = _("WING-SLUT");
 
 static const struct MatchCallRival sMayMatchCallHeader =
 {
