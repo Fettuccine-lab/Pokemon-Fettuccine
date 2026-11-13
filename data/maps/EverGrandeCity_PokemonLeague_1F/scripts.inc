@@ -197,8 +197,10 @@ EverGrandeCity_PokemonLeague_1F_Text_MikeBrianBeatMe:
 	.string "chair right out from under me.\p"
 	.string "His ABOMASNOW froze my whole team\n"
 	.string "solid. Gotta respect that.\p"
-	.string "But now he says he's gonna ban pasta.\n"
-	.string "PASTA! In PASTALIA! Fuhgeddaboudit.\p"
+	.string "But now he says he's gonna ban sauce.\n"
+	.string "Says it all comes outta a JAR!\p"
+	.string "My nonna's Sunday gravy? A JAR?!\n"
+	.string "Fuhgeddaboudit.\p"
 	.string "Go on in there and show him what\n"
 	.string "PASTALIA's made of.$"
 

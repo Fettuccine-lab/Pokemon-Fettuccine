@@ -2310,7 +2310,7 @@ MatchCall_Text_MayRayquazaCall:
 	.string "BRIAN: I was just in RAVIOLOG.\p"
 	.string "I saw a giant green POKéMON flying\n"
 	.string "across the sky.\p"
-	.string "It was heading away from all the pasta.\n"
+	.string "It was heading away from all the sauce.\n"
 	.string "Smart POKéMON.\p"
 	.string "… … … … … …\p"
 	.string "… … … … … Click!$"
@@ -2321,7 +2321,7 @@ MatchCall_Text_BrendanRayquazaCall:
 	.string "BRIAN: I was just in RAVIOLOG.\p"
 	.string "I saw a giant green POKéMON flying\n"
 	.string "across the sky.\p"
-	.string "It was heading away from all the pasta.\n"
+	.string "It was heading away from all the sauce.\n"
 	.string "Smart POKéMON.\p"
 	.string "… … … … … …\p"
 	.string "… … … … … Click!$"
@@ -2331,15 +2331,16 @@ MatchCall_Text_May1::
 	.string "as a SAILOR, but I still see him out on\l"
 	.string "the sea with PEEKO.\p"
 	.string "I get it. The sea's the only place\n"
-	.string "around here that isn't named after\l"
-	.string "pasta.$"
+	.string "around here that isn't covered in\l"
+	.string "sauce.$"
 
 MatchCall_Text_May2::
 	.string "BRIAN: Hey, {PLAYER}! How does\n"
 	.string "SPAGHETTIPORT not have a GYM?\p"
 	.string "When they build one, I'm applying to be\n"
 	.string "the LEADER.\p"
-	.string "First rule: no spaghetti.$"
+	.string "First rule: no sauce. Spaghetti gets\n"
+	.string "salt and pepper, like a wing.$"
 
 MatchCall_Text_May3::
 	.string "BRIAN: Remember the CUTTER in\n"
@@ -2360,10 +2361,11 @@ MatchCall_Text_May5::
 	.string "BRIAN: I'm on ROUTE 111. I'm resting at\n"
 	.string "an old lady's house north of the\l"
 	.string "desert.\p"
-	.string "She offered me spaghetti. I said sorry,\n"
+	.string "She offered me spaghetti with her\n"
+	.string "“secret family sauce.” I said sorry,\l"
 	.string "I'm allergic.\p"
-	.string "I'm not allergic. You should visit her,\n"
-	.string "too.$"
+	.string "I'm not allergic. It's jar sauce. You\n"
+	.string "should visit her, too.$"
 
 MatchCall_Text_May6::
 	.string "BRIAN: Did you know about the MIRAGE\n"
@@ -2389,14 +2391,15 @@ MatchCall_Text_May9::
 	.string "BRIAN: Around JAGGED PASS, I ran into\n"
 	.string "some nasty characters. TEAM MARINARA,\l"
 	.string "I think.\p"
-	.string "A whole team fighting over SAUCE. This\n"
-	.string "region is nuts.$"
+	.string "A whole team fighting over SAUCE. Red,\n"
+	.string "white… it's ALL jar sauce!\p"
+	.string "What is there to fight about?$"
 
 MatchCall_Text_May10::
 	.string "BRIAN: Did you catch the news? CAPT.\n"
 	.string "STERN found the SEAFLOOR CAVERN on\l"
 	.string "his submarine expedition.\p"
-	.string "No pasta at the bottom of the sea. I\n"
+	.string "No sauce at the bottom of the sea. I\n"
 	.string "should get a submarine.$"
 
 MatchCall_Text_May11::
@@ -2416,7 +2419,7 @@ MatchCall_Text_May12::
 MatchCall_Text_May13::
 	.string "BRIAN: I heard there are super-ancient\n"
 	.string "POKéMON out there. Three of them!\p"
-	.string "Imagine one on my team. No pasta lover\n"
+	.string "Imagine one on my team. No sauce lover\n"
 	.string "could stop me.$"
 
 MatchCall_Text_May14::
@@ -2438,15 +2441,16 @@ MatchCall_Text_Brendan1::
 	.string "as a SAILOR, but I still see him out on\l"
 	.string "the sea with PEEKO.\p"
 	.string "I get it. The sea's the only place\n"
-	.string "around here that isn't named after\l"
-	.string "pasta.$"
+	.string "around here that isn't covered in\l"
+	.string "sauce.$"
 
 MatchCall_Text_Brendan2::
 	.string "BRIAN: Hey, {PLAYER}! How does\n"
 	.string "SPAGHETTIPORT not have a GYM?\p"
 	.string "When they build one, I'm applying to be\n"
 	.string "the LEADER.\p"
-	.string "First rule: no spaghetti.$"
+	.string "First rule: no sauce. Spaghetti gets\n"
+	.string "salt and pepper, like a wing.$"
 
 MatchCall_Text_Brendan3::
 	.string "BRIAN: Remember the CUTTER in\n"
@@ -2467,10 +2471,11 @@ MatchCall_Text_Brendan5::
 	.string "BRIAN: I'm on ROUTE 111. I'm resting at\n"
 	.string "an old lady's house north of the\l"
 	.string "desert.\p"
-	.string "She offered me spaghetti. I said sorry,\n"
+	.string "She offered me spaghetti with her\n"
+	.string "“secret family sauce.” I said sorry,\l"
 	.string "I'm allergic.\p"
-	.string "I'm not allergic. You should visit her,\n"
-	.string "too.$"
+	.string "I'm not allergic. It's jar sauce. You\n"
+	.string "should visit her, too.$"
 
 MatchCall_Text_Brendan6::
 	.string "BRIAN: Did you know about the MIRAGE\n"
@@ -2496,14 +2501,15 @@ MatchCall_Text_Brendan9::
 	.string "BRIAN: Around JAGGED PASS, I ran into\n"
 	.string "some nasty characters. TEAM MARINARA,\l"
 	.string "I think.\p"
-	.string "A whole team fighting over SAUCE. This\n"
-	.string "region is nuts.$"
+	.string "A whole team fighting over SAUCE. Red,\n"
+	.string "white… it's ALL jar sauce!\p"
+	.string "What is there to fight about?$"
 
 MatchCall_Text_Brendan10::
 	.string "BRIAN: Did you catch the news? CAPT.\n"
 	.string "STERN found the SEAFLOOR CAVERN on\l"
 	.string "his submarine expedition.\p"
-	.string "No pasta at the bottom of the sea. I\n"
+	.string "No sauce at the bottom of the sea. I\n"
 	.string "should get a submarine.$"
 
 MatchCall_Text_Brendan11::
@@ -2523,7 +2529,7 @@ MatchCall_Text_Brendan12::
 MatchCall_Text_Brendan13::
 	.string "BRIAN: I heard there are super-ancient\n"
 	.string "POKéMON out there. Three of them!\p"
-	.string "Imagine one on my team. No pasta lover\n"
+	.string "Imagine one on my team. No sauce lover\n"
 	.string "could stop me.$"
 
 MatchCall_Text_Brendan14::

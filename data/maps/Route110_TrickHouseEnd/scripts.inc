@@ -311,7 +311,7 @@ Route110_TrickHouseEnd_Text_FountainOfIdeasRunDry:
 Route110_TrickHouseEnd_Text_DefeatedMePreferWhichTent:
 	.string "I hate to admit defeat, but you have\n"
 	.string "bested me!\p"
-	.string "Not since that pasta-hating BRIAN\n"
+	.string "Not since that sauce-hating BRIAN\n"
 	.string "has anyone humbled me so!\p"
 	.string "Still, you must have been reeled in by\n"
 	.string "my charisma for you to visit me again\l"

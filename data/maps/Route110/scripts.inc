@@ -778,7 +778,8 @@ Route110_Text_MayExplainItemfinder:
 	.string "makes a sound.\p"
 	.string "It's never chicken wings. I've checked.\p"
 	.string "Don't thank me. Thank my mom.\p"
-	.string "I'm off to MACAROVILLE. MACARONI. Ugh.$"
+	.string "I'm off to MACAROVILLE. Mac and\n"
+	.string "cheese. CHEESE SAUCE. Ugh.$"
 
 Route110_Text_BrendanLetsBattle:
 	.string "BRIAN: {PLAYER}. So this is where you\n"
@@ -804,7 +805,8 @@ Route110_Text_BrendanExplainItemfinder:
 	.string "makes a sound.\p"
 	.string "It's never chicken wings. I've checked.\p"
 	.string "Don't thank me. Thank my mom.\p"
-	.string "I'm off to MACAROVILLE. MACARONI. Ugh.$"
+	.string "I'm off to MACAROVILLE. Mac and\n"
+	.string "cheese. CHEESE SAUCE. Ugh.$"
 
 Route110_Text_RideBikeAtFullSpeed:
 	.string "Wouldn't it be great to ride a BIKE\n"

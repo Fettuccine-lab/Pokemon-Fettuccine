@@ -143,11 +143,13 @@ Balance notes:
 
 ## Brian's story
 
-Brian is a proud Canadian who hates all Italian food. He wants to become Champion so he can rid the world of it, and he won't let the player get in his way. In a region where every town is named after pasta, he's surrounded by everything he hates.
+Brian is a proud Canadian who hates **sauce**. His firm stance: **all sauce is jar sauce**. Red or white, "homemade" or "Nonna's secret recipe," it all came out of a jar as far as he's concerned. He wants to become Champion so he can rid Pastalia of sauce, and he won't let the player get in his way. In a region where every town is named after pasta (and his own hometown, Lil Ragu, is named after a sauce), he's surrounded by everything he hates.
 
-**Decided:** Brian stays a pasta hater forever, even after he loses.
+**Decided:** Brian stays a sauce hater forever, even after he loses ("…But I'm still not eating the sauce.").
 
-**Decided: Brian's backstory and running jokes.** His mom moved the family to Pastalia from Canada, and his Ducklett came with him. He's rude about pasta but compulsively polite as a Canadian ("Sorry in advance!"). He's **obsessed with chicken wings**, his favorite food and his main running joke; other jokes are maple syrup, poutine, renaming Rotiniboro "Mapleboro", and his mom's lasagna. His anger grows across the game: annoyed at first, then he sees the player as an obstacle (Route 110), then furious (Route 119).
+**Done (Nov 2026): sauce rewrite.** Brian's lines changed focus from pasta to sauce and jar sauce: his intro, his mom, Alan and his aide (Alan's "homemade" bolognese), Route 103, the Pestoburg Gym, Rotiniboro and Route 104 (rotini is "a sauce delivery system"), Lasagnaridge, Route 110, Macaroville, Route 119 ("It's ALL JAR SAUCE!"), Linguicove, Victory Road, the Champion battle (his first law: no more sauce), his PokéNav calls, Mike in the League lobby ("My nonna's Sunday gravy? A JAR?!"), the Carbonara family mom and WILDCARD. Lines that only complain about pasta town names were kept. New running jokes: he eats his wings **dry, salt and pepper, no sauce**, and he insists **gravy is NOT a sauce** (so poutine is fine). He thinks the white-vs-red sauce war is pointless because it's all jar sauce (PokéNav call), but he still doesn't appear in the teams' schemes. The PokéNav tag stays ANTI-PASTA (the antipasto pun).
+
+**Decided: Brian's backstory and running jokes.** His mom moved the family to Pastalia from Canada, and his Ducklett came with him. He's rude about pasta but compulsively polite as a Canadian ("Sorry in advance!"). He's **obsessed with chicken wings** (dry, no sauce), his favorite food and his main running joke; other jokes are maple syrup, poutine (gravy doesn't count as sauce), renaming Rotiniboro "Mapleboro", and his mom's lasagna. His anger grows across the game: annoyed at first, then he sees the player as an obstacle (Route 110), then furious (Route 119).
 
 **Decided:** Brian is **not** Prof. Birch's (Alan's) son. In Emerald the rival is Birch's child, so the rival's "my dad" lines get written out in the dialogue rewrite.
 

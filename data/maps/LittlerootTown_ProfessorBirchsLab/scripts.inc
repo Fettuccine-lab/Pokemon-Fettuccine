@@ -749,7 +749,9 @@ LittlerootTown_ProfessorBirchsLab_Text_BirchEnjoysRivalsHelpToo:
 	.string "PROF. ALAN is studying the habitats\n"
 	.string "and distribution of POKéMON.\p"
 	.string "He's been trying to get BRIAN to try\n"
-	.string "his lasagna. No luck so far.$"
+	.string "his homemade bolognese.\p"
+	.string "BRIAN says it's from a jar. It is not\n"
+	.string "from a jar.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_LikeYouToHavePokemon:
 	.string "PROF. ALAN: Now then, {PLAYER}{KUN}.\p"
@@ -776,9 +778,9 @@ LittlerootTown_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival:
 	.string "Your neighbour, BRIAN, is out\n"
 	.string "training on ROUTE 103.\p"
 	.string "He's a good lad, though he has some\n"
-	.string "funny ideas about pasta.\p"
-	.string "Won't touch my lasagna,\n"
-	.string "the poor soul.\p"
+	.string "funny ideas about sauce.\p"
+	.string "Reckons it all comes out of a jar.\n"
+	.string "Even my bolognese. The cheek!\p"
 	.string "Why don't you pop over and\n"
 	.string "say hello?$"
 
@@ -832,7 +834,7 @@ LittlerootTown_ProfessorBirchsLab_Text_MayGotPokedexTooTakeThese:
 	.string "too.\p"
 	.string "He gave me one to “help his research.”\p"
 	.string "Fine. I'll use it to find POKéMON that\n"
-	.string "live far away from all this pasta.\p"
+	.string "live far away from all this sauce.\p"
 	.string "Here. These are for you. My mom says I\n"
 	.string "have to be nice to the neighbors.$"
 
@@ -842,7 +844,7 @@ LittlerootTown_ProfessorBirchsLab_Text_CatchCutePokemonWithPokeBalls:
 	.string "The stronger my team, the sooner I'm\n"
 	.string "CHAMPION.\p"
 	.string "And the sooner I'm CHAMPION, the\n"
-	.string "sooner PASTALIA is pasta-free.$"
+	.string "sooner PASTALIA is sauce-free.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_OhYourBagsFull:
 	.string "Oh? Your BAG's full.$"
@@ -850,14 +852,16 @@ LittlerootTown_ProfessorBirchsLab_Text_OhYourBagsFull:
 LittlerootTown_ProfessorBirchsLab_Text_MayWhereShouldIGoNext:
 	.string "BRIAN: Where should I go next…\p"
 	.string "Somewhere that doesn't smell like\n"
-	.string "garlic.$"
+	.string "simmering sauce.\p"
+	.string "It's not even simmering. It's from a\n"
+	.string "jar. They just heat it up.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BrendanGotPokedexTooTakeThese:
 	.string "BRIAN: Huh… So he gave you a POKéDEX,\n"
 	.string "too.\p"
 	.string "He gave me one to “help his research.”\p"
 	.string "Fine. I'll use it to find POKéMON that\n"
-	.string "live far away from all this pasta.\p"
+	.string "live far away from all this sauce.\p"
 	.string "Here. These are for you. My mom says I\n"
 	.string "have to be nice to the neighbors.$"
 
@@ -867,7 +871,7 @@ LittlerootTown_ProfessorBirchsLab_Text_CatchCoolPokemonWithPokeBalls:
 	.string "The stronger my team, the sooner I'm\n"
 	.string "CHAMPION.\p"
 	.string "And the sooner I'm CHAMPION, the\n"
-	.string "sooner PASTALIA is pasta-free.$"
+	.string "sooner PASTALIA is sauce-free.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_HeyYourBagsFull:
 	.string "Hey, your BAG's full.$"
@@ -875,7 +879,9 @@ LittlerootTown_ProfessorBirchsLab_Text_HeyYourBagsFull:
 LittlerootTown_ProfessorBirchsLab_Text_BrendanWhereShouldIGoNext:
 	.string "BRIAN: Where should I go next…\p"
 	.string "Somewhere that doesn't smell like\n"
-	.string "garlic.$"
+	.string "simmering sauce.\p"
+	.string "It's not even simmering. It's from a\n"
+	.string "jar. They just heat it up.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_SeriousLookingMachine:
 	.string "It's a serious-looking machine.\n"
@@ -907,7 +913,7 @@ LittlerootTown_ProfessorBirchsLab_Text_MayUpgradeSoCool:
 	.string "BRIAN: Don't get excited. I only came\n"
 	.string "back because the PROF says there are\l"
 	.string "POKéMON from other regions.\p"
-	.string "Regions with NO pasta!\p"
+	.string "Regions with NO sauce!\p"
 	.string "If you find out where they're from,\n"
 	.string "tell me first. I'm moving there.$"
 
@@ -915,7 +921,7 @@ LittlerootTown_ProfessorBirchsLab_Text_BrendanYouCanThankMe:
 	.string "BRIAN: Don't get excited. I only came\n"
 	.string "back because the PROF says there are\l"
 	.string "POKéMON from other regions.\p"
-	.string "Regions with NO pasta!\p"
+	.string "Regions with NO sauce!\p"
 	.string "If you find out where they're from,\n"
 	.string "tell me first. I'm moving there.$"
 
@@ -940,14 +946,16 @@ LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaiting2:
 LittlerootTown_ProfessorBirchsLab_Text_MayTakeBreakFromFieldwork:
 	.string "BRIAN: The PROF asked me to help out\n"
 	.string "here for a while.\p"
-	.string "He keeps offering me lasagna. I keep\n"
-	.string "saying no.$"
+	.string "He keeps offering me his “homemade”\n"
+	.string "bolognese.\p"
+	.string "It's jar sauce. I can tell.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BrendanTakeBreakFromFieldwork:
 	.string "BRIAN: The PROF asked me to help out\n"
 	.string "here for a while.\p"
-	.string "He keeps offering me lasagna. I keep\n"
-	.string "saying no.$"
+	.string "He keeps offering me his “homemade”\n"
+	.string "bolognese.\p"
+	.string "It's jar sauce. I can tell.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_CompletedDexChoosePokemon:
 	.string "PROF. ALAN: Ah, {PLAYER}{KUN}!\n"
@@ -1099,7 +1107,7 @@ LittlerootTown_ProfessorBirchsLab_Text_AlanDeclined:
 
 LittlerootTown_ProfessorBirchsLab_Text_BrianRootsAgainstAlan:
 	.string "BRIAN: Sorry in advance, PROF., but\n"
-	.string "I'm rooting for whoever hates pasta.$"
+	.string "I'm rooting for whoever hates sauce.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_AlanDefeat:
 	.string "Good heavens, well played!\n"
@@ -1122,16 +1130,16 @@ LittlerootTown_ProfessorBirchsLab_Text_DontHaveAnyRoomForPokemon:
 
 LittlerootTown_ProfessorBirchsLab_Text_MayWhatNextImStayingHere:
 	.string "BRIAN: So you beat me. Fine.\p"
-	.string "But I'm still not eating the pasta. I'm\n"
-	.string "getting wings.\p"
+	.string "But I'm still not eating the sauce. I'm\n"
+	.string "getting wings. Dry.\p"
 	.string "What now, {PLAYER}? Fill the NATIONAL\n"
 	.string "POKéDEX?\p"
 	.string "Me, I'm training. I'll be back.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BrendanPreferCollectingSlowly:
 	.string "BRIAN: So you beat me. Fine.\p"
-	.string "But I'm still not eating the pasta. I'm\n"
-	.string "getting wings.\p"
+	.string "But I'm still not eating the sauce. I'm\n"
+	.string "getting wings. Dry.\p"
 	.string "What now, {PLAYER}? Fill the NATIONAL\n"
 	.string "POKéDEX?\p"
 	.string "Me, I'm training. I'll be back.$"
@@ -1139,14 +1147,14 @@ LittlerootTown_ProfessorBirchsLab_Text_BrendanPreferCollectingSlowly:
 LittlerootTown_ProfessorBirchsLab_Text_MayHaveYouGoneToBattleFrontier:
 	.string "BRIAN: Hey, {PLAYER}! Have you been to\n"
 	.string "the BUCATINI FRONTIER?\p"
-	.string "I hear the snack bar only sells\n"
-	.string "breadsticks.$"
+	.string "I hear the snack bar puts marinara\n"
+	.string "on everything. Jar marinara.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BrendanHaveYouGoneToBattleFrontier:
 	.string "BRIAN: Hey, {PLAYER}! Have you been to\n"
 	.string "the BUCATINI FRONTIER?\p"
-	.string "I hear the snack bar only sells\n"
-	.string "breadsticks.$"
+	.string "I hear the snack bar puts marinara\n"
+	.string "on everything. Jar marinara.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_ScottAboardSSTidalCall:
 	.string "… … … … … …\n"

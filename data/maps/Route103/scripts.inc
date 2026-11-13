@@ -289,7 +289,8 @@ Route103_EventScript_Isabelle::
 Route103_Text_MayRoute103Pokemon:
 	.string "BRIAN: Let's see… The POKéMON on ROUTE\n"
 	.string "103 include…\p"
-	.string "Ugh. Even the grass smells like garlic.$"
+	.string "Ugh. Even the grass smells like\n"
+	.string "marinara.$"
 
 Route103_Text_MayLetsBattle:
 	.string "Hey, it's {PLAYER}!\p"
@@ -314,7 +315,8 @@ Route103_Text_MayTimeToHeadBack:
 Route103_Text_BrendanRoute103Pokemon:
 	.string "BRIAN: Let's see… The POKéMON on ROUTE\n"
 	.string "103 include…\p"
-	.string "Ugh. Even the grass smells like garlic.$"
+	.string "Ugh. Even the grass smells like\n"
+	.string "marinara.$"
 
 Route103_Text_BrendanLetsBattle:
 	.string "Hey, it's {PLAYER}!\p"

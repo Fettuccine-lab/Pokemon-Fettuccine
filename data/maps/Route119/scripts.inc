@@ -478,11 +478,12 @@ Route119_EventScript_ScottWonAtFortreeGymCall::
 
 Route119_Text_MayIntro:
 	.string "BRIAN: {PLAYER}! There you are!\p"
-	.string "Everywhere I go, it's pasta, pasta,\n"
-	.string "PASTA!\p"
+	.string "Everywhere I go, it's sauce, sauce,\n"
+	.string "SAUCE! Red sauce! White sauce!\p"
+	.string "It's ALL JAR SAUCE!\p"
 	.string "And everywhere I go, there's YOU!\p"
 	.string "You're the only thing standing between\n"
-	.string "me and a pasta-free PASTALIA!\p"
+	.string "me and a sauce-free PASTALIA!\p"
 	.string "Battle me! Now!$"
 
 Route119_Text_MayDefeat:
@@ -504,11 +505,12 @@ Route119_Text_MayExplainFly:
 
 Route119_Text_BrendanIntro:
 	.string "BRIAN: {PLAYER}! There you are!\p"
-	.string "Everywhere I go, it's pasta, pasta,\n"
-	.string "PASTA!\p"
+	.string "Everywhere I go, it's sauce, sauce,\n"
+	.string "SAUCE! Red sauce! White sauce!\p"
+	.string "It's ALL JAR SAUCE!\p"
 	.string "And everywhere I go, there's YOU!\p"
 	.string "You're the only thing standing between\n"
-	.string "me and a pasta-free PASTALIA!\p"
+	.string "me and a sauce-free PASTALIA!\p"
 	.string "Battle me! Now!$"
 
 Route119_Text_BrendanDefeat:

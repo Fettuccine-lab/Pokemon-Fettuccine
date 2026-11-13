@@ -1122,14 +1122,16 @@ Route104_Text_RegisteredMay:
 
 Route104_Text_MayHowsYourPokedex:
 	.string "BRIAN: Do you know what ROTINI is?\p"
-	.string "It's a PASTA. A SPIRAL one. They named\n"
-	.string "a whole CITY after it, just up the road.$"
+	.string "It's a SPIRAL pasta. Know why it's a\n"
+	.string "spiral? To hold more SAUCE.\p"
+	.string "They named a whole CITY after it, just\n"
+	.string "up the road.$"
 
 Route104_Text_MayMinesDecentLetsBattle:
 	.string "When I'm CHAMPION, I'm renaming it.\n"
 	.string "MAPLEBORO.\p"
-	.string "And every pasta shop becomes a wing\n"
-	.string "place.\p"
+	.string "And every jar of sauce goes in the\n"
+	.string "recycling.\p"
 	.string "Now, how about a battle?$"
 
 Route104_Text_MayHaventRaisedPokemon:
@@ -1145,15 +1147,15 @@ Route104_Text_MayIntro:
 
 Route104_Text_MayDefeat:
 	.string "What?! Lost again…\p"
-	.string "Right next to a city named after\n"
-	.string "NOODLES.$"
+	.string "Right next to a city built to hold\n"
+	.string "SAUCE.$"
 
 Route104_Text_MayPostBattle:
 	.string "BRIAN: You know MR. BRINEY? That's his\n"
 	.string "cottage.\p"
 	.string "He was once a great sailor.\p"
 	.string "He's probably the only person in\n"
-	.string "PASTALIA who doesn't talk about pasta\l"
+	.string "PASTALIA who doesn't talk about sauce\l"
 	.string "all day.$"
 
 Route104_Text_BrendanWeShouldRegister:
@@ -1169,14 +1171,16 @@ Route104_Text_RegisteredBrendan:
 
 Route104_Text_BrendanHowsYourPokedex:
 	.string "BRIAN: Do you know what ROTINI is?\p"
-	.string "It's a PASTA. A SPIRAL one. They named\n"
-	.string "a whole CITY after it, just up the road.$"
+	.string "It's a SPIRAL pasta. Know why it's a\n"
+	.string "spiral? To hold more SAUCE.\p"
+	.string "They named a whole CITY after it, just\n"
+	.string "up the road.$"
 
 Route104_Text_BrendanDoingGreatLetsBattle:
 	.string "When I'm CHAMPION, I'm renaming it.\n"
 	.string "MAPLEBORO.\p"
-	.string "And every pasta shop becomes a wing\n"
-	.string "place.\p"
+	.string "And every jar of sauce goes in the\n"
+	.string "recycling.\p"
 	.string "Now, how about a battle?$"
 
 Route104_Text_BrendanNoConfidence:
@@ -1192,13 +1196,13 @@ Route104_Text_BrendanIntro:
 
 Route104_Text_BrendanDefeat:
 	.string "What?! Lost again…\p"
-	.string "Right next to a city named after\n"
-	.string "NOODLES.$"
+	.string "Right next to a city built to hold\n"
+	.string "SAUCE.$"
 
 Route104_Text_BrendanPostBattle:
 	.string "BRIAN: You know MR. BRINEY? That's his\n"
 	.string "cottage.\p"
 	.string "He was once a great sailor.\p"
 	.string "He's probably the only person in\n"
-	.string "PASTALIA who doesn't talk about pasta\l"
+	.string "PASTALIA who doesn't talk about sauce\l"
 	.string "all day.$"

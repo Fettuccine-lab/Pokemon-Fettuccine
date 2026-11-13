@@ -111,7 +111,7 @@ PetalburgCity_WallysHouse_Text_WallyLeftWithoutTelling:
 	.string "I want you to keep this a secret from\n"
 	.string "my husband…\p"
 	.string "I heard there's a boy from CANADA who\n"
-	.string "wants to ban pasta.\p"
+	.string "wants to ban sauce.\p"
 	.string "Can you imagine? In PASTALIA!\p"
 	.string "If my husband finds out, he'll never\n"
 	.string "sleep again.$"

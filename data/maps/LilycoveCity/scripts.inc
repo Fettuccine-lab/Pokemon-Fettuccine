@@ -410,8 +410,8 @@ LilycoveCity_EventScript_DontKnowAboutBerryBlender::
 LilycoveCity_Text_MayShoppingLetsBattle:
 	.string "BRIAN: Oh. It's you.\p"
 	.string "I'm shopping for my mom. This whole\n"
-	.string "DEPARTMENT STORE, and not one bottle\l"
-	.string "of maple syrup.\p"
+	.string "DEPARTMENT STORE has forty kinds of\l"
+	.string "jar sauce and not one maple syrup.\p"
 	.string "My DUCKLETT just evolved. Look at\n"
 	.string "those colors. A real CANADA goose!\p"
 	.string "Want to see how strong my team's\n"
@@ -437,7 +437,8 @@ LilycoveCity_Text_MayDefeat:
 LilycoveCity_Text_MayGoingBackToLittleroot:
 	.string "BRIAN: I'm going back to LIL RAGU for a\n"
 	.string "bit. My mom misses me.\p"
-	.string "She'll make lasagna. I'll pretend I'm\n"
+	.string "She'll make lasagna and swear the\n"
+	.string "sauce is homemade. I'll pretend I'm\l"
 	.string "not hungry.\p"
 	.string "…Unless she makes wings.$"
 
@@ -457,14 +458,14 @@ LilycoveCity_Text_MayYouGoingToBattleFrontier:
 	.string "So, {PLAYER}, what now? The BUCATINI\n"
 	.string "FRONTIER?\p"
 	.string "You beat me at the LEAGUE. Fine.\p"
-	.string "But I'm still not eating the pasta. See\n"
+	.string "But I'm still not eating the sauce. See\n"
 	.string "you!$"
 
 LilycoveCity_Text_BrendanShoppingLetsBattle:
 	.string "BRIAN: Oh. It's you.\p"
 	.string "I'm shopping for my mom. This whole\n"
-	.string "DEPARTMENT STORE, and not one bottle\l"
-	.string "of maple syrup.\p"
+	.string "DEPARTMENT STORE has forty kinds of\l"
+	.string "jar sauce and not one maple syrup.\p"
 	.string "My DUCKLETT just evolved. Look at\n"
 	.string "those colors. A real CANADA goose!\p"
 	.string "Want to see how strong my team's\n"
@@ -490,7 +491,8 @@ LilycoveCity_Text_BrendanDefeat:
 LilycoveCity_Text_BrendanGoingBackToLittleroot:
 	.string "BRIAN: I'm going back to LIL RAGU for a\n"
 	.string "bit. My mom misses me.\p"
-	.string "She'll make lasagna. I'll pretend I'm\n"
+	.string "She'll make lasagna and swear the\n"
+	.string "sauce is homemade. I'll pretend I'm\l"
 	.string "not hungry.\p"
 	.string "…Unless she makes wings.$"
 
@@ -510,7 +512,7 @@ LilycoveCity_Text_BrendanYouGoingToBattleFrontier:
 	.string "So, {PLAYER}, what now? The BUCATINI\n"
 	.string "FRONTIER?\p"
 	.string "You beat me at the LEAGUE. Fine.\p"
-	.string "But I'm still not eating the pasta. See\n"
+	.string "But I'm still not eating the sauce. See\n"
 	.string "you!$"
 
 LilycoveCity_Text_MovedLootIntoHideoutToday:

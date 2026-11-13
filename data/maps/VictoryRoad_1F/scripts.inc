@@ -143,7 +143,7 @@ VictoryRoad_1F_Text_WallyNotGoingToLoseAnymore:
 	.string "My ABOMASNOW and I trained in the snow\n"
 	.string "for this.\p"
 	.string "You're the last thing between me and a\n"
-	.string "pasta-free PASTALIA.\p"
+	.string "sauce-free PASTALIA.\p"
 	.string "Here I come!$"
 
 VictoryRoad_1F_Text_WallyEntranceDefeat:

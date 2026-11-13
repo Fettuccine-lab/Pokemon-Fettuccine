@@ -1139,12 +1139,12 @@ RustboroCity_Text_RegisteredMay:
 
 RustboroCity_Text_MayPassedBrineyWantToBattle:
 	.string "BRIAN: Do you know what ROTINI is?\p"
-	.string "It's a PASTA. A SPIRAL one. They named\n"
-	.string "a whole CITY after it.\p"
+	.string "It's a SPIRAL pasta. Know why it's a\n"
+	.string "spiral? To hold more SAUCE.\p"
+	.string "They named a whole CITY after a sauce\n"
+	.string "delivery system.\p"
 	.string "When I'm CHAMPION, the first thing I'm\n"
 	.string "doing is renaming it. MAPLEBORO.\p"
-	.string "And every pasta shop becomes a wing\n"
-	.string "place.\p"
 	.string "Now, how about a battle?$"
 
 RustboroCity_Text_MayOhHaventRaisedPokemonEnough:
@@ -1160,7 +1160,7 @@ RustboroCity_Text_MayImNotGoingToLose:
 
 RustboroCity_Text_MayDefeat:
 	.string "What?! Lost again…\p"
-	.string "In a city named after NOODLES.$"
+	.string "In a city built to hold SAUCE.$"
 
 RustboroCity_Text_MayMrBrineyHint:
 	.string "BRIAN: By the way, you know MR. BRINEY?\n"
@@ -1168,7 +1168,7 @@ RustboroCity_Text_MayMrBrineyHint:
 	.string "You just moved here, so you might not\n"
 	.string "know, but he was once a great sailor.\p"
 	.string "He's probably the only person in\n"
-	.string "PASTALIA who doesn't talk about pasta\l"
+	.string "PASTALIA who doesn't talk about sauce\l"
 	.string "all day.$"
 
 RustboroCity_Text_BrendanHiLetsRegister:
@@ -1185,12 +1185,12 @@ RustboroCity_Text_RegisteredBrendan:
 
 RustboroCity_Text_BrendanPassedBrineyWantToBattle:
 	.string "BRIAN: Do you know what ROTINI is?\p"
-	.string "It's a PASTA. A SPIRAL one. They named\n"
-	.string "a whole CITY after it.\p"
+	.string "It's a SPIRAL pasta. Know why it's a\n"
+	.string "spiral? To hold more SAUCE.\p"
+	.string "They named a whole CITY after a sauce\n"
+	.string "delivery system.\p"
 	.string "When I'm CHAMPION, the first thing I'm\n"
 	.string "doing is renaming it. MAPLEBORO.\p"
-	.string "And every pasta shop becomes a wing\n"
-	.string "place.\p"
 	.string "Now, how about a battle?$"
 
 RustboroCity_Text_BrendanNoConfidenceInPokemon:
@@ -1206,7 +1206,7 @@ RustboroCity_Text_BrendanIWontGoEasy:
 
 RustboroCity_Text_BrendanDefeat:
 	.string "What?! Lost again…\p"
-	.string "In a city named after NOODLES.$"
+	.string "In a city built to hold SAUCE.$"
 
 RustboroCity_Text_BrendanMrBrineyHint:
 	.string "BRIAN: By the way, you know MR. BRINEY?\n"
@@ -1214,7 +1214,7 @@ RustboroCity_Text_BrendanMrBrineyHint:
 	.string "You just moved here, so you might not\n"
 	.string "know, but he was once a great sailor.\p"
 	.string "He's probably the only person in\n"
-	.string "PASTALIA who doesn't talk about pasta\l"
+	.string "PASTALIA who doesn't talk about sauce\l"
 	.string "all day.$"
 
 RustboroCity_Text_TunnelNearingCompletion:

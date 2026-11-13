@@ -488,7 +488,7 @@ MauvilleCity_Text_WallyDefeat:
 MauvilleCity_Text_WallyIllGoBackToVerdanturf:
 	.string "BRIAN: First the GYM, now you.\p"
 	.string "This whole city smells like cheese\n"
-	.string "sauce.$"
+	.string "sauce. From a JAR.$"
 
 MauvilleCity_Text_ThankYouNotEnoughToBattle:
 	.string "BRIAN: I'm training until I can beat\n"

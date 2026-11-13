@@ -1183,8 +1183,8 @@ PetalburgCity_Gym_Text_IllLoanYouMyZigzagoon:
 	.string "TRAINER should learn.$"
 
 PetalburgCity_Gym_Text_WallyThankYouAndDadGivesPokeBall:
-	.string "BRIAN: Fine. As long as it's not an\n"
-	.string "Italian POKéMON.\p"
+	.string "BRIAN: Fine. As long as it doesn't\n"
+	.string "come with sauce.\p"
 	.string "DAD: Hm. I'll give you a POKé BALL, too.\n"
 	.string "Go for it!\p"
 	.string "BRIAN received a POKé BALL!$"
