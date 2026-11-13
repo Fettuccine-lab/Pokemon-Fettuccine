@@ -122,6 +122,7 @@ SootopolisCity_Gym_1F_EventScript_JuanDefeated::
 	closemessage
 	delay 30
 	setflag FLAG_ENABLE_JUAN_MATCH_CALL
+	call SootopolisCity_Gym_1F_EventScript_TakeOffBattleDuds
 	release
 	end
 
@@ -146,9 +147,15 @@ SootopolisCity_Gym_1F_EventScript_GoGetFortreeBadge::
 	end
 
 SootopolisCity_Gym_1F_EventScript_JuanRematch::
+	special HasEnoughMonsForDoubleBattle
+	goto_if_ne VAR_RESULT, PLAYER_HAS_TWO_USABLE_MONS, SootopolisCity_Gym_1F_EventScript_JuanRematchBattle  @ no suit-up if he'll just send you away
 	call_if_eq VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_SCOTT, SootopolisCity_Gym_1F_EventScript_SuitUpForRematch
+SootopolisCity_Gym_1F_EventScript_JuanRematchBattle::
 	trainerbattle_rematch_double TRAINER_JUAN_1, SootopolisCity_Gym_1F_Text_JuanPreRematch, SootopolisCity_Gym_1F_Text_JuanRematchDefeat, SootopolisCity_Gym_1F_Text_JuanRematchNeedTwoMons
-	msgbox SootopolisCity_Gym_1F_Text_JuanPostRematch, MSGBOX_AUTOCLOSE
+	msgbox SootopolisCity_Gym_1F_Text_JuanPostRematch, MSGBOX_DEFAULT
+	closemessage
+	call SootopolisCity_Gym_1F_EventScript_TakeOffBattleDuds
+	release
 	end
 
 SootopolisCity_Gym_1F_EventScript_SuitUpForRematch::
@@ -158,21 +165,34 @@ SootopolisCity_Gym_1F_EventScript_SuitUpForRematch::
 	return
 
 @ The spin: speeds up, swaps to the BATTLE DUDS sprite mid-spin, then slows down.
-@ VAR_OBJ_GFX_ID_0 keeps him in the DUDS after the battle until the player leaves.
+@ VAR_OBJ_GFX_ID_0 keeps him in the DUDS when the map reloads after the battle.
 SootopolisCity_Gym_1F_EventScript_PutOnBattleDuds::
-	playse SE_M_DOUBLE_TEAM
-	applymovement LOCALID_SOOTOPOLIS_GYM_JOE_Q, SootopolisCity_Gym_1F_Movement_SpinFaster
-	waitmovement 0
-	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_JUAN
-	setvar VAR_0x8000, LOCALID_SOOTOPOLIS_GYM_JOE_Q
 	setvar VAR_0x8001, OBJ_EVENT_GFX_JUAN
-	special SetObjectEventGraphicsByLocalId
-	playse SE_SHINY
-	applymovement LOCALID_SOOTOPOLIS_GYM_JOE_Q, SootopolisCity_Gym_1F_Movement_SpinSlower
-	waitmovement 0
+	call SootopolisCity_Gym_1F_EventScript_SpinIntoOutfit
 	faceplayer
 	playse SE_M_SWAGGER
 	applymovement LOCALID_SOOTOPOLIS_GYM_JOE_Q, Common_Movement_ExclamationMark
+	waitmovement 0
+	return
+
+@ After a battle: spins back into his street clothes (Scott's sprite).
+@ The spin ends facing down, toward the player.
+SootopolisCity_Gym_1F_EventScript_TakeOffBattleDuds::
+	setvar VAR_0x8001, OBJ_EVENT_GFX_SCOTT
+	call SootopolisCity_Gym_1F_EventScript_SpinIntoOutfit
+	msgbox SootopolisCity_Gym_1F_Text_BackInStreetClothes, MSGBOX_DEFAULT
+	return
+
+@ VAR_0x8001 = the outfit to change into.
+SootopolisCity_Gym_1F_EventScript_SpinIntoOutfit::
+	playse SE_M_DOUBLE_TEAM
+	applymovement LOCALID_SOOTOPOLIS_GYM_JOE_Q, SootopolisCity_Gym_1F_Movement_SpinFaster
+	waitmovement 0
+	copyvar VAR_OBJ_GFX_ID_0, VAR_0x8001
+	setvar VAR_0x8000, LOCALID_SOOTOPOLIS_GYM_JOE_Q
+	special SetObjectEventGraphicsByLocalId
+	playse SE_SHINY
+	applymovement LOCALID_SOOTOPOLIS_GYM_JOE_Q, SootopolisCity_Gym_1F_Movement_SpinSlower
 	waitmovement 0
 	return
 
@@ -336,6 +356,11 @@ SootopolisCity_Gym_1F_Text_JoeQSuitUpRematch:
 	.string "Hold that thought. I can't battle\n"
 	.string "in my street clothes.\p"
 	.string "BATTLE DUDS, go!$"
+
+SootopolisCity_Gym_1F_Text_BackInStreetClothes:
+	.string "JOE Q: Ahh, much better.\p"
+	.string "Those BATTLE DUDS were starting\n"
+	.string "to pinch.$"
 
 SootopolisCity_Gym_1F_Text_JuanIntro:
 	.string "JOE Q: Ta-da!\n"
