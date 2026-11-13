@@ -433,7 +433,7 @@ All built into pokeemerald-expansion; the work is deciding where things appear.
 - **All Pokémon through Gen IX.** **Decided:** every Gen 3 Pokémon stays where it is in Emerald.
   - **Decided:** every non-legendary Pokémon is catchable (not a curated set); **no time-of-day encounters** (changed Oct 2026; every Pokémon in an area appears at all hours); some legendaries become one-off encounters (see "Legendary one-off encounters"); the Pokédex keeps the **National Dex order**.
   - **Done: the Pokédex is the National Dex from the moment Alan gives it** (in Emerald it unlocked after the Hall of Fame). See Alan's post-game scene for the follow-up.
-  - **Done (Oct 2026): encounters don't depend on the time of day.** Each area's four time tables were merged into one. **Decided:** no wild Pokémon is rarer than 4%; common ones can be higher. Grass, surfing, Rock Smash and the Super Rod have 25 slots at 4% each, the Old Rod 10 slots at 10% and the Good Rod 20 slots at 5%, so a Pokémon's chance is how many slots it fills (edit rates in Porymap by adding or removing copies). Rates came from each Pokémon's average over the four times, reviewed by Joe; he hand-set the surfing, fishing and Rock Smash tables on Routes 102–104, 111, 114, 117, 118 and 120. The build fails on purpose if the slot percentages stop being even. Lures no longer favor rare slots (there are none) but still raise levels.
+  - **Done (Oct 2026): encounters don't depend on the time of day.** Each area's four time tables were merged into one. **Decided:** no wild Pokémon is rarer than 4%; common ones can be higher. Grass, surfing, Rock Smash and the Super Rod have 25 slots at 4% each, the Old Rod 10 slots at 10% and the Good Rod 20 slots at 5%, so a Pokémon's chance is how many slots it fills (edit rates in Porymap by adding or removing copies). Rates came from each Pokémon's average over the four times, reviewed by Joe; he hand-set the surfing, fishing and Rock Smash tables on Routes 102–104, 111, 114, 117, 118 and 120. The build fails on purpose if the slot percentages stop being even. Lures no longer favor rare slots (there are none) but still raise levels. **Done (Nov 2026):** the time-of-day setting is off (`OW_TIME_OF_DAY_ENCOUNTERS`), so the Pokédex area page shows every location at once and no longer has the Up/Down time switcher (it used to look empty except in the morning).
   - **Done: the Johto starters** (Nov 2026), on Route 117 at 4% each: Chikorita and Cyndaquil in the grass (Lv 14), Totodile surfing (Lv 15–25). Chikorita and Totodile let Meganium and Feraligatr use their Z-A Megas.
   - **Done:** the first stage of 21 lines that were only placed evolved (Litten, Popplio, Sprigatito and others; Chimchar's slot went to Scorbunny in Nov 2026) now appears in an early area.
   - **Done: Feebas evolves into Milotic at Lv 35;** the Prism Scale still works.
@@ -521,6 +521,8 @@ Not included for now: the other legendaries, mythicals, Ultra Beasts and Paradox
   - **Done: Beldum is offered by Steven (Sam) with HM Dive** after the Space Center, instead of after the Hall of Fame.
   - **Done: trade evolutions without trading.** Two Linking Cords (Routes 110 and 123) evolve Kadabra, Haunter and other trade Pokémon. `I_USE_EVO_HELD_ITEMS_FROM_BAG` is on, so held-item trade evolutions (Metal Coat, Dragon Scale, Electirizer…) work by using the item from the bag. Two Metal Coats are placed (New Macaroville, Route 121) for Steelix and Scizor.
   - **Done: plain trade evolutions are now level-up evolutions.** Kadabra Lv 36; Machoke, Graveler (both forms), Haunter, Boldore, Gurdurr Lv 40; Phantump and all Pumpkaboo sizes Lv 35; Karrablast and Shelmet Lv 30 (no partner needed). The Linking Cord still works on them as an early shortcut. **Decided:** held-item trade evolutions stay as they are (use the item from the bag).
+  - **Done (Nov 2026): no friendship evolutions.** Every friendship evolution is now a level-up, with no day/night condition: Pichu, Cleffa, Igglybuff, Azurill Lv 12; Togepi, Budew Lv 15; Chingling Lv 20; Riolu Lv 25; Alolan Meowth Lv 28; Munchlax, Buneary, Woobat, Swadloon, Snom Lv 30; Golbat Lv 35; Chansey, Type: Null Lv 40 (Type: Null isn't in the game). Eevee uses stones instead: **Sun Stone → Espeon, Moon Stone → Umbreon, Shiny Stone → Sylveon** (all sold at the evolution counter). **Happiny evolves at Lv 12** with no Oval Stone or time of day. Leafeon and Glaceon are unchanged (Leaf/Ice Stone, or leveling up in Petalburg Woods / Shoal Cave's ice room).
+- **Done (Nov 2026): Snow Warning summons Hail, not Snow** (`B_SNOW_WARNING` set to Gen 8). Hail does chip damage to non-Ice Pokémon each turn; Gen 9 Snow did no damage and boosted Ice types' Defense instead. The Hail and Snowscape moves are unchanged.
 
 ### Pokémon added for Mega Evolution
 
@@ -590,6 +592,7 @@ Mostly quality-of-life config options. Feature names change between expansion ve
 - **Done: SELECT to switch party members.** Pressing SELECT on a Pokémon in the party menu opened from the Start menu goes straight to "Move to where?", skipping the action list. It follows the same rules as the SWITCH option, so it does nothing on CANCEL, with only one Pokémon, in the Battle Pike, or in battle.
 - **Done: modern Exp. Share, in the bag from the start and on by default.** It's a key item that gives the whole team 50% Exp. and can be switched off from the bag (`I_EXP_SHARE_ITEM` is `GEN_6`, using `FLAG_EXP_SHARE_ON`). Pokémon that fought still get full Exp. Mr. Garlic now gives an **Amulet Coin** for delivering the letter to Sam, and the lottery's 3-digit prize is now a **Lucky Egg**. Old saves get the Exp. Share, switched on, from Nurse Joy.
 - **PC access anywhere via a bag item.** A key item that opens the storage system. **Done (built in):** the expansion's Pkmn Box Link. Alan gives it with the starter in his lab.
+- **Done (Nov 2026): no "add to party?" prompt when catching with a full party.** The new catch goes straight to the PC, as in Emerald (`B_CATCH_SWAP_INTO_PARTY` set to Gen 6). The Gen 7 swap prompt had a bug that copied the first party Pokémon over the whole party; the Box Link covers the same need.
 - **"Move" as the default PC option.** **Done (built in):** MOVE POKéMON is the first PC menu option, with the cursor on it, in every PC and the Box Link. **Decided:** keep the menu rather than skipping straight into Move mode, so MOVE ITEMS stays available.
 
 ## Secret minigame: Pocket Knight Adventures
@@ -715,6 +718,7 @@ A yes/no choice at New Game that randomizes Pokémon for that save file. It runs
 | National Dex from the start | Script | Done |
 | Reusable TMs | Config toggle | Done |
 | Plain trade evolutions become level-up | Species data | Done |
+| No friendship evolutions (level-ups; Eevee by stone; Happiny Lv 12) | Species data | Done, needs playtesting |
 | Wonder Trade (right-hand counter, every Pokémon Center) | Custom | Done |
 | Retrotopia promo office (Ditalinford Hall) | Dialogue | Done |
 | Gouda Grotto (Granite Cave) | Text, Town Map | Done |
@@ -726,6 +730,9 @@ A yes/no choice at New Game that randomizes Pokémon for that save file. It runs
 | MEDICINE bag pocket | Custom | Done |
 | Pokédex search by typed name | Custom | Done |
 | Wild encounters without time of day (4% minimum) | Data plus engine change | Done |
+| Pokédex area page without time of day | Config toggle | Done, needs playtesting |
+| No catch-to-party swap prompt (fixes party duplication bug) | Config toggle | Done, needs playtesting |
+| Snow Warning summons Hail | Config toggle | Done, needs playtesting |
 | Caught Pokémon fully healed | Custom | Done |
 | No random trainer PokéNav calls | Custom | Done |
 | Peperoncino Path (Fiery Path) | Text | Done |
