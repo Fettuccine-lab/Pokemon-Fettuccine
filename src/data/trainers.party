@@ -4845,13 +4845,13 @@ Items: Hyper Potion / Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
-Primarina
+Palafin-Hero
 Level: 41
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Sparkling Aria
-- Moonblast
-- Ice Beam
-- Protect
+- Jet Punch
+- Wave Crash
+- Close Combat
+- Bulk Up
 
 Lanturn
 Level: 41
@@ -15470,13 +15470,13 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Primarina
+Palafin-Hero
 Level: 46
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Sparkling Aria
-- Moonblast
-- Ice Beam
-- Protect
+- Jet Punch
+- Wave Crash
+- Close Combat
+- Bulk Up
 
 Lanturn
 Level: 46
@@ -15521,13 +15521,13 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Primarina
+Palafin-Hero
 Level: 50
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Sparkling Aria
-- Moonblast
-- Ice Beam
-- Protect
+- Jet Punch
+- Wave Crash
+- Close Combat
+- Bulk Up
 
 Lanturn
 Level: 51
@@ -15579,13 +15579,13 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Curse
 - Protect
 
-Primarina
+Palafin-Hero
 Level: 58
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Sparkling Aria
-- Moonblast
-- Ice Beam
-- Protect
+- Jet Punch
+- Wave Crash
+- Close Combat
+- Bulk Up
 
 Lanturn
 Level: 56
@@ -15638,13 +15638,13 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Curse
 - Protect
 
-Primarina
+Palafin-Hero
 Level: 63
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Sparkling Aria
-- Moonblast
-- Ice Beam
-- Protect
+- Jet Punch
+- Wave Crash
+- Close Combat
+- Bulk Up
 
 Lanturn
 Level: 61

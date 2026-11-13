@@ -435,7 +435,7 @@ Every Pokémon is from Gens 1–3 and has a cheese connection.
 | Norman | Normal | Oinkologne, Furret, Ambipom, **Mega Kangaskhan** | Bewear, Ursaluna, Snorlax |
 | Winona | Flying | Hawlucha, Corvisquire, Toucannon, Cramorant, **Mega Altaria** | Staraptor; **Mega Hawlucha** replaces Mega Altaria on rematch 2 only |
 | Tate & Liza | Psychic | Gothitelle, Reuniclus, Espeon, **Mega Alakazam** | Bronzong, Hatterene |
-| Joe Q (was Juan) | Water | Primarina, Lanturn, Golisopod, Barraskewda, **Mega Gyarados** | Dondozo; Mega alternates: **Golisopod** on rematches 1 and 3, **Gyarados** on 2 and 4 |
+| Joe Q (was Juan) | Water | Palafin (Hero Form, replaced Primarina Nov 2026), Lanturn, Golisopod, Barraskewda, **Mega Gyarados** | Dondozo; Mega alternates: **Golisopod** on rematches 1 and 3, **Gyarados** on 2 and 4 |
 - **Decided:** trainers' names are replaced with names from the Retrotopia community. Joe will supply the list; build this near the end.
 
 ## Pokémon, moves, items and abilities
