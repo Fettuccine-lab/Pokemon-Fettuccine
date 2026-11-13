@@ -649,3 +649,4 @@ gSpecials::
 	def_special IsPlayerNamedJoeF
 	def_special StartPocketKnightAdventures, waitstate=1
 	def_special CreateWonderTradePokemon
+	def_special SetObjectEventGraphicsByLocalId

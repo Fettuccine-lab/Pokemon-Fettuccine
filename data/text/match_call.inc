@@ -2225,37 +2225,34 @@ MatchCall_Text_TateLiza_PostRematch::
 	.string "LIZA: We could all battle again!$"
 
 MatchCall_Text_Juan_Preparing::
-	.string "JUAN: Hmm…\n"
-	.string "{PLAYER}{KUN}… Was it?\p"
-	.string "Our battle together--it brought\n"
-	.string "to me memories of when I first\l"
-	.string "encountered MIKE.\p"
-	.string "Perhaps you are a genius who may\n"
-	.string "yet surpass MIKE!$"
+	.string "JOE Q: Hi, hi, {PLAYER}{KUN}!\p"
+	.string "Our battle took me back to the day\n"
+	.string "I taught little MIKE how to battle.\p"
+	.string "Don't tell him I said this, but you\n"
+	.string "might be even better than he was!$"
 
 MatchCall_Text_Juan_PreparingPostGame::
-	.string "JUAN: Fufu… {PLAYER}{KUN}…\n"
-	.string "You've finally achieved your goal.\p"
-	.string "My eye for appraising talent wasn't\n"
-	.string "mistaken…\p"
-	.string "I wish for another chance to meet\n"
-	.string "you, for you have scaled the peak\l"
-	.string "of power and prestige.$"
+	.string "JOE Q: {PLAYER}{KUN}! You did it!\n"
+	.string "You're the CHAMPION!\p"
+	.string "My eye for talent never misses.\n"
+	.string "Well, hardly ever.\p"
+	.string "I'd love another round sometime.\n"
+	.string "The BATTLE DUDS are ready when\l"
+	.string "you are.$"
 
 MatchCall_Text_Juan_RematchReady::
-	.string "JUAN: Hoho… {PLAYER}{KUN}…\p"
-	.string "Our SUGOPOLIS GYM has finally\n"
-	.string "reopened.\p"
-	.string "If you wish to see me, you are\n"
-	.string "welcome to visit anytime.$"
+	.string "JOE Q: Hiya, {PLAYER}{KUN}!\p"
+	.string "The SUGOPOLIS GYM is open for\n"
+	.string "business again.\p"
+	.string "The BATTLE DUDS are pressed and\n"
+	.string "ready. Stop by anytime!$"
 
 MatchCall_Text_Juan_PostRematch::
-	.string "JUAN: {PLAYER}{KUN}…\p"
-	.string "Like the finest music, the battles\n"
-	.string "we wage together strike chords\l"
-	.string "of inspiration in my heart…\p"
-	.string "When I close my eyes, I see visions\n"
-	.string "of you soaring with the melody…$"
+	.string "JOE Q: {PLAYER}{KUN}…\p"
+	.string "Our battles are like a great radio\n"
+	.string "show. I never want them to end.\p"
+	.string "Next time, I might play on easy\n"
+	.string "mode. Don't tell anyone.$"
 
 MatchCall_Text_Sidney::
 	.string "SIDNEY: Yo, {PLAYER}!\p"
@@ -2645,6 +2642,8 @@ MatchCall_Text_Scott5::
 
 MatchCall_Text_Scott6::
 	.string "JOE Q: Hi, hi, {PLAYER}{KUN}!\p"
+	.string "My BATTLE DUDS are at the dry\n"
+	.string "cleaner's, thanks to you.\p"
 	.string "You know that you can challenge\n"
 	.string "the POKéMON LEAGUE when you've\l"
 	.string "collected all the GYM BADGES?\p"

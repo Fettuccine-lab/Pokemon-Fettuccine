@@ -5831,3 +5831,14 @@ bool8 CheckAddCoins(void)
     else
         return TRUE;
 }
+
+// Fettuccine: swaps an object's sprite on the spot (used for JOE Q putting on
+// his BATTLE DUDS in the SUGOPOLIS GYM).
+// VAR_0x8000 = local ID of the object, VAR_0x8001 = new OBJ_EVENT_GFX_* ID.
+void SetObjectEventGraphicsByLocalId(void)
+{
+    u8 objectEventId;
+
+    if (!TryGetObjectEventIdByLocalIdAndMap(gSpecialVar_0x8000, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, &objectEventId))
+        ObjectEventSetGraphicsId(&gObjectEvents[objectEventId], gSpecialVar_0x8001);
+}

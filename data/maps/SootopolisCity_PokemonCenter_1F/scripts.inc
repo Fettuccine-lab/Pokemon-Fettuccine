@@ -46,10 +46,10 @@ SootopolisCity_PokemonCenter_1F_EventScript_WomanNoLegendaries::
 SootopolisCity_PokemonCenter_1F_Text_WallaceToughestInHoenn:
 	.string "MIKE is rumored to be the toughest\n"
 	.string "TRAINER in the whole PASTALIA region.\p"
-	.string "This town's GYM is led by the TRAINER\n"
-	.string "who taught MIKE.\p"
+	.string "This town's GYM is led by MIKE's\n"
+	.string "big brother, who taught MIKE.\p"
 	.string "But the ELITE FOUR… They're said to be\n"
-	.string "even stronger than MIKE's mentor.\p"
+	.string "even stronger than MIKE's brother.\p"
 	.string "How strong could they be?$"
 
 SootopolisCity_PokemonCenter_1F_Text_EveryoneTakenRefuge:

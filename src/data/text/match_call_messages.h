@@ -358,10 +358,10 @@ const u8 gText_MatchCallMysticDuo_TateAndLiza_Pokemon[] = _("Always friendly POK
 const u8 gText_MatchCallMysticDuo_TateAndLiza_Intro1[] = _("Papa has trouble telling");
 const u8 gText_MatchCallMysticDuo_TateAndLiza_Intro2[] = _("the two of us apart!");
 
-const u8 gText_MatchCallDandyCharm_Juan_Strategy[] = _("I use splendid waterpower.");
-const u8 gText_MatchCallDandyCharm_Juan_Pokemon[] = _("POKéMON of elegance!");
-const u8 gText_MatchCallDandyCharm_Juan_Intro1[] = _("The adulation of beautiful");
-const u8 gText_MatchCallDandyCharm_Juan_Intro2[] = _("ladies fills me with energy!");
+const u8 gText_MatchCallDandyCharm_Juan_Strategy[] = _("I spin into my BATTLE DUDS.");
+const u8 gText_MatchCallDandyCharm_Juan_Pokemon[] = _("WATER POKéMON. Just cool!");
+const u8 gText_MatchCallDandyCharm_Juan_Intro1[] = _("Big Joe, live from the GYM!");
+const u8 gText_MatchCallDandyCharm_Juan_Intro2[] = _("MIKE learned it all from me.");
 
 const u8 gText_MatchCallEliteFour_Sidney_Strategy[] = _("Offense over defense!");
 const u8 gText_MatchCallEliteFour_Sidney_Pokemon[] = _("The DARK side's beauties.");

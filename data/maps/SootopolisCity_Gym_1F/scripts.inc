@@ -7,6 +7,7 @@ SootopolisCity_Gym_1F_MapScripts::
 
 SootopolisCity_Gym_1F_OnTransition:
 	setvar VAR_ICE_STEP_COUNT, 1
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_SCOTT  @ JOE Q arrives in his street clothes
 	end
 
 SootopolisCity_Gym_1F_OnResume:
@@ -79,8 +80,17 @@ SootopolisCity_Gym_1F_Movement_FallThroughIce:
 	set_invisible
 	step_end
 
+@ JOE Q (Scott's sprite) runs the GYM. Before a battle he spins into his
+@ BATTLE DUDS (Juan's sprite), which is also the sprite he battles with.
 SootopolisCity_Gym_1F_EventScript_Juan::
+	lock
+	faceplayer
+	goto_if_defeated TRAINER_JUAN_1, SootopolisCity_Gym_1F_EventScript_JuanAlreadyBeaten
+	msgbox SootopolisCity_Gym_1F_Text_JoeQGreeting, MSGBOX_DEFAULT
+	closemessage
+	call SootopolisCity_Gym_1F_EventScript_PutOnBattleDuds
 	trainerbattle_single TRAINER_JUAN_1, SootopolisCity_Gym_1F_Text_JuanIntro, SootopolisCity_Gym_1F_Text_JuanDefeat, SootopolisCity_Gym_1F_EventScript_JuanDefeated, NO_MUSIC
+SootopolisCity_Gym_1F_EventScript_JuanAlreadyBeaten::
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, SootopolisCity_Gym_1F_EventScript_JuanRematch
 	goto_if_unset FLAG_RECEIVED_TM_WATER_PULSE, SootopolisCity_Gym_1F_EventScript_GiveWaterPulse2
@@ -136,9 +146,113 @@ SootopolisCity_Gym_1F_EventScript_GoGetFortreeBadge::
 	end
 
 SootopolisCity_Gym_1F_EventScript_JuanRematch::
+	call_if_eq VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_SCOTT, SootopolisCity_Gym_1F_EventScript_SuitUpForRematch
 	trainerbattle_rematch_double TRAINER_JUAN_1, SootopolisCity_Gym_1F_Text_JuanPreRematch, SootopolisCity_Gym_1F_Text_JuanRematchDefeat, SootopolisCity_Gym_1F_Text_JuanRematchNeedTwoMons
 	msgbox SootopolisCity_Gym_1F_Text_JuanPostRematch, MSGBOX_AUTOCLOSE
 	end
+
+SootopolisCity_Gym_1F_EventScript_SuitUpForRematch::
+	msgbox SootopolisCity_Gym_1F_Text_JoeQSuitUpRematch, MSGBOX_DEFAULT
+	closemessage
+	call SootopolisCity_Gym_1F_EventScript_PutOnBattleDuds
+	return
+
+@ The spin: speeds up, swaps to the BATTLE DUDS sprite mid-spin, then slows down.
+@ VAR_OBJ_GFX_ID_0 keeps him in the DUDS after the battle until the player leaves.
+SootopolisCity_Gym_1F_EventScript_PutOnBattleDuds::
+	playse SE_M_DOUBLE_TEAM
+	applymovement LOCALID_SOOTOPOLIS_GYM_JOE_Q, SootopolisCity_Gym_1F_Movement_SpinFaster
+	waitmovement 0
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_JUAN
+	setvar VAR_0x8000, LOCALID_SOOTOPOLIS_GYM_JOE_Q
+	setvar VAR_0x8001, OBJ_EVENT_GFX_JUAN
+	special SetObjectEventGraphicsByLocalId
+	playse SE_SHINY
+	applymovement LOCALID_SOOTOPOLIS_GYM_JOE_Q, SootopolisCity_Gym_1F_Movement_SpinSlower
+	waitmovement 0
+	faceplayer
+	playse SE_M_SWAGGER
+	applymovement LOCALID_SOOTOPOLIS_GYM_JOE_Q, Common_Movement_ExclamationMark
+	waitmovement 0
+	return
+
+SootopolisCity_Gym_1F_Movement_SpinFaster:
+	face_left
+	delay_4
+	face_up
+	delay_4
+	face_right
+	delay_4
+	face_down
+	delay_4
+	face_left
+	delay_2
+	face_up
+	delay_2
+	face_right
+	delay_2
+	face_down
+	delay_2
+	face_left
+	delay_1
+	face_up
+	delay_1
+	face_right
+	delay_1
+	face_down
+	delay_1
+	face_left
+	delay_1
+	face_up
+	delay_1
+	face_right
+	delay_1
+	face_down
+	delay_1
+	face_left
+	face_up
+	face_right
+	face_down
+	face_left
+	face_up
+	face_right
+	face_down
+	step_end
+
+SootopolisCity_Gym_1F_Movement_SpinSlower:
+	face_left
+	face_up
+	face_right
+	face_down
+	face_left
+	face_up
+	face_right
+	face_down
+	face_left
+	delay_1
+	face_up
+	delay_1
+	face_right
+	delay_1
+	face_down
+	delay_1
+	face_left
+	delay_2
+	face_up
+	delay_2
+	face_right
+	delay_2
+	face_down
+	delay_2
+	face_left
+	delay_4
+	face_up
+	delay_4
+	face_right
+	delay_4
+	face_down
+	delay_8
+	step_end
 
 SootopolisCity_Gym_1F_EventScript_GymGuide::
 	lock
@@ -178,9 +292,11 @@ SootopolisCity_Gym_1F_EventScript_GymStatue::
 SootopolisCity_Gym_1F_Text_GymGuideAdvice:
 	.string "Yo! How's it going, CHAMPION-\n"
 	.string "bound {PLAYER}?\p"
-	.string "SUGOPOLIS's GYM LEADER JUAN is\n"
+	.string "SUGOPOLIS's GYM LEADER JOE Q is\n"
 	.string "a master of WATER-type POKéMON.\p"
-	.string "And, to get to JUAN, an icy floor\n"
+	.string "Word is, he dresses up for GYM\n"
+	.string "battles. Nobody knows why.\p"
+	.string "And, to get to JOE Q, an icy floor\n"
 	.string "will hamper your progress…\p"
 	.string "Listen, I'm sorry, but that's all the\n"
 	.string "advice that I have for you.\p"
@@ -188,133 +304,142 @@ SootopolisCity_Gym_1F_Text_GymGuideAdvice:
 	.string "go for it yourself!$"
 
 SootopolisCity_Gym_1F_Text_GymGuidePostVictory:
-	.string "Yow! You've beaten even JUAN, who\n"
+	.string "Yow! You've beaten even JOE Q, who\n"
 	.string "was supposedly the best in all PASTALIA!\p"
 	.string "Okay! Check out your TRAINER CARD.\p"
 	.string "If you've gotten all the BADGES, you're\n"
 	.string "set for the POKéMON LEAGUE challenge!$"
 
+SootopolisCity_Gym_1F_Text_JoeQGreeting:
+	.string "JOE Q: Well, hi, hi, {PLAYER}{KUN}!\n"
+	.string "Surprised to see me here?\p"
+	.string "Here's a scoop for you, live and\n"
+	.string "exclusive.\p"
+	.string "Before I got into talent scouting,\n"
+	.string "I was the LEADER of this GYM.\p"
+	.string "I taught my little brother MIKE\n"
+	.string "everything he knows about POKéMON.\p"
+	.string "When I went off scouting, I left\n"
+	.string "the GYM to MIKE.\p"
+	.string "But MIKE moved up to bigger things,\n"
+	.string "so this old man is back on the air!\p"
+	.string "I've been watching you battle all\n"
+	.string "over PASTALIA.\p"
+	.string "Now I finally get a front-row seat.\p"
+	.string "But hold on. I can't battle in my\n"
+	.string "street clothes.\p"
+	.string "Time to suit up in my…\n"
+	.string "BATTLE DUDS!$"
+
+SootopolisCity_Gym_1F_Text_JoeQSuitUpRematch:
+	.string "JOE Q: {PLAYER}{KUN}! Back for more?\p"
+	.string "Hold that thought. I can't battle\n"
+	.string "in my street clothes.\p"
+	.string "BATTLE DUDS, go!$"
+
 SootopolisCity_Gym_1F_Text_JuanIntro:
-	.string "Let me ask you.\n"
-	.string "Did you know?\l"
-	.string "Ah, I should not be so coy.\p"
-	.string "It was I who taught MIKE everything\n"
-	.string "there is to know about POKéMON.\p"
-	.string "Once, I had given up my position as\n"
-	.string "the GYM LEADER.\p"
-	.string "In my place, I had entrusted MIKE\n"
-	.string "with the GYM.\p"
-	.string "However, a compelling reason arose for\n"
-	.string "me to make a comeback.\p"
-	.string "Ah, but enough chatter.\n"
-	.string "Let us begin our match, shall we?\p"
-	.string "Please, you shall bear witness to\n"
-	.string "our artistry.\p"
-	.string "A grand illusion of water sculpted\n"
-	.string "by POKéMON and myself!$"
+	.string "JOE Q: Ta-da!\n"
+	.string "The BATTLE DUDS!\p"
+	.string "Pretty slick, right? I only bust\n"
+	.string "these out for GYM battles.\p"
+	.string "They still fit, too. Mostly.\n"
+	.string "I may have to hold my breath.\p"
+	.string "Okay, {PLAYER}{KUN}, this is it.\p"
+	.string "Let's find out if you're…\n"
+	.string "JUST COOL ENOUGH!$"
 
 @ NOTE: This defeat text actually causes a buffer overflow. It's about 50 bytes too long for
 @ the gDisplayedStringBattle buffer that it's put into, and it stomps all over the gBattleTextBuffs
 @ after, as well as the otherwise unused array after that. One wonders if that's the reason for
 @ the existence of that unused array of ints.
 SootopolisCity_Gym_1F_Text_JuanDefeat:
-	.string "Ahahaha, excellent!\n"
-	.string "Very well, you are the winner.\p"
-	.string "From you, I sense the brilliant shine\n"
-	.string "of skill that will overcome all.\p"
-	.string "However, compared with me or even\n"
-	.string "MIKE, you are lacking in elegance.\p"
-	.string "Perhaps I should make you a loan\n"
-	.string "of my outfit?\p"
+	.string "Ha! You beat me fair and square,\n"
+	.string "BATTLE DUDS and all!\p"
+	.string "Folks, you heard it here first.\n"
+	.string "{PLAYER} is the real deal.\p"
+	.string "I'd lend you the BATTLE DUDS, but\n"
+	.string "then what would I wear?\p"
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
-	.string "Hahaha, I merely jest!\p"
-	.string "Rather than my clothes, I shall reward\n"
-	.string "you with this, the RAIN BADGE!$"
+	.string "Hahaha, I'm only kidding!\p"
+	.string "Instead of the DUDS, I'll give you\n"
+	.string "this. The RAIN BADGE!$"
 
 SootopolisCity_Gym_1F_Text_ReceivedRainBadge:
 	.string "{PLAYER} received the RAIN BADGE\n"
-	.string "from JUAN.$"
+	.string "from JOE Q.$"
 
 SootopolisCity_Gym_1F_Text_ExplainRainBadgeTakeThis:
-	.string "Having the RAIN BADGE shall assure you\n"
-	.string "the full obedience of all your POKéMON\l"
-	.string "to your every command.\p"
-	.string "The RAIN BADGE also allows the use\n"
-	.string "of the HM move WATERFALL to scale\l"
-	.string "walls of cascading water.\p"
-	.string "And, so that you never forget the\n"
-	.string "battle we shared, take this…$"
+	.string "With the RAIN BADGE, all of your\n"
+	.string "POKéMON will obey your every command.\p"
+	.string "The RAIN BADGE also lets you use\n"
+	.string "the HM move WATERFALL to climb\l"
+	.string "up rushing waterfalls.\p"
+	.string "And so you never forget the day you\n"
+	.string "beat the BATTLE DUDS, take this…$"
 
 SootopolisCity_Gym_1F_Text_ExplainWaterPulse:
-	.string "The TECHNICAL MACHINE I handed you\n"
-	.string "contains WATER PULSE.\p"
-	.string "In use, it will occasionally confuse\n"
-	.string "the target with ultrasonic waves.\p"
-	.string "… … … … … …$"
+	.string "That TECHNICAL MACHINE has\n"
+	.string "WATER PULSE on it.\p"
+	.string "Sometimes it confuses the target\n"
+	.string "with ultrasonic waves.\p"
+	.string "And it was free! Never let anyone\n"
+	.string "tell you a TM is worth paying for.$"
 
 SootopolisCity_Gym_1F_Text_RegisteredJuan:
-	.string "Registered GYM LEADER JUAN\n"
+	.string "Registered GYM LEADER JOE Q\n"
 	.string "in the POKéNAV.$"
 
 SootopolisCity_Gym_1F_Text_JuanPostBattle:
-	.string "The TRAINERS who have gathered all\n"
-	.string "the GYM BADGES of PASTALIA should make\l"
-	.string "way to the ultimate destination.\p"
+	.string "JOE Q: With every BADGE in PASTALIA,\n"
+	.string "there's only one place left to go.\p"
 	.string "The POKéMON LEAGUE.\p"
-	.string "Travel to the easternmost reaches of\n"
-	.string "PASTALIA, to the island FETTUCCINE\l"
-	.string "GRANDE.\p"
-	.string "There, you shall find the POKéMON\n"
-	.string "LEAGUE.$"
+	.string "Head to the far east of PASTALIA,\n"
+	.string "to the island FETTUCCINE GRANDE.\p"
+	.string "If you see my little brother MIKE\n"
+	.string "out there, tell him I said hi.\p"
+	.string "And tell him to call Mom.$"
 
 SootopolisCity_Gym_1F_Text_GoGetFortreeBadge:
-	.string "There remains but one BADGE to\n"
-	.string "obtain in PASTALIA.\p"
-	.string "If you wish to challenge the POKéMON\n"
-	.string "LEAGUE, you must obtain the last\l"
-	.string "BADGE from the GYM in FORTELLINI.$"
+	.string "JOE Q: Hold on, you're still one\n"
+	.string "BADGE short.\p"
+	.string "If you want to take on the POKéMON\n"
+	.string "LEAGUE, get the last BADGE from\l"
+	.string "the GYM in FORTELLINI first.$"
 
 SootopolisCity_Gym_1F_Text_GymStatue:
 	.string "SUGOPOLIS CITY POKéMON GYM$"
 
 SootopolisCity_Gym_1F_Text_GymStatueCertified:
 	.string "SUGOPOLIS CITY POKéMON GYM\p"
-	.string "JUAN'S CERTIFIED TRAINERS:\n"
+	.string "JOE Q'S CERTIFIED TRAINERS:\n"
 	.string "{PLAYER}$"
 
 SootopolisCity_Gym_1F_Text_JuanPreRematch:
-	.string "JUAN: Ah, this GYM had returned to its\n"
-	.string "usual state of serenity…\p"
-	.string "But our young typhoon has returned\n"
-	.string "to put us to the test again!\p"
-	.string "Well, my friend, most certainly!\p"
-	.string "I shall be delighted to dance with you\n"
-	.string "as often as you wish!$"
+	.string "JOE Q: And we're back on the air!\p"
+	.string "Our young typhoon has returned\n"
+	.string "to put the GYM to the test again!\p"
+	.string "Let's see if you're still\n"
+	.string "just cool enough!$"
 
 SootopolisCity_Gym_1F_Text_JuanRematchDefeat:
-	.string "Ahahaha, you are the winner!\n"
-	.string "You have defeated me again!$"
+	.string "Hahaha! Beaten again!\n"
+	.string "These DUDS need an upgrade.$"
 
 SootopolisCity_Gym_1F_Text_JuanPostRematch:
-	.string "JUAN: If I told you to become my\n"
-	.string "apprentice, you will refuse, I am sure.\p"
-	.string "I would like to make a gift of my coat\n"
-	.string "to you.\p"
-	.string "But again, you will refuse.\n"
-	.string "I imagine that to be so.\p"
-	.string "And that, my friend, is a certain sign\n"
-	.string "of nobility!$"
+	.string "JOE Q: I'd ask you to be my\n"
+	.string "apprentice, but you'd say no.\p"
+	.string "I'd give you my BATTLE DUDS, but\n"
+	.string "you'd say no to that, too.\p"
+	.string "Smart kid.\n"
+	.string "They're dry-clean only.$"
 
 SootopolisCity_Gym_1F_Text_JuanRematchNeedTwoMons:
-	.string "JUAN: Ah, this GYM had returned to its\n"
-	.string "usual state of serenity…\p"
-	.string "But our young typhoon has returned\n"
-	.string "to put us to the test again!\p"
-	.string "Well, my friend, most certainly!\n"
-	.string "I shall be delighted to dance with you…\p"
-	.string "Ah, no, no, no.\n"
-	.string "You have with you but one POKéMON.\p"
-	.string "I wish that you would return with\n"
-	.string "two, perhaps more, POKéMON, please.$"
+	.string "JOE Q: And we're back on the air!\p"
+	.string "Our young typhoon has returned\n"
+	.string "to put the GYM to the test again!\p"
+	.string "Oh, wait. You've only got one\n"
+	.string "POKéMON with you.\p"
+	.string "Come back with two or more, and\n"
+	.string "we'll do this right.$"
 

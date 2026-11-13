@@ -45,5 +45,6 @@ void CutMoveOpenDottedHoleDoor(void);
 enum Species RollBirchBattleLegendary(void);
 void SetBirchBattleLegendary(void);
 enum Species GetBirchBattleLegendary(void);
+void SetObjectEventGraphicsByLocalId(void);
 
 #endif // GUARD_FIELD_SPECIALS_H

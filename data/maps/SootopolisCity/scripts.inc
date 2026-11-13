@@ -1404,9 +1404,9 @@ SootopolisCity_Movement_DestroyTask::
 
 SootopolisCity_Text_GymSign:
 	.string "SUGOPOLIS CITY POKéMON GYM\n"
-	.string "LEADER: JUAN\p"
-	.string "“The GYM LEADER with the beauty\n"
-	.string "of pure water!”$"
+	.string "LEADER: JOE Q\p"
+	.string "“The GYM LEADER who is just\n"
+	.string "cool enough!”$"
 
 SootopolisCity_Text_CitySign:
 	.string "SUGOPOLIS CITY\p"
@@ -1740,7 +1740,7 @@ SootopolisCity_Text_ExplainWaterfallGoToGym:
 	.string "that door.$"
 
 SootopolisCity_Text_DazzledByMentor:
-	.string "MIKE: My old teacher JUAN?\n"
-	.string "Classy guy. Real smooth.\p"
-	.string "Just don't get too comfy.\n"
+	.string "MIKE: My big brother JOE Q?\n"
+	.string "Taught me everything I know.\p"
+	.string "Don't let the dad jokes fool ya.\n"
 	.string "He hits harder than he looks.$"
