@@ -759,6 +759,7 @@ Testers download from **https://github.com/Fettuccine-lab/Pokemon-Fettuccine/rel
 | 6 | Randomizer, Alan's secret boss and lab bookcases, Blobby's stall, Joe Fettuccine's dialogue, title screen shortcut removed |
 | 7 | Modern Exp. Share from the start, SELECT to switch in the party menu, Mr. Garlic and his Amulet Coin, Alan's Hoothoot, randomizer text fix |
 | 8 | New starters (Rowlet, Chimchar, Sobble), Legends Z-A Megas and new trainer Megas, random legendary on Route 101, randomizer limited to obtainable Pokémon, Italian flag and pasta frames, Alan's fireplace and comfy chair |
+| 9 | Full-party catch duplication bug fixed (no add-to-party prompt), no friendship evolutions, Snow Warning summons Hail, time-free Pokédex area page, Brian hates sauce (all sauce is jar sauce), WING-SLUT PokéNav tag |
 
 **Idea (not scheduled): free up save space.** `include/config/save.h` can switch off unused save data (Mystery Event, record-mixing Hall records, Mystery Gift, Union Room chat, Battle Tower e-Reader and smaller ones), about 3.7 KB in all. Any of these shifts the save layout and breaks existing saves, so do them together, once, in a playtest where testers start a new save. Keep Match Call (the story calls use it).
 
