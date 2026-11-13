@@ -1,0 +1,87 @@
+POKEMON FETTUCCINE VERSION - PLAYTEST 11
+========================================
+
+Thanks for testing! This is a bug-fix build: it fixes a freeze right
+after catching a Pokemon.
+
+
+HOW TO PLAY
+-----------
+1. You need a clean US Pokemon Emerald ROM (not included).
+   It should match:
+     CRC32: 1F1C08FB
+     SHA-1: f3ae088181bf583e55daf962a92bb46f4f1d07b7
+2. Apply fettuccine-playtest-11.bps to it. Either of these works:
+     - Rom Patcher JS (in your browser): https://www.marcrobledo.com/RomPatcher.js/
+     - Floating IPS (Flips)
+3. Play the patched ROM in mGBA or any GBA emulator.
+
+Your Playtest 10 save should keep working: give the new ROM the same
+file name as before (so the save file matches) or copy the .sav across.
+Use an in-game save, not a save state from an older playtest.
+
+
+NEW SINCE PLAYTEST 10
+---------------------
+Fixed: freeze after catching a Pokemon
+- If you had opened and closed the Pokedex from the START menu, then
+  caught a Pokemon that was new to your Pokedex, the game could freeze
+  when its Pokedex page closed (screen stuck, no buttons working).
+- This bug may also have caused the old "player keeps walking down
+  on their own after a catch" glitch. If that glitch ever happens
+  again, please send a save state right away.
+
+
+PLEASE TRY
+----------
+- Open the Pokedex from the START menu, close it, then catch a
+  Pokemon you haven't registered yet. Its Pokedex page should show
+  and close normally, and you should be back on the map in control.
+- Do that a few times, with the Pokedex opened in between and
+  without.
+- Keep playing as normal. Everything from Playtest 10 (Joe Q's
+  Sugopolis Gym) still needs testing too.
+
+
+DEBUG MENU
+----------
+This build has the developer's debug menus turned on, so you can
+skip ahead or set up a test:
+  - Overworld: hold R and press START (mGBA keyboard: hold S, Enter)
+  - In battle: press SELECT on the battle menu (mGBA: Backspace)
+  - Sprite viewer: SELECT on a summary screen (mGBA: Backspace)
+Use a separate save or a save state first, and say in your report
+if that save used the debug menu.
+
+
+AFTER-BATTLE GLITCHES
+---------------------
+If anything odd happens right after a battle (the player moving on
+their own, buttons not working, a freeze, strange graphics), make a
+SAVE STATE right away (mGBA: File > Save State) and send it in.
+
+
+KNOWN PLACEHOLDERS
+------------------
+- Brian, Prof. Alan, Sam, Mike, Joe Q, WILDCARD, JASON and BLOBBY
+  still use old Emerald sprites. Prof. Alan's battle sprite is a
+  Gentleman.
+- Retro Salvage Games shops still have blue roofs and MART signs.
+- A few map graphics still say HOENN.
+- Sam's shiny Metagross isn't cheddar-yellow yet.
+- The new frames, chair and fireplace are first drafts of the art.
+
+
+PLEASE REPORT
+-------------
+- Crashes or freezes, especially right after catching a Pokemon
+- Anything odd in the Sugopolis Gym
+- Joe Q stuck in the wrong outfit, facing the wrong way, or
+  disappearing
+- Text that runs off the box
+- Anything that blocks progress
+- Say whether your save is a RANDOMIZER game, and whether it's new or
+  from an older playtest
+
+If you can, say where you were and what you were doing, and send a
+screenshot or your save file.
