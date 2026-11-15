@@ -1679,7 +1679,7 @@ static const struct FormChange sNecrozmaUltraFormChangeTable[] =
 // Fettuccine: Omnirouge. Pick Armarouge first, then Ceruledge. Ceruledge is kept in
 // fusion storage slot 1, which is Necrozma's N-Solarizer slot (that item isn't in this game).
 static const struct Fusion sOmnirougeFusionTable[] = {
-    {1, ITEM_OMNI_ARMOR, SPECIES_ARMAROUGE, SPECIES_CERULEDGE, SPECIES_OMNIROUGE, MOVE_BITTER_BLADE, FORGET_EXTRA_MOVES},
+    {1, ITEM_OMNI_ARMOR, SPECIES_ARMAROUGE, SPECIES_CERULEDGE, SPECIES_OMNIROUGE, MOVE_NONE, FORGET_EXTRA_MOVES}, // fixed moveset: see OmnirougeOnFuse in party_menu.c
     {FUSION_TERMINATOR},
 };
 #endif //P_FAMILY_CHARCADET
