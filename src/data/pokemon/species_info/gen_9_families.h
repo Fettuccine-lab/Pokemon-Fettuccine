@@ -2338,6 +2338,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         )
         .levelUpLearnset = sArmarougeLevelUpLearnset,
         .teachableLearnset = sArmarougeTeachableLearnset,
+        .formSpeciesIdTable = sArmarougeFormSpeciesIdTable,
     },
 
     [SPECIES_CERULEDGE] =
@@ -2401,6 +2402,74 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         )
         .levelUpLearnset = sCeruledgeLevelUpLearnset,
         .teachableLearnset = sCeruledgeTeachableLearnset,
+    },
+
+    [SPECIES_OMNIROUGE] =
+    {
+        // Fettuccine: Armarouge + Ceruledge fusion. Placeholder: Armarouge's sprites.
+        .baseHP        = 80,
+        .baseAttack    = 110,
+        .baseDefense   = 100,
+        .baseSpeed     = 100,
+        .baseSpAttack  = 110,
+        .baseSpDefense = 100,
+        .types = MON_TYPES(TYPE_FIRE, TYPE_GHOST),
+        .catchRate = 25,
+        .expYield = 300,
+        .evYield_Attack = 1,
+        .evYield_SpAttack = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 35,
+        .friendship = 20,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
+        .abilities = { ABILITY_FLASH_FIRE, ABILITY_NONE, ABILITY_WEAK_ARMOR },
+        .bodyColor = BODY_COLOR_RED,
+        .speciesName = _("Omnirouge"),
+        .cryId = CRY_ARMAROUGE,
+        .natDexNum = NATIONAL_DEX_ARMAROUGE,
+        .categoryName = _("Twin Knight"),
+        .height = 18,
+        .weight = 1470,
+        .description = COMPOUND_STRING(
+            "When an Armarouge and a Ceruledge\n"
+            "share one suit of armor, their flames\n"
+            "join. It fires its cannon arm and\n"
+            "swings its blade arm as one."),
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Armarouge,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 1,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_Armarouge,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 3,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Armarouge,
+        .shinyPalette = gMonShinyPalette_Armarouge,
+        .iconSprite = gMonIcon_Armarouge,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(0, 14, SHADOW_SIZE_L)
+        FOOTPRINT(Armarouge)
+        OVERWORLD(
+            sPicTable_Armarouge,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Armarouge,
+            gShinyOverworldPalette_Armarouge
+        )
+        .cannotBeTraded = TRUE,
+        .isFrontierBanned = TRUE,
+        .levelUpLearnset = sOmnirougeLevelUpLearnset,
+        .teachableLearnset = sOmnirougeTeachables,
+        .formSpeciesIdTable = sArmarougeFormSpeciesIdTable,
     },
 #endif //P_FAMILY_CHARCADET
 

@@ -1052,6 +1052,7 @@ enum __attribute__((packed)) Item
     ITEM_TATSUGIRINITE = 872,
     ITEM_GLIMMORANITE = 873,
     ITEM_MEGA_STONE_CASE = 874, // Fettuccine: holds every Mega Stone (see mega_stone_case.c)
+    ITEM_OMNI_ARMOR = 875, // Fettuccine: fuses Armarouge and Ceruledge into Omnirouge
 
     ITEMS_COUNT,
     ITEM_FIELD_ARROW = ITEMS_COUNT,
