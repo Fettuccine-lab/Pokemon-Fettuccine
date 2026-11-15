@@ -766,7 +766,7 @@ A yes/no choice at New Game that randomizes Pokémon for that save file. It runs
 | Roxanne's ace: Shieldon replaces Tyrunt | Trainer data | Done, needs playtesting |
 | Signature moves on evolution (Lv 35 single-stage; starter ultimates Lv 65, Volt Tackle Lv 50) | Learnset data | Done, needs playtesting |
 | Bird Keepers and Fortellini Gym trainers use Flying types | Trainer data | Done, needs playtesting |
-| Armarouge + Ceruledge fusion | Custom form, fusion item, sprites by Joe | **Open** (idea only) |
+| Omnirouge (Armarouge + Ceruledge fusion) | Custom form, fusion item, sprites by Joe | Built with placeholder sprites; not given to the player yet (Joe Fettuccine, post-game, still to do); sprites still to do |
 
 ## Playtests
 
@@ -786,7 +786,13 @@ Testers download from **https://github.com/Fettuccine-lab/Pokemon-Fettuccine/rel
 | 10 | Joe Q replaces Juan as Sugopolis Gym Leader (Battle Duds spin, Palafin Hero Form) |
 | 11 | Fix for the freeze after catching a new Pokémon (likely also the walking-down bug) |
 
-**Idea (not scheduled, Open): Armarouge + Ceruledge fusion.** Fuse the two into one Pokémon (Joe's reference: fan art of a knight with Armarouge's cannon arm and Ceruledge's blade arm). The engine's built-in fusion system (the one Kyurem and Necrozma use) can do it: a key item fuses them from the party, the second Pokémon is stored inside the fused one, and using the item again splits them back. Needs Joe's decisions on name, type, stats, ability, signature move, where the item comes from, and an original front/back sprite, icon and palette.
+**Omnirouge (Armarouge + Ceruledge fusion): built Nov 2026, hidden for now.** Inspired by fan art Joe found (use it as inspiration for an original sprite, not a trace).
+- **Decided:** name **Omnirouge**, Fire/Ghost, 600 base stats: 80 HP / 110 Atk / 100 Def / 110 SpA / 100 SpD / 100 Spe. Abilities Flash Fire / Weak Armor (same as its parents). Category "Twin Knight".
+- **How it works:** the **Omni Armor** key item (placeholder name and icon). Use it on Armarouge, then pick Ceruledge: they fuse into Omnirouge, which learns Bitter Blade (it usually already knows Armor Cannon). Using it on Omnirouge splits them again; Ceruledge comes back as it was, and moves Armarouge can't learn are forgotten. Omnirouge learns both parents' level-up, TM and tutor moves. It can't be traded, can't enter the Frontier, never shows up in Wonder Trade or the randomizer, and shares Armarouge's Pokédex entry.
+- Built on the engine's fusion system (Kyurem/Necrozma). Ceruledge is stored in fusion slot 1, which belonged to the N-Solarizer (not in this game), so saves didn't change.
+- **Decided:** Joe Fettuccine gives the Omni Armor post-game, with an explanation. **Not built yet on purpose:** Joe wants Omnirouge finished before players can see it.
+- **Still to do:** original front/back sprites, icon and palette (currently Armarouge's); its own cry is optional (uses Armarouge's); a final item name and icon; the Joe Fettuccine scene. **Open:** a signature move of its own (it uses Armor Cannon and Bitter Blade for now).
+- Note: TM/tutor moves are a hand-made list (`sOmnirougeTeachables` in `src/data/pokemon/level_up_learnsets/gen_9.h`), so it must be updated if the TM list changes.
 
 **Idea (not scheduled): free up save space.** `include/config/save.h` can switch off unused save data (Mystery Event, record-mixing Hall records, Mystery Gift, Union Room chat, Battle Tower e-Reader and smaller ones), about 3.7 KB in all. Any of these shifts the save layout and breaks existing saves, so do them together, once, in a playtest where testers start a new save. Keep Match Call (the story calls use it).
 
