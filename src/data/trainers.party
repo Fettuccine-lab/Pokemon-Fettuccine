@@ -264,11 +264,11 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Luvdisc
+Kilowattrel
 Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Rabsca
+Sigilyph
 Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -6959,7 +6959,7 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Spheal
+Wattrel
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -6972,11 +6972,11 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Goldeen
+Wattrel
 Level: 25
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Gourgeist-Average
+Chatot
 Level: 25
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -6989,7 +6989,7 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Aipom
+Noctowl
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -7002,15 +7002,15 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Meowth
+Pidgeotto
 Level: 27
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Steelix
+Corvisquire
 Level: 27
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Carnivine
+Murkrow
 Level: 27
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -7023,7 +7023,7 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Stunfisk-Galar
+Kilowattrel
 Level: 30
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
@@ -7036,11 +7036,11 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Cacturne
+Jumpluff
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Bronzong
+Sigilyph
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -7053,11 +7053,11 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Ditto
+Chatot
 Level: 29
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-Luvdisc
+Kilowattrel
 Level: 29
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -7070,11 +7070,11 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Goldeen
+Wattrel
 Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Baltoy
+Tranquill
 Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -7087,7 +7087,7 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Lickitung
+Fletchinder
 Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -7100,15 +7100,15 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Furret
+Staraptor
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Skrelp
+Kilowattrel
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Oranguru
+Sigilyph
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -7121,11 +7121,11 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Pidove
+Tranquill
 Level: 25
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Dunsparce
+Fletchinder
 Level: 25
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -7138,11 +7138,11 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Mr. Mime
+Noctowl
 Level: 32
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Lickitung
+Fletchinder
 Level: 32
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -7155,11 +7155,11 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Mr. Mime
+Noctowl
 Level: 35
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-Lickilicky
+Talonflame
 Level: 35
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
@@ -7172,11 +7172,11 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Mr. Mime
+Noctowl
 Level: 38
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Lickilicky
+Talonflame
 Level: 38
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -7189,11 +7189,11 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Lickilicky
+Talonflame
 Level: 41
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Musharna
+Noctowl
 Level: 41
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -7206,11 +7206,11 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Mr. Mime
+Murkrow
 Level: 33
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-Trumbeak
+Unfezant
 Level: 33
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -7223,7 +7223,7 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Lilligant-Hisui
+Flamigo
 Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -11730,11 +11730,11 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Chansey
+Fletchinder
 Level: 29
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-Mr. Mime-Galar
+Sigilyph
 Level: 29
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -11747,15 +11747,15 @@ Music: Girl
 Double Battle: No
 AI: Check Bad Move
 
-Tandemaus
+Skiploom
 Level: 27
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Teddiursa
+Trumbeak
 Level: 27
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Ditto
+Squawkabilly
 Level: 27
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -12442,7 +12442,7 @@ Rufflet
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Forretress
+Bombirdier
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -13002,11 +13002,11 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Durant
+Rookidee
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Buneary
+Staravia
 Level: 19
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -13441,11 +13441,11 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Meowth
+Staravia
 Level: 25
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Chewtle
+Ducklett
 Level: 25
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -13514,11 +13514,11 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Klefki
+Corvisquire
 Level: 25
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Orthworm
+Murkrow
 Level: 25
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -15705,7 +15705,7 @@ Music: Cool
 Double Battle: No
 AI: Basic Trainer
 
-Breloom
+Jumpluff
 Level: 30
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
