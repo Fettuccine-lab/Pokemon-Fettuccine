@@ -4574,13 +4574,14 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Mud Shot
 - Smack Down
 
-Tyrunt @ Oran Berry
+Shieldon @ Oran Berry
 Level: 15
+Ability: Soundproof
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Rock Tomb
-- Thunder Fang
-- Charm
-- Ancient Power
+- Take Down
+- Metal Sound
+- Protect
 
 === TRAINER_BRAWLY_1 ===
 Name: BRAWLY
