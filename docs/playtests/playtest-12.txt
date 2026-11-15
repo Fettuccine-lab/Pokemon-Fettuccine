@@ -1,0 +1,105 @@
+POKEMON FETTUCCINE VERSION - PLAYTEST 12
+========================================
+
+Thanks for testing! This build makes the first gym easier, gives
+Bird Keepers real birds again, and fixes signature moves.
+
+
+HOW TO PLAY
+-----------
+1. You need a clean US Pokemon Emerald ROM (not included).
+   It should match:
+     CRC32: 1F1C08FB
+     SHA-1: f3ae088181bf583e55daf962a92bb46f4f1d07b7
+2. Apply fettuccine-playtest-12.bps to it. Either of these works:
+     - Rom Patcher JS (in your browser): https://www.marcrobledo.com/RomPatcher.js/
+     - Floating IPS (Flips)
+3. Play the patched ROM in mGBA or any GBA emulator.
+
+Your Playtest 11 save should keep working: give the new ROM the same
+file name as before (so the save file matches) or copy the .sav across.
+Use an in-game save, not a save state from an older playtest.
+
+
+NEW SINCE PLAYTEST 11
+---------------------
+Armarouge and Ceruledge earlier
+- The Retro Salvage Games shop in FARFALLARBOR now sells the
+  Auspicious Armor and Malicious Armor (3,000 each), right next to
+  Route 113 where Charcadet lives. (Linguicove still sells them too.)
+
+Easier first gym
+- Roxanne's ace is now a Shieldon instead of Tyrunt.
+
+Signature moves
+- Pokemon with a signature move now learn it when they evolve
+  instead of at a very high level. Examples: Ceruledge gets Bitter
+  Blade and Armarouge gets Armor Cannon right away; also Sirfetch'd,
+  Gholdengo, Kommo-o, Hatterene, Zoroark, Flapple, Appletun,
+  Crabominable, Marowak and more.
+- Pokemon that don't evolve learn theirs by Lv 35 (Hawlucha's Flying
+  Press, Dondozo's Order Up, Morpeko's Aura Wheel...).
+- Final-stage starters learn Blast Burn / Frenzy Plant / Hydro
+  Cannon at Lv 65. Pikachu learns Volt Tackle at Lv 50.
+- Pokemon that evolved in an older save won't learn the move
+  automatically: use RELEARN in the party menu to teach it.
+
+Bird Keepers use birds again
+- Bird Keepers and the Fortellini Gym trainers were using Pokemon
+  that weren't Flying types. They now all use Flying types.
+
+
+PLEASE TRY
+----------
+- Buy an armor in Farfallarbor, evolve a Charcadet, and check it
+  learns Bitter Blade or Armor Cannon on the spot.
+- Battle Roxanne (any starter). Is she still a fair first gym?
+- Battle the Fortellini Gym and the Bird Keepers on Routes 113-120.
+- If you get there: a final-stage starter reaching Lv 65 should be
+  offered its Blast Burn / Frenzy Plant / Hydro Cannon.
+- Keep an eye out for any freeze right after catching a Pokemon
+  (fixed in Playtest 11).
+
+
+DEBUG MENU
+----------
+This build has the developer's debug menus turned on, so you can
+skip ahead or set up a test:
+  - Overworld: hold R and press START (mGBA keyboard: hold S, Enter)
+  - In battle: press SELECT on the battle menu (mGBA: Backspace)
+  - Sprite viewer: SELECT on a summary screen (mGBA: Backspace)
+Use a separate save or a save state first, and say in your report
+if that save used the debug menu.
+
+
+AFTER-BATTLE GLITCHES
+---------------------
+If anything odd happens right after a battle (the player moving on
+their own, buttons not working, a freeze, strange graphics), make a
+SAVE STATE right away (mGBA: File > Save State) and send it in.
+
+
+KNOWN PLACEHOLDERS
+------------------
+- Brian, Prof. Alan, Sam, Mike, Joe Q, WILDCARD, JASON and BLOBBY
+  still use old Emerald sprites. Prof. Alan's battle sprite is a
+  Gentleman.
+- Retro Salvage Games shops still have blue roofs and MART signs.
+- A few map graphics still say HOENN.
+- Sam's shiny Metagross isn't cheddar-yellow yet.
+- The new frames, chair and fireplace are first drafts of the art.
+
+
+PLEASE REPORT
+-------------
+- Crashes or freezes, especially right after catching a Pokemon
+- A Pokemon that didn't learn its signature move when expected
+- A Bird Keeper or Fortellini Gym trainer without Flying types
+- Battles that feel much too hard or too easy
+- Text that runs off the box
+- Anything that blocks progress
+- Say whether your save is a RANDOMIZER game, and whether it's new or
+  from an older playtest
+
+If you can, say where you were and what you were doing, and send a
+screenshot or your save file.
