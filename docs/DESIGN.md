@@ -788,6 +788,7 @@ Testers download from **https://github.com/Fettuccine-lab/Pokemon-Fettuccine/rel
 | 10 | Joe Q replaces Juan as Sugopolis Gym Leader (Battle Duds spin, Palafin Hero Form) |
 | 11 | Fix for the freeze after catching a new Pokémon (likely also the walking-down bug) |
 | 12 | Armors sold in Farfallarbor, Shieldon replaces Roxanne's Tyrunt, signature moves on evolution (starter ultimates Lv 65, Volt Tackle Lv 50), Bird Keepers and Fortellini Gym use Flying types (Omnirouge is in the build but hidden) |
+| 13 | Solar Blade is a one-turn move (95 power) |
 
 **Omnirouge (Armarouge + Ceruledge fusion): built Nov 2026, hidden for now.** Inspired by fan art Joe found (use it as inspiration for an original sprite, not a trace).
 - **Decided:** name **Omnirouge**, Fire/Ghost, 600 base stats: 80 HP / 110 Atk / 100 Def / 110 SpA / 100 SpD / 100 Spe. Abilities Flash Fire / Weak Armor (same as its parents). Category "Twin Knight".
