@@ -616,10 +616,10 @@ Mostly quality-of-life config options. Feature names change between expansion ve
 
 ## Secret minigame: Pocket Knight Adventures
 
-**Decided:** the GameCube in the player's bedroom in Lil Ragu is a secret unlock. If the player's name is exactly **Joe F.**, interacting with it starts a simple side-scrolling rocket-pack minigame, *Pocket Knight Adventures*: a homemade tribute to Rocket Knight Adventures (Sega Genesis), and a nod to it being a tiny game inside a GBA game. **Late-build bonus:** do it after the main custom features, before or alongside the randomizer.
+**Decided:** the GameCube in the player's bedroom in Lil Ragu is a secret unlock. If the player's name is exactly **My Guy** (changed from "Joe F." in Nov 2026, a Retrotopia nod), interacting with it starts a simple side-scrolling rocket-pack minigame, *Pocket Knight Adventures*: a homemade tribute to Rocket Knight Adventures (Sega Genesis), and a nod to it being a tiny game inside a GBA game. **Late-build bonus:** do it after the main custom features, before or alongside the randomizer.
 
 - **Decided:** in-game, the console is described as a Sega Genesis for every player, secret name or not.
-- **Decided:** the name match is exact and case-sensitive: uppercase J, lowercase o, lowercase e, space, uppercase F, period. "JOE F." or "joe f." does not unlock it. It's 6 characters (within Emerald's 7-character limit), and the space and period are both on the naming screen.
+- **Decided:** the name match is exact and case-sensitive: uppercase M, lowercase y, space, uppercase G, lowercase u, lowercase y. "MY GUY" or "my guy" does not unlock it. It's 6 characters (within Emerald's 7-character limit), and the space is on the naming screen.
 
 **Constraints:**
 
@@ -629,7 +629,7 @@ Mostly quality-of-life config options. Feature names change between expansion ve
 
 **Unlock logic:**
 
-- The GameCube's script compares `gSaveBlock2Ptr->playerName` to "Joe F." (exact, case-sensitive).
+- The GameCube's script compares `gSaveBlock2Ptr->playerName` to "My Guy" (exact, case-sensitive).
 - Match: ask "Boot up the game?" (yes/no) and launch the minigame.
 - No match: show this text instead (no minigame): "It's a Sega Genesis. There's a copy of Pocket Knight Adventures in it... universally agreed upon to be the greatest 2D platformer of all time." Break it to fit the text box with `\n` and `\p`.
 - Returning from the minigame drops the player back in the bedroom without disturbing the overworld state.
@@ -732,7 +732,7 @@ A yes/no choice at New Game that randomizes Pokémon for that save file. It runs
 | Start with Running Shoes | New-game setup, Mom's script | Done |
 | Start with Shiny Charm | New-game setup | Done |
 | Faster berry picking | Berry tree script | Done |
-| Secret Pocket Knight Adventures minigame (name "Joe F.") | Custom minigame, original sprites | Done |
+| Secret Pocket Knight Adventures minigame (name "My Guy") | Custom minigame, original sprites | Done |
 | Randomizer at New Game | Custom (large) | Done, needs playtesting |
 | Instant text speed | Options menu | Done |
 | National Dex from the start | Script | Done |

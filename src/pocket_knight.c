@@ -192,8 +192,8 @@ static void Task_Level_Main(u8 taskId);
 static void Task_Level_EndScreen(u8 taskId);
 static void Task_Exit(u8 taskId);
 
-// Case-sensitive: "JOE F." and "joe f." don't count
-static const u8 sSecretName[] = _("Joe F.");
+// Case-sensitive: "MY GUY" and "my guy" don't count
+static const u8 sSecretName[] = _("My Guy");
 
 static const u8 sText_TitleTop[] = _("POCKET KNIGHT");
 static const u8 sText_TitleBottom[] = _("ADVENTURES");
@@ -342,7 +342,7 @@ static const struct WindowTemplate sWindowTemplates[] =
     DUMMY_WIN_TEMPLATE
 };
 
-void IsPlayerNamedJoeF(void)
+void IsPlayerNamedMyGuy(void)
 {
     gSpecialVar_Result = (StringCompare(gSaveBlock2Ptr->playerName, sSecretName) == 0);
 }

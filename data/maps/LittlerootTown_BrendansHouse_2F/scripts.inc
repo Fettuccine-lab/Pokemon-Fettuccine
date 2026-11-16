@@ -271,9 +271,9 @@ LittlerootTown_BrendansHouse_2F_EventScript_GameCube::
 	goto PlayersHouse_2F_EventScript_GameCube
 
 @ The player's GameCube is a Sega Genesis. If the player is named exactly
-@ "Joe F.", it boots the secret Pocket Knight Adventures minigame.
+@ "My Guy", it boots the secret Pocket Knight Adventures minigame.
 PlayersHouse_2F_EventScript_GameCube::
-	special IsPlayerNamedJoeF
+	special IsPlayerNamedMyGuy
 	goto_if_eq VAR_RESULT, TRUE, PlayersHouse_2F_EventScript_PocketKnight
 	msgbox PlayersHouse_2F_Text_ItsASegaGenesis, MSGBOX_SIGN
 	end

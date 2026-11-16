@@ -646,7 +646,7 @@ gSpecials::
 	def_special UpdateTrainerCardPhotoIcons
 	def_special StickerManGetBragFlags
 	def_special CheckAddCoins
-	def_special IsPlayerNamedJoeF
+	def_special IsPlayerNamedMyGuy
 	def_special StartPocketKnightAdventures, waitstate=1
 	def_special CreateWonderTradePokemon
 	def_special SetObjectEventGraphicsByLocalId
