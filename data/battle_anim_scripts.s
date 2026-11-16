@@ -9480,7 +9480,7 @@ gBattleAnimMove_StrengthSap::
 	end
 
 gBattleAnimMove_SolarBlade::
-	choosetwoturnanim SolarBeamSetUp SolarBladeUnleash
+	@ Fettuccine: one-turn move, so skip the charge animation
 SolarBladeUnleash:
 	monbg ANIM_ATTACKER
 	setalpha 13, 3

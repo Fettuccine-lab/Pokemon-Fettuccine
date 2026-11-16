@@ -16884,10 +16884,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Solar Blade"),
         .description = COMPOUND_STRING(
-            "Charges first turn, then\n"
-            "chops with a blade of light."),
-        .effect = EFFECT_SOLAR_BEAM,
-        .power = 125,
+            "Slashes the foe with a\n"
+            "blade of sunlight."),
+        .effect = EFFECT_HIT, // Fettuccine: one turn, 95 power (was a 125-power two-turn move)
+        .power = 95,
         .type = TYPE_GRASS,
         .accuracy = 100,
         .pp = 10,
@@ -16896,9 +16896,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
         .slicingMove = TRUE,
-        .sleepTalkBanned = TRUE,
-        .instructBanned = TRUE,
-        .argument.twoTurnAttack = { .stringId = STRINGID_PKMNTOOKSUNLIGHT, .weather = BATTLE_WEATHER_SUN },
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
