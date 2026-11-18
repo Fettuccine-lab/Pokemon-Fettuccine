@@ -121,6 +121,13 @@ Balance notes:
 - Blacking out before reaching the first Pokémon Center (Mom heals you at home) is unchanged.
 - **Done** (both the normal and blackout versions).
 
+**Done (Nov 2026), needs playtesting: Nurse Joy is a chef, and the healing machine is a kitchen.**
+- Every Pokémon Center nurse (all 18 spots, including the Battle Frontier center, the Pokémon League lobby and the Trainer Hill entrance) uses the built-in chef sprite (`OBJ_EVENT_GFX_CHEF`). The chef sprite has no bow frame, so after healing (and after the blackout cookie) the chef just faces the player instead of bowing.
+- The healing machine on the counter is now FireRed's restaurant **stove/sink**, and the small terminal to its right is the white **fridge** from Emerald's player's house. The fridge stands behind the counter's front edge. The wall TV stays.
+- The Pokémon Center tileset is shared, so every center plus the Pokémon League lobby gets the kitchen. The Battle Frontier center and the Trainer Hill entrance use other tilesets and keep their counters.
+- Tiles: stove = tiles 478–489 on palette 10 (FireRed's colors); fridge = tiles 490–497 on palette 12. A custom 16×32 oven can replace the fridge later.
+- The dialogue never names Nurse Joy, so no text changed. The chef's text may show in the male (blue) color.
+
 ### Wonder Trade (upstairs in every Pokémon Center)
 
 **Done.** The attendant at the **right-hand counter** upstairs (Emerald's Direct Corner, which needs a wireless adapter and can't work on emulators) now runs Wonder Trade in every Pokémon Center. The left counter (cable link) and the middle counter (Union Room) are unchanged.
@@ -701,6 +708,7 @@ A yes/no choice at New Game that randomizes Pokémon for that save file. It runs
 | Italian flag and pasta window frames | Draft art, code | Done, needs playtesting |
 | Fireplace and big comfy chair in Alan's lab | Draft art, map | Done, needs playtesting |
 | Nurse Joy Jammie Dodger heal (plus blackout cookie) | One shared script change | Done |
+| Nurse Joy as a chef; stove and fridge replace the healing machine and terminal | Sprite swap, tileset edit | Done, needs playtesting |
 | Retro Salvage Games shops (Jason, orange roofs) | Sprite recolor, palette, tiles | Dialogue done; Jason sprite, orange roofs and sign tile still to do |
 | Main character sprites (Ethan and Kris) | Community sprites, no recolor | Not started |
 | Brian as rival (sprites, name, logic, anti-pasta story) | Art plus code and dialogue | Partly done: named BRIAN for both genders, uses Brendan's sprites as a placeholder; rival teams and dialogue done (Macaroville, Victory Road and Champion come with those steps); custom sprites still to do |
