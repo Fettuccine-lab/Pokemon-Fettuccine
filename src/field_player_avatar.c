@@ -358,6 +358,16 @@ static u8 ObjectEventCB2_NoMovement2(void)
     return 0;
 }
 
+// Fettuccine: tapping B on foot switches between walking and running (saved).
+// Bikes keep B for Acro Bike tricks, and B underwater still surfaces.
+void TryToggleRun(u16 newKeys)
+{
+    if ((newKeys & B_BUTTON)
+     && FlagGet(FLAG_SYS_B_DASH)
+     && (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ON_FOOT))
+        gSaveBlock2Ptr->runToggledOn ^= 1;
+}
+
 void PlayerStep(enum Direction direction, u16 newKeys, u16 heldKeys)
 {
     struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
@@ -910,7 +920,7 @@ static void PlayerNotOnBikeMoving(enum Direction direction, u16 heldKeys)
     }
 
     if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER)
-     && (heldKeys & B_BUTTON)
+     && gSaveBlock2Ptr->runToggledOn
      && FlagGet(FLAG_SYS_B_DASH)
      && IsRunningDisallowed(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) == 0
      && !FollowerNPCComingThroughDoor()

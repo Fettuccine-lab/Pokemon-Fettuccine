@@ -1669,6 +1669,7 @@ static void DoCB1_Overworld(u16 newKeys, u16 heldKeys)
         }
         else
         {
+            TryToggleRun(newKeys);
             PlayerStep(inputStruct.dpadDirection, newKeys, heldKeys);
         }
     }
