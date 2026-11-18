@@ -1,0 +1,101 @@
+POKEMON FETTUCCINE VERSION - PLAYTEST 14
+========================================
+
+Thanks for testing! This build makes running a toggle, turns the
+Pokemon Center nurses into chefs with a kitchen, and gives the game
+designer and WILDCARD a new sprite.
+
+
+HOW TO PLAY
+-----------
+1. You need a clean US Pokemon Emerald ROM (not included).
+   It should match:
+     CRC32: 1F1C08FB
+     SHA-1: f3ae088181bf583e55daf962a92bb46f4f1d07b7
+2. Apply fettuccine-playtest-14.bps to it. Either of these works:
+     - Rom Patcher JS (in your browser): https://www.marcrobledo.com/RomPatcher.js/
+     - Floating IPS (Flips)
+3. Play the patched ROM in mGBA or any GBA emulator.
+
+Your Playtest 13 save should keep working: give the new ROM the same
+file name as before (so the save file matches) or copy the .sav across.
+Use an in-game save, not a save state from an older playtest.
+
+
+NEW SINCE PLAYTEST 13
+---------------------
+Run toggle
+- You no longer hold B to run. Tap B once to start running and tap
+  it again to go back to walking. The game remembers your choice
+  when you save.
+- Old saves and new games start out walking.
+- On a bike, B still does Acro Bike tricks, and underwater B still
+  takes you back to the surface.
+
+Pokemon Center kitchens
+- Nurse Joy is now a chef in every Pokemon Center (and at the
+  Pokemon League, Battle Frontier and Trainer Hill counters).
+- The healing machine behind the counter is now a stove and sink,
+  and the small machine next to it is now a fridge.
+
+New sprite for the game designer and WILDCARD
+- The game designer at the Cove Lily Motel in Linguicove and
+  WILDCARD in his castle now look like Red from FireRed. So do the
+  dolls in castle room 5.
+
+
+PLEASE TRY
+----------
+- Tap B to switch between running and walking, both standing still
+  and while moving. Save with running on, reload, and check you're
+  still running.
+- Close a text box or menu with B: it shouldn't also switch running
+  on or off.
+- Heal at a few Pokemon Centers and black out once. The chef should
+  turn to face you at the end (no glitchy bow).
+- Look at the stove and fridge behind the counter: any wrong colors
+  or pieces drawn over the counter?
+- Visit the game designer at the motel and find WILDCARD in his
+  castle.
+
+
+DEBUG MENU
+----------
+This build has the developer's debug menus turned on, so you can
+skip ahead or set up a test:
+  - Overworld: hold R and press START (mGBA keyboard: hold S, Enter)
+  - In battle: press SELECT on the battle menu (mGBA: Backspace)
+  - Sprite viewer: SELECT on a summary screen (mGBA: Backspace)
+Use a separate save or a save state first, and say in your report
+if that save used the debug menu.
+
+
+AFTER-BATTLE GLITCHES
+---------------------
+If anything odd happens right after a battle (the player moving on
+their own, buttons not working, a freeze, strange graphics), make a
+SAVE STATE right away (mGBA: File > Save State) and send it in.
+
+
+KNOWN PLACEHOLDERS
+------------------
+- Brian, Prof. Alan, Sam, Mike, Joe Q, JASON and BLOBBY still use
+  old Emerald sprites. Prof. Alan's battle sprite is a Gentleman.
+- Retro Salvage Games shops still have blue roofs and MART signs.
+- A few map graphics still say HOENN.
+- Sam's shiny Metagross isn't cheddar-yellow yet.
+- The new frames, chair and fireplace are first drafts of the art.
+
+
+PLEASE REPORT
+-------------
+- Crashes or freezes, especially right after catching a Pokemon
+- Running that switches on or off when you didn't tap B
+- Glitched graphics in the Pokemon Centers or around the chef
+- Text that runs off the box
+- Anything that blocks progress
+- Say whether your save is a RANDOMIZER game, and whether it's new or
+  from an older playtest
+
+If you can, say where you were and what you were doing, and send a
+screenshot or your save file.
