@@ -595,6 +595,7 @@ Mostly quality-of-life config options. Feature names change between expansion ve
 - **Done: the bedroom PC starts with TM15 Hyper Beam** instead of a Potion (Nov 2026).
 - **Done: the wall clock's "Is this the correct time?" cursor starts on YES** (Nov 2026).
 - **Done: the player starts with the Running Shoes.** Mom's scene in Lil Ragu Town after getting the starter is now just a goodbye.
+- **Done: run toggle (Nov 2026), needs playtesting.** Tap B on foot to switch between walking and running instead of holding B. The choice is saved with the game; new games and old saves start out walking. Bikes (Acro Bike tricks) and Dive (B to surface) keep their usual B behavior.
 - **Done: the player starts with the Shiny Charm** in the bag (it only works from the bag, not the PC).
 - **Done: INSTANT text speed.** TEXT SPEED in the Options menu cycles SLOW / MID / FAST / INSTANT with Left and Right; only the chosen speed is shown, like FRAME.
 - **Done: two new window frames (draft art, Nov 2026).** FRAME 21 is the Italian flag and FRAME 22 is wavy fettuccine with farfalle corners (`graphics/text_window/21.png` and `22.png`).
@@ -730,6 +731,7 @@ A yes/no choice at New Game that randomizes Pokémon for that save file. It runs
 | Modern Exp. Share from the start, on by default | Config plus new-game setup | Done |
 | PC access via bag item, "Move" default in storage | Built in | Done: Pkmn Box Link (from Alan with the starter); MOVE POKéMON is already the default option |
 | Start with Running Shoes | New-game setup, Mom's script | Done |
+| Run toggle (tap B to switch walk/run) | Custom code | Done, needs playtesting |
 | Start with Shiny Charm | New-game setup | Done |
 | Faster berry picking | Berry tree script | Done |
 | Secret Pocket Knight Adventures minigame (name "My Guy") | Custom minigame, original sprites | Done |
