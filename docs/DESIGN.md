@@ -293,7 +293,7 @@ Status:
 | Jason | Every shopkeeper | Runs every Retro Salvage Games shop |
 | Joe Q | Scott | Talent scout who keeps turning up to watch the player battle, then invites them to the Bucatini Frontier |
 
-**Decided:** Alan, Sam, and Joe Fettuccine all get custom sprites (overworld; Sam also needs a battle sprite; Alan also needs the large Birch portrait from the opening scene).
+**Decided:** Alan and Sam get custom sprites (overworld; Sam also needs a battle sprite; Alan also needs the large Birch portrait from the opening scene). **Changed (Nov 2026):** Joe Fettuccine uses **Red's overworld sprite from FireRed** (`OBJ_EVENT_GFX_RED`) instead of a custom one.
 
 ### Alan as Birch
 
@@ -355,7 +355,7 @@ Every Pokémon is from Gens 1–3 and has a cheese connection.
 
 - The Trick House is **WILDCARD'S CASTLE** everywhere: dialogue, the Route 110 sign, and the Town Map landmark. His "tricks" are still called tricks. Internal map names (`Route110_TrickHouse…`) are unchanged.
 - Every TRICK MASTER is now **WILDCARD**, including the secret door codes ("WILDCARD is huggable.").
-- **Sprite:** WILDCARD and the room-5 Mechadolls use Joe Fettuccine's placeholder sprite (`OBJ_EVENT_GFX_MAN_3`). When Joe Fettuccine's custom sprite is made, switch WILDCARD over too if it's a new graphics ID.
+- **Sprite (Nov 2026):** WILDCARD (castle entrance and end room) and the room-5 Mechadolls use Joe Fettuccine's sprite, **Red from FireRed** (`OBJ_EVENT_GFX_RED`). Vincent and Leroy, the room-8 trainers, keep their normal sprite.
 - **Dialogue:** introduces himself as the "Former KART KING of MARIO KART NIGHT! Banned from servers far and wide!"; says his old kingdom crashed and burned but this one will stand forever; teases rooms as cruel as BLUE SHELL HELL and as explosive as BULLETS OVER BOMBSWAY; jokes that not even a blue shell could get you through; needs "a pit stop"; is humbled like no one since "that sauce-hating BRIAN"; brags that he invented BLUE SHELL HELL (and was there for BULLETS OVER BOMBSWAY) when his ideas run dry; signs off with "Tune in next time for the CASTLE WEEKLY REKAP!"; and in his farewell jokes about starting a podcast "With BRIAN, of all people! As if!" and denies being "some game designer at a motel in LINGUICOVE."
 - **Done: the Mechadoll quiz.** All 15 questions are about Mario Kart Night, the ReKap, RetroBytes Neo and the Retrotopia crew (one still asks which Pokémon Brian caught on Route 102).
 - **Trainers gossip:** Robin (room 1) heard he used to be a KING; Paul (room 2) says rigging tricks is easier than surviving BLUE SHELL HELL; Joshua (room 7) heard he vanished when his old kingdom fell; Leroy (room 8) isn't sure if he'll be pleased or furious.
@@ -719,7 +719,7 @@ A yes/no choice at New Game that randomizes Pokémon for that save file. It runs
 | Joe Q replaces Juan as Sugopolis Gym Leader (Battle Duds spin) | Script, small custom special, dialogue | Done, needs playtesting |
 | New themed teams for all trainers and Gym Leaders (Gens 1–9, Megas from gym 3) | Trainer data | Done |
 | Trainer names from the Retrotopia community | Text (waiting on Joe's list) | Not started |
-| Retrotopia cast: Alan (Birch), Sam (Steven), Joe Fettuccine (designer) | Custom sprites, scripts, dialogue | Partly done: names and dialogue done for all three (Joe Fettuccine gives the Old Sea Map and signs the diploma); all three custom sprites still to do |
+| Retrotopia cast: Alan (Birch), Sam (Steven), Joe Fettuccine (designer) | Custom sprites, scripts, dialogue | Partly done: names and dialogue done for all three (Joe Fettuccine gives the Old Sea Map and signs the diploma); Joe Fettuccine uses Red's FireRed sprite (needs playtesting); Alan's and Sam's custom sprites still to do |
 | All Pokémon through Gen IX | Built in; plan placement | Done: wild placement, event islands, 27 legendary one-offs, regional evolutions |
 | Items, abilities, move effects through Gen IX | Built in; plan placement | Done: TM51–100, held items, training items, balls, berries, form items, charms, gems, snacks placed in shops; the rest skipped on purpose |
 | Physical/special split | Built in | Done (built in) |
@@ -753,7 +753,7 @@ A yes/no choice at New Game that randomizes Pokémon for that save file. It runs
 | Retrotopia promo office (Ditalinford Hall) | Dialogue | Done |
 | Gouda Grotto (Granite Cave) | Text, Town Map | Done |
 | Garlic Corp. (Devon) | Text, item names | Done |
-| WILDCARD and Wildcard's Castle (Trick Master, Trick House) | Dialogue, sprite swap | Done (Joe Fettuccine's placeholder sprite) |
+| WILDCARD and Wildcard's Castle (Trick Master, Trick House) | Dialogue, sprite swap | Done (Red's sprite, shared with Joe Fettuccine; needs playtesting) |
 | Alan's post-game lab scene | Dialogue | Done |
 | Brian's house sign and WING-SLUT PokéNav tag | Text | Done |
 | One combined BIKE (B: Fast/Acro, R: tricks) | Custom | Done |
