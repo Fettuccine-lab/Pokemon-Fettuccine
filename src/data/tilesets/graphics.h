@@ -418,7 +418,7 @@ const u16 gTilesetPalettes_Shop[][16] =
     INCGFX_U16("data/tilesets/secondary/shop/palettes/15.pal", ".gbapal"),
 };
 
-const u32 gTilesetTiles_PokemonCenter[] = INCGFX_U32("data/tilesets/secondary/pokemon_center/tiles.png", ".4bpp.fastSmol", "-num_tiles 478 -Wnum_tiles");
+const u32 gTilesetTiles_PokemonCenter[] = INCGFX_U32("data/tilesets/secondary/pokemon_center/tiles.png", ".4bpp.fastSmol", "-num_tiles 490 -Wnum_tiles");
 
 const u16 gTilesetPalettes_PokemonCenter[][16] =
 {
