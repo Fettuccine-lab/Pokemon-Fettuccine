@@ -68,8 +68,9 @@ EventScript_PkmnCenterNurse_ExplainPokerus::
 	setflag FLAG_POKERUS_EXPLAINED
 	return
 
+@ Fettuccine: the nurse is now a chef, whose sprite has no bow frame.
 Movement_PkmnCenterNurse_Bow:
-	nurse_joy_bow
+	face_down
 	delay_4
 	step_end
 

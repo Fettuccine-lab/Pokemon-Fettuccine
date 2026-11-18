@@ -31,7 +31,7 @@
     },
     {
       "local_id": "LOCALID_TRAINER_HILL_NURSE",
-      "graphics_id": "OBJ_EVENT_GFX_NURSE",
+      "graphics_id": "OBJ_EVENT_GFX_CHEF",
       "x": 4,
       "y": 9,
       "elevation": 3,
