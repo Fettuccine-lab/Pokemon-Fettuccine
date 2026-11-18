@@ -17,7 +17,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_MECHADOLL_1",
-      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+      "graphics_id": "OBJ_EVENT_GFX_RED",
       "x": 6,
       "y": 17,
       "elevation": 3,
@@ -31,7 +31,7 @@
     },
     {
       "local_id": "LOCALID_MECHADOLL_2",
-      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+      "graphics_id": "OBJ_EVENT_GFX_RED",
       "x": 0,
       "y": 7,
       "elevation": 3,
@@ -45,7 +45,7 @@
     },
     {
       "local_id": "LOCALID_MECHADOLL_3",
-      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+      "graphics_id": "OBJ_EVENT_GFX_RED",
       "x": 14,
       "y": 10,
       "elevation": 3,
@@ -59,7 +59,7 @@
     },
     {
       "local_id": "LOCALID_MECHADOLL_4",
-      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+      "graphics_id": "OBJ_EVENT_GFX_RED",
       "x": 14,
       "y": 19,
       "elevation": 3,
@@ -73,7 +73,7 @@
     },
     {
       "local_id": "LOCALID_MECHADOLL_5",
-      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+      "graphics_id": "OBJ_EVENT_GFX_RED",
       "x": 10,
       "y": 4,
       "elevation": 3,
