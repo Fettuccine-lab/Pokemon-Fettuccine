@@ -529,7 +529,7 @@
 #define FLAG_RANDOMIZER_ON                   0x1E0 // Fettuccine: this save is a randomizer game
 #define FLAG_EXP_SHARE_ON                    0x1E1 // Fettuccine: Exp. Share key item is switched on
 #define FLAG_JOE_FETTUCCINE_REMATCH_READY    0x1E2 // Fettuccine: set on every Hall of Fame entry, cleared when Joe Fettuccine is beaten
-#define FLAG_RECEIVED_TRICK_HOUSE_GRENINJA   0x1E3 // Fettuccine: got the Battle Bond Greninja from Wildcard's Castle (room 4 or the catch-up)
+#define FLAG_RECEIVED_TRICK_HOUSE_GRENINJA   0x1E3 // Fettuccine: got the Battle Bond Greninja from Wildcard's Castle (room 5, room 4 in Playtest 15, or the catch-up)
 
 // Mystery Gift Flags (Unknown)
 #define FLAG_MYSTERY_GIFT_DONE               0x1E4

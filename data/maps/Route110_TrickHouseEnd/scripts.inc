@@ -94,10 +94,9 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle3::
 Route110_TrickHouseEnd_EventScript_CompletedPuzzle4::
 	msgbox Route110_TrickHouseEnd_Text_AllNightToShoveBoulders, MSGBOX_DEFAULT
 	msgbox Route110_TrickHouseEnd_Text_YouHaveEarnedThisReward, MSGBOX_DEFAULT
-	msgbox Route110_TrickHouse_Text_GreninjaReward, MSGBOX_DEFAULT
 	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 0
-	call Route110_TrickHouse_EventScript_GiveGreninja
-	call_if_eq VAR_RESULT, FALSE, Route110_TrickHouseEnd_EventScript_NoRoomForGreninja
+	giveitem ITEM_TM_TAUNT
+	call_if_eq VAR_RESULT, FALSE, Route110_TrickHouseEnd_EventScript_BagFull
 	msgbox Route110_TrickHouseEnd_Text_MakeNewTricksToStumpYou, MSGBOX_DEFAULT
 	closemessage
 	call Route110_TrickHouseEnd_EventScript_TrickMasterExit
@@ -108,13 +107,23 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle5::
 	msgbox Route110_TrickHouseEnd_Text_AllNightToMakeMechadolls, MSGBOX_DEFAULT
 	msgbox Route110_TrickHouseEnd_Text_YouHaveEarnedThisReward, MSGBOX_DEFAULT
 	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 0
-	giveitem ITEM_TM_TAUNT
-	call_if_eq VAR_RESULT, FALSE, Route110_TrickHouseEnd_EventScript_BagFull
+	call_if_set FLAG_RECEIVED_TRICK_HOUSE_GRENINJA, Route110_TrickHouseEnd_EventScript_Puzzle5TauntInstead
+	goto_if_set FLAG_RECEIVED_TRICK_HOUSE_GRENINJA, Route110_TrickHouseEnd_EventScript_Puzzle5Done
+	msgbox Route110_TrickHouse_Text_GreninjaReward, MSGBOX_DEFAULT
+	call Route110_TrickHouse_EventScript_GiveGreninja
+	call_if_eq VAR_RESULT, FALSE, Route110_TrickHouseEnd_EventScript_NoRoomForGreninja
+Route110_TrickHouseEnd_EventScript_Puzzle5Done::
 	msgbox Route110_TrickHouseEnd_Text_MakeNewTricksToStumpYou, MSGBOX_DEFAULT
 	closemessage
 	call Route110_TrickHouseEnd_EventScript_TrickMasterExit
 	release
 	end
+
+@ Fettuccine: saves that got the GRENINJA from room 4 (Playtest 15) get room 4's new TM TAUNT here instead.
+Route110_TrickHouseEnd_EventScript_Puzzle5TauntInstead::
+	giveitem ITEM_TM_TAUNT
+	call_if_eq VAR_RESULT, FALSE, Route110_TrickHouseEnd_EventScript_BagFull
+	return
 
 Route110_TrickHouseEnd_EventScript_CompletedPuzzle6::
 	msgbox Route110_TrickHouseEnd_Text_AllNightToInstallDoors, MSGBOX_DEFAULT
@@ -193,7 +202,7 @@ Route110_TrickHouseEnd_EventScript_BagFull::
 	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 1
 	return
 
-@ Fettuccine: room 4's reward is a Lv 36 Battle Bond GRENINJA (was a SMOKE BALL).
+@ Fettuccine: room 5's reward is a Lv 36 Battle Bond GRENINJA (was TM TAUNT; room 4 now gives TM TAUNT).
 @ Also used by the entrance when the reward is picked up later. VAR_RESULT is TRUE if given.
 Route110_TrickHouse_EventScript_GiveGreninja::
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GRENINJA_BATTLE_BOND

@@ -235,11 +235,11 @@ Route110_TrickHouseEntrance_EventScript_TrickMaster::
 	case 6, Route110_TrickHouseEntrance_EventScript_MechadollReward
 	end
 
-@ Fettuccine: catch-up GRENINJA for saves that cleared room 4 when its reward was a SMOKE BALL.
+@ Fettuccine: catch-up GRENINJA for saves that cleared room 5 before it gave the GRENINJA.
 @ Offered when WILDCARD is found (state 0), waiting at the door (state 3), or after the last room (state 4).
 Route110_TrickHouseEntrance_EventScript_TryCatchUpGreninja::
 	goto_if_set FLAG_RECEIVED_TRICK_HOUSE_GRENINJA, Route110_TrickHouseEntrance_EventScript_NoCatchUp
-	goto_if_lt VAR_TRICK_HOUSE_LEVEL, 4, Route110_TrickHouseEntrance_EventScript_NoCatchUp
+	goto_if_lt VAR_TRICK_HOUSE_LEVEL, 5, Route110_TrickHouseEntrance_EventScript_NoCatchUp
 	applymovement LOCALID_TRICK_MASTER, Common_Movement_FacePlayer
 	waitmovement 0
 	msgbox Route110_TrickHouseEntrance_Text_CatchUpGreninja, MSGBOX_DEFAULT
@@ -253,7 +253,7 @@ Route110_TrickHouseEntrance_EventScript_NoCatchUp::
 
 Route110_TrickHouseEntrance_EventScript_StillMakingPuzzleOrCatchUp::
 	goto_if_set FLAG_RECEIVED_TRICK_HOUSE_GRENINJA, Route110_TrickHouseEntrance_EventScript_StillMakingPuzzle
-	goto_if_lt VAR_TRICK_HOUSE_LEVEL, 4, Route110_TrickHouseEntrance_EventScript_StillMakingPuzzle
+	goto_if_lt VAR_TRICK_HOUSE_LEVEL, 5, Route110_TrickHouseEntrance_EventScript_StillMakingPuzzle
 	call Route110_TrickHouseEntrance_EventScript_TryCatchUpGreninja
 	applymovement LOCALID_TRICK_MASTER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
@@ -407,6 +407,16 @@ Route110_TrickHouseEntrance_EventScript_GivePuzzle3Reward::
 	end
 
 Route110_TrickHouseEntrance_EventScript_GivePuzzle4Reward::
+	giveitem ITEM_TM_TAUNT
+	goto_if_eq VAR_RESULT, TRUE, Route110_TrickHouseEntrance_EventScript_GotReward
+	call_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+	msgbox Route110_TrickHouseEntrance_Text_DidYouNotComeToClaimReward, MSGBOX_DEFAULT
+	releaseall
+	end
+
+@ Fettuccine: room 5 gives the GRENINJA, or TM TAUNT if the save already got the GRENINJA from room 4.
+Route110_TrickHouseEntrance_EventScript_GivePuzzle5Reward::
+	goto_if_set FLAG_RECEIVED_TRICK_HOUSE_GRENINJA, Route110_TrickHouseEntrance_EventScript_GivePuzzle5Taunt
 	call Route110_TrickHouse_EventScript_GiveGreninja
 	goto_if_eq VAR_RESULT, TRUE, Route110_TrickHouseEntrance_EventScript_GotReward
 	msgbox gText_NoMoreRoomForPokemon, MSGBOX_DEFAULT
@@ -414,7 +424,7 @@ Route110_TrickHouseEntrance_EventScript_GivePuzzle4Reward::
 	releaseall
 	end
 
-Route110_TrickHouseEntrance_EventScript_GivePuzzle5Reward::
+Route110_TrickHouseEntrance_EventScript_GivePuzzle5Taunt::
 	giveitem ITEM_TM_TAUNT
 	goto_if_eq VAR_RESULT, TRUE, Route110_TrickHouseEntrance_EventScript_GotReward
 	call_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
@@ -881,7 +891,7 @@ Route110_TrickHouseEntrance_Text_DoorLockedWriteSecretCodeHere:
 
 Route110_TrickHouseEntrance_Text_CatchUpGreninja:
 	.string "Hold it! Before anything else…\p"
-	.string "Since you cleared my fourth trick,\n"
+	.string "Since you cleared my fifth trick,\n"
 	.string "I've upgraded its reward!$"
 
 Route110_TrickHouseEntrance_Text_CatchUpNoRoom:
