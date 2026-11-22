@@ -127,6 +127,7 @@ Balance notes:
 - The Pokémon Center tileset is shared, so every center plus the Pokémon League lobby gets the kitchen. The Battle Frontier center and the Trainer Hill entrance use other tilesets and keep their counters.
 - Tiles: stove = tiles 478–489 on palette 10 (FireRed's colors); fridge = tiles 490–497 on palette 12. A custom 16×32 oven can replace the fridge later.
 - The dialogue never names Nurse Joy, so no text changed. The chef's text may show in the male (blue) color.
+- **Bug fixed (Nov 22, 2026):** the chefs were invisible in the Playtest 14 and 15 builds. The chef is a FireRed sprite, and its graphics were only included in FireRed builds. They're now included in our Emerald build too. Check that the chefs show up in the next playtest.
 
 ### Wonder Trade (upstairs in every Pokémon Center)
 
@@ -836,7 +837,7 @@ Testers download from **https://github.com/Fettuccine-lab/Pokemon-Fettuccine/rel
 | 11 | Fix for the freeze after catching a new Pokémon (likely also the walking-down bug) |
 | 12 | Armors sold in Farfallarbor, Shieldon replaces Roxanne's Tyrunt, signature moves on evolution (starter ultimates Lv 65, Volt Tackle Lv 50), Bird Keepers and Fortellini Gym use Flying types (Omnirouge is in the build but hidden) |
 | 13 | Solar Blade is a one-turn move (95 power) |
-| 14 | Run toggle (tap B), Pokémon Center chefs with a stove and fridge, Red's sprite for Joe Fettuccine and WILDCARD |
+| 14 | Run toggle (tap B), Pokémon Center chefs with a stove and fridge, Red's sprite for Joe Fettuccine and WILDCARD (the chefs were invisible in this build and in 15; fixed after Playtest 15) |
 | 15 | Joe Fettuccine's post-game battle and rematches, Battle Bond Greninja from Wildcard's Castle room 4 (catch-up for old saves), one-chance Zeraora before the Elite Four, secret "Joe" Charcadet starter with followers and Joe Fettuccine's mirror team, Omnirouge removed |
 
 **Dropped (Nov 2026): Omnirouge.** The Armarouge + Ceruledge fusion and its Omni Armor key item were removed from the game; Joe decided not to make it.
