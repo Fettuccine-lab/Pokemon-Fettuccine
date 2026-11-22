@@ -16897,7 +16897,7 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 
 Clodsire @ Leftovers
 Level: 76
@@ -16910,7 +16910,7 @@ EVs: 252 HP / 4 Atk / 252 SpD
 - Toxic Spikes
 - Recover
 
-Noivern @ Choice Specs
+Noivern @ Life Orb
 Level: 77
 Ability: Infiltrator
 Nature: Timid
@@ -16951,7 +16951,7 @@ Shiny: Yes
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
 - Water Shuriken
-- Hydro Pump
+- Grass Knot
 - Dark Pulse
 - Ice Beam
 
