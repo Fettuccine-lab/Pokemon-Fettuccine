@@ -836,6 +836,8 @@ Testers download from **https://github.com/Fettuccine-lab/Pokemon-Fettuccine/rel
 | 11 | Fix for the freeze after catching a new Pokémon (likely also the walking-down bug) |
 | 12 | Armors sold in Farfallarbor, Shieldon replaces Roxanne's Tyrunt, signature moves on evolution (starter ultimates Lv 65, Volt Tackle Lv 50), Bird Keepers and Fortellini Gym use Flying types (Omnirouge is in the build but hidden) |
 | 13 | Solar Blade is a one-turn move (95 power) |
+| 14 | Run toggle (tap B), Pokémon Center chefs with a stove and fridge, Red's sprite for Joe Fettuccine and WILDCARD |
+| 15 | Joe Fettuccine's post-game battle and rematches, Battle Bond Greninja from Wildcard's Castle room 4 (catch-up for old saves), one-chance Zeraora before the Elite Four, secret "Joe" Charcadet starter with followers and Joe Fettuccine's mirror team, Omnirouge removed |
 
 **Dropped (Nov 2026): Omnirouge.** The Armarouge + Ceruledge fusion and its Omni Armor key item were removed from the game; Joe decided not to make it.
 
