@@ -303,6 +303,24 @@ DebugScript_Text_EmptyParty::
 DebugScript_HatchAnEgg_Text_NotAnEgg::
 	.string "That's not a Pokémon Egg.$"
 
+DebugScript_JoeFettuccineTeamGiven::
+	msgbox DebugText_JoeFettuccineTeamGiven, MSGBOX_DEFAULT
+	releaseall
+	end
+
+DebugScript_JoeFettuccineTeamPCFull::
+	msgbox DebugText_JoeFettuccineTeamPCFull, MSGBOX_DEFAULT
+	releaseall
+	end
+
+DebugText_JoeFettuccineTeamGiven:
+	.string "JOE FETTUCCINE's team (Lv. 45)\n"
+	.string "was sent to the PC.$"
+
+DebugText_JoeFettuccineTeamPCFull:
+	.string "The PC is full! Some of the team\n"
+	.string "couldn't be sent.$"
+
 DebugScript_ZeroDaycareMons::
 	msgbox DebugText_DaycareNoPokemon, MSGBOX_DEFAULT
 	releaseall

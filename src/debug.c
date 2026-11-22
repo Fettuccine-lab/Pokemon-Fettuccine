@@ -344,6 +344,7 @@ static void DebugAction_Give_MaxMoney(u8 taskId);
 static void DebugAction_Give_MaxCoins(u8 taskId);
 static void DebugAction_Give_MaxBattlePoints(u8 taskId);
 static void DebugAction_Give_DayCareEgg(u8 taskId);
+static void DebugAction_Give_JoeFettuccineTeam(u8 taskId);
 
 static void DebugAction_Sound_SE(u8 taskId);
 static void DebugAction_Sound_SE_SelectId(u8 taskId);
@@ -400,6 +401,8 @@ extern const u8 Debug_StoryBeat_MtPyreReturn[];
 extern const u8 DebugScript_DaycareMonsNotCompatible[];
 extern const u8 DebugScript_OneDaycareMons[];
 extern const u8 DebugScript_ZeroDaycareMons[];
+extern const u8 DebugScript_JoeFettuccineTeamGiven[];
+extern const u8 DebugScript_JoeFettuccineTeamPCFull[];
 
 extern const u8 Debug_ShowFieldMessageStringVar4[];
 extern const u8 Debug_CheatStart[];
@@ -675,6 +678,7 @@ static const struct DebugMenuOption sDebugMenu_Actions_Give[] =
     { COMPOUND_STRING("Max Coins"),         DebugAction_Give_MaxCoins },
     { COMPOUND_STRING("Max Battle Points"), DebugAction_Give_MaxBattlePoints },
     { COMPOUND_STRING("Daycare Egg"),       DebugAction_Give_DayCareEgg },
+    { COMPOUND_STRING("Joe F. team Lv45"),  DebugAction_Give_JoeFettuccineTeam },
     { NULL }
 };
 
@@ -3588,6 +3592,80 @@ static void DebugAction_Give_MaxCoins(u8 taskId)
 static void DebugAction_Give_MaxBattlePoints(u8 taskId)
 {
     gSaveBlock2Ptr->frontier.battlePoints = MAX_BATTLE_FRONTIER_POINTS;
+}
+
+// Fettuccine: Joe Fettuccine's team (TRAINER_JOE_FETTUCCINE in trainers.party) at Lv 45, sent to the PC.
+// Keep this in sync with his team. The Ceruledge is the secret "Joe" form, so it follows when it leads.
+struct DebugJoeTeamMon
+{
+    u16 species;
+    u16 heldItem;
+    u16 ability;
+    u8 nature;
+    bool8 isShiny;
+    u8 evs[NUM_STATS]; // HP, Atk, Def, Spe, SpA, SpD
+    u16 moves[MAX_MON_MOVES];
+};
+
+static const struct DebugJoeTeamMon sDebugJoeFettuccineTeam[] =
+{
+    { SPECIES_CLODSIRE, ITEM_LEFTOVERS, ABILITY_WATER_ABSORB, NATURE_CAREFUL, FALSE, {252, 4, 0, 0, 0, 252},
+      { MOVE_EARTHQUAKE, MOVE_POISON_JAB, MOVE_TOXIC_SPIKES, MOVE_RECOVER } },
+    { SPECIES_NOIVERN, ITEM_LIFE_ORB, ABILITY_INFILTRATOR, NATURE_TIMID, FALSE, {4, 0, 0, 252, 252, 0},
+      { MOVE_DRACO_METEOR, MOVE_BOOMBURST, MOVE_HURRICANE, MOVE_FLAMETHROWER } },
+    { SPECIES_ANNIHILAPE, ITEM_LEFTOVERS, ABILITY_DEFIANT, NATURE_JOLLY, FALSE, {4, 252, 0, 252, 0, 0},
+      { MOVE_RAGE_FIST, MOVE_DRAIN_PUNCH, MOVE_BULK_UP, MOVE_ICE_PUNCH } },
+    { SPECIES_ZERAORA, ITEM_ZERAORITE, ABILITY_VOLT_ABSORB, NATURE_JOLLY, FALSE, {4, 252, 0, 252, 0, 0},
+      { MOVE_PLASMA_FISTS, MOVE_CLOSE_COMBAT, MOVE_KNOCK_OFF, MOVE_PLAY_ROUGH } },
+    { SPECIES_GRENINJA_BATTLE_BOND, ITEM_EXPERT_BELT, ABILITY_BATTLE_BOND, NATURE_TIMID, TRUE, {4, 0, 0, 252, 252, 0},
+      { MOVE_WATER_SHURIKEN, MOVE_GRASS_KNOT, MOVE_DARK_PULSE, MOVE_ICE_BEAM } },
+    { SPECIES_CERULEDGE_JOE, ITEM_LIFE_ORB, ABILITY_SHARPNESS, NATURE_ADAMANT, TRUE, {4, 252, 0, 252, 0, 0},
+      { MOVE_BITTER_BLADE, MOVE_POLTERGEIST, MOVE_SOLAR_BLADE, MOVE_SWORDS_DANCE } },
+};
+
+static void DebugAction_Give_JoeFettuccineTeam(u8 taskId)
+{
+    u32 i, j;
+
+    for (i = 0; i < ARRAY_COUNT(sDebugJoeFettuccineTeam); i++)
+    {
+        const struct DebugJoeTeamMon *joeMon = &sDebugJoeFettuccineTeam[i];
+        struct PokemonTemplate template = {0};
+        struct Pokemon mon;
+
+        template.species = joeMon->species;
+        template.heldItem = joeMon->heldItem;
+        template.level = 45;
+        template.gender = MON_GENDER_RANDOM;
+        template.nature = joeMon->nature;
+        template.isShiny = joeMon->isShiny;
+        template.doNotUseDefaultShinyness = TRUE;
+        template.origin = GIFTMON_ORIGIN;
+        for (j = 0; j < NUM_ABILITY_SLOTS; j++)
+        {
+            if (GetAbilityBySpecies(joeMon->species, j) == joeMon->ability)
+            {
+                template.abilityNum = j;
+                template.doNotUseDefaultAbility = TRUE;
+                break;
+            }
+        }
+        for (j = 0; j < NUM_STATS; j++)
+        {
+            template.ivs[j] = MAX_PER_STAT_IVS;
+            template.evs[j] = joeMon->evs[j];
+        }
+        for (j = 0; j < MAX_MON_MOVES; j++)
+            template.moves[j] = joeMon->moves[j];
+
+        CreateMonFromTemplate(&mon, &template);
+        if (CopyMonToPC(&mon) != MON_GIVEN_TO_PC)
+        {
+            Debug_DestroyMenu_Full_Script(taskId, DebugScript_JoeFettuccineTeamPCFull);
+            return;
+        }
+    }
+    Debug_DestroyMenu_Full_Script(taskId, DebugScript_JoeFettuccineTeamGiven);
 }
 
 static void DebugAction_Give_DayCareEgg(u8 taskId)
