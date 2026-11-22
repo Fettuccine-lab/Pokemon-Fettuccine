@@ -348,14 +348,14 @@ Every Pokémon is from Gens 1–3 and has a cheese connection.
 - **Done: dialogue (approved by Joe).** He introduces himself by name, jokes that his cousin told him to stop spending money on Pokémon games ("So I made my own!"), and denies ever meeting WILDCARD. The diploma is signed JOE FETTUCCINE. The motel owner says the big group booked in under FETTUCCINE instead of GAME FREAK.
 - **Done (Nov 2026, needs playtesting): post-game battle.** After the Hall of Fame, the first talk gives the Old Sea Map and offers a battle (yes/no). After that he offers a rematch (yes/no) **once after every Hall of Fame entry**; otherwise he says to beat the Elite Four again. If the player loses or says no, the offer stays open. No prize. Trainer `TRAINER_JOE_FETTUCCINE`. In battle he's **JOE FETTUCCINE**: trainer names max out at 10 letters, so the class (the unused PKMN TRAINER 2 class, renamed) reads JOE and the name reads FETTUCCINE. He has Red's FireRed battle sprite, Champion battle music and 4 Full Restores. The rematch flag is `FLAG_JOE_FETTUCCINE_REMATCH_READY`, set in the Hall of Fame script. Battle dialogue drafted, **awaiting Joe's approval**.
 - **Decided: his ace is a shiny, overpowered Ceruledge**, a form only he has (`SPECIES_CERULEDGE_JOE`), like Mike's Spearow. Boosted stats: 90 HP / 150 Atk / 100 Def / 70 SpA / 110 SpD / 120 Spe (640 total, vs. 525). Ability Sharpness (boosts slicing moves). Uses Ceruledge's sprites and its normal shiny palette. Moves: Bitter Blade, Poltergeist, Solar Blade, Swords Dance, with a Life Orb.
-- **Decided (Nov 2026): Zeraora (Mega), Noivern and a shiny Ash-Greninja,** with the Ceruledge as ace. Breloom and Cloyster (kept from the first draft) fill the last two slots, **awaiting Joe's review**. Levels 76–80, perfect IVs, Ceruledge last.
+- **Decided (Nov 2026): Zeraora (Mega), Noivern and a shiny Ash-Greninja,** with the Ceruledge as ace. Annihilape and Clodsire fill the last two slots (Joe's picks; their movesets await his review). Levels 76–80, perfect IVs, Ceruledge last.
 - **Ash-Greninja:** a Battle Bond Greninja that becomes Ash-Greninja after it knocks out a Pokémon. This needed `B_BATTLE_BOND` set to `GEN_8` in `include/config/battle.h` (Gen 9 changed Battle Bond to a stat boost). No Battle Bond Greninja can be caught in the game, so this only affects Joe's.
 
 | Pokémon | Lv | Set |
 | --- | --- | --- |
-| Breloom | 76 | Focus Sash, Technician; Spore, Bullet Seed, Mach Punch, Rock Tomb |
+| Clodsire | 76 | Leftovers, Water Absorb; Earthquake, Poison Jab, Toxic Spikes, Recover |
 | Noivern | 77 | Choice Specs, Infiltrator; Draco Meteor, Boomburst, Hurricane, Flamethrower |
-| Cloyster | 77 | White Herb, Skill Link; Shell Smash, Icicle Spear, Rock Blast, Liquidation |
+| Annihilape | 77 | Leftovers, Defiant; Rage Fist, Drain Punch, Bulk Up, Ice Punch |
 | Zeraora (Mega) | 78 | Zeraorite, Volt Absorb; Plasma Fists, Close Combat, Knock Off, Play Rough |
 | Greninja (Battle Bond, shiny) | 79 | Expert Belt; Water Shuriken, Hydro Pump, Dark Pulse, Ice Beam |
 | Ceruledge (Joe's form, shiny, ace) | 80 | Life Orb, Sharpness; Bitter Blade, Poltergeist, Solar Blade, Swords Dance |
@@ -792,7 +792,7 @@ A yes/no choice at New Game that randomizes Pokémon for that save file. It runs
 | Solar Blade: one turn, 95 power | Move data, animation | Done, needs playtesting |
 | Bird Keepers and Fortellini Gym trainers use Flying types | Trainer data | Done, needs playtesting |
 | Omnirouge (Armarouge + Ceruledge fusion) | Custom form, fusion item | Dropped (Nov 2026): removed from the game |
-| Joe Fettuccine post-game battle (rematch after every Hall of Fame, shiny overpowered Ceruledge ace) | Trainer data, custom form, motel script | Built, needs playtesting; Breloom/Cloyster picks and battle dialogue await Joe's review |
+| Joe Fettuccine post-game battle (rematch after every Hall of Fame, shiny overpowered Ceruledge ace) | Trainer data, custom form, motel script | Built, needs playtesting; movesets and battle dialogue await Joe's review |
 
 ## Playtests
 

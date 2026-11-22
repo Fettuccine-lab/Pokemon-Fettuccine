@@ -16899,16 +16899,16 @@ Items: Full Restore / Full Restore / Full Restore / Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Breloom @ Focus Sash
+Clodsire @ Leftovers
 Level: 76
-Ability: Technician
-Nature: Jolly
+Ability: Water Absorb
+Nature: Careful
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 4 HP / 252 Atk / 252 Spe
-- Spore
-- Bullet Seed
-- Mach Punch
-- Rock Tomb
+EVs: 252 HP / 4 Atk / 252 SpD
+- Earthquake
+- Poison Jab
+- Toxic Spikes
+- Recover
 
 Noivern @ Choice Specs
 Level: 77
@@ -16921,16 +16921,16 @@ EVs: 4 HP / 252 SpA / 252 Spe
 - Hurricane
 - Flamethrower
 
-Cloyster @ White Herb
+Annihilape @ Leftovers
 Level: 77
-Ability: Skill Link
-Nature: Adamant
+Ability: Defiant
+Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
-- Shell Smash
-- Icicle Spear
-- Rock Blast
-- Liquidation
+- Rage Fist
+- Drain Punch
+- Bulk Up
+- Ice Punch
 
 Zeraora @ Zeraorite
 Level: 78
