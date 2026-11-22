@@ -1,0 +1,125 @@
+POKEMON FETTUCCINE VERSION - PLAYTEST 15
+========================================
+
+Thanks for testing! This build gives the game designer a post-game
+battle, adds a Greninja to WILDCARD's castle, lets you catch Zeraora
+before the Elite Four, and hides a secret starter.
+
+
+HOW TO PLAY
+-----------
+1. You need a clean US Pokemon Emerald ROM (not included).
+   It should match:
+     CRC32: 1F1C08FB
+     SHA-1: f3ae088181bf583e55daf962a92bb46f4f1d07b7
+2. Apply fettuccine-playtest-15.bps to it. Either of these works:
+     - Rom Patcher JS (in your browser): https://www.marcrobledo.com/RomPatcher.js/
+     - Floating IPS (Flips)
+3. Play the patched ROM in mGBA or any GBA emulator.
+
+Your Playtest 14 save should keep working: give the new ROM the same
+file name as before (so the save file matches) or copy the .sav across.
+Use an in-game save, not a save state from an older playtest.
+
+
+NEW SINCE PLAYTEST 14
+---------------------
+Joe Fettuccine, the game designer, battles you
+- After the Hall of Fame, the game designer at the Cove Lily Motel
+  in Linguicove gives you the OLD SEA MAP, then offers a battle. You
+  can say no and come back later.
+- He's tough: levels 76-80, a Mega Zeraora, a shiny Greninja that
+  turns into Ash-Greninja, and a shiny, powered-up Ceruledge.
+- Beat him and he'll want a rematch every time you enter the Hall
+  of Fame again.
+
+A Greninja in WILDCARD's castle
+- Room 4's prize is now a Lv 36 Greninja with Battle Bond (it was a
+  Smoke Ball). When it knocks out a Pokemon in battle, it turns into
+  Ash-Greninja.
+- Already cleared room 4? Talk to WILDCARD at the castle entrance
+  and he'll give you the Greninja anyway. You keep your Smoke Ball.
+
+Zeraora before the Elite Four
+- Zeraora now waits in the New Macaroville entrance (surf on
+  Route 110) as soon as you can get there, at Lv 40.
+- You get ONE chance: if you knock it out or run away, it's gone
+  for good. Save first!
+
+A secret starter
+- Name yourself JOE and press B when Prof. Alan asks you to pick a
+  Pokemon from his bag. He'll hand you his own shiny Charcadet
+  instead, and give you a Malicious Armor back at the lab.
+- This Charcadet follows you around (like HeartGold and SoulSilver)
+  when it leads your party. It evolves only into Ceruledge.
+- With this starter, the game designer's post-game team is the
+  opposite of his usual one.
+
+Removed
+- Omnirouge (the hidden Armarouge + Ceruledge fusion) and its Omni
+  Armor are gone. If you gave yourself an Omni Armor with the debug
+  menu, toss it.
+
+
+PLEASE TRY
+----------
+- Post-game: battle the game designer. Say no the first time, then
+  come back. Lose once on purpose. Beat him, then re-enter the Hall
+  of Fame and check he offers a rematch.
+- Clear castle room 4 (or talk to WILDCARD if you already did) and
+  get the Greninja. Let it knock something out and watch it change.
+- Try Zeraora: knock it out or run on one save (it should vanish
+  for good), catch it on another.
+- Start a NEW game named JOE, press B at the bag, and walk around
+  with the Charcadet leading: towns, buildings, doors, surfing,
+  biking, cutscenes. Does it ever get stuck or block the way?
+- Put another Pokemon first in your party: nothing should follow.
+
+
+DEBUG MENU
+----------
+This build has the developer's debug menus turned on, so you can
+skip ahead or set up a test:
+  - Overworld: hold R and press START (mGBA keyboard: hold S, Enter)
+  - In battle: press SELECT on the battle menu (mGBA: Backspace)
+  - Sprite viewer: SELECT on a summary screen (mGBA: Backspace)
+Use a separate save or a save state first, and say in your report
+if that save used the debug menu.
+
+Handy for this playtest: Give X > Pokemon (Complex), species 1576 is
+the secret Charcadet (set Shiny to yes). Species 1574 is its
+Ceruledge.
+
+
+AFTER-BATTLE GLITCHES
+---------------------
+If anything odd happens right after a battle (the player moving on
+their own, buttons not working, a freeze, strange graphics), make a
+SAVE STATE right away (mGBA: File > Save State) and send it in.
+
+
+KNOWN PLACEHOLDERS
+------------------
+- Brian, Prof. Alan, Sam, Mike, Joe Q, JASON and BLOBBY still use
+  old Emerald sprites. Prof. Alan's battle sprite is a Gentleman.
+- The special Charcadet, Ceruledge and Armarouge use the normal
+  sprites and shiny colors for now.
+- The title screen still says EMERALD VERSION.
+- Retro Salvage Games shops still have blue roofs and MART signs.
+- A few map graphics still say HOENN.
+- Sam's shiny Metagross isn't cheddar-yellow yet.
+
+
+PLEASE REPORT
+-------------
+- Crashes or freezes, especially right after catching a Pokemon
+- The following Charcadet getting stuck, walking through walls,
+  showing up indoors when it shouldn't, or breaking a cutscene
+- Any battle against the game designer that feels unfair or too easy
+- Text that runs off the box
+- Anything that blocks progress
+- Say whether your save is a RANDOMIZER game, and whether it's new or
+  from an older playtest
+
+If you can, say where you were and what you were doing, and send a
+screenshot or your save file.
