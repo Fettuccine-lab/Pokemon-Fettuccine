@@ -206,7 +206,15 @@ Route110_TrickHouseEnd_EventScript_BagFull::
 @ Also used by the entrance when the reward is picked up later. VAR_RESULT is TRUE if given.
 Route110_TrickHouse_EventScript_GiveGreninja::
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GRENINJA_BATTLE_BOND
-	givemon SPECIES_GRENINJA_BATTLE_BOND, 36, shinyMode=FALSE
+	goto_if_set FLAG_RANDOMIZER_ON, Route110_TrickHouse_EventScript_GiveRandomizedGreninja
+	@ Same item, nature and moves as Joe Fettuccine's GRENINJA (Battle Bond is its only ability).
+	givemon SPECIES_GRENINJA_BATTLE_BOND, 36, item=ITEM_EXPERT_BELT, nature=NATURE_TIMID, move1=MOVE_WATER_SHURIKEN, move2=MOVE_GRASS_KNOT, move3=MOVE_DARK_PULSE, move4=MOVE_ICE_BEAM, shinyMode=FALSE
+	goto Route110_TrickHouse_EventScript_CheckGreninjaGiven
+
+@ In randomizer games the gift becomes a random Pokémon, so it keeps the item and nature but learns its own moves.
+Route110_TrickHouse_EventScript_GiveRandomizedGreninja::
+	givemon SPECIES_GRENINJA_BATTLE_BOND, 36, item=ITEM_EXPERT_BELT, nature=NATURE_TIMID, shinyMode=FALSE
+Route110_TrickHouse_EventScript_CheckGreninjaGiven::
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Route110_TrickHouse_EventScript_GreninjaToParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Route110_TrickHouse_EventScript_GreninjaToPC
 	setvar VAR_RESULT, FALSE
