@@ -699,8 +699,8 @@
 #define FLAG_JOE_STARTER   0x284 // Fettuccine: player named Joe pressed B at the starter bag and got the secret Charcadet
 #define FLAG_CELEBI_GONE   0x285 // Fettuccine: wild Celebi (Pestoburg Woods) was knocked out or caught; it never appears again
 #define FLAG_SHAYMIN_GONE  0x286 // Fettuccine: wild Shaymin (Route 117) was knocked out or caught; it never appears again
-#define FLAG_UNUSED_0x287  0x287 // Unused Flag
-#define FLAG_UNUSED_0x288  0x288 // Unused Flag
+#define FLAG_JIRACHI_GONE  0x287 // Fettuccine: Jirachi (Meatball Falls) was knocked out; it never comes back
+#define FLAG_MARSHADOW_GONE 0x288 // Fettuccine: Marshadow (Gouda Grotto) was knocked out; it never comes back
 #define FLAG_UNUSED_0x289  0x289 // Unused Flag
 #define FLAG_UNUSED_0x28A  0x28A // Unused Flag
 #define FLAG_UNUSED_0x28B  0x28B // Unused Flag

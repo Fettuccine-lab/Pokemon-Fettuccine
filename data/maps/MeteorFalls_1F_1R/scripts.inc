@@ -313,9 +313,10 @@ MeteorFalls_1F_1R_Text_WhatsTeamMagmaDoingAtMtChimney:
 	.string "What are they going to do with that\n"
 	.string "METEORITE at MT. CALZONE?$"
 
-@ Fettuccine: Jirachi (Lv 20). There from the start, until it's caught.
+@ Fettuccine: Jirachi (Lv 20). There from the start, until it's caught or knocked out.
 MeteorFalls_1F_1R_EventScript_SetupLegendJirachi::
 	setflag FLAG_HIDE_LEGEND_JIRACHI
+	goto_if_set FLAG_JIRACHI_GONE, MeteorFalls_1F_1R_EventScript_SetupLegendJirachiDone
 	getcaughtmon SPECIES_JIRACHI
 	goto_if_eq VAR_RESULT, TRUE, MeteorFalls_1F_1R_EventScript_SetupLegendJirachiDone
 	clearflag FLAG_HIDE_LEGEND_JIRACHI
@@ -335,7 +336,15 @@ MeteorFalls_1F_1R_EventScript_LegendJirachi::
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, MeteorFalls_1F_1R_EventScript_CaughtLegendJirachi
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, MeteorFalls_1F_1R_EventScript_KnockedOutLegendJirachi
 	release
+	end
+
+@ Knocked out: gone for good. Running away or blacking out leaves it there.
+MeteorFalls_1F_1R_EventScript_KnockedOutLegendJirachi::
+	setflag FLAG_JIRACHI_GONE
+	setflag FLAG_HIDE_LEGEND_JIRACHI
+	goto Common_EventScript_RemoveStaticPokemon
 	end
 
 MeteorFalls_1F_1R_EventScript_CaughtLegendJirachi::
