@@ -57,10 +57,9 @@ NewMauville_Entrance_Text_UsedBasementKey:
 	.string "{PLAYER} used the BASEMENT KEY.\p"
 	.string "The door opened!$"
 
-@ Fettuccine: post-game Zeraora. Appears after the Hall of Fame, until it's caught.
+@ Fettuccine: Zeraora (Lv 40). Here from the start (reaching this room takes Surf), until it's caught.
 NewMauville_Entrance_EventScript_SetupLegendZeraora::
 	setflag FLAG_HIDE_LEGEND_ZERAORA
-	goto_if_unset FLAG_SYS_GAME_CLEAR, NewMauville_Entrance_EventScript_SetupLegendZeraoraDone
 	getcaughtmon SPECIES_ZERAORA
 	goto_if_eq VAR_RESULT, TRUE, NewMauville_Entrance_EventScript_SetupLegendZeraoraDone
 	clearflag FLAG_HIDE_LEGEND_ZERAORA
@@ -74,7 +73,7 @@ NewMauville_Entrance_EventScript_LegendZeraora::
 	playmoncry SPECIES_ZERAORA, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
-	setwildbattle SPECIES_ZERAORA, 50
+	setwildbattle SPECIES_ZERAORA, 40
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
