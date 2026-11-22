@@ -57,9 +57,11 @@ NewMauville_Entrance_Text_UsedBasementKey:
 	.string "{PLAYER} used the BASEMENT KEY.\p"
 	.string "The door opened!$"
 
-@ Fettuccine: Zeraora (Lv 40). Here from the start (reaching this room takes Surf), until it's caught.
+@ Fettuccine: Zeraora (Lv 40). Here from the start (reaching this room takes Surf).
+@ One chance only: it's gone for good once it's caught, knocked out or run from.
 NewMauville_Entrance_EventScript_SetupLegendZeraora::
 	setflag FLAG_HIDE_LEGEND_ZERAORA
+	goto_if_set FLAG_ZERAORA_GONE, NewMauville_Entrance_EventScript_SetupLegendZeraoraDone
 	getcaughtmon SPECIES_ZERAORA
 	goto_if_eq VAR_RESULT, TRUE, NewMauville_Entrance_EventScript_SetupLegendZeraoraDone
 	clearflag FLAG_HIDE_LEGEND_ZERAORA
@@ -79,7 +81,17 @@ NewMauville_Entrance_EventScript_LegendZeraora::
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, NewMauville_Entrance_EventScript_CaughtLegendZeraora
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, NewMauville_Entrance_EventScript_LostLegendZeraora
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NewMauville_Entrance_EventScript_LostLegendZeraora
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, NewMauville_Entrance_EventScript_LostLegendZeraora
+	goto_if_eq VAR_RESULT, B_OUTCOME_MON_FLED, NewMauville_Entrance_EventScript_LostLegendZeraora
 	release
+	end
+
+NewMauville_Entrance_EventScript_LostLegendZeraora::
+	setflag FLAG_ZERAORA_GONE
+	setflag FLAG_HIDE_LEGEND_ZERAORA
+	goto Common_EventScript_RemoveStaticPokemon
 	end
 
 NewMauville_Entrance_EventScript_CaughtLegendZeraora::

@@ -542,7 +542,7 @@ All built into pokeemerald-expansion; the work is deciding where things appear.
 | Lunala | Altering Cave |
 | Genesect | Weather Institute lab |
 | Marshadow | Gouda Grotto B2F |
-| Zeraora | New Macaroville entrance (**changed Nov 2026:** Lv 40 and there from the start, so it can be caught as soon as the player can Surf on Route 110; no Hall of Fame needed) |
+| Zeraora | New Macaroville entrance (**changed Nov 2026:** Lv 40 and there from the start, so it can be caught as soon as the player can Surf on Route 110; no Hall of Fame needed). **One chance only:** knocking it out or running away removes it for good (`FLAG_ZERAORA_GONE`); losing the battle leaves it there |
 | Eternal Flower Floette | Route 104, outside the flower shop (Lv 50) |
 | Magearna | Abandoned Ship, Captain's Office (Lv 50) |
 

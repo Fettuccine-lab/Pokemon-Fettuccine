@@ -695,7 +695,7 @@
 #define FLAG_HIDE_LEGEND_FLOETTE_ETERNAL  0x280
 #define FLAG_HIDE_LEGEND_MAGEARNA  0x281
 #define FLAG_CAUGHT_FLOETTE_ETERNAL  0x282 // The Pokedex can't tell it from a regular Floette
-#define FLAG_UNUSED_0x283  0x283 // Unused Flag
+#define FLAG_ZERAORA_GONE  0x283 // Fettuccine: Zeraora was knocked out or the player ran; it never comes back
 #define FLAG_UNUSED_0x284  0x284 // Unused Flag
 #define FLAG_UNUSED_0x285  0x285 // Unused Flag
 #define FLAG_UNUSED_0x286  0x286 // Unused Flag
