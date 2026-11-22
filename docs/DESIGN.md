@@ -538,7 +538,7 @@ All built into pokeemerald-expansion; the work is deciding where things appear.
 | Mystic Ticket | Navel Rock | Lugia and Ho-Oh (Lv 70) | Joe Q, his house at the Bucatini Frontier |
 | Aurora Ticket | Birth Island | Deoxys (Lv 50) | Scientist, Mostaccideep Space Center 1F |
 
-**Done: themed one-offs (29).** Levels: Arceus 80; cover legendaries 70; other legendaries 60; mythicals 50. Each is hidden until the Hall of Fame (and until its prerequisites are caught), and disappears once it's registered as caught in the Pokédex. Spots were picked automatically on open floor that can't block a path, so Joe may want to move some in Porymap (look for `OBJ_EVENT_GFX_SPECIES(...)` objects). Flags `FLAG_HIDE_LEGEND_*` (0x264–0x27E, plus 0x280 and 0x281). The Pokédex counts every Floette as one Pokémon, so Eternal Floette has its own caught flag (0x282), and catching a regular Floette doesn't remove it.
+**Done: themed one-offs (25; Celebi, Jirachi, Shaymin and Marshadow moved out, see below).** Levels: Arceus 80; cover legendaries 70; other legendaries 60; mythicals 50. Each is hidden until the Hall of Fame (and until its prerequisites are caught), and disappears once it's registered as caught in the Pokédex. Spots were picked automatically on open floor that can't block a path, so Joe may want to move some in Porymap (look for `OBJ_EVENT_GFX_SPECIES(...)` objects). Flags `FLAG_HIDE_LEGEND_*` (0x264–0x27E, plus 0x280 and 0x281). The Pokédex counts every Floette as one Pokémon, so Eternal Floette has its own caught flag (0x282), and catching a regular Floette doesn't remove it.
 
 | Pokémon | Where |
 | --- | --- |
@@ -548,10 +548,7 @@ All built into pokeemerald-expansion; the work is deciding where things appear.
 | Raikou | Route 120 |
 | Entei | Mt. Calzone summit |
 | Suicune | Route 119, by the waterfall |
-| Celebi | Pestoburg Woods |
-| Jirachi | Meatball Falls 1F |
 | Darkrai | Cave of Oregano |
-| Shaymin | Route 117 flower fields |
 | Manaphy | Seafloor Cavern |
 | Dialga, Palkia | Sky Breadstick 3F and 5F, after catching Rayquaza |
 | Arceus | Sky Breadstick summit, after catching Dialga, Palkia and Giratina |
@@ -566,10 +563,22 @@ All built into pokeemerald-expansion; the work is deciding where things appear.
 | Solgaleo | Route 111 desert (the Mirage Tower vanishes for good once its fossil is taken, so it can't be used post-game) |
 | Lunala | Altering Cave |
 | Genesect | Weather Institute lab |
-| Marshadow | Gouda Grotto B2F |
 | Zeraora | New Macaroville entrance (**changed Nov 2026:** Lv 40 and there from the start, so it can be caught as soon as the player can Surf on Route 110; no Hall of Fame needed). **One chance only:** knocking it out or running away removes it for good (`FLAG_ZERAORA_GONE`); losing the battle leaves it there |
 | Eternal Flower Floette | Route 104, outside the flower shop (Lv 50) |
 | Magearna | Abandoned Ship, Captain's Office (Lv 50) |
+
+**Done (Nov 2026), needs playtesting: four mythicals before the Hall of Fame.** Each is gone for good once it's caught or **knocked out**; running away or blacking out leaves it for another try.
+
+| Pokémon | Where | Level | How |
+| --- | --- | --- | --- |
+| Celebi | Pestoburg Woods grass | 8 | 1% of grass encounters (no overworld sprite) |
+| Shaymin | Route 117 grass | 15 | 1% of grass encounters (no overworld sprite) |
+| Jirachi | Meatball Falls 1F | 20 | Overworld sprite, there from the start |
+| Marshadow | Gouda Grotto B2F | 15 | Overworld sprite, there from the start |
+
+- Celebi and Shaymin come from a small table in `src/wild_encounter.c` (`sRareGrassMons`), not the wild encounter JSON, because every grass slot is 4%. Their encounters are always single battles, Sweet Scent can find them, and a Repel blocks them if the lead Pokémon is higher level. A save that already caught one never sees it again. In randomizer games the 1% encounter is randomized like any wild Pokémon. The randomizer pool script reads that table too.
+- Flags: `FLAG_CELEBI_GONE` (0x285), `FLAG_SHAYMIN_GONE` (0x286), `FLAG_JIRACHI_GONE` (0x287), `FLAG_MARSHADOW_GONE` (0x288). `FLAG_HIDE_LEGEND_CELEBI` and `FLAG_HIDE_LEGEND_SHAYMIN` are no longer used.
+- **To check in playtesting:** that the Jirachi and Marshadow spots can be reached that early (no Surf, Rock Smash or Strength in the way).
 
 Not included for now: the other legendaries, mythicals, Ultra Beasts and Paradox Pokémon (about 110).
 
@@ -743,6 +752,7 @@ A yes/no choice at New Game that randomizes Pokémon for that save file. It runs
 | Starters: Rowlet, Chimchar, Sobble | Script and data change | Done, needs playtesting |
 | Legends Z-A Megas in the game and Mega Stone Case | Config, item list | Done, needs playtesting |
 | Random legendary in the Route 101 battle | Custom, script | Done, needs playtesting |
+| Celebi, Jirachi, Shaymin and Marshadow before the Hall of Fame (Celebi and Shaymin as 1% grass encounters) | Custom code, script | Done, needs playtesting |
 | Z-A Megas on Flannery, Winona, Joe Q (Sugopolis Gym) and Mike; Sam and Mike team swaps | Trainer data | Done, needs playtesting |
 | Italian flag and pasta window frames | Draft art, code | Done, needs playtesting |
 | Fireplace and big comfy chair in Alan's lab | Draft art, map | Done, needs playtesting |
