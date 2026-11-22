@@ -49,6 +49,7 @@
 #include "overworld.h"
 #include "vs_seeker.h"
 #include "wild_encounter_ow.h"
+#include "wild_encounter.h"
 #include "window.h"
 #include "constants/battle_frontier.h"
 #include "constants/battle_special.h"
@@ -693,6 +694,8 @@ static void CB2_EndWildBattle(void)
 {
     CpuFill16(0, (void *)(BG_PLTT), BG_PLTT_SIZE);
     ResetOamRange(0, 128);
+
+    UpdateRareGrassMonAfterBattle(); // Fettuccine: wild Celebi / Shaymin
 
     if (IsNPCFollowerWildBattle())
     {

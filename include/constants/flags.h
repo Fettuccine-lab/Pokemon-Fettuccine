@@ -697,8 +697,8 @@
 #define FLAG_CAUGHT_FLOETTE_ETERNAL  0x282 // The Pokedex can't tell it from a regular Floette
 #define FLAG_ZERAORA_GONE  0x283 // Fettuccine: Zeraora was knocked out or the player ran; it never comes back
 #define FLAG_JOE_STARTER   0x284 // Fettuccine: player named Joe pressed B at the starter bag and got the secret Charcadet
-#define FLAG_UNUSED_0x285  0x285 // Unused Flag
-#define FLAG_UNUSED_0x286  0x286 // Unused Flag
+#define FLAG_CELEBI_GONE   0x285 // Fettuccine: wild Celebi (Pestoburg Woods) was knocked out or caught; it never appears again
+#define FLAG_SHAYMIN_GONE  0x286 // Fettuccine: wild Shaymin (Route 117) was knocked out or caught; it never appears again
 #define FLAG_UNUSED_0x287  0x287 // Unused Flag
 #define FLAG_UNUSED_0x288  0x288 // Unused Flag
 #define FLAG_UNUSED_0x289  0x289 // Unused Flag

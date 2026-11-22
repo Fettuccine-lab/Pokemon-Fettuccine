@@ -63,6 +63,7 @@ u16 GetLocalWaterMon(void);
 bool8 UpdateRepelCounter(void);
 bool8 IsWildLevelAllowedByRepel(u8 wildLevel);
 bool8 IsAbilityAllowingEncounter(u8 level);
+void UpdateRareGrassMonAfterBattle(void);
 bool8 TryDoDoubleWildBattle(void);
 u32 CalculateChainFishingShinyRolls(void);
 void CreateWildMon(enum Species species, u8 level);

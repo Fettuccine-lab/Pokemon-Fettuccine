@@ -26,6 +26,9 @@
 #include "battle_pike.h"
 #include "battle_pyramid.h"
 #include "randomizer.h"
+#include "pokedex.h"
+#include "battle.h"
+#include "constants/maps.h"
 #include "constants/abilities.h"
 #include "constants/game_stat.h"
 #include "constants/item.h"
@@ -525,6 +528,62 @@ bool8 AreLegendariesInSootopolisPreventingEncounters(void)
     return FlagGet(FLAG_LEGENDARIES_IN_SOOTOPOLIS);
 }
 
+// Fettuccine: rare mythicals hiding in the grass. Each grass encounter on its map has a
+// 1% chance to be this Pokémon instead. Knocking it out or catching it sets its flag and
+// it never appears again; running away or blacking out leaves it for another try.
+struct RareGrassMon
+{
+    u16 map;
+    u16 species;
+    u8 level;
+    u16 goneFlag;
+};
+
+static const struct RareGrassMon sRareGrassMons[] =
+{
+    { MAP_PETALBURG_WOODS, SPECIES_CELEBI,  8,  FLAG_CELEBI_GONE },
+    { MAP_ROUTE117,        SPECIES_SHAYMIN, 15, FLAG_SHAYMIN_GONE },
+};
+
+#define RARE_GRASS_MON_CHANCE 1 // percent
+
+EWRAM_DATA static u16 sRareGrassMonPendingFlag = 0;
+
+static bool32 TryGenerateRareGrassMon(u8 flags)
+{
+    u32 i;
+    u16 map = (gSaveBlock1Ptr->location.mapGroup << 8) | gSaveBlock1Ptr->location.mapNum;
+
+    for (i = 0; i < ARRAY_COUNT(sRareGrassMons); i++)
+    {
+        const struct RareGrassMon *rare = &sRareGrassMons[i];
+
+        if (rare->map != map || FlagGet(rare->goneFlag))
+            continue;
+        // A save that already caught it (e.g. from the old post-game spot) never sees it again
+        if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(rare->species), FLAG_GET_CAUGHT))
+            continue;
+        if (!RandomPercentage(RNG_NONE, RARE_GRASS_MON_CHANCE))
+            return FALSE;
+        if (flags & WILD_CHECK_REPEL && !IsWildLevelAllowedByRepel(rare->level))
+            return FALSE;
+
+        CreateWildMon(rare->species, rare->level);
+        sRareGrassMonPendingFlag = rare->goneFlag;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+// Called when any wild battle started from the grass ends
+void UpdateRareGrassMonAfterBattle(void)
+{
+    if (sRareGrassMonPendingFlag != 0
+     && (gBattleOutcome == B_OUTCOME_WON || gBattleOutcome == B_OUTCOME_CAUGHT))
+        FlagSet(sRareGrassMonPendingFlag);
+    sRareGrassMonPendingFlag = 0;
+}
+
 bool8 StandardWildEncounter(u16 curMetatileBehavior, u16 prevMetatileBehavior)
 {
     u32 headerId;
@@ -596,6 +655,13 @@ bool8 StandardWildEncounter(u16 curMetatileBehavior, u16 prevMetatileBehavior)
             else
             {
                 if (DoMassOutbreakEncounterTest() == TRUE && SetUpMassOutbreakEncounter(WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
+                {
+                    BattleSetup_StartWildBattle();
+                    return TRUE;
+                }
+
+                // Fettuccine: rare mythical in the grass (always a single battle)
+                if (TryGenerateRareGrassMon(WILD_CHECK_REPEL))
                 {
                     BattleSetup_StartWildBattle();
                     return TRUE;
@@ -765,7 +831,7 @@ bool8 SweetScentWildEncounter(void)
 
             if (DoMassOutbreakEncounterTest() == TRUE)
                 SetUpMassOutbreakEncounter(0);
-            else
+            else if (!TryGenerateRareGrassMon(0)) // Fettuccine: Sweet Scent can find it too
                 TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo, WILD_AREA_LAND, 0);
 
             BattleSetup_StartWildBattle();

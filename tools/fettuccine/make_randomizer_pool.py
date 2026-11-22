@@ -88,6 +88,9 @@ def starting_species():
         if "frlg" in path.lower() or path.endswith("debug.inc"):
             continue
         found |= set(command.findall(open(path, encoding="utf-8").read()))
+    # Rare grass mythicals (Celebi, Shaymin) live in a table in the wild encounter code
+    rare = re.search(r"sRareGrassMons\[\]\s*=\s*\{(.*?)\};", open("src/wild_encounter.c", encoding="utf-8").read(), re.S)
+    found |= set(re.findall(r"\bSPECIES_\w+", rare.group(1)))
     trades = open("src/data/trade.h", encoding="utf-8").read()
     found |= set(re.findall(r"\.species\s*=\s*(SPECIES_\w+)", trades))
     return found

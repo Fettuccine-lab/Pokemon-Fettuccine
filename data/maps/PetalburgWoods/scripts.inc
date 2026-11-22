@@ -3,7 +3,6 @@ PetalburgWoods_MapScripts::
 	.byte 0
 
 PetalburgWoods_OnTransition:
-	call PetalburgWoods_EventScript_SetupLegendCelebi
 	end
 
 PetalburgWoods_EventScript_DevonResearcherLeft::
@@ -476,33 +475,3 @@ PetalburgWoods_Text_TrainerTipsPP:
 	.string "If a POKéMON runs out of PP, it must be\n"
 	.string "taken to a POKéMON CENTER.$"
 
-@ Fettuccine: post-game Celebi. Appears after the Hall of Fame, until it's caught.
-PetalburgWoods_EventScript_SetupLegendCelebi::
-	setflag FLAG_HIDE_LEGEND_CELEBI
-	goto_if_unset FLAG_SYS_GAME_CLEAR, PetalburgWoods_EventScript_SetupLegendCelebiDone
-	getcaughtmon SPECIES_CELEBI
-	goto_if_eq VAR_RESULT, TRUE, PetalburgWoods_EventScript_SetupLegendCelebiDone
-	clearflag FLAG_HIDE_LEGEND_CELEBI
-PetalburgWoods_EventScript_SetupLegendCelebiDone::
-	return
-
-PetalburgWoods_EventScript_LegendCelebi::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_CELEBI, CRY_MODE_ENCOUNTER
-	delay 40
-	waitmoncry
-	setwildbattle SPECIES_CELEBI, 50
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
-	dowildbattle
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, PetalburgWoods_EventScript_CaughtLegendCelebi
-	release
-	end
-
-PetalburgWoods_EventScript_CaughtLegendCelebi::
-	setflag FLAG_HIDE_LEGEND_CELEBI
-	goto Common_EventScript_RemoveStaticPokemon
-	end

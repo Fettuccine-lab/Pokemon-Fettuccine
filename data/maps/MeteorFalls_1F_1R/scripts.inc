@@ -313,10 +313,9 @@ MeteorFalls_1F_1R_Text_WhatsTeamMagmaDoingAtMtChimney:
 	.string "What are they going to do with that\n"
 	.string "METEORITE at MT. CALZONE?$"
 
-@ Fettuccine: post-game Jirachi. Appears after the Hall of Fame, until it's caught.
+@ Fettuccine: Jirachi (Lv 20). There from the start, until it's caught.
 MeteorFalls_1F_1R_EventScript_SetupLegendJirachi::
 	setflag FLAG_HIDE_LEGEND_JIRACHI
-	goto_if_unset FLAG_SYS_GAME_CLEAR, MeteorFalls_1F_1R_EventScript_SetupLegendJirachiDone
 	getcaughtmon SPECIES_JIRACHI
 	goto_if_eq VAR_RESULT, TRUE, MeteorFalls_1F_1R_EventScript_SetupLegendJirachiDone
 	clearflag FLAG_HIDE_LEGEND_JIRACHI
@@ -330,7 +329,7 @@ MeteorFalls_1F_1R_EventScript_LegendJirachi::
 	playmoncry SPECIES_JIRACHI, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
-	setwildbattle SPECIES_JIRACHI, 50
+	setwildbattle SPECIES_JIRACHI, 20
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE

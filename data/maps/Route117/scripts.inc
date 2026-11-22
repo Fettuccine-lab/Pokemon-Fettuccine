@@ -6,7 +6,6 @@ Route117_MapScripts::
 	.byte 0
 
 Route117_OnTransition:
-	call Route117_EventScript_SetupLegendShaymin
 	call Route117_EventScript_TryMoveDayCareMan
 	@ set flags for OW daycare mons
 	setflag FLAG_TEMP_1
@@ -242,33 +241,3 @@ Route117_Text_DayCareSign:
 	.string "POKéMON DAY CARE\n"
 	.string "“Let us raise your POKéMON.”$"
 
-@ Fettuccine: post-game Shaymin. Appears after the Hall of Fame, until it's caught.
-Route117_EventScript_SetupLegendShaymin::
-	setflag FLAG_HIDE_LEGEND_SHAYMIN
-	goto_if_unset FLAG_SYS_GAME_CLEAR, Route117_EventScript_SetupLegendShayminDone
-	getcaughtmon SPECIES_SHAYMIN
-	goto_if_eq VAR_RESULT, TRUE, Route117_EventScript_SetupLegendShayminDone
-	clearflag FLAG_HIDE_LEGEND_SHAYMIN
-Route117_EventScript_SetupLegendShayminDone::
-	return
-
-Route117_EventScript_LegendShaymin::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_SHAYMIN, CRY_MODE_ENCOUNTER
-	delay 40
-	waitmoncry
-	setwildbattle SPECIES_SHAYMIN, 50
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
-	dowildbattle
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route117_EventScript_CaughtLegendShaymin
-	release
-	end
-
-Route117_EventScript_CaughtLegendShaymin::
-	setflag FLAG_HIDE_LEGEND_SHAYMIN
-	goto Common_EventScript_RemoveStaticPokemon
-	end
