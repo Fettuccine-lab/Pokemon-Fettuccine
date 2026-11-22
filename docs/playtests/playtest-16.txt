@@ -1,0 +1,107 @@
+POKEMON FETTUCCINE VERSION - PLAYTEST 16
+========================================
+
+Thanks for testing! This build fixes the invisible Pokemon Center
+chefs, moves WILDCARD's Greninja to a later room, and lets you find
+four mythical Pokemon before the Elite Four.
+
+
+HOW TO PLAY
+-----------
+1. You need a clean US Pokemon Emerald ROM (not included).
+   It should match:
+     CRC32: 1F1C08FB
+     SHA-1: f3ae088181bf583e55daf962a92bb46f4f1d07b7
+2. Apply fettuccine-playtest-16.bps to it. Either of these works:
+     - Rom Patcher JS (in your browser): https://www.marcrobledo.com/RomPatcher.js/
+     - Floating IPS (Flips)
+3. Play the patched ROM in mGBA or any GBA emulator.
+
+Your Playtest 15 save should keep working: give the new ROM the same
+file name as before (so the save file matches) or copy the .sav across.
+Use an in-game save, not a save state from an older playtest.
+
+
+NEW SINCE PLAYTEST 15
+---------------------
+Pokemon Center chefs are back
+- The chefs behind the Pokemon Center counters were invisible in
+  Playtests 14 and 15. You should see them now.
+
+WILDCARD's Greninja moved to room 5
+- Room 4 now gives TM TAUNT, and room 5 (after the 6th badge) gives
+  the Lv 36 Battle Bond Greninja.
+- The Greninja now comes with an Expert Belt, a Timid nature and
+  Water Shuriken, Grass Knot, Dark Pulse and Ice Beam.
+- Already got the Greninja from room 4 in Playtest 15? Room 5 gives
+  you TM TAUNT instead, so you don't miss anything.
+
+Four mythical Pokemon before the Elite Four
+- CELEBI hides in the grass of Pestoburg Woods (Lv 8) and SHAYMIN
+  in the grass of Route 117 (Lv 15). They're very rare: about 1 in
+  every 100 grass encounters.
+- JIRACHI (Meatball Falls 1F, Lv 20) and MARSHADOW (Gouda Grotto
+  B2F, Lv 15) now wait there from the start instead of after the
+  Hall of Fame.
+- If you KNOCK OUT any of these four, it's gone for good. Running
+  away or blacking out is fine: you can try again.
+
+
+PLEASE TRY
+----------
+- Visit a few Pokemon Centers and heal. Is the chef there, with the
+  right colors, and do they turn to face you after healing?
+- Clear castle rooms 4 and 5. Check the prizes, and check the
+  Greninja's summary (item, nature, moves).
+- Look for Celebi and Shaymin. Tell us roughly how many encounters
+  it took, or if you never found them.
+- Find Jirachi and Marshadow early. Can you reach them without
+  Surf, Rock Smash or Strength? Knock one out and make sure it
+  doesn't come back; run from one and make sure it stays.
+
+
+DEBUG MENU
+----------
+This build has the developer's debug menus turned on, so you can
+skip ahead or set up a test:
+  - Overworld: hold R and press START (mGBA keyboard: hold S, Enter)
+  - In battle: press SELECT on the battle menu (mGBA: Backspace)
+  - Sprite viewer: SELECT on a summary screen (mGBA: Backspace)
+  - New: Give X > Joe F. team Lv45 puts the game designer's whole
+    team (at Lv 45) in your PC.
+Use a separate save or a save state first, and say in your report
+if that save used the debug menu.
+
+
+AFTER-BATTLE GLITCHES
+---------------------
+If anything odd happens right after a battle (the player moving on
+their own, buttons not working, a freeze, strange graphics), make a
+SAVE STATE right away (mGBA: File > Save State) and send it in.
+
+
+KNOWN PLACEHOLDERS
+------------------
+- Brian, Prof. Alan, Sam, Mike, Joe Q, JASON and BLOBBY still use
+  old Emerald sprites. Prof. Alan's battle sprite is a Gentleman.
+- The game designer's powered-up Pokemon (and the secret starter)
+  use the normal sprites and shiny colors for now.
+- The title screen still says EMERALD VERSION.
+- Retro Salvage Games shops still have blue roofs and MART signs.
+- A few map graphics still say HOENN.
+- Sam's shiny Metagross isn't cheddar-yellow yet.
+
+
+PLEASE REPORT
+-------------
+- Crashes or freezes, especially right after catching a Pokemon
+- A Pokemon following you that gets stuck, walks through walls, or
+  breaks a cutscene
+- A mythical Pokemon that comes back after you knocked it out
+- Text that runs off the box
+- Anything that blocks progress
+- Say whether your save is a RANDOMIZER game, and whether it's new or
+  from an older playtest
+
+If you can, say where you were and what you were doing, and send a
+screenshot or your save file.
