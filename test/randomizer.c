@@ -44,6 +44,7 @@ TEST("Fettuccine randomizer: results are repeatable and leave the pool never")
 TEST("Fettuccine randomizer: the pool has no battle-only forms or Mike's Spearow")
 {
     EXPECT(!RandomizerIsSpeciesInPool(SPECIES_SPEAROW_MIKE));
+    EXPECT(!RandomizerIsSpeciesInPool(SPECIES_CERULEDGE_JOE));
     EXPECT(!RandomizerIsSpeciesInPool(SPECIES_CHARIZARD_MEGA_X));
     EXPECT(!RandomizerIsSpeciesInPool(SPECIES_AEGISLASH_BLADE));
     EXPECT(!RandomizerIsSpeciesInPool(SPECIES_KYOGRE_PRIMAL));

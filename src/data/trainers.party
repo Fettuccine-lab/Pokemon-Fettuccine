@@ -16888,3 +16888,80 @@ EVs: 4 HP / 252 SpA / 252 Spe
 - Shadow Ball
 - Giga Drain
 - Strength Sap
+
+=== TRAINER_JOE_FETTUCCINE ===
+Name: JOE
+Class: Pkmn Trainer 2
+Pic: Red
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Electrode @ Life Orb
+Level: 76
+Ability: Aftermath
+Nature: Timid
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- Thunderbolt
+- Volt Switch
+- Foul Play
+- Explosion
+
+Breloom @ Focus Sash
+Level: 76
+Ability: Technician
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- Spore
+- Bullet Seed
+- Mach Punch
+- Rock Tomb
+
+Starmie @ Expert Belt
+Level: 77
+Ability: Analytic
+Nature: Timid
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- Hydro Pump
+- Psychic
+- Ice Beam
+- Thunderbolt
+
+Cloyster @ White Herb
+Level: 77
+Ability: Skill Link
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- Shell Smash
+- Icicle Spear
+- Rock Blast
+- Liquidation
+
+Mismagius @ Leftovers
+Level: 78
+Ability: Levitate
+Nature: Timid
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- Nasty Plot
+- Shadow Ball
+- Dazzling Gleam
+- Thunderbolt
+
+Ceruledge-Joe @ Life Orb
+Level: 80
+Ability: Sharpness
+Nature: Adamant
+Shiny: Yes
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- Bitter Blade
+- Poltergeist
+- Solar Blade
+- Swords Dance

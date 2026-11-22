@@ -6,6 +6,9 @@ LilycoveCity_CoveLilyMotel_2F_EventScript_GameDesigner::
 	faceplayer
 	goto_if_unset FLAG_SYS_GAME_CLEAR, LilycoveCity_CoveLilyMotel_2F_EventScript_GameDesignerDex
 	goto_if_unset FLAG_ENABLE_SHIP_FARAWAY_ISLAND, LilycoveCity_CoveLilyMotel_2F_EventScript_GiveOldSeaMap
+	goto_if_not_defeated TRAINER_JOE_FETTUCCINE, LilycoveCity_CoveLilyMotel_2F_EventScript_JoeBattleOffer
+	goto_if_set FLAG_JOE_FETTUCCINE_REMATCH_READY, LilycoveCity_CoveLilyMotel_2F_EventScript_JoeRematchOffer
+	msgbox LilycoveCity_CoveLilyMotel_2F_Text_JoeRematchNotReady, MSGBOX_DEFAULT
 LilycoveCity_CoveLilyMotel_2F_EventScript_GameDesignerDex::
 	call_if_unset FLAG_TEMP_2, LilycoveCity_CoveLilyMotel_2F_EventScript_ShowMeCompletedDex
 	call_if_set FLAG_TEMP_2, LilycoveCity_CoveLilyMotel_2F_EventScript_ShowDiploma
@@ -178,6 +181,32 @@ LilycoveCity_CoveLilyMotel_2F_EventScript_GiveOldSeaMap::
 	setflag FLAG_ENABLE_SHIP_FARAWAY_ISLAND
 	setflag FLAG_RECEIVED_OLD_SEA_MAP
 	msgbox LilycoveCity_CoveLilyMotel_2F_Text_OldSeaMapUseAtPort, MSGBOX_DEFAULT
+	msgbox LilycoveCity_CoveLilyMotel_2F_Text_JoeFirstChallenge, MSGBOX_DEFAULT
+	goto LilycoveCity_CoveLilyMotel_2F_EventScript_JoeBattle
+	end
+
+@ Post-game: Joe Fettuccine battles the player after the OLD SEA MAP,
+@ then again once after every Hall of Fame entry (FLAG_JOE_FETTUCCINE_REMATCH_READY).
+LilycoveCity_CoveLilyMotel_2F_EventScript_JoeBattleOffer::
+	msgbox LilycoveCity_CoveLilyMotel_2F_Text_JoeBattleOffer, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, LilycoveCity_CoveLilyMotel_2F_EventScript_JoeBattleAccepted
+	msgbox LilycoveCity_CoveLilyMotel_2F_Text_JoeDeclined, MSGBOX_DEFAULT
+	goto LilycoveCity_CoveLilyMotel_2F_EventScript_GameDesignerDex
+	end
+
+LilycoveCity_CoveLilyMotel_2F_EventScript_JoeRematchOffer::
+	msgbox LilycoveCity_CoveLilyMotel_2F_Text_JoeRematchOffer, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, LilycoveCity_CoveLilyMotel_2F_EventScript_JoeBattleAccepted
+	msgbox LilycoveCity_CoveLilyMotel_2F_Text_JoeDeclined, MSGBOX_DEFAULT
+	goto LilycoveCity_CoveLilyMotel_2F_EventScript_GameDesignerDex
+	end
+
+LilycoveCity_CoveLilyMotel_2F_EventScript_JoeBattleAccepted::
+	msgbox LilycoveCity_CoveLilyMotel_2F_Text_JoeAccepted, MSGBOX_DEFAULT
+LilycoveCity_CoveLilyMotel_2F_EventScript_JoeBattle::
+	trainerbattle_no_intro TRAINER_JOE_FETTUCCINE, LilycoveCity_CoveLilyMotel_2F_Text_JoeDefeat
+	clearflag FLAG_JOE_FETTUCCINE_REMATCH_READY
+	msgbox LilycoveCity_CoveLilyMotel_2F_Text_JoePostBattle, MSGBOX_DEFAULT
 	release
 	end
 
@@ -206,3 +235,45 @@ LilycoveCity_CoveLilyMotel_2F_Text_OldSeaMapBagFull:
 	.string "Your BAG is full! Come back when you've\n"
 	.string "made some room, and I'll tell you my\l"
 	.string "secret.$"
+
+LilycoveCity_CoveLilyMotel_2F_Text_JoeFirstChallenge:
+	.string "Oh, and one more thing.\p"
+	.string "I didn't just make this game. I play\n"
+	.string "it too. A lot. Too much, maybe.\p"
+	.string "Let's see if the new CHAMPION can\n"
+	.string "beat the guy who made the rules!$"
+
+LilycoveCity_CoveLilyMotel_2F_Text_JoeBattleOffer:
+	.string "JOE FETTUCCINE: Back for a rematch?\n"
+	.string "I've been practicing. Kind of.\p"
+	.string "Ready to battle the GAME DESIGNER?$"
+
+LilycoveCity_CoveLilyMotel_2F_Text_JoeRematchOffer:
+	.string "JOE FETTUCCINE: You beat the ELITE\n"
+	.string "FOUR again? I saw it on the news.\p"
+	.string "That means I get another shot.\n"
+	.string "Ready to battle the GAME DESIGNER?$"
+
+LilycoveCity_CoveLilyMotel_2F_Text_JoeAccepted:
+	.string "JOE FETTUCCINE: Alright! No cheat\n"
+	.string "codes. I promise. Mostly.$"
+
+LilycoveCity_CoveLilyMotel_2F_Text_JoeDeclined:
+	.string "JOE FETTUCCINE: No worries. I'll be\n"
+	.string "right here, playtesting.$"
+
+LilycoveCity_CoveLilyMotel_2F_Text_JoeDefeat:
+	.string "Beaten in my own game?!\n"
+	.string "I need to rebalance this…$"
+
+LilycoveCity_CoveLilyMotel_2F_Text_JoePostBattle:
+	.string "JOE FETTUCCINE: That CERULEDGE is\n"
+	.string "supposed to be unbeatable!\p"
+	.string "Beat the ELITE FOUR again, and I'll\n"
+	.string "be ready for a rematch.$"
+
+LilycoveCity_CoveLilyMotel_2F_Text_JoeRematchNotReady:
+	.string "JOE FETTUCCINE: I'm still tweaking my\n"
+	.string "team after that last battle.\p"
+	.string "Beat the ELITE FOUR again, and I'll\n"
+	.string "be ready for a rematch.$"

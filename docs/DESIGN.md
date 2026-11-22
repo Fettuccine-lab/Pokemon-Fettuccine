@@ -287,7 +287,7 @@ Status:
 | --- | --- | --- |
 | Alan | Professor Birch | Gives the player their starter and introduces the world |
 | Sam | Steven Stone | Kind mentor, gives the player the Mega Ring, secret post-game boss |
-| Joe Fettuccine | Game designer (Cove Lily Motel, Linguicove) | Awards the diploma for completing the Pokédex |
+| Joe Fettuccine | Game designer (Cove Lily Motel, Linguicove) | Awards the diploma for completing the Pokédex; post-game battle, rematch after every Hall of Fame |
 | WILDCARD (Joe's former persona) | Trick Master | Runs Wildcard's Castle (the Trick House) |
 | Brian | The rival, Wally, and Wallace (Champion) | See Brian's story |
 | Jason | Every shopkeeper | Runs every Retro Salvage Games shop |
@@ -346,6 +346,18 @@ Every Pokémon is from Gens 1–3 and has a cheese connection.
 - Replaces the Game Freak developer cameo in the Cove Lily Motel.
 - Awards the diploma for completing the Pokédex. The diploma checks the **PASTALIA (regional) Dex**, not the full National Dex.
 - **Done: dialogue (approved by Joe).** He introduces himself by name, jokes that his cousin told him to stop spending money on Pokémon games ("So I made my own!"), and denies ever meeting WILDCARD. The diploma is signed JOE FETTUCCINE. The motel owner says the big group booked in under FETTUCCINE instead of GAME FREAK.
+- **Done (Nov 2026, needs playtesting): post-game battle.** After the Hall of Fame, the first talk gives the Old Sea Map and goes straight into a battle. After that he offers a rematch (yes/no) **once after every Hall of Fame entry**; otherwise he says to beat the Elite Four again. If the player loses or says no, the offer stays open. No prize. Trainer `TRAINER_JOE_FETTUCCINE`, class GAME DESIGNER (the unused PKMN TRAINER 2 class, renamed), Red's FireRed battle sprite, Champion battle music, 4 Full Restores. The rematch flag is `FLAG_JOE_FETTUCCINE_REMATCH_READY`, set in the Hall of Fame script. Battle dialogue drafted, **awaiting Joe's approval**.
+- **Decided: his ace is a shiny, overpowered Ceruledge**, a form only he has (`SPECIES_CERULEDGE_JOE`), like Mike's Spearow. Boosted stats: 90 HP / 150 Atk / 100 Def / 70 SpA / 110 SpD / 120 Spe (640 total, vs. 525). Ability Sharpness (boosts slicing moves). Uses Ceruledge's sprites and its normal shiny palette. Moves: Bitter Blade, Poltergeist, Solar Blade, Swords Dance, with a Life Orb.
+- **Team (proposed, awaiting Joe's review): Mario Kart items,** a wink at WILDCARD, who he swears he's never met. Levels 76–80, perfect IVs, Ceruledge last.
+
+| Pokémon | Lv | Mario Kart item | Set |
+| --- | --- | --- | --- |
+| Electrode | 76 | Bob-omb | Life Orb; Thunderbolt, Volt Switch, Foul Play, Explosion |
+| Breloom | 76 | Mushroom | Focus Sash, Technician; Spore, Bullet Seed, Mach Punch, Rock Tomb |
+| Starmie | 77 | Super Star | Expert Belt, Analytic; Hydro Pump, Psychic, Ice Beam, Thunderbolt |
+| Cloyster | 77 | Spiny Shell | White Herb, Skill Link; Shell Smash, Icicle Spear, Rock Blast, Liquidation |
+| Mismagius | 78 | Boo | Leftovers; Nasty Plot, Shadow Ball, Dazzling Gleam, Thunderbolt |
+| Ceruledge (Joe's form, shiny, ace) | 80 | (his own) | See above |
 
 ### WILDCARD and his castle (replaces the Trick Master and Trick House)
 
@@ -719,7 +731,7 @@ A yes/no choice at New Game that randomizes Pokémon for that save file. It runs
 | Joe Q replaces Juan as Sugopolis Gym Leader (Battle Duds spin) | Script, small custom special, dialogue | Done, needs playtesting |
 | New themed teams for all trainers and Gym Leaders (Gens 1–9, Megas from gym 3) | Trainer data | Done |
 | Trainer names from the Retrotopia community | Text (waiting on Joe's list) | Not started |
-| Retrotopia cast: Alan (Birch), Sam (Steven), Joe Fettuccine (designer) | Custom sprites, scripts, dialogue | Partly done: names and dialogue done for all three (Joe Fettuccine gives the Old Sea Map and signs the diploma); Joe Fettuccine uses Red's FireRed sprite (needs playtesting); Alan's and Sam's custom sprites still to do |
+| Retrotopia cast: Alan (Birch), Sam (Steven), Joe Fettuccine (designer) | Custom sprites, scripts, dialogue | Partly done: names and dialogue done for all three (Joe Fettuccine gives the Old Sea Map, signs the diploma and has a post-game battle with rematches); Joe Fettuccine uses Red's FireRed sprite (needs playtesting); Alan's and Sam's custom sprites still to do |
 | All Pokémon through Gen IX | Built in; plan placement | Done: wild placement, event islands, 27 legendary one-offs, regional evolutions |
 | Items, abilities, move effects through Gen IX | Built in; plan placement | Done: TM51–100, held items, training items, balls, berries, form items, charms, gems, snacks placed in shops; the rest skipped on purpose |
 | Physical/special split | Built in | Done (built in) |
@@ -779,6 +791,7 @@ A yes/no choice at New Game that randomizes Pokémon for that save file. It runs
 | Solar Blade: one turn, 95 power | Move data, animation | Done, needs playtesting |
 | Bird Keepers and Fortellini Gym trainers use Flying types | Trainer data | Done, needs playtesting |
 | Omnirouge (Armarouge + Ceruledge fusion) | Custom form, fusion item | Dropped (Nov 2026): removed from the game |
+| Joe Fettuccine post-game battle (rematch after every Hall of Fame, shiny overpowered Ceruledge ace) | Trainer data, custom form, motel script | Built, needs playtesting; team and battle dialogue await Joe's review |
 
 ## Playtests
 

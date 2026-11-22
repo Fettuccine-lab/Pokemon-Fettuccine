@@ -2401,6 +2401,72 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         )
         .levelUpLearnset = sCeruledgeLevelUpLearnset,
         .teachableLearnset = sCeruledgeTeachableLearnset,
+        .formSpeciesIdTable = sCeruledgeFormSpeciesIdTable,
+    },
+    // Placeholder art: uses Ceruledge's sprites (Joe's is shiny in his trainer data)
+    [SPECIES_CERULEDGE_JOE] =
+    {
+        // Joe Fettuccine's ace: boosted stats (640 total, vs. 525 for a normal Ceruledge)
+        .baseHP        = 90,
+        .baseAttack    = 150,
+        .baseDefense   = 100,
+        .baseSpeed     = 120,
+        .baseSpAttack  = 70,
+        .baseSpDefense = 110,
+        .types = MON_TYPES(TYPE_FIRE, TYPE_GHOST),
+        .catchRate = 3,
+        .expYield = 263,
+        .evYield_Attack = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 35,
+        .friendship = 20,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_SHARPNESS, ABILITY_SHARPNESS, ABILITY_SHARPNESS },
+        .bodyColor = BODY_COLOR_PURPLE,
+        .speciesName = _("Ceruledge"),
+        .cryId = CRY_CERULEDGE,
+        .natDexNum = NATIONAL_DEX_CERULEDGE,
+        .categoryName = _("Fire Blades"),
+        .height = 16,
+        .weight = 620,
+        .description = COMPOUND_STRING(
+            "The fiery blades on its arms burn\n"
+            "fiercely with the lingering\n"
+            "resentment of a sword wielder who fell\n"
+            "before accomplishing their goal."),
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Ceruledge,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_Ceruledge,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 3,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Ceruledge,
+        .shinyPalette = gMonShinyPalette_Ceruledge,
+        .iconSprite = gMonIcon_Ceruledge,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(9, 14, SHADOW_SIZE_L)
+        FOOTPRINT(Ceruledge)
+        OVERWORLD(
+            sPicTable_Ceruledge,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Ceruledge,
+            gShinyOverworldPalette_Ceruledge
+        )
+        .levelUpLearnset = sCeruledgeLevelUpLearnset,
+        .teachableLearnset = sCeruledgeTeachableLearnset,
+        .formSpeciesIdTable = sCeruledgeFormSpeciesIdTable,
     },
 #endif //P_FAMILY_CHARCADET
 

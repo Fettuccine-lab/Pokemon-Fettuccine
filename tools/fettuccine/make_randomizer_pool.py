@@ -20,7 +20,7 @@ import subprocess
 
 OUTPUT = "src/data/randomizer_pool.h"
 SCRIPT_COMMANDS = ("givemon", "giveegg", "setwildbattle", "wildbattle", "dowildbattle", "seteventmon")
-NEVER = {"SPECIES_NONE", "SPECIES_EGG", "SPECIES_SPEAROW_MIKE"}
+NEVER = {"SPECIES_NONE", "SPECIES_EGG", "SPECIES_SPEAROW_MIKE", "SPECIES_CERULEDGE_JOE"}
 BATTLE_METHOD = re.compile(r"FORM_CHANGE_BATTLE|FORM_CHANGE_BEGIN_BATTLE|FORM_CHANGE_END_BATTLE|FORM_CHANGE_FAINT")
 
 

@@ -528,7 +528,7 @@
 #define FLAG_MEDICINE_POCKET_READY           0x1DF // Fettuccine: Medicine pocket slots set up (see TryMoveMedicineToMedicinePocket)
 #define FLAG_RANDOMIZER_ON                   0x1E0 // Fettuccine: this save is a randomizer game
 #define FLAG_EXP_SHARE_ON                    0x1E1 // Fettuccine: Exp. Share key item is switched on
-#define FLAG_UNUSED_0x1E2                    0x1E2 // Unused Flag
+#define FLAG_JOE_FETTUCCINE_REMATCH_READY    0x1E2 // Fettuccine: set on every Hall of Fame entry, cleared when Joe Fettuccine is beaten
 #define FLAG_UNUSED_0x1E3                    0x1E3 // Unused Flag
 
 // Mystery Gift Flags (Unknown)
