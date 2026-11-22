@@ -373,8 +373,8 @@ Every Pokémon is from Gens 1–3 and has a cheese connection.
 | Usual team | Mirror team | Why | Set |
 | --- | --- | --- | --- |
 | Clodsire (Poison/Ground, Paldea) | Quagsire (Water/Ground, Johto), Lv 76 | Regional counterparts | Leftovers, Unaware; Earthquake, Liquidation, Spikes, Recover |
-| Noivern (Flying/Dragon, sound moves) | Sylveon (Fairy), Lv 77 | Fairy beats Dragon; its own sound move (Hyper Voice) | Leftovers, Pixilate; Hyper Voice, Shadow Ball, Calm Mind, Wish |
-| Annihilape (Fighting/Ghost) | Farigiraf (Normal/Psychic), Lv 77 | Exactly opposite types | Leftovers, Armor Tail; Twin Beam, Hyper Voice, Nasty Plot, Thunderbolt |
+| Noivern (Flying/Dragon, sound moves) | Tinkaton (Fairy/Steel), Lv 77 | Both types resist Dragon; a tiny hammer smasher vs. a huge sound-wave bat (Joe's pick) | Leftovers, Mold Breaker; Gigaton Hammer, Play Rough, Knock Off, Swords Dance |
+| Annihilape (Fighting/Ghost) | Grimmsnarl (Dark/Fairy), Lv 77 | A direct counter: Dark beats Ghost, Fairy beats Fighting (Joe's pick) | Light Clay, Prankster; Reflect, Light Screen, Spirit Break, Parting Shot |
 | Zeraora (Mega, Electric) | Garchomp (Mega, Dragon/Ground), Lv 78 | Ground shuts out Electric | Garchompite, Rough Skin; Earthquake, Dragon Claw, Stone Edge, Swords Dance |
 | Greninja (shiny, Water/Dark, Kalos) | Chesnaught (shiny, Grass/Fighting, Kalos), Lv 79 | Kalos rival starter, beats both types | Rocky Helmet, Bulletproof; Spiky Shield, Wood Hammer, Drain Punch, Leech Seed |
 | Ceruledge (Joe's form, shiny, ace) | **Armarouge (Joe's form, shiny, ace)**, Lv 80 | Ceruledge's counterpart (Joe's example) | Life Orb, Magic Guard; Armor Cannon, Psychic, Aura Sphere, Calm Mind |

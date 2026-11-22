@@ -16988,27 +16988,27 @@ EVs: 252 HP / 4 Atk / 252 Def
 - Spikes
 - Recover
 
-Sylveon @ Leftovers
+Tinkaton @ Leftovers
 Level: 77
-Ability: Pixilate
-Nature: Modest
+Ability: Mold Breaker
+Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 SpA / 4 SpD
-- Hyper Voice
-- Shadow Ball
-- Calm Mind
-- Wish
+EVs: 4 HP / 252 Atk / 252 Spe
+- Gigaton Hammer
+- Play Rough
+- Knock Off
+- Swords Dance
 
-Farigiraf @ Leftovers
+Grimmsnarl @ Light Clay
 Level: 77
-Ability: Armor Tail
-Nature: Modest
+Ability: Prankster
+Nature: Careful
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 SpA / 4 SpD
-- Twin Beam
-- Hyper Voice
-- Nasty Plot
-- Thunderbolt
+EVs: 252 HP / 4 Atk / 252 SpD
+- Reflect
+- Light Screen
+- Spirit Break
+- Parting Shot
 
 Garchomp @ Garchompite
 Level: 78
