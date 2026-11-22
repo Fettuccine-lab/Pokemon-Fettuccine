@@ -94,9 +94,10 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle3::
 Route110_TrickHouseEnd_EventScript_CompletedPuzzle4::
 	msgbox Route110_TrickHouseEnd_Text_AllNightToShoveBoulders, MSGBOX_DEFAULT
 	msgbox Route110_TrickHouseEnd_Text_YouHaveEarnedThisReward, MSGBOX_DEFAULT
+	msgbox Route110_TrickHouse_Text_GreninjaReward, MSGBOX_DEFAULT
 	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 0
-	giveitem ITEM_SMOKE_BALL
-	call_if_eq VAR_RESULT, FALSE, Route110_TrickHouseEnd_EventScript_BagFull
+	call Route110_TrickHouse_EventScript_GiveGreninja
+	call_if_eq VAR_RESULT, FALSE, Route110_TrickHouseEnd_EventScript_NoRoomForGreninja
 	msgbox Route110_TrickHouseEnd_Text_MakeNewTricksToStumpYou, MSGBOX_DEFAULT
 	closemessage
 	call Route110_TrickHouseEnd_EventScript_TrickMasterExit
@@ -189,6 +190,50 @@ Route110_TrickHouseEnd_EventScript_TrickMasterExit::
 Route110_TrickHouseEnd_EventScript_BagFull::
 	call Common_EventScript_BagIsFull
 	msgbox Route110_TrickHouseEnd_Text_NoRoomForThis, MSGBOX_DEFAULT
+	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 1
+	return
+
+@ Fettuccine: room 4's reward is a Lv 36 Battle Bond GRENINJA (was a SMOKE BALL).
+@ Also used by the entrance when the reward is picked up later. VAR_RESULT is TRUE if given.
+Route110_TrickHouse_EventScript_GiveGreninja::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GRENINJA_BATTLE_BOND
+	givemon SPECIES_GRENINJA_BATTLE_BOND, 36, shinyMode=FALSE
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Route110_TrickHouse_EventScript_GreninjaToParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Route110_TrickHouse_EventScript_GreninjaToPC
+	setvar VAR_RESULT, FALSE
+	return
+
+Route110_TrickHouse_EventScript_GreninjaToParty::
+	call Route110_TrickHouse_EventScript_GreninjaFanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Route110_TrickHouse_EventScript_GotGreninja
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto Route110_TrickHouse_EventScript_GotGreninja
+
+Route110_TrickHouse_EventScript_GreninjaToPC::
+	call Route110_TrickHouse_EventScript_GreninjaFanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Route110_TrickHouse_EventScript_GreninjaTransferredToPC
+	call Common_EventScript_NameReceivedBoxMon
+Route110_TrickHouse_EventScript_GreninjaTransferredToPC::
+	call Common_EventScript_TransferredToPC
+Route110_TrickHouse_EventScript_GotGreninja::
+	setvar VAR_RESULT, TRUE
+	return
+
+Route110_TrickHouse_EventScript_GreninjaFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_GRENINJA_BATTLE_BOND
+	playfanfare MUS_OBTAIN_ITEM
+	message Route110_TrickHouse_Text_ObtainedGreninja
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_GRENINJA_BATTLE_BOND
+	return
+
+Route110_TrickHouseEnd_EventScript_NoRoomForGreninja::
+	msgbox gText_NoMoreRoomForPokemon, MSGBOX_DEFAULT
+	msgbox Route110_TrickHouseEnd_Text_NoRoomForGreninja, MSGBOX_DEFAULT
 	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 1
 	return
 
@@ -369,3 +414,16 @@ Route110_TrickHouseEnd_Text_YoureIgnoringMe:
 	.string "BRIAN used to do that, too!\p"
 	.string "Now that, I consider heartbreaking!$"
 
+Route110_TrickHouse_Text_GreninjaReward:
+	.string "This GRENINJA shares a special bond\n"
+	.string "with its trainer. Treat it well!\p"
+	.string "Where did I get it? A WILDCARD never\n"
+	.string "reveals his secrets!$"
+
+Route110_TrickHouse_Text_ObtainedGreninja:
+	.string "{PLAYER} obtained a GRENINJA!$"
+
+Route110_TrickHouseEnd_Text_NoRoomForGreninja:
+	.string "No room for a POKéMON? Fine, since\n"
+	.string "you've reached me, it will be with me\l"
+	.string "till later.$"

@@ -360,9 +360,9 @@ Route110_TrickHouseEntrance_EventScript_GivePuzzle3Reward::
 	end
 
 Route110_TrickHouseEntrance_EventScript_GivePuzzle4Reward::
-	giveitem ITEM_SMOKE_BALL
+	call Route110_TrickHouse_EventScript_GiveGreninja
 	goto_if_eq VAR_RESULT, TRUE, Route110_TrickHouseEntrance_EventScript_GotReward
-	call_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+	msgbox gText_NoMoreRoomForPokemon, MSGBOX_DEFAULT
 	msgbox Route110_TrickHouseEntrance_Text_DidYouNotComeToClaimReward, MSGBOX_DEFAULT
 	releaseall
 	end
