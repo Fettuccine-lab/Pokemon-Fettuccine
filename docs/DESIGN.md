@@ -367,7 +367,19 @@ Every Pokémon is from Gens 1–3 and has a cheese connection.
 - **Malicious Armor:** back at the lab, after the nickname prompt, Alan gives it ("Oh, and that CHARCADET came with something… Into what? Ha! You'll see.").
 - **Followers:** follower Pokémon (HGSS style) are switched on, but **only this Charcadet / Ceruledge follows**, and only while it leads the party. Every other Pokémon stays in its ball.
 - **Behind the scenes:** `FLAG_JOE_STARTER` (spare flag 0x284). `VAR_STARTER_MON` is set to the Fire slot (Chimchar's), so Brian uses his Fire-starter teams. The credits show Charcadet.
-- Alan's two lines **await Joe's approval**.
+- Alan's lines are approved by Joe.
+- **Joe Fettuccine's mirror team (proposed, awaiting Joe's review).** With the secret Charcadet, Joe Fettuccine's post-game battle and rematches use `TRAINER_JOE_FETTUCCINE_MIRROR`, the polar opposite of his usual team: each Pokémon is its counterpart or has the opposite types. Same levels, AI and items count. His post-battle line names ARMAROUGE instead of CERULEDGE.
+
+| Usual team | Mirror team | Why | Set |
+| --- | --- | --- | --- |
+| Clodsire (Poison/Ground, Paldea) | Quagsire (Water/Ground, Johto), Lv 76 | Regional counterparts | Leftovers, Unaware; Earthquake, Liquidation, Spikes, Recover |
+| Noivern (Flying/Dragon, sound moves) | Sylveon (Fairy), Lv 77 | Fairy beats Dragon; its own sound move (Hyper Voice) | Leftovers, Pixilate; Hyper Voice, Shadow Ball, Calm Mind, Wish |
+| Annihilape (Fighting/Ghost) | Farigiraf (Normal/Psychic), Lv 77 | Exactly opposite types | Leftovers, Armor Tail; Twin Beam, Hyper Voice, Nasty Plot, Thunderbolt |
+| Zeraora (Mega, Electric) | Garchomp (Mega, Dragon/Ground), Lv 78 | Ground shuts out Electric | Garchompite, Rough Skin; Earthquake, Dragon Claw, Stone Edge, Swords Dance |
+| Greninja (shiny, Water/Dark, Kalos) | Chesnaught (shiny, Grass/Fighting, Kalos), Lv 79 | Kalos rival starter, beats both types | Rocky Helmet, Bulletproof; Spiky Shield, Wood Hammer, Drain Punch, Leech Seed |
+| Ceruledge (Joe's form, shiny, ace) | **Armarouge (Joe's form, shiny, ace)**, Lv 80 | Ceruledge's counterpart (Joe's example) | Life Orb, Magic Guard; Armor Cannon, Psychic, Aura Sphere, Calm Mind |
+
+- **Joe's Armarouge** (`SPECIES_ARMAROUGE_JOE`) mirrors his Ceruledge's stats, with Attack and Sp. Atk swapped: 90 HP / 70 Atk / 110 Def / 150 SpA / 100 SpD / 120 Spe (640 total, vs. 525). Ability Magic Guard (no Life Orb recoil, the special-attacker answer to Sharpness). Trainer only, uses Armarouge's sprites.
 
 ### WILDCARD and his castle (replaces the Trick Master and Trick House)
 

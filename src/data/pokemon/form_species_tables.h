@@ -2483,6 +2483,12 @@ static const u16 sCharcadetFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 
+static const u16 sArmarougeFormSpeciesIdTable[] = {
+    SPECIES_ARMAROUGE,
+    SPECIES_ARMAROUGE_JOE,
+    FORM_SPECIES_END,
+};
+
 static const u16 sCeruledgeFormSpeciesIdTable[] = {
     SPECIES_CERULEDGE,
     SPECIES_CERULEDGE_JOE,

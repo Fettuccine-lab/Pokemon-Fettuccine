@@ -6,7 +6,9 @@ LilycoveCity_CoveLilyMotel_2F_EventScript_GameDesigner::
 	faceplayer
 	goto_if_unset FLAG_SYS_GAME_CLEAR, LilycoveCity_CoveLilyMotel_2F_EventScript_GameDesignerDex
 	goto_if_unset FLAG_ENABLE_SHIP_FARAWAY_ISLAND, LilycoveCity_CoveLilyMotel_2F_EventScript_GiveOldSeaMap
+	goto_if_set FLAG_JOE_STARTER, LilycoveCity_CoveLilyMotel_2F_EventScript_JoeCheckMirrorDefeated
 	goto_if_not_defeated TRAINER_JOE_FETTUCCINE, LilycoveCity_CoveLilyMotel_2F_EventScript_JoeBattleOffer
+LilycoveCity_CoveLilyMotel_2F_EventScript_JoeCheckRematch::
 	goto_if_set FLAG_JOE_FETTUCCINE_REMATCH_READY, LilycoveCity_CoveLilyMotel_2F_EventScript_JoeRematchOffer
 	msgbox LilycoveCity_CoveLilyMotel_2F_Text_JoeRematchNotReady, MSGBOX_DEFAULT
 LilycoveCity_CoveLilyMotel_2F_EventScript_GameDesignerDex::
@@ -206,10 +208,24 @@ LilycoveCity_CoveLilyMotel_2F_EventScript_JoeRematchOffer::
 LilycoveCity_CoveLilyMotel_2F_EventScript_JoeBattleAccepted::
 	msgbox LilycoveCity_CoveLilyMotel_2F_Text_JoeAccepted, MSGBOX_DEFAULT
 LilycoveCity_CoveLilyMotel_2F_EventScript_JoeBattle::
+	goto_if_set FLAG_JOE_STARTER, LilycoveCity_CoveLilyMotel_2F_EventScript_JoeBattleMirror
 	trainerbattle_no_intro TRAINER_JOE_FETTUCCINE, LilycoveCity_CoveLilyMotel_2F_Text_JoeDefeat
 	clearflag FLAG_JOE_FETTUCCINE_REMATCH_READY
 	msgbox LilycoveCity_CoveLilyMotel_2F_Text_JoePostBattle, MSGBOX_DEFAULT
 	release
+	end
+
+@ Fettuccine: with the secret "Joe" Charcadet, he uses the mirror team (Armarouge ace)
+LilycoveCity_CoveLilyMotel_2F_EventScript_JoeBattleMirror::
+	trainerbattle_no_intro TRAINER_JOE_FETTUCCINE_MIRROR, LilycoveCity_CoveLilyMotel_2F_Text_JoeDefeat
+	clearflag FLAG_JOE_FETTUCCINE_REMATCH_READY
+	msgbox LilycoveCity_CoveLilyMotel_2F_Text_JoePostBattleMirror, MSGBOX_DEFAULT
+	release
+	end
+
+LilycoveCity_CoveLilyMotel_2F_EventScript_JoeCheckMirrorDefeated::
+	goto_if_not_defeated TRAINER_JOE_FETTUCCINE_MIRROR, LilycoveCity_CoveLilyMotel_2F_EventScript_JoeBattleOffer
+	goto LilycoveCity_CoveLilyMotel_2F_EventScript_JoeCheckRematch
 	end
 
 LilycoveCity_CoveLilyMotel_2F_EventScript_GiveOldSeaMapBagFull::
@@ -278,5 +294,11 @@ LilycoveCity_CoveLilyMotel_2F_Text_JoePostBattle:
 LilycoveCity_CoveLilyMotel_2F_Text_JoeRematchNotReady:
 	.string "JOE FETTUCCINE: I'm still tweaking my\n"
 	.string "team after that last battle.\p"
+	.string "Beat the ELITE FOUR again, and I'll\n"
+	.string "be ready for a rematch.$"
+
+LilycoveCity_CoveLilyMotel_2F_Text_JoePostBattleMirror:
+	.string "JOE FETTUCCINE: That ARMAROUGE is\n"
+	.string "supposed to be unbeatable!\p"
 	.string "Beat the ELITE FOUR again, and I'll\n"
 	.string "be ready for a rematch.$"

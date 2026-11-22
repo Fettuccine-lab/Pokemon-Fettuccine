@@ -2406,6 +2406,73 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         )
         .levelUpLearnset = sArmarougeLevelUpLearnset,
         .teachableLearnset = sArmarougeTeachableLearnset,
+        .formSpeciesIdTable = sArmarougeFormSpeciesIdTable,
+    },
+
+    // Placeholder art: uses Armarouge's sprites (Joe's is shiny in his trainer data)
+    [SPECIES_ARMAROUGE_JOE] =
+    {
+        // Joe Fettuccine's ace vs. the secret Charcadet: Ceruledge-Joe's stats mirrored (640 total, vs. 525)
+        .baseHP        = 90,
+        .baseAttack    = 70,
+        .baseDefense   = 110,
+        .baseSpeed     = 120,
+        .baseSpAttack  = 150,
+        .baseSpDefense = 100,
+        .types = MON_TYPES(TYPE_FIRE, TYPE_PSYCHIC),
+        .catchRate = 25,
+        .expYield = 263,
+        .evYield_SpAttack = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 35,
+        .friendship = 20,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_MAGIC_GUARD, ABILITY_MAGIC_GUARD, ABILITY_MAGIC_GUARD },
+        .bodyColor = BODY_COLOR_RED,
+        .speciesName = _("Armarouge"),
+        .cryId = CRY_ARMAROUGE,
+        .natDexNum = NATIONAL_DEX_ARMAROUGE,
+        .categoryName = _("Fire Warrior"),
+        .height = 15,
+        .weight = 850,
+        .description = COMPOUND_STRING(
+            "Armarouge evolved through the use\n"
+            "of a set of armor that belonged to\n"
+            "a distinguished warrior. This\n"
+            "Pokémon is incredibly loyal."),
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Armarouge,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 1,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_Armarouge,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 3,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Armarouge,
+        .shinyPalette = gMonShinyPalette_Armarouge,
+        .iconSprite = gMonIcon_Armarouge,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(0, 14, SHADOW_SIZE_L)
+        FOOTPRINT(Armarouge)
+        OVERWORLD(
+            sPicTable_Armarouge,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Armarouge,
+            gShinyOverworldPalette_Armarouge
+        )
+        .levelUpLearnset = sArmarougeLevelUpLearnset,
+        .teachableLearnset = sArmarougeTeachableLearnset,
+        .formSpeciesIdTable = sArmarougeFormSpeciesIdTable,
     },
 
     [SPECIES_CERULEDGE] =

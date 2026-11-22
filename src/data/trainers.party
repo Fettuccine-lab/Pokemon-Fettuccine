@@ -16966,3 +16966,81 @@ EVs: 4 HP / 252 Atk / 252 Spe
 - Poltergeist
 - Solar Blade
 - Swords Dance
+
+=== TRAINER_JOE_FETTUCCINE_MIRROR ===
+Name: FETTUCCINE
+Class: Pkmn Trainer 2
+Pic: Red
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Smart Trainer
+
+Quagsire @ Leftovers
+Level: 76
+Ability: Unaware
+Nature: Relaxed
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Atk / 252 Def
+- Earthquake
+- Liquidation
+- Spikes
+- Recover
+
+Sylveon @ Leftovers
+Level: 77
+Ability: Pixilate
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+- Hyper Voice
+- Shadow Ball
+- Calm Mind
+- Wish
+
+Farigiraf @ Leftovers
+Level: 77
+Ability: Armor Tail
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+- Twin Beam
+- Hyper Voice
+- Nasty Plot
+- Thunderbolt
+
+Garchomp @ Garchompite
+Level: 78
+Ability: Rough Skin
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- Earthquake
+- Dragon Claw
+- Stone Edge
+- Swords Dance
+
+Chesnaught @ Rocky Helmet
+Level: 79
+Ability: Bulletproof
+Nature: Impish
+Shiny: Yes
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Atk / 252 Def
+- Spiky Shield
+- Wood Hammer
+- Drain Punch
+- Leech Seed
+
+Armarouge-Joe @ Life Orb
+Level: 80
+Ability: Magic Guard
+Nature: Timid
+Shiny: Yes
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- Armor Cannon
+- Psychic
+- Aura Sphere
+- Calm Mind
