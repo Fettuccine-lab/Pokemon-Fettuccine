@@ -1549,10 +1549,6 @@ static const struct SpriteFrameImage sPicTable_BeautyFrlg[] = {
     overworld_ascending_frames(gObjectEventPic_BeautyFrlg, 2, 4),
 };
 
-static const struct SpriteFrameImage sPicTable_Chef[] = {
-    overworld_ascending_frames(gObjectEventPic_Chef, 2, 4),
-};
-
 static const struct SpriteFrameImage sPicTable_OldMan2[] = {
     overworld_frame(gObjectEventPic_OldMan2, 2, 4, 0),
     overworld_frame(gObjectEventPic_OldMan2, 2, 4, 1),
@@ -2502,3 +2498,7 @@ static const struct SpriteFrameImage sPicTable_MomFrlg[] = {
 };
 
 #endif // IS_FRLG
+// Fettuccine: the chef is used in Emerald Pokémon Centers, so keep it outside the FRLG-only block.
+static const struct SpriteFrameImage sPicTable_Chef[] = {
+    overworld_ascending_frames(gObjectEventPic_Chef, 2, 4),
+};
