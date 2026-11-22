@@ -219,6 +219,7 @@ Route110_TrickHouse_EventScript_GreninjaToPC::
 Route110_TrickHouse_EventScript_GreninjaTransferredToPC::
 	call Common_EventScript_TransferredToPC
 Route110_TrickHouse_EventScript_GotGreninja::
+	setflag FLAG_RECEIVED_TRICK_HOUSE_GRENINJA
 	setvar VAR_RESULT, TRUE
 	return
 

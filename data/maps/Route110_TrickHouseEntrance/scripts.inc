@@ -118,7 +118,7 @@ Route110_TrickHouseEntrance_OnWarp:
 	map_script_2 VAR_TRICK_HOUSE_ENTRANCE_STATE, 1, Route110_TrickHouseEntrance_EventScript_RemoveTrickMaster
 	map_script_2 VAR_TRICK_HOUSE_ENTRANCE_STATE, 2, Route110_TrickHouseEntrance_EventScript_SetTrickMasterFacingDoor
 	map_script_2 VAR_TRICK_HOUSE_ENTRANCE_STATE, 3, Route110_TrickHouseEntrance_EventScript_SetTrickMasterFacingDoor
-	map_script_2 VAR_TRICK_HOUSE_ENTRANCE_STATE, 4, Route110_TrickHouseEntrance_EventScript_RemoveTrickMaster
+	map_script_2 VAR_TRICK_HOUSE_ENTRANCE_STATE, 4, Route110_TrickHouseEntrance_EventScript_FinishedPuzzlesWarp
 	map_script_2 VAR_TRICK_HOUSE_ENTRANCE_STATE, 5, Route110_TrickHouseEntrance_EventScript_RemoveTrickMaster
 	map_script_2 VAR_TRICK_HOUSE_ENTRANCE_STATE, 6, Route110_TrickHouseEntrance_EventScript_SetTrickMasterInFrontOfDoor
 	.2byte 0
@@ -180,6 +180,12 @@ Route110_TrickHouseEntrance_EventScript_RemoveTrickMaster::
 	removeobject LOCALID_TRICK_MASTER
 	end
 
+@ Fettuccine: after the last room WILDCARD is gone, unless an old save still needs its GRENINJA.
+Route110_TrickHouseEntrance_EventScript_FinishedPuzzlesWarp::
+	goto_if_set FLAG_RECEIVED_TRICK_HOUSE_GRENINJA, Route110_TrickHouseEntrance_EventScript_RemoveTrickMaster
+	goto Route110_TrickHouseEntrance_EventScript_SetTrickMasterInFrontOfDoor
+	end
+
 Route110_TrickHouseEntrance_EventScript_SetTrickMasterFacingDoor::
 	addobject LOCALID_TRICK_MASTER
 	setobjectxy LOCALID_TRICK_MASTER, 5, 2
@@ -200,6 +206,7 @@ Route110_TrickHouseEntrance_EventScript_BeginChallenge::
 	lockall
 	delay 20
 	call_if_eq VAR_TRICK_HOUSE_LEVEL, 0, Route110_TrickHouseEntrance_EventScript_MeetTrickMaster
+	call Route110_TrickHouseEntrance_EventScript_TryCatchUpGreninja
 	msgbox Route110_TrickHouseEntrance_Text_ComeToChallengeTrickHouse, MSGBOX_DEFAULT
 	closemessage
 	delay 20
@@ -223,8 +230,48 @@ Route110_TrickHouseEntrance_EventScript_TrickMaster::
 	switch VAR_TRICK_HOUSE_ENTRANCE_STATE
 	case 0, Route110_TrickHouseEntrance_EventScript_FoundTrickMaster
 	case 2, Route110_TrickHouseEntrance_EventScript_GiveReward
-	case 3, Route110_TrickHouseEntrance_EventScript_StillMakingPuzzle
+	case 3, Route110_TrickHouseEntrance_EventScript_StillMakingPuzzleOrCatchUp
+	case 4, Route110_TrickHouseEntrance_EventScript_FinishedCatchUp
 	case 6, Route110_TrickHouseEntrance_EventScript_MechadollReward
+	end
+
+@ Fettuccine: catch-up GRENINJA for saves that cleared room 4 when its reward was a SMOKE BALL.
+@ Offered when WILDCARD is found (state 0), waiting at the door (state 3), or after the last room (state 4).
+Route110_TrickHouseEntrance_EventScript_TryCatchUpGreninja::
+	goto_if_set FLAG_RECEIVED_TRICK_HOUSE_GRENINJA, Route110_TrickHouseEntrance_EventScript_NoCatchUp
+	goto_if_lt VAR_TRICK_HOUSE_LEVEL, 4, Route110_TrickHouseEntrance_EventScript_NoCatchUp
+	applymovement LOCALID_TRICK_MASTER, Common_Movement_FacePlayer
+	waitmovement 0
+	msgbox Route110_TrickHouseEntrance_Text_CatchUpGreninja, MSGBOX_DEFAULT
+	msgbox Route110_TrickHouse_Text_GreninjaReward, MSGBOX_DEFAULT
+	call Route110_TrickHouse_EventScript_GiveGreninja
+	goto_if_eq VAR_RESULT, TRUE, Route110_TrickHouseEntrance_EventScript_NoCatchUp
+	msgbox gText_NoMoreRoomForPokemon, MSGBOX_DEFAULT
+	msgbox Route110_TrickHouseEntrance_Text_CatchUpNoRoom, MSGBOX_DEFAULT
+Route110_TrickHouseEntrance_EventScript_NoCatchUp::
+	return
+
+Route110_TrickHouseEntrance_EventScript_StillMakingPuzzleOrCatchUp::
+	goto_if_set FLAG_RECEIVED_TRICK_HOUSE_GRENINJA, Route110_TrickHouseEntrance_EventScript_StillMakingPuzzle
+	goto_if_lt VAR_TRICK_HOUSE_LEVEL, 4, Route110_TrickHouseEntrance_EventScript_StillMakingPuzzle
+	call Route110_TrickHouseEntrance_EventScript_TryCatchUpGreninja
+	applymovement LOCALID_TRICK_MASTER, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	releaseall
+	end
+
+Route110_TrickHouseEntrance_EventScript_FinishedCatchUp::
+	call Route110_TrickHouseEntrance_EventScript_TryCatchUpGreninja
+	goto_if_unset FLAG_RECEIVED_TRICK_HOUSE_GRENINJA, Route110_TrickHouseEntrance_EventScript_FinishedCatchUpWait
+	closemessage
+	applymovement LOCALID_TRICK_MASTER, Route110_TrickHouse_Movement_TrickMasterSpin
+	waitmovement 0
+	playse SE_M_EXPLOSION
+	applymovement LOCALID_TRICK_MASTER, Route110_TrickHouse_Movement_TrickMasterJumpAway
+	waitmovement 0
+	removeobject LOCALID_TRICK_MASTER
+Route110_TrickHouseEntrance_EventScript_FinishedCatchUpWait::
+	releaseall
 	end
 
 Route110_TrickHouseEntrance_EventScript_FoundTrickMaster::
@@ -831,3 +878,12 @@ Route110_TrickHouseEntrance_Text_DoorLockedWriteSecretCodeHere:
 	.string "The door is locked.\p"
 	.string "…On closer inspection, this is written\n"
 	.string "on it: “Write the secret code here.”$"
+
+Route110_TrickHouseEntrance_Text_CatchUpGreninja:
+	.string "Hold it! Before anything else…\p"
+	.string "Since you cleared my fourth trick,\n"
+	.string "I've upgraded its reward!$"
+
+Route110_TrickHouseEntrance_Text_CatchUpNoRoom:
+	.string "No room for a POKéMON? Fine. Make some\n"
+	.string "room and come find me again!$"
