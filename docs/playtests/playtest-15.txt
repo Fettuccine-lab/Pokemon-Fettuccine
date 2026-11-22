@@ -47,13 +47,9 @@ Zeraora before the Elite Four
   for good. Save first!
 
 A secret starter
-- Name yourself JOE and press B when Prof. Alan asks you to pick a
-  Pokemon from his bag. He'll hand you his own shiny Charcadet
-  instead, and give you a Malicious Armor back at the lab.
-- This Charcadet follows you around (like HeartGold and SoulSilver)
-  when it leads your party. It evolves only into Ceruledge.
-- With this starter, the game designer's post-game team is the
-  opposite of his usual one.
+- There's a fourth starter, if you can find it. Hint: who made this
+  game, and what if you don't want anything in Prof. Alan's bag?
+- Find it and it might just follow you around.
 
 Removed
 - Omnirouge (the hidden Armarouge + Ceruledge fusion) and its Omni
@@ -70,10 +66,9 @@ PLEASE TRY
   get the Greninja. Let it knock something out and watch it change.
 - Try Zeraora: knock it out or run on one save (it should vanish
   for good), catch it on another.
-- Start a NEW game named JOE, press B at the bag, and walk around
-  with the Charcadet leading: towns, buildings, doors, surfing,
-  biking, cutscenes. Does it ever get stuck or block the way?
-- Put another Pokemon first in your party: nothing should follow.
+- If you find the secret starter, walk around with it leading your
+  party: towns, buildings, doors, surfing, biking, cutscenes. Does
+  it ever get stuck or block the way?
 
 
 DEBUG MENU
@@ -85,10 +80,6 @@ skip ahead or set up a test:
   - Sprite viewer: SELECT on a summary screen (mGBA: Backspace)
 Use a separate save or a save state first, and say in your report
 if that save used the debug menu.
-
-Handy for this playtest: Give X > Pokemon (Complex), species 1576 is
-the secret Charcadet (set Shiny to yes). Species 1574 is its
-Ceruledge.
 
 
 AFTER-BATTLE GLITCHES
@@ -102,8 +93,8 @@ KNOWN PLACEHOLDERS
 ------------------
 - Brian, Prof. Alan, Sam, Mike, Joe Q, JASON and BLOBBY still use
   old Emerald sprites. Prof. Alan's battle sprite is a Gentleman.
-- The special Charcadet, Ceruledge and Armarouge use the normal
-  sprites and shiny colors for now.
+- The game designer's powered-up Pokemon (and the secret starter)
+  use the normal sprites and shiny colors for now.
 - The title screen still says EMERALD VERSION.
 - Retro Salvage Games shops still have blue roofs and MART signs.
 - A few map graphics still say HOENN.
@@ -113,8 +104,8 @@ KNOWN PLACEHOLDERS
 PLEASE REPORT
 -------------
 - Crashes or freezes, especially right after catching a Pokemon
-- The following Charcadet getting stuck, walking through walls,
-  showing up indoors when it shouldn't, or breaking a cutscene
+- A Pokemon following you that gets stuck, walks through walls, or
+  breaks a cutscene
 - Any battle against the game designer that feels unfair or too easy
 - Text that runs off the box
 - Anything that blocks progress
