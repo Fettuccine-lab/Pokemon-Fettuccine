@@ -14120,23 +14120,6 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_TMCase,
     },
 
-    // Fettuccine: fuses Armarouge (first) with Ceruledge into Omnirouge, or separates them.
-    [ITEM_OMNI_ARMOR] =
-    {
-        .name = ITEM_NAME("Omni Armor"),
-        .price = 0,
-        .importance = 1,
-        .description = COMPOUND_STRING(
-            "Fuses or separates\n"
-            "Armarouge and\n"
-            "Ceruledge."),
-        .pocket = POCKET_KEY_ITEMS,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_Fusion,
-        .iconPic = gItemIcon_AuspiciousArmor,
-        .iconPalette = gItemIconPalette_MaliciousArmor,
-    },
-
     [ITEM_Z_POWER_RING] =
     {
         .name = ITEM_NAME("Z-Power Ring"),

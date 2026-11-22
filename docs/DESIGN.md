@@ -778,7 +778,7 @@ A yes/no choice at New Game that randomizes Pokémon for that save file. It runs
 | Signature moves on evolution (Lv 35 single-stage; starter ultimates Lv 65, Volt Tackle Lv 50) | Learnset data | Done, needs playtesting |
 | Solar Blade: one turn, 95 power | Move data, animation | Done, needs playtesting |
 | Bird Keepers and Fortellini Gym trainers use Flying types | Trainer data | Done, needs playtesting |
-| Omnirouge (Armarouge + Ceruledge fusion) | Custom form, fusion item, sprites by Joe | Built with placeholder sprites; not given to the player yet (Joe Fettuccine, post-game, still to do); sprites still to do |
+| Omnirouge (Armarouge + Ceruledge fusion) | Custom form, fusion item | Dropped (Nov 2026): removed from the game |
 
 ## Playtests
 
@@ -800,13 +800,7 @@ Testers download from **https://github.com/Fettuccine-lab/Pokemon-Fettuccine/rel
 | 12 | Armors sold in Farfallarbor, Shieldon replaces Roxanne's Tyrunt, signature moves on evolution (starter ultimates Lv 65, Volt Tackle Lv 50), Bird Keepers and Fortellini Gym use Flying types (Omnirouge is in the build but hidden) |
 | 13 | Solar Blade is a one-turn move (95 power) |
 
-**Omnirouge (Armarouge + Ceruledge fusion): built Nov 2026, hidden for now.** Inspired by fan art Joe found (use it as inspiration for an original sprite, not a trace).
-- **Decided:** name **Omnirouge**, Fire/Ghost, 600 base stats: 80 HP / 110 Atk / 100 Def / 110 SpA / 100 SpD / 100 Spe. Abilities Flash Fire / Weak Armor (same as its parents). Category "Twin Knight".
-- **How it works:** the **Omni Armor** key item (placeholder name and icon). Use it on Armarouge, then pick Ceruledge: they fuse into Omnirouge, which always gets the same four moves at full PP: **Armor Cannon, Bitter Blade, Shadow Claw, Work Up** (Decided, Nov 2026). Armarouge's own moves are saved (in fusion slot 2, the N-Lunarizer's) and given back when the item splits them; Ceruledge comes back exactly as it was. Omnirouge learns both parents' level-up, TM and tutor moves. It can't be traded, can't enter the Frontier, never shows up in Wonder Trade or the randomizer, and shares Armarouge's Pokédex entry.
-- Built on the engine's fusion system (Kyurem/Necrozma). Ceruledge is stored in fusion slot 1, which belonged to the N-Solarizer (not in this game), so saves didn't change.
-- **Decided:** Joe Fettuccine gives the Omni Armor post-game, with an explanation. **Not built yet on purpose:** Joe wants Omnirouge finished before players can see it.
-- **Still to do:** original front/back sprites, icon and palette (currently Armarouge's); its own cry is optional (uses Armarouge's); a final item name and icon; the Joe Fettuccine scene. 
-- Note: TM/tutor moves are a hand-made list (`sOmnirougeTeachables` in `src/data/pokemon/level_up_learnsets/gen_9.h`), so it must be updated if the TM list changes.
+**Dropped (Nov 2026): Omnirouge.** The Armarouge + Ceruledge fusion and its Omni Armor key item were removed from the game; Joe decided not to make it.
 
 **Idea (not scheduled): free up save space.** `include/config/save.h` can switch off unused save data (Mystery Event, record-mixing Hall records, Mystery Gift, Union Room chat, Battle Tower e-Reader and smaller ones), about 3.7 KB in all. Any of these shifts the save layout and breaks existing saves, so do them together, once, in a playtest where testers start a new save. Keep Match Call (the story calls use it).
 

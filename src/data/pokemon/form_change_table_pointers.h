@@ -21,11 +21,6 @@ const struct Fusion *const gFusionTablePointers[NUM_SPECIES] =
     [SPECIES_LUNALA] = sNecrozmaFusionTable,
 #endif //P_FAMILY_COSMOG
 #endif //P_FAMILY_NECROZMA
-#if P_FAMILY_CHARCADET
-    [SPECIES_ARMAROUGE] = sOmnirougeFusionTable,
-    [SPECIES_CERULEDGE] = sOmnirougeFusionTable,
-    [SPECIES_OMNIROUGE] = sOmnirougeFusionTable,
-#endif //P_FAMILY_CHARCADET
 #if P_FAMILY_CALYREX
     [SPECIES_CALYREX] = sCalyrexFusionTable,
 #if P_FAMILY_SPECTRIER

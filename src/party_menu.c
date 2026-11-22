@@ -6576,41 +6576,6 @@ static void SwapFusionMonMoves(struct Pokemon *mon, const u16 moveTable[][2], u3
 }
 #endif //P_FUSION_FORMS
 
-// Fettuccine: Omnirouge always fuses with this moveset. Armarouge's own moves are saved
-// in fusion storage slot 2 (the N-Lunarizer's, not in this game) and given back on separation.
-#define OMNIROUGE_SAVED_MOVES_SLOT 2
-static const u16 sOmnirougeFusionMoves[MAX_MON_MOVES] = {MOVE_ARMOR_CANNON, MOVE_BITTER_BLADE, MOVE_SHADOW_CLAW, MOVE_WORK_UP};
-
-static void OmnirougeOnFuse(struct Pokemon *mon)
-{
-    u32 i, zero = 0;
-
-    CopyMon(&gPokemonStoragePtr->fusions[OMNIROUGE_SAVED_MOVES_SLOT], mon, sizeof(*mon));
-    SetMonData(mon, MON_DATA_PP_BONUSES, &zero);
-    for (i = 0; i < MAX_MON_MOVES; i++)
-        SetMonMoveSlot(mon, sOmnirougeFusionMoves[i], i);
-}
-
-// Gives Armarouge its saved moves back, if any were saved.
-static void OmnirougeOnSeparate(struct Pokemon *mon)
-{
-    struct Pokemon *saved = &gPokemonStoragePtr->fusions[OMNIROUGE_SAVED_MOVES_SLOT];
-    u32 i, data;
-
-    if (GetMonData(saved, MON_DATA_SPECIES) != SPECIES_ARMAROUGE)
-        return;
-    for (i = 0; i < MAX_MON_MOVES; i++)
-    {
-        data = GetMonData(saved, MON_DATA_MOVE1 + i);
-        SetMonData(mon, MON_DATA_MOVE1 + i, &data);
-        data = GetMonData(saved, MON_DATA_PP1 + i);
-        SetMonData(mon, MON_DATA_PP1 + i, &data);
-    }
-    data = GetMonData(saved, MON_DATA_PP_BONUSES);
-    SetMonData(mon, MON_DATA_PP_BONUSES, &data);
-    ZeroMonData(saved);
-}
-
 static void Task_TryItemUseFusionChange(u8 taskId)
 {
     struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][gTasks[taskId].firstFusionSlot];
@@ -6635,10 +6600,6 @@ static void Task_TryItemUseFusionChange(u8 taskId)
             ZeroMonData(&gPokemonStoragePtr->fusions[gTasks[taskId].storageIndex]);
         }
         targetSpecies = gTasks[taskId].tTargetSpecies;
-        if (targetSpecies == SPECIES_OMNIROUGE)
-            OmnirougeOnFuse(mon);
-        else if (GetMonData(mon, MON_DATA_SPECIES) == SPECIES_OMNIROUGE)
-            OmnirougeOnSeparate(mon); // if nothing was saved, the usual cleanup forgets Omnirouge-only moves
         SetMonData(mon, MON_DATA_SPECIES, &targetSpecies);
         CalculateMonStats(mon);
         CompactPartySlots();

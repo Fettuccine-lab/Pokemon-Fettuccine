@@ -87,14 +87,6 @@ static const u16 sRaticateFormSpeciesIdTable[] = {
 };
 #endif //P_FAMILY_RATTATA
 
-#if P_FAMILY_CHARCADET
-static const u16 sArmarougeFormSpeciesIdTable[] = {
-    SPECIES_ARMAROUGE,
-    SPECIES_OMNIROUGE,
-    FORM_SPECIES_END,
-};
-#endif //P_FAMILY_CHARCADET
-
 #if P_FAMILY_SPEAROW
 static const u16 sSpearowFormSpeciesIdTable[] = {
     SPECIES_SPEAROW,
