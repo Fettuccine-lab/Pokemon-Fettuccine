@@ -405,7 +405,7 @@ enum
 enum TrainerClassID
 {
     TRAINER_CLASS_PKMN_TRAINER_1, // Unused
-    TRAINER_CLASS_PKMN_TRAINER_2, // Fettuccine: GAME DESIGNER (Joe Fettuccine)
+    TRAINER_CLASS_PKMN_TRAINER_2, // Fettuccine: shows as "JOE" (Joe Fettuccine)
     TRAINER_CLASS_HIKER,
     TRAINER_CLASS_TEAM_AQUA,
     TRAINER_CLASS_PKMN_BREEDER,

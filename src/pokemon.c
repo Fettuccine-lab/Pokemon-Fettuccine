@@ -5138,7 +5138,7 @@ u16 GetBattleBGM(void)
             return MUS_VS_GYM_LEADER;
         case TRAINER_CLASS_CHAMPION:
         case TRAINER_CLASS_PKMN_PROF_FRLG: // Prof. Alan, the secret boss
-        case TRAINER_CLASS_PKMN_TRAINER_2: // Joe Fettuccine, the GAME DESIGNER
+        case TRAINER_CLASS_PKMN_TRAINER_2: // Joe Fettuccine
             return MUS_VS_CHAMPION;
         case TRAINER_CLASS_RIVAL:
             if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)

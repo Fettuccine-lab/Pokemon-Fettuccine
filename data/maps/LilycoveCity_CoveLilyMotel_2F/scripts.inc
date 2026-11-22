@@ -181,8 +181,10 @@ LilycoveCity_CoveLilyMotel_2F_EventScript_GiveOldSeaMap::
 	setflag FLAG_ENABLE_SHIP_FARAWAY_ISLAND
 	setflag FLAG_RECEIVED_OLD_SEA_MAP
 	msgbox LilycoveCity_CoveLilyMotel_2F_Text_OldSeaMapUseAtPort, MSGBOX_DEFAULT
-	msgbox LilycoveCity_CoveLilyMotel_2F_Text_JoeFirstChallenge, MSGBOX_DEFAULT
-	goto LilycoveCity_CoveLilyMotel_2F_EventScript_JoeBattle
+	msgbox LilycoveCity_CoveLilyMotel_2F_Text_JoeFirstChallenge, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, LilycoveCity_CoveLilyMotel_2F_EventScript_JoeBattleAccepted
+	msgbox LilycoveCity_CoveLilyMotel_2F_Text_JoeDeclined, MSGBOX_DEFAULT
+	release
 	end
 
 @ Post-game: Joe Fettuccine battles the player after the OLD SEA MAP,
@@ -241,10 +243,11 @@ LilycoveCity_CoveLilyMotel_2F_Text_JoeFirstChallenge:
 	.string "I didn't just make this game. I play\n"
 	.string "it too. A lot. Too much, maybe.\p"
 	.string "Let's see if the new CHAMPION can\n"
-	.string "beat the guy who made the rules!$"
+	.string "beat the guy who made the rules!\p"
+	.string "Ready to battle the GAME DESIGNER?$"
 
 LilycoveCity_CoveLilyMotel_2F_Text_JoeBattleOffer:
-	.string "JOE FETTUCCINE: Back for a rematch?\n"
+	.string "JOE FETTUCCINE: Changed your mind?\n"
 	.string "I've been practicing. Kind of.\p"
 	.string "Ready to battle the GAME DESIGNER?$"
 

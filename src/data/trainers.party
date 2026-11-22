@@ -16890,7 +16890,7 @@ EVs: 4 HP / 252 SpA / 252 Spe
 - Strength Sap
 
 === TRAINER_JOE_FETTUCCINE ===
-Name: JOE
+Name: FETTUCCINE
 Class: Pkmn Trainer 2
 Pic: Red
 Gender: Male
@@ -16898,17 +16898,6 @@ Music: Male
 Items: Full Restore / Full Restore / Full Restore / Full Restore
 Double Battle: No
 AI: Basic Trainer
-
-Electrode @ Life Orb
-Level: 76
-Ability: Aftermath
-Nature: Timid
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 4 HP / 252 SpA / 252 Spe
-- Thunderbolt
-- Volt Switch
-- Foul Play
-- Explosion
 
 Breloom @ Focus Sash
 Level: 76
@@ -16921,16 +16910,16 @@ EVs: 4 HP / 252 Atk / 252 Spe
 - Mach Punch
 - Rock Tomb
 
-Starmie @ Expert Belt
+Noivern @ Choice Specs
 Level: 77
-Ability: Analytic
+Ability: Infiltrator
 Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
-- Hydro Pump
-- Psychic
-- Ice Beam
-- Thunderbolt
+- Draco Meteor
+- Boomburst
+- Hurricane
+- Flamethrower
 
 Cloyster @ White Herb
 Level: 77
@@ -16943,16 +16932,28 @@ EVs: 4 HP / 252 Atk / 252 Spe
 - Rock Blast
 - Liquidation
 
-Mismagius @ Leftovers
+Zeraora @ Zeraorite
 Level: 78
-Ability: Levitate
+Ability: Volt Absorb
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- Plasma Fists
+- Close Combat
+- Knock Off
+- Play Rough
+
+Greninja-Battle-Bond @ Expert Belt
+Level: 79
+Ability: Battle Bond
 Nature: Timid
+Shiny: Yes
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
-- Nasty Plot
-- Shadow Ball
-- Dazzling Gleam
-- Thunderbolt
+- Water Shuriken
+- Hydro Pump
+- Dark Pulse
+- Ice Beam
 
 Ceruledge-Joe @ Life Orb
 Level: 80
