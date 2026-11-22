@@ -814,6 +814,7 @@ A yes/no choice at New Game that randomizes Pokémon for that save file. It runs
 | Solar Blade: one turn, 95 power | Move data, animation | Done, needs playtesting |
 | Bird Keepers and Fortellini Gym trainers use Flying types | Trainer data | Done, needs playtesting |
 | Omnirouge (Armarouge + Ceruledge fusion) | Custom form, fusion item | Dropped (Nov 2026): removed from the game |
+| Title screen banner: FETTUCCINE instead of EMERALD | Art by Joe: `graphics/title_screen/emerald_version.png`, 128 × 32, 16 colors (index 0 transparent), own palette so it can be recolored | To do (Joe draws it, then Claude builds and checks it) |
 | Joe Fettuccine post-game battle (rematch after every Hall of Fame, shiny overpowered Ceruledge ace) | Trainer data, custom form, motel script | Built, needs playtesting; movesets and battle dialogue await Joe's review |
 
 ## Playtests
