@@ -350,9 +350,49 @@ static const struct SpriteTemplate sSpriteTemplate_StarterCircle =
 // .text
 u16 GetStarterPokemon(u16 chosenStarterId)
 {
-    if (chosenStarterId > STARTER_MON_COUNT)
+    if (chosenStarterId == STARTER_JOE_CHARCADET)
+        return SPECIES_CHARCADET_JOE;
+    if (chosenStarterId >= STARTER_MON_COUNT)
         chosenStarterId = 0;
     return RandomizerGetStarter(sStarterMon[chosenStarterId], chosenStarterId);
+}
+
+// Fettuccine: the species the player actually started with. A "Joe" save keeps
+// VAR_STARTER_MON at the fire slot so Brian's teams work, and sets FLAG_JOE_STARTER.
+u16 GetPlayerStarterSpecies(void)
+{
+    if (FlagGet(FLAG_JOE_STARTER))
+        return SPECIES_CHARCADET_JOE;
+    return GetStarterPokemon(VarGet(VAR_STARTER_MON));
+}
+
+// Fettuccine: "Joe" in any capitalization (JOE, Joe, joe) unlocks the secret starter
+static bool32 IsPlayerNamedJoe(void)
+{
+    static const u8 sJoe[] = _("JOE");
+    const u8 *name = gSaveBlock2Ptr->playerName;
+    u32 i;
+
+    for (i = 0; sJoe[i] != EOS; i++)
+    {
+        u8 c = name[i];
+        if (c >= CHAR_a && c <= CHAR_z)
+            c = c - CHAR_a + CHAR_A;
+        if (c != sJoe[i])
+            return FALSE;
+    }
+    return name[i] == EOS;
+}
+
+static void Task_JoeStarterWaitForButton(u8 taskId)
+{
+    if (JOY_NEW(A_BUTTON | B_BUTTON))
+    {
+        PlaySE(SE_SELECT);
+        gSpecialVar_Result = STARTER_JOE_CHARCADET;
+        ResetAllPicSprites();
+        SetMainCallback2(gMain.savedCallback);
+    }
 }
 
 static void VblankCB_StarterChoose(void)
@@ -502,6 +542,15 @@ static void Task_HandleStarterChooseInput(u8 taskId)
 
         gTasks[taskId].tPkmnSpriteId = spriteId;
         gTasks[taskId].func = Task_WaitForStarterSprite;
+    }
+    else if (JOY_NEW(B_BUTTON) && IsPlayerNamedJoe())
+    {
+        // Fettuccine: secret starter. Alan throws out his own POKéMON instead.
+        ClearStarterLabel();
+        FillWindowPixelBuffer(0, PIXEL_FILL(1));
+        AddTextPrinterParameterized(0, FONT_NORMAL, gText_AlanJoeStarter, 0, 1, 0, NULL);
+        ScheduleBgCopyTilemapToVram(0);
+        gTasks[taskId].func = Task_JoeStarterWaitForButton;
     }
     else if (JOY_NEW(DPAD_LEFT) && selection > 0)
     {

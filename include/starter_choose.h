@@ -7,7 +7,11 @@ extern const u32 gBirchGrassTilemap[];
 extern const u32 gBirchBagGrass_Gfx[];
 extern const u32 gPokeballSelection_Gfx[];
 
+// Fettuccine: the secret "Joe" starter (shiny Charcadet), returned by the starter screen
+#define STARTER_JOE_CHARCADET 3
+
 u16 GetStarterPokemon(u16 chosenStarterId);
+u16 GetPlayerStarterSpecies(void);
 void CB2_ChooseStarter(void);
 
 #endif // GUARD_STARTER_CHOOSE_H

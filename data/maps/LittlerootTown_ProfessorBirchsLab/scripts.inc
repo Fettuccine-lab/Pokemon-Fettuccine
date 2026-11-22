@@ -124,6 +124,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_NicknameStarter::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival::
 	call LittlerootTown_ProfessorBirchsLab_EventScript_GiveBoxLink
+	call_if_set FLAG_JOE_STARTER, LittlerootTown_ProfessorBirchsLab_EventScript_GiveMaliciousArmor
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, LittlerootTown_ProfessorBirchsLab_EventScript_AgreeToSeeRival
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_DeclineSeeingRival
@@ -1203,3 +1204,19 @@ LittlerootTown_ProfessorBirchsLab_Text_ComfyChair:
 	.string "It's PROF. ALAN's big comfy chair.\p"
 	.string "There's a whiskey glass wedged\n"
 	.string "down the side of the cushion.$"
+
+@ Fettuccine: the secret "Joe" starter comes with the MALICIOUS ARMOR it evolves with
+LittlerootTown_ProfessorBirchsLab_EventScript_GiveMaliciousArmor::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_AlanMaliciousArmor, MSGBOX_DEFAULT
+	giveitem ITEM_MALICIOUS_ARMOR
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_AlanMaliciousArmorHowTo, MSGBOX_DEFAULT
+	return
+
+LittlerootTown_ProfessorBirchsLab_Text_AlanMaliciousArmor:
+	.string "PROF. ALAN: Oh, and that CHARCADET\n"
+	.string "came with something. Here.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_AlanMaliciousArmorHowTo:
+	.string "Use the MALICIOUS ARMOR on CHARCADET\n"
+	.string "when you're ready, and it'll evolve.\p"
+	.string "Into what? Ha! You'll see.$"

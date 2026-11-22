@@ -2477,6 +2477,12 @@ static const u16 sSquawkabillyFormSpeciesIdTable[] = {
 #endif //P_FAMILY_SQUAWKABILLY
 
 #if P_FAMILY_CHARCADET
+static const u16 sCharcadetFormSpeciesIdTable[] = {
+    SPECIES_CHARCADET,
+    SPECIES_CHARCADET_JOE,
+    FORM_SPECIES_END,
+};
+
 static const u16 sCeruledgeFormSpeciesIdTable[] = {
     SPECIES_CERULEDGE,
     SPECIES_CERULEDGE_JOE,

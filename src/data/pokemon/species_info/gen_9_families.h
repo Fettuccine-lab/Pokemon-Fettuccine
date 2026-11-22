@@ -2273,8 +2273,76 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .levelUpLearnset = sCharcadetLevelUpLearnset,
         .teachableLearnset = sCharcadetTeachableLearnset,
         .eggMoveLearnset = sCharcadetEggMoveLearnset,
+        .formSpeciesIdTable = sCharcadetFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_AUSPICIOUS_ARMOR, SPECIES_ARMAROUGE},
                                 {EVO_ITEM, ITEM_MALICIOUS_ARMOR, SPECIES_CERULEDGE}),
+    },
+
+    // Placeholder art: uses Charcadet's sprites (the player's is always shiny)
+    [SPECIES_CHARCADET_JOE] =
+    {
+        // Secret "Joe" starter: boosted stats (320 total, vs. 255 for a normal Charcadet)
+        .baseHP        = 50,
+        .baseAttack    = 65,
+        .baseDefense   = 50,
+        .baseSpeed     = 50,
+        .baseSpAttack  = 55,
+        .baseSpDefense = 50,
+        .types = MON_TYPES(TYPE_FIRE),
+        .catchRate = 90,
+        .expYield = 51,
+        .evYield_SpAttack = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 35,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_FLASH_FIRE, ABILITY_NONE, ABILITY_FLAME_BODY },
+        .bodyColor = BODY_COLOR_RED,
+        .speciesName = _("Charcadet"),
+        .cryId = CRY_CHARCADET,
+        .natDexNum = NATIONAL_DEX_CHARCADET,
+        .categoryName = _("Fire Child"),
+        .height = 6,
+        .weight = 105,
+        .description = COMPOUND_STRING(
+            "Burnt charcoal came to life and\n"
+            "became a Pokémon. Possessing a fiery\n"
+            "fighting spirit, Charcadet will\n"
+            "battle even tough opponents."),
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Charcadet,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 9,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_Charcadet,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 6,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Charcadet,
+        .shinyPalette = gMonShinyPalette_Charcadet,
+        .iconSprite = gMonIcon_Charcadet,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
+        SHADOW(-1, 5, SHADOW_SIZE_S)
+        FOOTPRINT(Charcadet)
+        OVERWORLD(
+            sPicTable_Charcadet,
+            SIZE_32x32,
+            SHADOW_SIZE_S,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Charcadet,
+            gShinyOverworldPalette_Charcadet
+        )
+        .levelUpLearnset = sCharcadetLevelUpLearnset,
+        .teachableLearnset = sCharcadetTeachableLearnset,
+        .formSpeciesIdTable = sCharcadetFormSpeciesIdTable,
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_MALICIOUS_ARMOR, SPECIES_CERULEDGE_JOE}),
     },
 
     [SPECIES_ARMAROUGE] =

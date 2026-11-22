@@ -360,6 +360,15 @@ Every Pokémon is from Gens 1–3 and has a cheese connection.
 | Greninja (Battle Bond, shiny) | 79 | Expert Belt; Water Shuriken, Grass Knot, Dark Pulse, Ice Beam |
 | Ceruledge (Joe's form, shiny, ace) | 80 | Life Orb, Sharpness; Bitter Blade, Poltergeist, Solar Blade, Swords Dance |
 
+#### Secret "Joe" starter (Nov 2026, needs playtesting)
+
+- **How:** if the player's name is **Joe** (any capitalization), pressing **B** at Alan's starter bag makes Alan say "Never mind the bag! Here, just use this POKéMON!" and the first battle starts with a **shiny, powered-up Charcadet** (Lv 5, `SPECIES_CHARCADET_JOE`), the pre-evolution of Joe Fettuccine's Ceruledge. Pressing B with any other name does nothing, as before. It's never randomized.
+- **Stats:** 50 HP / 65 Atk / 50 Def / 55 SpA / 50 SpD / 50 Spe (320 total, vs. 255). It can only evolve into **Joe's Ceruledge** (`SPECIES_CERULEDGE_JOE`, 640 total, Sharpness) with the Malicious Armor, never into Armarouge. Neither can breed (no eggs), so it can't be copied.
+- **Malicious Armor:** back at the lab, after the nickname prompt, Alan gives it ("Oh, and that CHARCADET came with something… Into what? Ha! You'll see.").
+- **Followers:** follower Pokémon (HGSS style) are switched on, but **only this Charcadet / Ceruledge follows**, and only while it leads the party. Every other Pokémon stays in its ball.
+- **Behind the scenes:** `FLAG_JOE_STARTER` (spare flag 0x284). `VAR_STARTER_MON` is set to the Fire slot (Chimchar's), so Brian uses his Fire-starter teams. The credits show Charcadet.
+- Alan's two lines **await Joe's approval**.
+
 ### WILDCARD and his castle (replaces the Trick Master and Trick House)
 
 **Who he is:** WILDCARD is Joe's known former persona. In another Discord server, Joe hosted a weekly **Mario Kart Night** that grew a small following and turned into a group goofing off. Joe and Brian started a sarcastic rivalry, openly taking jabs at each other, and that's where their friendship grew. Joe became the **Mario Kart King**, went mad with power, watched his "kingdom" crash and burn, and then started **RetroBytes** with Brian. The group made their own game modes, **Blue Shell Hell** and **Bullets Over Bombsway**, and a short fake-news video series, the **Mario Kart Weekly ReKap**, recapping each night's shenanigans.

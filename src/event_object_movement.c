@@ -2336,7 +2336,16 @@ static bool8 GetMonInfo(struct Pokemon *mon, enum Species *species, bool32 *shin
 // Retrieve graphic information about the following Pokémon, if any
 bool8 GetFollowerInfo(enum Species *species, bool32 *shiny, bool32 *female)
 {
-    return GetMonInfo(GetFirstLiveMon(), species, shiny, female);
+    struct Pokemon *mon = GetFirstLiveMon();
+
+    // Fettuccine: only the secret "Joe" Charcadet line follows the player (when it leads the party)
+    if (mon != NULL)
+    {
+        enum Species lead = GetMonData(mon, MON_DATA_SPECIES);
+        if (lead != SPECIES_CHARCADET_JOE && lead != SPECIES_CERULEDGE_JOE)
+            mon = NULL;
+    }
+    return GetMonInfo(mon, species, shiny, female);
 }
 
 // Update following Pokémon if any

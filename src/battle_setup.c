@@ -1008,9 +1008,25 @@ static void CB2_GiveStarter(void)
 {
     u16 starterMon;
 
-    *GetVarPointer(VAR_STARTER_MON) = gSpecialVar_Result;
-    starterMon = GetStarterPokemon(gSpecialVar_Result);
-    ScriptGiveMon(starterMon, 5, ITEM_NONE);
+    if (gSpecialVar_Result == STARTER_JOE_CHARCADET)
+    {
+        // Fettuccine: secret "Joe" starter, a shiny powered-up Charcadet (never randomized).
+        // VAR_STARTER_MON uses the fire slot so Brian's teams match a Fire starter.
+        struct Pokemon mon;
+        bool32 shiny = TRUE;
+
+        *GetVarPointer(VAR_STARTER_MON) = 1;
+        FlagSet(FLAG_JOE_STARTER);
+        CreateRandomMon(&mon, SPECIES_CHARCADET_JOE, 5);
+        SetMonData(&mon, MON_DATA_IS_SHINY, &shiny);
+        GiveScriptedMonToPlayer(&mon, PARTY_SIZE);
+    }
+    else
+    {
+        *GetVarPointer(VAR_STARTER_MON) = gSpecialVar_Result;
+        starterMon = GetStarterPokemon(gSpecialVar_Result);
+        ScriptGiveMon(starterMon, 5, ITEM_NONE);
+    }
     ResetTasks();
     PlayBattleBGM();
     SetMainCallback2(CB2_StartFirstBattle);

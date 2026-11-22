@@ -1693,7 +1693,8 @@ enum __attribute__((packed)) Species
     SPECIES_CUSTOM_START = SPECIES_GLIMMORA_MEGA,
     // Add any custom species between here and SPECIES_CUSTOM_END
     SPECIES_SPEAROW_MIKE, // Mike's overpowered Spearow (trainer only)
-    SPECIES_CERULEDGE_JOE, // Joe Fettuccine's overpowered Ceruledge (trainer only)
+    SPECIES_CERULEDGE_JOE, // Joe Fettuccine's overpowered Ceruledge (his ace; also the secret "Joe" starter's evolution)
+    SPECIES_CHARCADET_JOE, // Secret "Joe" starter: powered-up Charcadet, evolves only into SPECIES_CERULEDGE_JOE
     SPECIES_CUSTOM_END,
 
     SPECIES_EGG = SPECIES_CUSTOM_END,

@@ -62,6 +62,7 @@ const u8 gText_Name[] = _("NAME");
 const u8 gText_IDNumber[] = _("IDNo.");
 const u8 gText_BirchInTrouble[] = _("PROF. ALAN is in trouble!\nRelease a POKéMON and rescue him!");
 const u8 gText_ConfirmStarterChoice[] = _("Do you choose this POKéMON?");
+const u8 gText_AlanJoeStarter[] = _("PROF. ALAN: Never mind the bag!\nHere, just use this POKéMON!");
 const u8 gText_Pokemon4[] = _("POKéMON"); // Unused
 const u8 gText_FlyToWhere[] = _("FLY to where?");
 const u8 gMenuText_Use[] = _("USE");
